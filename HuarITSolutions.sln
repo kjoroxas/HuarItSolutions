@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HuarITSolutions", "Testing\HuarITSolutions.csproj", "{01FA262B-3302-4C0F-9A45-5F3C331A6447}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{01FA262B-3302-4C0F-9A45-5F3C331A6447}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01FA262B-3302-4C0F-9A45-5F3C331A6447}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01FA262B-3302-4C0F-9A45-5F3C331A6447}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01FA262B-3302-4C0F-9A45-5F3C331A6447}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5F746673-3B3B-4288-96C6-6E421EEA9C6C}
+	EndGlobalSection
+EndGlobal

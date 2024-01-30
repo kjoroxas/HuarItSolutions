@@ -1,0 +1,237 @@
+﻿/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    margin-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set widths on the form inputs since otherwise they're 100% wide */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+/*This pertains to the login page*/
+    #passfield {
+        width:250px;
+        margin-bottom:10px;
+    }
+    #emailfield {
+        width: 250px;
+        margin-bottom: 10px;
+    }
+    login{
+        margin-top: 50px;
+    }
+    .exempt {
+        text-align: left;
+        margin-left: 20px;
+    }
+
+    #logintitle {
+        margin-top: 5px;
+        margin-bottom: 20px;
+    }
+
+    #loginsection {
+        margin-top: 90px;
+        margin-bottom: 200px;
+    }
+    #loginbutton {
+        background-color: #3498db;
+        color: #fff;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    #loginbutton:hover {
+        background-color: #2980b9;
+    }
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    .body-content {
+        padding: 0;
+    }
+}
+
+/*Footer*/
+footer {
+    padding: 10px;
+  
+    margin-top: auto;
+}
+
+/*Catalog Page*/
+#catalogbuttons {
+    margin-left:150px;
+    margin-top:70px;
+    margin-bottom:230px;
+}
+
+#catalogtitle {
+    margin-top: 140px;
+    margin-left: 640px;
+    font-size: 4rem;
+}
+.catalogtext{
+    margin-left:5px;
+    font-size: 2rem;
+}
+.catalogtext2 {
+
+    font-size: 2rem;
+}
+.catalogtext3 {
+    font-size: 2rem;
+    margin-left:-40px;
+}
+.catalogtext4 {
+    font-size: 2rem;
+    margin-left: -50px;
+}
+.catalogtext5 {
+    font-size: 2rem;
+    margin-left: -20px;
+    margin-top: -10px
+}
+.catalogtext6 {
+    font-size: 2rem;
+    margin-left: -10px;
+}
+.catalogtext7 {
+    font-size: 2rem;
+    margin-left: -20px;
+
+}
+.filebutton {
+    background: url('https://api.iconify.design/mdi/file.svg') no-repeat center center / contain;
+    background-color: lightgray;
+    width: 74px; 
+    height: 74px; 
+
+    border: none;
+    text-indent: -9999px; 
+    border-radius: 15px; 
+}
+.salesbutton {
+    background: url('https://api.iconify.design/icon-park-solid/sales-report.svg') no-repeat center center / contain;
+    background-color: lightgray;
+    width: 75px; 
+    height: 75px;
+
+    border: none;
+    text-indent: -9999px; 
+    border-radius: 15px; 
+}
+.collectionsbutton {
+    background: url('https://api.iconify.design/ic/baseline-collections.svg') no-repeat center center / contain;
+    background-color: lightgray;
+    width: 75px; 
+    height: 75px; 
+
+    border: none;
+    text-indent: -9999px; 
+    border-radius: 15px; 
+}
+.accountingbutton {
+    background: url('https://api.iconify.design/map/accounting.svg') no-repeat center center / contain;
+    background-color: lightgray;
+    width: 75px; 
+    height: 75px;
+
+    border: none;
+    text-indent: -9999px; 
+    border-radius: 15px; 
+}
+.reportsbutton {
+    background: url('https://api.iconify.design/iconoir/reports-solid.svg') no-repeat center center / contain;
+    background-color: lightgray;
+    width: 75px;
+    height: 75px; 
+
+    border: none;
+    text-indent: -9999px;
+    border-radius: 15px; 
+}
+.settingsbutton {
+    background: url('https://api.iconify.design/material-symbols/settings.svg') no-repeat center center / contain;
+    background-color: lightgray;
+    width: 70px; 
+    height: 70px;
+
+    border: none;
+    text-indent: -9999px; 
+    border-radius: 15px; 
+}
+/*Specific page*/
+.buttonContainer {
+    text-align: right;
+    margin-left: 1250px;
+
+}
+.closebutton {
+    background: url('https://api.iconify.design/icon-park-solid/back.svg') no-repeat center center / contain;
+    background-color: none;
+    width: 40px;
+    height: 40px;
+    border: none;
+    text-indent: -9999px;
+    border-radius: 10px;
+}
+
+#specificcatalog {
+    margin-top: 30px;
+ 
+}
+.btn-size {
+    width: 200px; 
+}
+#catalogbuttons2 {
+    margin-left: -100px;
+    border: none !important;
+    margin-bottom: 250px;
+}
+.custom-column-spacing {
+    margin-right: 40px; 
+
+}
+#firstrow{
+    margin-bottom: 20px;
+}
+
+#content{
+    padding-top:50px;
+}
+
+ .btn-light {
+    background-color: lightgray !important;
+}
+
+.btn-custom.active {
+    background-color: black !important; 
+    
+}
+
+.btn-custom.active svg {
+    color: white !important;
+}
+.nav-item {
+    text-align: left !important;
+}
+#sidettons {
+    padding-bottom: 103px;
+    background-color: lightgray !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+#site-logo {
+    border: none !important;
+    
+}
+custom-column-spacing{
+    margin-right:20px;
+}
