@@ -66,12 +66,31 @@ namespace HuarITSolutions
             if (selectedGameId != "0")
             {
                 //  JavaScript function to enable the TextBox
-                ScriptManager.RegisterStartupScript(this, GetType(), "enableTextBox", "enableTextBox();", true);
+                gameCode.Enabled = true;
+                printCode.Enabled = true;
+                lowBet.Enabled = true;
+                lowBetLimit.Enabled = true;
+                highBet.Enabled = true;
+                highBetLimit.Enabled = true;
+                AdminCommission.Enabled = true;
+                AdminPay.Enabled = true;
+                CoorCommission.Enabled = true;
+                coorPay.Enabled = true;
+
             }
             else
             {
                 // JavaScript function to disable the TextBox
-                ScriptManager.RegisterStartupScript(this, GetType(), "disableTextBox", "disableTextBox();", true);
+                gameCode.Enabled = false;
+                printCode.Enabled = false;
+                lowBet.Enabled = false;
+                lowBetLimit.Enabled = false;
+                highBet.Enabled = false;
+                highBetLimit.Enabled = false;
+                AdminCommission.Enabled = false;
+                AdminPay.Enabled = false;
+                CoorCommission.Enabled = false;
+                coorPay.Enabled = false;
             }
         }
         protected void viewBtn_click(object sender, EventArgs e)

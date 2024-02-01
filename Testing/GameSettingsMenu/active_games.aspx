@@ -87,32 +87,5 @@
     <%: Scripts.Render("~/Scripts/bootstrap.js") %>
 </asp:PlaceHolder>
 
-<script>
-    function enableTextBox() {
-        document.getElementById('<%= gameCode.ClientID %>').removeAttribute('disabled');
-        document.getElementById('<%= printCode.ClientID %>').removeAttribute('disabled');
-        document.getElementById('<%= lowBet.ClientID %>').removeAttribute('disabled');
-        document.getElementById('<%= lowBetLimit.ClientID %>').removeAttribute('disabled');
-        document.getElementById('<%= highBet.ClientID %>').removeAttribute('disabled');
-        document.getElementById('<%= highBetLimit.ClientID %>').removeAttribute('disabled');
-        document.getElementById('<%= AdminCommission.ClientID %>').removeAttribute('disabled');
-        document.getElementById('<%= AdminPay.ClientID %>').removeAttribute('disabled');
-        document.getElementById('<%= CoorCommission.ClientID %>').removeAttribute('disabled');
-        document.getElementById('<%= coorPay.ClientID %>').removeAttribute('disabled');
-}
 
-    function disableTextBox() {
-        document.getElementById('<%= gameCode.ClientID %>').setAttribute('disabled', 'disabled');
-        document.getElementById('<%= printCode.ClientID %>').setAttribute('disabled', 'disabled');
-        document.getElementById('<%= lowBet.ClientID %>').setAttribute('disabled', 'disabled');
-        document.getElementById('<%= lowBetLimit.ClientID %>').setAttribute('disabled', 'disabled');
-        document.getElementById('<%= highBet.ClientID %>').setAttribute('disabled', 'disabled');
-        document.getElementById('<%= highBetLimit.ClientID %>').setAttribute('disabled', 'disabled');
-        document.getElementById('<%= AdminCommission.ClientID %>').setAttribute('disabled', 'disabled');
-        document.getElementById('<%= AdminPay.ClientID %>').setAttribute('disabled', 'disabled');
-        document.getElementById('<%= CoorCommission.ClientID %>').setAttribute('disabled', 'disabled');
-        document.getElementById('<%= coorPay.ClientID %>').setAttribute('disabled', 'disabled');
-    }
-
-</script>
 
