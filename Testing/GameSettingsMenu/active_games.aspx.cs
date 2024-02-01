@@ -14,6 +14,7 @@ using System.Web.UI.WebControls;
 using HuarITSolutions.Class;
 using HuarITSolutions.Model;
 using System.Reflection.Emit;
+using Antlr.Runtime.Tree;
 
 
 namespace HuarITSolutions
@@ -22,6 +23,7 @@ namespace HuarITSolutions
     {
         public static SQLFunctions sqlFunctions = new SQLFunctions();
         List<ApprovedGames> listOfApprovedGames = new List<ApprovedGames>();
+        protected string selectedGameId;
         protected void Page_Init(object sender, EventArgs e)
         {
             if (!Context.User.Identity.IsAuthenticated)
@@ -31,20 +33,46 @@ namespace HuarITSolutions
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            listOfApprovedGames = sqlFunctions.getApprovedGames();
-
-            foreach (var game in listOfApprovedGames)
+            if (!this.IsPostBack)
             {
-                activeGames.Items.Add(new ListItem(game.GameCode, game.Id.ToString()));
+                gameCode.Enabled = false;
+                printCode.Enabled = false;
+                lowBet.Enabled = false;
+                lowBetLimit.Enabled = false;
+                highBet.Enabled = false;
+                highBetLimit.Enabled = false;
+                AdminCommission.Enabled = false;
+                AdminPay.Enabled = false;
+                CoorCommission.Enabled = false;
+                coorPay.Enabled = false;
+
+                listOfApprovedGames = sqlFunctions.getApprovedGames();
+
+                foreach (var game in listOfApprovedGames)
+                {
+                    activeGames.Items.Add(new ListItem(game.GameCode, game.Id.ToString()));
+                }
             }
 
         }
 
         protected void gameCode_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //stored Id value
-            string selectedGameId = activeGames.SelectedItem.Value;
 
+            //stored Id value
+            selectedGameId = activeGames.SelectedItem.Value;
+
+            // Enable or disable the TextBox based on the selected value
+            if (selectedGameId != "0")
+            {
+                //  JavaScript function to enable the TextBox
+                ScriptManager.RegisterStartupScript(this, GetType(), "enableTextBox", "enableTextBox();", true);
+            }
+            else
+            {
+                // JavaScript function to disable the TextBox
+                ScriptManager.RegisterStartupScript(this, GetType(), "disableTextBox", "disableTextBox();", true);
+            }
         }
         protected void viewBtn_click(object sender, EventArgs e)
         {
@@ -74,7 +102,7 @@ namespace HuarITSolutions
             //the GameCode and PrintDescription is not required to change
 
             sqlFunctions.updateGameSettingsMenu(gameCode.Text, printCode.Text, highBet.Text, lowBet.Text, lowBetLimit.Text, highBetLimit.Text,
-                commAdmin.Text, commCoor.Text, adPay.Text, coorPay.Text);
+                AdminCommission.Text, CoorCommission.Text, AdminPay.Text, coorPay.Text);
 
            
         }

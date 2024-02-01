@@ -18,42 +18,50 @@
                            
                          <asp:DropDownList ID="activeGames" OnSelectedIndexChanged="gameCode_SelectedIndexChanged" runat="server" AutoPostBack="true">
                             <asp:ListItem Value="0">Select Game Code</asp:ListItem>
-                        </asp:DropDownList>
+                        </asp:DropDownList><br />
+                        <asp:Table ID="activegame" runat="server" Width="70%" HorizontalAlign="Left" CssClass="table table-bordered">
+                               <asp:TableHeaderRow>
+                                   <asp:TableHeaderCell>Game Code</asp:TableHeaderCell>
+                                   <asp:TableHeaderCell>Print Code</asp:TableHeaderCell>
+
+                               </asp:TableHeaderRow>
+
+                        </asp:Table>
                                                
                        </div>
                     <div class="col-3">
                        <label><small>Game Code</small></label><br />
-                        <asp:TextBox ID="gameCode" ValidateRequestMode="Disabled" type="text" runat="server"  placeholder="GameCode"></asp:TextBox>
+                        <asp:TextBox ID="gameCode" ValidateRequestMode="Disabled" type="text" runat="server"  placeholder="GameCode"></asp:TextBox><br />
 
                        <label><small>Print Code</small></label><br />
-                        <asp:TextBox ID="printCode" ValidateRequestMode="Disabled" type="text" runat="server"  placeholder="PrintCode"></asp:TextBox>
+                        <asp:TextBox ID="printCode" ValidateRequestMode="Disabled" type="text" runat="server"  placeholder="PrintCode"></asp:TextBox><br />
                         <input type="checkbox"><label><small>Local Game</small></label><br />
 
                        <label><small>Win Value(Low)</small></label><br />
-                        <asp:TextBox ID="lowBet" ValidateRequestMode="Disabled" type="text" runat="server"  placeholder="lowBet"></asp:TextBox>
+                        <asp:TextBox ID="lowBet" ValidateRequestMode="Disabled" type="text" runat="server"  placeholder="lowBet"></asp:TextBox><br />
                         
                        <label><small>Bet Limit (0-31)</small></label><br />
-                        <asp:TextBox ID="lowBetLimit" ValidateRequestMode="Disabled" type="text" runat="server"  placeholder="lowBetLimit"></asp:TextBox>
+                        <asp:TextBox ID="lowBetLimit" ValidateRequestMode="Disabled" type="text" runat="server"  placeholder="lowBetLimit"></asp:TextBox><br />
 
                        <label><small>Win Value(High)</small></label><br />
-                         <asp:TextBox ID="highBet" ValidateRequestMode="Disabled" type="text" runat="server"  placeholder="highBet"></asp:TextBox>
+                         <asp:TextBox ID="highBet" ValidateRequestMode="Disabled" type="text" runat="server"  placeholder="highBet"></asp:TextBox><br />
 
                        <label><small>Bet Limit (32-99)</small></label><br />
-                        <asp:TextBox ID="highBetLimit" ValidateRequestMode="Disabled" type="text" runat="server"  placeholder="highBetLimit"></asp:TextBox>
+                        <asp:TextBox ID="highBetLimit" ValidateRequestMode="Disabled" type="text" runat="server"  placeholder="highBetLimit"></asp:TextBox><br />
 
                     </div>
                     <div class="col-3">
                        <label><small>Admin Commission</small></label><br />
-                        <asp:TextBox ID="commAdmin" ValidateRequestMode="Disabled" type="text" runat="server"  placeholder="commAdmin"></asp:TextBox>
+                        <asp:TextBox ID="AdminCommission" ValidateRequestMode="Disabled" type="text" runat="server"  placeholder="commAdmin"></asp:TextBox><br />
                        
                         <label><small>Back Pay(Admin)</small></label><br />
-                        <asp:TextBox ID="adPay" ValidateRequestMode="Disabled" type="text" runat="server"  placeholder="adPay"></asp:TextBox>                     
+                        <asp:TextBox ID="AdminPay" ValidateRequestMode="Disabled" type="text" runat="server"  placeholder="adPay"></asp:TextBox><br />          
 
                        <label><small>Coor Commission</small></label><br />
-                        <asp:TextBox ID="commCoor" ValidateRequestMode="Disabled" type="text" runat="server"  placeholder="commCoor"></asp:TextBox>
+                        <asp:TextBox ID="CoorCommission" ValidateRequestMode="Disabled" type="text" runat="server"  placeholder="commCoor"></asp:TextBox><br />
 
                        <label><small>Back Pay(Coor)</small></label><br />
-                        <asp:TextBox ID="coorPay" ValidateRequestMode="Disabled" type="text" runat="server" placeholder="coorPay"></asp:TextBox>
+                        <asp:TextBox ID="coorPay" ValidateRequestMode="Disabled" type="text" runat="server" placeholder="coorPay"></asp:TextBox><br />
 
                     </div>
                     </div>
@@ -78,4 +86,33 @@
 <asp:PlaceHolder runat="server">
     <%: Scripts.Render("~/Scripts/bootstrap.js") %>
 </asp:PlaceHolder>
+
+<script>
+    function enableTextBox() {
+        document.getElementById('<%= gameCode.ClientID %>').removeAttribute('disabled');
+        document.getElementById('<%= printCode.ClientID %>').removeAttribute('disabled');
+        document.getElementById('<%= lowBet.ClientID %>').removeAttribute('disabled');
+        document.getElementById('<%= lowBetLimit.ClientID %>').removeAttribute('disabled');
+        document.getElementById('<%= highBet.ClientID %>').removeAttribute('disabled');
+        document.getElementById('<%= highBetLimit.ClientID %>').removeAttribute('disabled');
+        document.getElementById('<%= AdminCommission.ClientID %>').removeAttribute('disabled');
+        document.getElementById('<%= AdminPay.ClientID %>').removeAttribute('disabled');
+        document.getElementById('<%= CoorCommission.ClientID %>').removeAttribute('disabled');
+        document.getElementById('<%= coorPay.ClientID %>').removeAttribute('disabled');
+}
+
+    function disableTextBox() {
+        document.getElementById('<%= gameCode.ClientID %>').setAttribute('disabled', 'disabled');
+        document.getElementById('<%= printCode.ClientID %>').setAttribute('disabled', 'disabled');
+        document.getElementById('<%= lowBet.ClientID %>').setAttribute('disabled', 'disabled');
+        document.getElementById('<%= lowBetLimit.ClientID %>').setAttribute('disabled', 'disabled');
+        document.getElementById('<%= highBet.ClientID %>').setAttribute('disabled', 'disabled');
+        document.getElementById('<%= highBetLimit.ClientID %>').setAttribute('disabled', 'disabled');
+        document.getElementById('<%= AdminCommission.ClientID %>').setAttribute('disabled', 'disabled');
+        document.getElementById('<%= AdminPay.ClientID %>').setAttribute('disabled', 'disabled');
+        document.getElementById('<%= CoorCommission.ClientID %>').setAttribute('disabled', 'disabled');
+        document.getElementById('<%= coorPay.ClientID %>').setAttribute('disabled', 'disabled');
+    }
+
+</script>
 

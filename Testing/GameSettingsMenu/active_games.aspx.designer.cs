@@ -33,6 +33,15 @@ namespace HuarITSolutions
         protected global::System.Web.UI.WebControls.DropDownList activeGames;
 
         /// <summary>
+        /// activegame control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table activegame;
+
+        /// <summary>
         /// gameCode control.
         /// </summary>
         /// <remarks>
@@ -87,31 +96,31 @@ namespace HuarITSolutions
         protected global::System.Web.UI.WebControls.TextBox highBetLimit;
 
         /// <summary>
-        /// commAdmin control.
+        /// AdminCommission control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox commAdmin;
+        protected global::System.Web.UI.WebControls.TextBox AdminCommission;
 
         /// <summary>
-        /// adPay control.
+        /// AdminPay control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox adPay;
+        protected global::System.Web.UI.WebControls.TextBox AdminPay;
 
         /// <summary>
-        /// commCoor control.
+        /// CoorCommission control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox commCoor;
+        protected global::System.Web.UI.WebControls.TextBox CoorCommission;
 
         /// <summary>
         /// coorPay control.

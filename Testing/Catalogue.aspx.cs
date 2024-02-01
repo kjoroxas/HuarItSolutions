@@ -33,5 +33,10 @@ namespace HuarITSolutions
         {
             Response.Redirect("Sales.aspx");
         }
+
+        protected void LogOutButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Login.aspx");
+        }
     }
 }

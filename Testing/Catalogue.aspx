@@ -12,19 +12,28 @@
 </head>
 <body>
     
-    <form id="form1" runat="server">
-        <div>
-            <div id="catalogtitle">Catalog</div>
+    <form id="form1" runat="server" contenteditable="false">
+            <div class="dropdown" id="UserControl" contenteditable="inherit">
+              <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                Welcome, <iconify-icon icon="iconamoon:profile-fill"></iconify-icon> dev
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li></li>
+                  <asp:Button ID="LogOutButton" CssClass="logout" runat="server" Text="Logout" OnClick="LogOutButton_Click" />
+              </ul>
+            </div>
+        
+            
+            <div id="catalogtitle" contenteditable="false">Catalog</div>
              
-        <div id="catalogbuttons" class="container mt-10" draggable="true" contenteditable="true">
+        <div id="catalogbuttons" class="container mt-10" draggable="true" contenteditable="false">
             <div class="row mx-auto" >
 
             <!-- Circular Buttons -->
             <div class="col-2">
 
                 <asp:Button runat="server" CssClass="filebutton" OnClick="Filesredirectiom" />
-                    <h6 class="catalogtext6">Game </h6>
-                    <h6 class="catalogtext5">Settings</h6>
+                    <h6 class="catalogtext6">Game Settings </h6>
             </div>
             <div class="col-2">
                 <asp:Button runat="server" CssClass="salesbutton" OnClick="Salesredirectiom" />
@@ -58,6 +67,8 @@
 </body>
         <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/Scripts/bootstrap.js") %>
+        <%: Scripts.Render("~/Scripts/jquery-3.4.1.min.js") %>
+        <%: Scripts.Render("~/Scripts/bootstrap.bundle.js") %>    
     </asp:PlaceHolder>
 </html>        
 <hr />

@@ -15,9 +15,9 @@
                 <div class="row">
                     <div class="col-3">
                         <label><small>Game Code</small></label><br />
-                        <select id="gameCode" name="language" style="width:230px; height:30px;">
-                          <option value="value">value</option>
-                        </select>
+                         <asp:DropDownList ID="gameCode" OnSelectedIndexChanged="gameCode_SelectedIndexChanged" runat="server" AutoPostBack="true">
+                            <asp:ListItem Value="0">Select Game Code</asp:ListItem>
+                        </asp:DropDownList>
                     </div>
                     <div class="col-3">
                         <label><small>Combination</small></label><br />
@@ -40,16 +40,14 @@
                 </div>
                 <div  style="height:300px;">
                     <div class="row" style="margin-left:30px;margin-top:30px;  ">
-                        <asp:Table ID="combiTab" runat="server" Width="80%" HorizontalAlign="Left" CssClass="table table-bordered" >
+                        <asp:Table ID="CombinationsTab" runat="server" Width="80%" HorizontalAlign="Left" CssClass="table table-bordered" >
                                <asp:TableHeaderRow>
                                    <asp:TableHeaderCell><small>Game Code</small></asp:TableHeaderCell>
                                    <asp:TableHeaderCell><small>Combination</small></asp:TableHeaderCell>
                                    <asp:TableHeaderCell><small>Bet Limit</small></asp:TableHeaderCell>
                                </asp:TableHeaderRow>
                              <asp:TableRow >
-                               <asp:TableCell></asp:TableCell>
-                               <asp:TableCell></asp:TableCell>
-                               <asp:TableCell></asp:TableCell>
+
                              </asp:TableRow>
 
 
