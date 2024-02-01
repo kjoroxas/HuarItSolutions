@@ -24,6 +24,15 @@ namespace HuarITSolutions
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// gameCode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList gameCode;
+
+        /// <summary>
         /// combination control.
         /// </summary>
         /// <remarks>
@@ -51,12 +60,12 @@ namespace HuarITSolutions
         protected global::System.Web.UI.WebControls.Button viewton;
 
         /// <summary>
-        /// combiTab control.
+        /// CombinationsTab control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table combiTab;
+        protected global::System.Web.UI.WebControls.Table CombinationsTab;
     }
 }

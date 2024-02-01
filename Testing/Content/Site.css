@@ -13,16 +13,17 @@ textarea {
     max-width: 280px;
 }
 /*This pertains to the login page*/
-    #passfield {
+    .passtest {
         width:250px;
         margin-bottom:10px;
     }
-    #emailfield {
+    .emailtest {
         width: 250px;
-        margin-bottom: 10px;
+
+
     }
     login{
-        margin-top: 50px;
+        margin-top: 10px;
     }
     .exempt {
         text-align: left;
@@ -36,9 +37,9 @@ textarea {
 
     #loginsection {
         margin-top: 90px;
-        margin-bottom: 200px;
+        margin-bottom: 180px;
     }
-    #loginbutton {
+    .loginbutton {
         background-color: #3498db;
         color: #fff;
         padding: 10px 20px;
@@ -48,7 +49,7 @@ textarea {
         border-radius: 5px;
     }
 
-    #loginbutton:hover {
+    .loginbutton:hover {
         background-color: #2980b9;
     }
 /* Responsive: Portrait tablets and up */
@@ -60,16 +61,33 @@ textarea {
 
 /*Footer*/
 footer {
-    padding: 10px;
+    padding-top: 60px;
   
-    margin-top: auto;
+    margin-top: -70px;
 }
-
+#footermaster {
+    padding-top: 60px;
+    margin-top: -70px;
+}
 /*Catalog Page*/
+#UserControl{
+    margin-left:1360px;
+}
+#UserControl:hover {
+    color: gray;
+}
+.logout{
+    background-color:white;
+    border:none;
+    margin-left: 50px;
+}
+dropdown-menu{
+    width:10%;
+}
 #catalogbuttons {
-    margin-left:150px;
-    margin-top:70px;
-    margin-bottom:230px;
+    margin-left: 150px;
+    margin-top: 70px;
+    margin-bottom: 210px;
 }
 
 #catalogtitle {
@@ -77,33 +95,33 @@ footer {
     margin-left: 640px;
     font-size: 4rem;
 }
-.catalogtext{
-    margin-left:5px;
-    font-size: 2rem;
+.catalogtext {
+    margin-left: 5px;
+    font-size: 2.25rem;
 }
 .catalogtext2 {
-
-    font-size: 2rem;
+    font-size: 2.25rem;
+    margin-left: -5px;
 }
 .catalogtext3 {
-    font-size: 2rem;
-    margin-left:-40px;
+    font-size: 2.25rem;
+    margin-left: -50px;
 }
 .catalogtext4 {
-    font-size: 2rem;
+    font-size: 2.25rem;
     margin-left: -50px;
 }
 .catalogtext5 {
-    font-size: 2rem;
+    font-size: 2.25rem;
     margin-left: -20px;
     margin-top: -10px
 }
 .catalogtext6 {
-    font-size: 2rem;
-    margin-left: -10px;
+    font-size: 2.25rem;
+    margin-left: -80px;
 }
 .catalogtext7 {
-    font-size: 2rem;
+    font-size: 2.25rem;
     margin-left: -20px;
 
 }
@@ -232,6 +250,16 @@ footer {
     border: none !important;
     
 }
-custom-column-spacing{
-    margin-right:20px;
+/*active file*/
+.actgamecode{
+    color:red;
+    font-size:11px;
+    margin-left: 10px;
+
+}
+.actlowbet {
+    color: red;
+    font-size: 10px;
+    margin-left: 9px;
+
 }
