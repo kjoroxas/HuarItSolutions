@@ -58,7 +58,7 @@
                                 </div>
                         <div  class="card " style="width: 80rem; height:32rem; margin-top:20px;">
                         <div class="row-lg-7"  >
-                            <div  class="tab-content" >
+                            <div class="tab-content" >
                                         <div id="active" class="tab-pane fade show active" role="tabpanel" aria-labelledby="agame">
                                              <iframe src="GameSettingsMenu/active_games.aspx" style="width:1280px; height:530px; border:none; "></iframe>
                                         </div>

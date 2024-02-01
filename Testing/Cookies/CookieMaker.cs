@@ -30,7 +30,7 @@ namespace HuarITSolutions
             //    dateExpired = DateTime.Now.AddMinutes(1);
             //}
 
-            dateExpired = DateTime.Now.AddSeconds(20);
+            dateExpired = DateTime.Now.AddDays(1);
             persistent = true;
 
             FormsAuthenticationTicket frmTicket = new FormsAuthenticationTicket(1, user, DateTime.Now, dateExpired, persistent, role, FormsAuthentication.FormsCookiePath);

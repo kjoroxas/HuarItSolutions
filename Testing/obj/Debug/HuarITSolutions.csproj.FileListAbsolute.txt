@@ -71,6 +71,8 @@ D:\STL_Project\WF_Client1\Testing\obj\Debug\HuarITSolutions.csproj.CoreCompileIn
 D:\STL_Project\WF_Client1\Testing\obj\Debug\HuarITSolutions.csproj.CopyComplete
 D:\STL_Project\WF_Client1\Testing\obj\Debug\Testing.dll
 D:\STL_Project\WF_Client1\Testing\obj\Debug\Testing.pdb
+D:\STL_Project\HuarITSolutions\HuarItSolutions\Testing\obj\Debug\HuarITSolutions.csproj.AssemblyReference.cache
+D:\STL_Project\HuarITSolutions\HuarItSolutions\Testing\obj\Debug\HuarITSolutions.csproj.CoreCompileInputs.cache
 D:\STL_Project\HuarITSolutions\HuarItSolutions\Testing\bin\HuarITSolutions.dll.config
 D:\STL_Project\HuarITSolutions\HuarItSolutions\Testing\bin\HuarITSolutions.dll
 D:\STL_Project\HuarITSolutions\HuarItSolutions\Testing\bin\HuarITSolutions.pdb
@@ -139,8 +141,6 @@ D:\STL_Project\HuarITSolutions\HuarItSolutions\Testing\bin\Newtonsoft.Json.xml
 D:\STL_Project\HuarITSolutions\HuarItSolutions\Testing\bin\Antlr3.Runtime.pdb
 D:\STL_Project\HuarITSolutions\HuarItSolutions\Testing\bin\Microsoft.AspNet.FriendlyUrls.xml
 D:\STL_Project\HuarITSolutions\HuarItSolutions\Testing\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\STL_Project\HuarITSolutions\HuarItSolutions\Testing\obj\Debug\HuarITSolutions.csproj.AssemblyReference.cache
-D:\STL_Project\HuarITSolutions\HuarItSolutions\Testing\obj\Debug\HuarITSolutions.csproj.CoreCompileInputs.cache
 D:\STL_Project\HuarITSolutions\HuarItSolutions\Testing\obj\Debug\HuarITSolutions.csproj.CopyComplete
 D:\STL_Project\HuarITSolutions\HuarItSolutions\Testing\obj\Debug\HuarITSolutions.dll
 D:\STL_Project\HuarITSolutions\HuarItSolutions\Testing\obj\Debug\HuarITSolutions.pdb
