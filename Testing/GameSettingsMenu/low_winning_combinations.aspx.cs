@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace HuarITSolutions.specifiles
+namespace HuarITSolutions.GameSettingsMenu
 {
     public partial class WebForm1 : System.Web.UI.Page
     {

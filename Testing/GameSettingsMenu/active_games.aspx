@@ -74,9 +74,9 @@
                             <asp:Button runat="server" Text="Save" Height="40px" Width="300px" OnClick="saveBtn_click" />
                         </div>
                     </div>
-                 
              </div>  
-</div>
+
+            </div>
                  
 </div>  
     </form>

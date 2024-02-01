@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using HuarITSolutions.Model;
-using Testing.Model;
+using HuarITSolutions.Model;
 
 namespace HuarITSolutions.Class
 {
@@ -71,9 +71,9 @@ namespace HuarITSolutions.Class
 
         }
 
-        public void updateGameSettings(string gameCode, string printCode, string highBet, string lowBet, string lowBetLimit, string highBetLimit, string commAdmin, string commCoor, string adPay, string coorPay)
+        public void updateGameSettingsMenu(string gameCode, string printCode, string highBet, string lowBet, string lowBetLimit, string highBetLimit, string commAdmin, string commCoor, string adPay, string coorPay)
         {
-            var storedProcName = "spUpdate_GameSettings";
+            var storedProcName = "spUpdate_GameSettingsMenu";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {

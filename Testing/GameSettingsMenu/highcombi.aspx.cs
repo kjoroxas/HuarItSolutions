@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace HuarITSolutions.specifiles
+namespace HuarITSolutions.GameSettingsMenu
 {
-    public partial class WebForm2 : System.Web.UI.Page
+    public partial class highcombi : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

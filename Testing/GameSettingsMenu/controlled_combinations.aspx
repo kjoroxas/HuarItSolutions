@@ -21,7 +21,7 @@
                     </div>
                     <div class="col-3">
                         <label><small>Combination</small></label><br />
-                        <asp:TextBox ID="combination" ValidateRequestMode="Disabled" type="text" runat="server"  placeholder="Combination"></asp:TextBox>
+                        <asp:TextBox ID="combination" ValidateRequestMode="Disabled" type="text" runat="server" placeholder="Combination"></asp:TextBox>
 
                     </div>
                     <div class="col-3">

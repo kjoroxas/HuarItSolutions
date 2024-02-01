@@ -12,8 +12,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Testing</RootNamespace>
-    <AssemblyName>Testing</AssemblyName>
+    <RootNamespace>HuarITSolutions</RootNamespace>
+    <AssemblyName>HuarITSolutions</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -102,10 +102,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="image\I.t.png" />
-    <Content Include="image\istockphoto-1147544807-612x612.jpg" />
-    <Content Include="specifiles\controlled_combinations.aspx" />
-    <Content Include="specifiles\active_games.aspx" />
+    <Content Include="Image\I.t.png" />
+    <Content Include="Image\istockphoto-1147544807-612x612.jpg" />
+    <Content Include="Login.aspx" />
+    <Content Include="GameSettingsMenu\controlled_combinations.aspx" />
+    <Content Include="GameSettingsMenu\active_games.aspx" />
     <Content Include="Catalogue.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -156,7 +157,7 @@
     <Content Include="Content\bootstrap-grid.rtl.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
-    <Content Include="image\placeholder-1-1.webp" />
+    <Content Include="Image\placeholder-1-1.webp" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -185,33 +186,41 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
-    <Content Include="Specificsales.aspx" />
-    <Content Include="Specificfile.aspx" />
-    <Content Include="specifiles\highcombi.aspx" />
-    <Content Include="specifiles\low_winning_combinations.aspx" />
-    <Content Include="specifiles\sales_representative.aspx" />
+    <Content Include="Sales.aspx" />
+    <Content Include="GameSettings.aspx" />
+    <Content Include="GameSettingsMenu\highcombi.aspx" />
+    <Content Include="GameSettingsMenu\low_winning_combinations.aspx" />
+    <Content Include="GameSettingsMenu\sales_representative.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cookies\CookieMaker.cs" />
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Model\ControlledCombinations.cs" />
     <Compile Include="Model\LowWinningCombinations.cs" />
     <Compile Include="SQL Functions\SQLFunctions.cs" />
     <Compile Include="Model\ApprovedGames.cs" />
-    <Compile Include="specifiles\controlled_combinations.aspx.cs">
+    <Compile Include="GameSettingsMenu\controlled_combinations.aspx.cs">
       <DependentUpon>controlled_combinations.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="specifiles\controlled_combinations.aspx.designer.cs">
+    <Compile Include="GameSettingsMenu\controlled_combinations.aspx.designer.cs">
       <DependentUpon>controlled_combinations.aspx</DependentUpon>
     </Compile>
-    <Compile Include="specifiles\active_games.aspx.cs">
+    <Compile Include="GameSettingsMenu\active_games.aspx.cs">
       <DependentUpon>active_games.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="specifiles\active_games.aspx.designer.cs">
+    <Compile Include="GameSettingsMenu\active_games.aspx.designer.cs">
       <DependentUpon>active_games.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -248,39 +257,39 @@
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
-    <Compile Include="Specificsales.aspx.cs">
-      <DependentUpon>Specificsales.aspx</DependentUpon>
+    <Compile Include="Sales.aspx.cs">
+      <DependentUpon>Sales.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Specificsales.aspx.designer.cs">
-      <DependentUpon>Specificsales.aspx</DependentUpon>
+    <Compile Include="Sales.aspx.designer.cs">
+      <DependentUpon>Sales.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Specificfile.aspx.cs">
-      <DependentUpon>Specificfile.aspx</DependentUpon>
+    <Compile Include="GameSettings.aspx.cs">
+      <DependentUpon>GameSettings.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Specificfile.aspx.designer.cs">
-      <DependentUpon>Specificfile.aspx</DependentUpon>
+    <Compile Include="GameSettings.aspx.designer.cs">
+      <DependentUpon>GameSettings.aspx</DependentUpon>
     </Compile>
-    <Compile Include="specifiles\highcombi.aspx.cs">
+    <Compile Include="GameSettingsMenu\highcombi.aspx.cs">
       <DependentUpon>highcombi.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="specifiles\highcombi.aspx.designer.cs">
+    <Compile Include="GameSettingsMenu\highcombi.aspx.designer.cs">
       <DependentUpon>highcombi.aspx</DependentUpon>
     </Compile>
-    <Compile Include="specifiles\low_winning_combinations.aspx.cs">
+    <Compile Include="GameSettingsMenu\low_winning_combinations.aspx.cs">
       <DependentUpon>low_winning_combinations.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="specifiles\low_winning_combinations.aspx.designer.cs">
+    <Compile Include="GameSettingsMenu\low_winning_combinations.aspx.designer.cs">
       <DependentUpon>low_winning_combinations.aspx</DependentUpon>
     </Compile>
-    <Compile Include="specifiles\sales_representative.aspx.cs">
+    <Compile Include="GameSettingsMenu\sales_representative.aspx.cs">
       <DependentUpon>sales_representative.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="specifiles\sales_representative.aspx.designer.cs">
+    <Compile Include="GameSettingsMenu\sales_representative.aspx.designer.cs">
       <DependentUpon>sales_representative.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
@@ -294,6 +303,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Files\" />
+    <Folder Include="SalesMenu\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HuarITSolutions.specifiles
+namespace HuarITSolutions.GameSettingsMenu
 {
 
 
-    public partial class WebForm2
+    public partial class highcombi
     {
 
         /// <summary>
@@ -24,33 +24,6 @@ namespace HuarITSolutions.specifiles
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// activegame control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Table activegame;
-
-        /// <summary>
-        /// clear control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button clear;
-
-        /// <summary>
-        /// set control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button set;
-
-        /// <summary>
         /// viewton control.
         /// </summary>
         /// <remarks>
@@ -58,5 +31,14 @@ namespace HuarITSolutions.specifiles
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button viewton;
+
+        /// <summary>
+        /// highcombitab control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table highcombitab;
     }
 }

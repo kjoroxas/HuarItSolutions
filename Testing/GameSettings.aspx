@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Specificfile.aspx.cs" Inherits="HuarITSolutions.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="GameSettings.aspx.cs" Inherits="HuarITSolutions.WebForm1" %>
 
 <!DOCTYPE html>
 
@@ -60,19 +60,19 @@
                         <div class="row-lg-7"  >
                             <div  class="tab-content" >
                                         <div id="active" class="tab-pane fade show active" role="tabpanel" aria-labelledby="agame">
-                                             <iframe src="specifiles/active_games.aspx" style="width:1280px; height:530px; border:none; "></iframe>
+                                             <iframe src="GameSettingsMenu/active_games.aspx" style="width:1280px; height:530px; border:none; "></iframe>
                                         </div>
                                         <div id="combi" class=" tab-pane fade" role="tabpanel" aria-labelledby="combine">
-                                             <iframe src="specifiles/controlled_combinations.aspx" style="width:1280px; height:530px; border:none; "></iframe>
+                                             <iframe src="GameSettingsMenu/controlled_combinations.aspx" style="width:1280px; height:530px; border:none; "></iframe>
                                         </div>
                                         <div id="lowcombi" class=" tab-pane fade" role="tabpanel" aria-labelledby="lowb">
-                                             <iframe src="specifiles/low_winning_combinations.aspx" style="width:1300px; height:550px; border:none; "></iframe>
+                                             <iframe src="GameSettingsMenu/low_winning_combinations.aspx" style="width:1300px; height:550px; border:none; "></iframe>
                                         </div>
                                         <%--<div id="highcombi" class=" tab-pane fade" role="tabpanel" aria-labelledby="highb">
-                                             <iframe src="specifiles/highcombi.aspx" style="width:1300px; height:550px; border:none; "></iframe>
+                                             <iframe src="GameSettingsMenu/highcombi.aspx" style="width:1300px; height:550px; border:none; "></iframe>
                                         </div>--%>
                                         <div id="salesrep" class=" tab-pane fade" role="tabpanel" aria-labelledby="salesr">
-                                               <iframe src="specifiles/sales_representative.aspx" style="width:1300px; height:550px; border:none;  "></iframe>
+                                               <iframe src="GameSettingsMenu/sales_representative.aspx" style="width:1300px; height:550px; border:none;  "></iframe>
                                         </div>
                             </div>
 </div>

@@ -7,38 +7,47 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HuarITSolutions.specifiles
+namespace HuarITSolutions
 {
 
 
-    public partial class highcombi
+    public partial class Login
     {
 
         /// <summary>
-        /// form1 control.
+        /// emailfield control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.TextBox emailfield;
 
         /// <summary>
-        /// viewton control.
+        /// emailVaildator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button viewton;
+        protected global::System.Web.UI.WebControls.CustomValidator emailVaildator;
 
         /// <summary>
-        /// highcombitab control.
+        /// passfield control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table highcombitab;
+        protected global::System.Web.UI.WebControls.TextBox passfield;
+
+        /// <summary>
+        /// loginbutton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button loginbutton;
     }
 }

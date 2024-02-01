@@ -14,12 +14,19 @@ using System.Web.UI.WebControls;
 using HuarITSolutions.Class;
 using HuarITSolutions.Model;
 
+
 namespace HuarITSolutions
-{
+{    
     public partial class active2 : Page
     {
-        public static SQLFunctions sqlFunctions = new SQLFunctions(); 
-
+        public static SQLFunctions sqlFunctions = new SQLFunctions();
+        protected void Page_Init(object sender, EventArgs e)
+        {
+            if (!Context.User.Identity.IsAuthenticated)
+            {
+                Response.Redirect("~/Login.aspx");
+            }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -50,7 +57,7 @@ namespace HuarITSolutions
         {
             //the GameCode and PrintDescription is not required to change
 
-            sqlFunctions.updateGameSettings(gameCode.Text, printCode.Text, highBet.Text, lowBet.Text, lowBetLimit.Text, highBetLimit.Text,
+            sqlFunctions.updateGameSettingsMenu(gameCode.Text, printCode.Text, highBet.Text, lowBet.Text, lowBetLimit.Text, highBetLimit.Text,
                 commAdmin.Text, commCoor.Text, adPay.Text, coorPay.Text);
 
            
