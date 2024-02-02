@@ -25,18 +25,23 @@ footer {
 }
 
 @media (min-width: 992px) {
-    .container-fluid {
+    .container {
         width: 970px;
     }
 }
 
 @media (min-width: 1200px) {
-    .container-fluid {
+    .container {
         width: 1170px;
     }
 }
+@media (min-width: 1080px) {
+    .container {
+        width: 1080px;
+    }
+}
 @media (min-width: 2400px) {
-    .container-fluid {
+    .container {
         width: 2340px;
     }
 }

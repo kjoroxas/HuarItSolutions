@@ -101,4 +101,11 @@
             $(this).addClass('active');
         });
     });
+
+
+    var scale = 1.25; // 125%
+    document.body.style.transform = "scale(" + scale + ")";
+    document.body.style.transformOrigin = "0 0";
+    document.body.style.width = (100 / scale) + "%";
+    document.body.style.height = (100 / scale) + "%";
 </script>
