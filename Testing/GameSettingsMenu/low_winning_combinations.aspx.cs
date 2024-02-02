@@ -97,6 +97,16 @@ namespace HuarITSolutions.GameSettingsMenu
             if (selectedGame != "0")
             {
                 Combination.Enabled = true;
+                var gameDetails = listLowWinningCombinations.FirstOrDefault(x => x.GameCode == selectedGame);
+                if (gameDetails != null)
+                {
+                    Combination.Text = gameDetails.Combination;
+
+                }
+                else
+                {
+                    Combination.Text = "";
+                }
             }
             else
             {

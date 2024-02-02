@@ -8,6 +8,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using HuarITSolutions.Class;
 using HuarITSolutions.Model;
+using WebGrease.Css.Ast;
 
 namespace HuarITSolutions
 {
@@ -27,8 +28,6 @@ namespace HuarITSolutions
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-
-
             if (!this.IsPostBack)
             {
                 combination.Enabled = false;
@@ -115,7 +114,18 @@ namespace HuarITSolutions
                 combination.Enabled = true;
                 bLimit.Enabled = true;
 
+                var gameDetails = listofControlledCombinations.FirstOrDefault(x => x.GameCode == selectedGame);
+                if(gameDetails != null)
+                {
+                    combination.Text = gameDetails.Combination;
+                    bLimit.Text = gameDetails.BetLimit.ToString();
 
+                }
+                else
+                {
+                    combination.Text = "";
+                    bLimit.Text = "";
+                }
                 //selectedGameCode = int.Parse(selectedGame);
                 //var gameDetails = listofControlledCombinations.FirstOrDefault(x => x.Id == selectedGameCode);
 
@@ -128,8 +138,10 @@ namespace HuarITSolutions
             else
             {
                 // JavaScript function to disable the TextBox
+               
 
                 combination.Enabled = false;
+                //combination.Text = 
                 bLimit.Enabled = false;
 
                 combination.Text = "";
