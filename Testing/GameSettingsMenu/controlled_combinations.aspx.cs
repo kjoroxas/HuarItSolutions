@@ -35,18 +35,6 @@ namespace HuarITSolutions
 
             }
 
-        }
-
-        protected void saveBtn_click(object sender, EventArgs e)
-        {
-            //sqlFunctions.saveControlledCombination(/*place here the GameCode ID choosen*/ ,combination.Text, bLimit.Text);
-        }
-
-        protected void deleteBtn_click(object sender, EventArgs e)
-        {
-            //sqlFunctions.deleteControllerCombination(/*place here the GameCode ID choosen*/);
-        }
-
         protected void gameCode_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Get the DropDownList 
@@ -62,7 +50,6 @@ namespace HuarITSolutions
                     ddl.Items.Remove(selectGameCodeItem);
                 }
             }
-
             //stored Id value
             selectedGameId = gameCode.SelectedItem.Value;
             int selectedGameCode;
@@ -75,15 +62,12 @@ namespace HuarITSolutions
                 bLimit.Enabled = true;
 
                 selectedGameCode = int.Parse(selectedGameId);
-
                 var gameDetails = listofControlledCombinations[selectedGameCode];
+
 
                 // Populate the TextBoxes
                 combination.Text = gameDetails.Combination;
                 bLimit.Text = gameDetails.BetLimit.ToString();
-
-
-
             }
             else
             {
@@ -92,11 +76,20 @@ namespace HuarITSolutions
                 combination.Enabled = false;
                 bLimit.Enabled = false;
 
-
                 combination.Text = "";
                 bLimit.Text = "";
 
             }
         }
+        protected void saveBtn_click(object sender, EventArgs e)
+        {
+            //sqlFunctions.saveControlledCombination(/*place here the GameCode ID choosen*/ ,combination.Text, bLimit.Text);
+        }
+
+        protected void deleteBtn_click(object sender, EventArgs e)
+        {
+            //sqlFunctions.deleteControllerCombination(/*place here the GameCode ID choosen*/);
+        }
+
     }
 }

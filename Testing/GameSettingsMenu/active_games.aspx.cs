@@ -111,6 +111,7 @@ namespace HuarITSolutions
                 AdminPay.Enabled = true;
                 CoorCommission.Enabled = true;
                 coorPay.Enabled = true;
+
                 selectedGameCode = int.Parse(selectedGameId);
 
                 var gameDetails = listOfApprovedGames[selectedGameCode];

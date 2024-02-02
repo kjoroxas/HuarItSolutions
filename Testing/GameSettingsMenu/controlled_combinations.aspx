@@ -15,7 +15,7 @@
                 <div class="row">
                     <div class="col-3">
                         <label><small>Game Code</small></label><br />
-                        <asp:DropDownList ID="gameCode" OnSelectedIndexChanged="gameCode_SelectedIndexChanged" runat="server" AutoPostBack="true">
+                        <asp:DropDownList ID="gameCode" runat="server" AutoPostBack="true" OnSelectedIndexChanged="gameCode_SelectedIndexChanged">
                             <asp:ListItem Value="0">Select Game Code</asp:ListItem>
                         </asp:DropDownList><br />
                     </div>
