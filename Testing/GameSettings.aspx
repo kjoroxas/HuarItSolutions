@@ -1,21 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="GameSettings.aspx.cs" Inherits="HuarITSolutions.WebForm1" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-    <webopt:bundlereference runat="server" path="~/Content/css" />
-    <webopt:bundlereference runat="server" path="~/Content/bootstrap.css" />
-</head>
-<body>
-    
-    <form id="form2" runat="server">
-
-    <div class="container-fluid">
-
-        <div class="row">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="GameSettings.aspx.cs" Inherits="HuarITSolutions.GameSettings2" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+            <div class="row">
 
             <div id="sidettons" class="col-sm-auto  sticky-top custom-column-spacing ">
                     <a id="site-logo" class="navbar-brand" href="#">
@@ -77,58 +62,10 @@
                                                <iframe src="GameSettingsMenu/sales_representative.aspx" style="width:1300px; height:550px; border:none;  "></iframe>
                                         </div>
                             </div>
-</div>
+                        </div>
                     </div>
                 </div>
-            <div class="col-1">
-            <div class="dropdown" id="UserControl2" contenteditable="inherit">
-              <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                Welcome, <iconify-icon icon="iconamoon:profile-fill"></iconify-icon> dev
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><asp:Button ID="LogOutButton" CssClass="logout" runat="server" Text="Logout" OnClick="LogOutButton_Click" /></li>
-              </ul>
             </div>
-            </div>
-                            </div>
-                        </div>
+</asp:Content>
 
-    </form>
-</body>
-</html>
-        <asp:PlaceHolder runat="server">
-        <%: Scripts.Render("~/Scripts/bootstrap.js") %>
-        <%: Scripts.Render("~/Scripts/jquery-3.4.1.min.js") %>
-        <%: Scripts.Render("~/Scripts/bootstrap.bundle.js") %>    
-    </asp:PlaceHolder>
 
-<script>
-    $(document).ready(function () {
-       
-        $('.btn-custom').on('click', function () {
-            // If button is  active
-            if ($(this).hasClass('active')) {
-                return;
-            }
-
-            // Get the data-target 
-            var targetId = $(this).data('target');
-
-            // Hide tab panes
-            $('.tab-pane').fadeOut(200, function () {
-                $(this).removeClass('show active');
-            });
-
-            // Show the specific tab pane
-            $(targetId).delay(200).fadeIn(200, function () {
-                $(this).addClass('show active');
-            });
-
-            // Remove active class 
-            $('.btn-custom').removeClass('active');
-
-            // Add active class to the clicked button and disable it
-            $(this).addClass('active');
-        });
-    });
-</script>

@@ -26,7 +26,8 @@ namespace HuarITSolutions.GameSettingsMenu
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!this.IsPostBack)
-            {               
+            {
+                Combination.Enabled = false;
                 listOfApprovedGames = sqlFunctions.getApprovedGames();
 
                 foreach (var game in listOfApprovedGames)
@@ -50,10 +51,27 @@ namespace HuarITSolutions.GameSettingsMenu
                         // Add row
                         lowWinningTable.Rows.Add(row);
                     }
+
                 }
+            }
 
+            string selectedGameCode = gameCode.SelectedItem.Text;
+            listLowWinningCombinations = sqlFunctions.getLowWinningCombinations(selectedGameCode);
 
+            foreach (var games in listLowWinningCombinations)
+            {
+                TableRow row = new TableRow();
 
+                TableCell cell1 = new TableCell();
+                cell1.Text = games.GameCode;
+                row.Cells.Add(cell1);
+
+                TableCell cell2 = new TableCell();
+                cell2.Text = games.Combination;
+                row.Cells.Add(cell2);
+
+                // Add row
+                lowWinningTable.Rows.Add(row);
             }
 
         }
@@ -78,11 +96,11 @@ namespace HuarITSolutions.GameSettingsMenu
 
             if (selectedGame != "0")
             {
-              
+                Combination.Enabled = true;
             }
             else
             {
-               
+                Combination.Enabled = false;
 
             }
         }

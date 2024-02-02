@@ -2,10 +2,22 @@
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
-    margin-top: 15px;
+
     padding-left: 15px;
     padding-right: 15px;
 }
+
+/*Footer*/
+footertext {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+footer {
+
+    margin-top:5px;
+
+}
+
 @media (min-width: 768px) {
     .container-fluid {
         width: 750px;
@@ -81,22 +93,14 @@ textarea {
     }
 }
 
-/*Footer*/
-footer {
-    padding-top: 60px;
-  
-    margin-top: -70px;
-}
-#footermaster {
-    padding-top: 60px;
-    margin-top: -70px;
-}
+
 /*Catalog Page*/
 #UserControl{
-    margin-left:1360px;
+    margin-left:1250px;
+
 }
 #UserControl:hover {
-    color: gray;
+    color: gray !important;
 }
 .logout{
     background-color:white;
@@ -107,14 +111,14 @@ dropdown-menu{
     width:10%;
 }
 #catalogbuttons {
-    margin-left: 150px;
+    margin-left: 50px;
     margin-top: 70px;
     margin-bottom: 210px;
 }
 
 #catalogtitle {
     margin-top: 140px;
-    margin-left: 640px;
+    margin-left: 520px;
     font-size: 4rem;
 }
 .catalogtext {
@@ -208,9 +212,7 @@ dropdown-menu{
     border-radius: 15px; 
 }
 /*Specific page*/
-#UserControl2 {
-    margin-left: 925px;
-}
+
 .buttonContainer {
     text-align: right;
     margin-left: 1250px;
@@ -227,16 +229,17 @@ dropdown-menu{
 }
 
 #specificcatalog {
-    margin-top: 30px;
+
  
 }
 .btn-size {
     width: 200px; 
 }
 #catalogbuttons2 {
+    margin-top: -10px;
     margin-left: -100px;
     border: none !important;
-    margin-bottom: 250px;
+    margin-bottom: 180px;
 }
 .custom-column-spacing {
     margin-right: 40px; 
@@ -266,10 +269,10 @@ dropdown-menu{
     text-align: left !important;
 }
 #sidettons {
-    padding-bottom: 103px;
+    margin-left:-110px;
+    padding-bottom: 20px;
     background-color: lightgray !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+
 }
 #site-logo {
     border: none !important;

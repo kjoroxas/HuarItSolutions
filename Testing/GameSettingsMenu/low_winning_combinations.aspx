@@ -42,8 +42,7 @@
                                        <asp:TableHeaderCell><small>Combination</small></asp:TableHeaderCell>
                                    </asp:TableHeaderRow>
                                  <asp:TableRow >
-                                   <asp:TableCell></asp:TableCell>
-                                   <asp:TableCell></asp:TableCell>
+
                                  </asp:TableRow>
 
 

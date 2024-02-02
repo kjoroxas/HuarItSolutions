@@ -34,5 +34,14 @@
 
         </div>
     </main>
-
+    <script>
+        $(document).ready(function () {
+            $("#UserControl").hide();
+        });
+    </script>
+    <style>
+        .body-content {
+            padding-top:35px;
+        }
+    </style>
 </asp:Content>
