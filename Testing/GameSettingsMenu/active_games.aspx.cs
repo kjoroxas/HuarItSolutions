@@ -33,6 +33,7 @@ namespace HuarITSolutions
         }
         protected void Page_Load(object sender, EventArgs e)
         {
+
             if (!this.IsPostBack)
             {
                 gameCode.Enabled = false;
@@ -52,18 +53,52 @@ namespace HuarITSolutions
                 {
                     activeGames.Items.Add(new ListItem(game.GameCode, game.Id.ToString()));
                 }
+
+            }
+            listOfApprovedGames = sqlFunctions.getApprovedGames();
+
+            foreach (var game in listOfApprovedGames)
+            {
+                TableRow row = new TableRow();
+
+                TableCell cell1 = new TableCell();
+                cell1.Text = game.GameCode;
+                row.Cells.Add(cell1);
+
+                TableCell cell2 = new TableCell();
+                cell2.Text = game.PrintDescription;
+                row.Cells.Add(cell2);
+
+
+
+                // Add row
+                activeGame.Rows.Add(row);
             }
 
         }
 
         protected void gameCode_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Get the DropDownList 
+            var ddl = (DropDownList)sender;
 
+            // Check 
+            if (ddl.SelectedValue != "0")
+            {
+                // remove ListItem with value "0" 
+                ListItem selectGameCodeItem = ddl.Items.FindByValue("0");
+                if (selectGameCodeItem != null)
+                {
+                    ddl.Items.Remove(selectGameCodeItem);
+                }
+            }
             //stored Id value
             selectedGameId = activeGames.SelectedItem.Value;
-
-            // Enable or disable the TextBox based on the selected value
+            int selectedGameCode;
+            // Enable or disable  TextBox 
             if (selectedGameId != "0")
+
+                
             {
                 //  JavaScript function to enable the TextBox
                 gameCode.Enabled = true;
@@ -77,8 +112,25 @@ namespace HuarITSolutions
                 CoorCommission.Enabled = true;
                 coorPay.Enabled = true;
 
+                selectedGameCode = int.Parse(selectedGameId);
+
+                var gameDetails = listOfApprovedGames[selectedGameCode];
+
+                // Populate the TextBoxes
+                gameCode.Text = gameDetails.GameCode;
+                printCode.Text = gameDetails.PrintDescription;
+                lowBet.Text = gameDetails.WinningValueLow.ToString();
+                lowBetLimit.Text = gameDetails.LowEndingLimit.ToString();
+                highBet.Text = gameDetails.WinningValueHigh.ToString();
+                highBetLimit.Text = gameDetails.HighEndingLimit.ToString();
+                AdminCommission.Text = gameDetails.CommissionA.ToString();
+                AdminPay.Text = gameDetails.BackPayTypeA.ToString();
+                CoorCommission.Text = gameDetails.CommissionB.ToString();
+                coorPay.Text = gameDetails.BackPayTypeB.ToString();
+
+
             }
-            else
+                else
             {
                 // JavaScript function to disable the TextBox
                 gameCode.Enabled = false;
@@ -91,29 +143,18 @@ namespace HuarITSolutions
                 AdminPay.Enabled = false;
                 CoorCommission.Enabled = false;
                 coorPay.Enabled = false;
+
+                gameCode.Text = "";
+                printCode.Text = "";
+                lowBet.Text = "";
+                lowBetLimit.Text = "";
+                highBet.Text = "";
+                highBetLimit.Text = "";
+                AdminCommission.Text = "";
+                AdminPay.Text = "";
+                CoorCommission.Text = "";
+                coorPay.Text = "";
             }
-        }
-        protected void viewBtn_click(object sender, EventArgs e)
-        {
-            ////var listOfApprovedGames = sqlFunctions.getApprovedGames();
-
-            //foreach (var game in listOfApprovedGames)
-            //{
-            //    TableRow row = new TableRow();
-
-            //    TableCell cell1 = new TableCell();
-            //    cell1.Text = game.GameCode;
-            //    row.Cells.Add(cell1);
-
-            //    TableCell cell2 = new TableCell();
-            //    cell2.Text = game.PrintDescription;
-            //    row.Cells.Add(cell2);
-
-
-
-            //    // Add row
-            //    activeGame.Rows.Add(row);
-            //}
         }
         
         protected void saveBtn_click(object sender, EventArgs e)

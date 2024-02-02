@@ -7,6 +7,7 @@
     <title></title>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <webopt:bundlereference runat="server" path="~/Content/css" />
+    <webopt:bundlereference runat="server" path="~/Content/bootstrap.css" />
 </head>
 <body>
     
@@ -52,6 +53,7 @@
                 </div>
             </div>
 
+
                     <div id="content" class="col-lg-2"  >
                                 <div class="buttonContainer">
                                     <asp:Button runat="server" CssClass="closebutton" OnClick="Button1_Click" ></asp:Button>
@@ -78,6 +80,16 @@
 </div>
                     </div>
                 </div>
+            <div class="col-1">
+            <div class="dropdown" id="UserControl2" contenteditable="inherit">
+              <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                Welcome, <iconify-icon icon="iconamoon:profile-fill"></iconify-icon> dev
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><asp:Button ID="LogOutButton" CssClass="logout" runat="server" Text="Logout" OnClick="LogOutButton_Click" /></li>
+              </ul>
+            </div>
+            </div>
                             </div>
                         </div>
 
@@ -86,7 +98,8 @@
 </html>
         <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/Scripts/bootstrap.js") %>
-        <%: Scripts.Render("~/Scripts/jquery-3.4.1.js") %>
+        <%: Scripts.Render("~/Scripts/jquery-3.4.1.min.js") %>
+        <%: Scripts.Render("~/Scripts/bootstrap.bundle.js") %>    
     </asp:PlaceHolder>
 
 <script>

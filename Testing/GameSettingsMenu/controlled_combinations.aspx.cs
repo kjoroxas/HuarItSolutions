@@ -15,12 +15,16 @@ namespace HuarITSolutions
     {
         public static SQLFunctions sqlFunctions = new SQLFunctions();
         List<ApprovedGames> listOfApprovedGames = new List<ApprovedGames>();
+        List<ControlledCombinations> listofControlledCombinations = new List<ControlledCombinations>();
         protected string selectedGameId;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!this.IsPostBack)
             {
+                combination.Enabled = false;
+                bLimit.Enabled = false;
+
                 listOfApprovedGames = sqlFunctions.getApprovedGames();
 
                 foreach (var game in listOfApprovedGames)
@@ -28,13 +32,54 @@ namespace HuarITSolutions
                     gameCode.Items.Add(new ListItem(game.GameCode, game.Id.ToString()));
                 }
             }
-           
-        }
+
+            }
+
         protected void gameCode_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Get the DropDownList 
+            var ddl = (DropDownList)sender;
+
+            // Check 
+            if (ddl.SelectedValue != "0")
+            {
+                // remove ListItem with value "0" 
+                ListItem selectGameCodeItem = ddl.Items.FindByValue("0");
+                if (selectGameCodeItem != null)
+                {
+                    ddl.Items.Remove(selectGameCodeItem);
+                }
+            }
             //stored Id value
             selectedGameId = gameCode.SelectedItem.Value;
+            int selectedGameCode;
+            if (selectedGameId != "0")
 
+
+            {
+                //  JavaScript function to enable the TextBox
+                combination.Enabled = true;
+                bLimit.Enabled = true;
+
+                selectedGameCode = int.Parse(selectedGameId);
+                var gameDetails = listofControlledCombinations[selectedGameCode];
+
+
+                // Populate the TextBoxes
+                combination.Text = gameDetails.Combination;
+                bLimit.Text = gameDetails.BetLimit.ToString();
+            }
+            else
+            {
+                // JavaScript function to disable the TextBox
+
+                combination.Enabled = false;
+                bLimit.Enabled = false;
+
+                combination.Text = "";
+                bLimit.Text = "";
+
+            }
         }
         protected void saveBtn_click(object sender, EventArgs e)
         {
@@ -44,32 +89,6 @@ namespace HuarITSolutions
         protected void deleteBtn_click(object sender, EventArgs e)
         {
             //sqlFunctions.deleteControllerCombination(/*place here the GameCode ID choosen*/);
-        }
-        protected void viewBtn_click(object sender, EventArgs e)
-        {
-            //code the foreach statement here, to display the data
-            var controlledCombinationView = sqlFunctions.getControlledCombinations(selectedGameId);
-
-            //code the foreach statement here, to display the data
-            foreach (var combi in controlledCombinationView)
-            {
-                TableRow row = new TableRow();
-
-                TableCell cell1 = new TableCell();
-                cell1.Text = combi.GameCode;
-                row.Cells.Add(cell1);
-
-                TableCell cell2 = new TableCell();
-                cell2.Text = combi.Combination; // Assuming Combination is a property of combi
-                row.Cells.Add(cell2);
-
-                TableCell cell3 = new TableCell();
-                cell3.Text = combi.BetLimit.ToString(); // Assuming BetLimit is a property of combi
-                row.Cells.Add(cell3);
-
-                // Add row to CombinationsTab
-                CombinationsTab.Rows.Add(row);
-            }
         }
 
     }

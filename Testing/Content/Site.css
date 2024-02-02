@@ -1,11 +1,33 @@
-﻿/* Wrapping element */
+﻿
+/* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
     margin-top: 15px;
     padding-left: 15px;
     padding-right: 15px;
 }
+@media (min-width: 768px) {
+    .container-fluid {
+        width: 750px;
+    }
+}
 
+@media (min-width: 992px) {
+    .container-fluid {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container-fluid {
+        width: 1170px;
+    }
+}
+@media (min-width: 2400px) {
+    .container-fluid {
+        width: 2340px;
+    }
+}
 /* Set widths on the form inputs since otherwise they're 100% wide */
 input,
 select,
@@ -186,6 +208,9 @@ dropdown-menu{
     border-radius: 15px; 
 }
 /*Specific page*/
+#UserControl2 {
+    margin-left: 925px;
+}
 .buttonContainer {
     text-align: right;
     margin-left: 1250px;
@@ -263,3 +288,5 @@ dropdown-menu{
     margin-left: 9px;
 
 }
+
+

@@ -8,6 +8,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+
         <div>
 
             <div class="card " style="width: 80rem; height:32rem;">
@@ -19,7 +20,7 @@
                          <asp:DropDownList ID="activeGames" OnSelectedIndexChanged="gameCode_SelectedIndexChanged" runat="server" AutoPostBack="true">
                             <asp:ListItem Value="0">Select Game Code</asp:ListItem>
                         </asp:DropDownList><br />
-                        <asp:Table ID="activegame" runat="server" Width="70%" HorizontalAlign="Left" CssClass="table table-bordered">
+                        <asp:Table ID="activeGame" runat="server" Width="70%" HorizontalAlign="Left" CssClass="table table-bordered">
                                <asp:TableHeaderRow>
                                    <asp:TableHeaderCell>Game Code</asp:TableHeaderCell>
                                    <asp:TableHeaderCell>Print Code</asp:TableHeaderCell>
@@ -67,8 +68,8 @@
                     </div>
                     <div class="row" >
                         <div class="col">
-                            <br />
-                            <asp:Button runat="server" id="viewton" Text="View" Height="40px" Width="500px" OnClick="viewBtn_click"/>
+
+                            
                         </div>
                         <div class="col">
                             <br />

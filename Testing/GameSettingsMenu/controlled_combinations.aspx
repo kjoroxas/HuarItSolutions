@@ -15,9 +15,9 @@
                 <div class="row">
                     <div class="col-3">
                         <label><small>Game Code</small></label><br />
-                         <asp:DropDownList ID="gameCode" OnSelectedIndexChanged="gameCode_SelectedIndexChanged" runat="server" AutoPostBack="true">
+                        <asp:DropDownList ID="gameCode" runat="server" AutoPostBack="true" OnSelectedIndexChanged="gameCode_SelectedIndexChanged">
                             <asp:ListItem Value="0">Select Game Code</asp:ListItem>
-                        </asp:DropDownList>
+                        </asp:DropDownList><br />
                     </div>
                     <div class="col-3">
                         <label><small>Combination</small></label><br />
@@ -30,7 +30,7 @@
                     </div>
                     <div class="col-1">
                             <br />
-                            <asp:Button runat="server" id="viewton" Text="View" Width="90px" />
+                            
                     </div>
                     <div class="col-1">
                         <br />

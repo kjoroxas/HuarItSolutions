@@ -8,24 +8,27 @@
    
     <title></title>
     <webopt:bundlereference runat="server" path="~/Content/css" />
+    <webopt:bundlereference runat="server" path="~/Content/bootstrap.css" />
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 </head>
 <body>
     
     <form id="form1" runat="server" contenteditable="false">
-            <div class="dropdown" id="UserControl" contenteditable="inherit">
-              <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+       <div class="container-fluid">
+
+                        <div class="dropdown" id="UserControl" contenteditable="inherit">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                 Welcome, <iconify-icon icon="iconamoon:profile-fill"></iconify-icon> dev
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li></li>
-                  <asp:Button ID="LogOutButton" CssClass="logout" runat="server" Text="Logout" OnClick="LogOutButton_Click" />
-              </ul>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><asp:Button ID="LogOutButton" CssClass="logout" runat="server" Text="Logout" OnClick="LogOutButton_Click" /></li>
+          
+                </ul>
             </div>
-        
-            
+
+    
             <div id="catalogtitle" contenteditable="false">Catalog</div>
-             
+     
         <div id="catalogbuttons" class="container mt-10" draggable="true" contenteditable="false">
             <div class="row mx-auto" >
 
@@ -63,6 +66,8 @@
         </div>
 
         </div>
+
+            
     </form>
 </body>
         <asp:PlaceHolder runat="server">

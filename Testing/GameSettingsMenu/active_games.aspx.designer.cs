@@ -33,13 +33,13 @@ namespace HuarITSolutions
         protected global::System.Web.UI.WebControls.DropDownList activeGames;
 
         /// <summary>
-        /// activegame control.
+        /// activeGame control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table activegame;
+        protected global::System.Web.UI.WebControls.Table activeGame;
 
         /// <summary>
         /// gameCode control.
@@ -130,14 +130,5 @@ namespace HuarITSolutions
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox coorPay;
-
-        /// <summary>
-        /// viewton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button viewton;
     }
 }
