@@ -27,14 +27,14 @@ namespace HuarITSolutions
         }
         protected void Page_Load(object sender, EventArgs e)
         {
+
+
             if (!this.IsPostBack)
             {
                 combination.Enabled = false;
                 bLimit.Enabled = false;
 
                 listOfApprovedGames = sqlFunctions.getApprovedGames();
-
-                
 
                 foreach (var game in listOfApprovedGames)
                 {
@@ -58,15 +58,34 @@ namespace HuarITSolutions
                         cell3.Text = games.BetLimit.ToString();
                         row.Cells.Add(cell3);
 
-
-
                         // Add row
                         CombinationsTab.Rows.Add(row);
                     }
                 }
 
+               
+            }
+            string selectedGameCode = gameCode.SelectedItem.Text;
+            listofControlledCombinations = sqlFunctions.getControlledCombinations(selectedGameCode);
 
-                
+            foreach (var games in listofControlledCombinations)
+            {
+                TableRow row = new TableRow();
+
+                TableCell cell1 = new TableCell();
+                cell1.Text = games.GameCode;
+                row.Cells.Add(cell1);
+
+                TableCell cell2 = new TableCell();
+                cell2.Text = games.Combination;
+                row.Cells.Add(cell2);
+
+                TableCell cell3 = new TableCell();
+                cell3.Text = games.BetLimit.ToString();
+                row.Cells.Add(cell3);
+
+                // Add row
+                CombinationsTab.Rows.Add(row);
             }
 
         }

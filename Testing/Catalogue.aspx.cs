@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace HuarITSolutions
 {
-    public partial class Catalogue : Page
+    public partial class Catalogue2 : System.Web.UI.Page
     {
         protected void Page_Init(object sender, EventArgs e)
         {
@@ -20,8 +19,8 @@ namespace HuarITSolutions
         protected void Page_Load(object sender, EventArgs e)
         {
             //var sssss = Roles.IsUserInRole("Administrators");
-           // var user = HttpContext.Current.User.Identity.Name;
-            
+            // var user = HttpContext.Current.User.Identity.Name;
+
         }
 
         protected void Filesredirectiom(object sender, EventArgs e)
