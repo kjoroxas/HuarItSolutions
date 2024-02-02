@@ -73,7 +73,7 @@ namespace HuarITSolutions.Class
 
         public void updateGameSettingsMenu(string gameCode, string printCode, string highBet, string lowBet, string lowBetLimit, string highBetLimit, string commAdmin, string commCoor, string adPay, string coorPay)
         {
-            var storedProcName = "spUpdate_GameSettingsMenu";
+            var storedProcName = "spUpdate_GameSettings";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -202,7 +202,7 @@ namespace HuarITSolutions.Class
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                SqlCommand command = new SqlCommand("Select * From fnLowWinCombinations(@gamecode) Order by GameCode, Combination", conn);
+                SqlCommand command = new SqlCommand("Select * From fnControlledCombinations(@gamecode) Order by GameCode, Combination", conn);
                 command.Parameters.AddWithValue("@gamecode", gameCode);
 
                 try
@@ -232,9 +232,9 @@ namespace HuarITSolutions.Class
 
         }
 
-        public List<ControlledCombinations> getLowWinningCombinations(string gameCode)
+        public List<LowWinningCombinations> getLowWinningCombinations(string gameCode)
         {
-            List<ControlledCombinations> controlledCombi = new List<ControlledCombinations>();
+            List<LowWinningCombinations> controlledCombi = new List<LowWinningCombinations>();
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -248,11 +248,10 @@ namespace HuarITSolutions.Class
                     {
                         while (reader.Read())
                         {
-                            ControlledCombinations cCOmbi = new ControlledCombinations();
+                            LowWinningCombinations cCOmbi = new LowWinningCombinations();
                             cCOmbi.Id = int.Parse(reader[0].ToString());
                             cCOmbi.GameCode = reader[1].ToString();
                             cCOmbi.Combination = reader[2].ToString();
-                            cCOmbi.BetLimit = decimal.Parse(reader[3].ToString());
 
 
                             controlledCombi.Add(cCOmbi);

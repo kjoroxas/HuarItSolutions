@@ -114,7 +114,7 @@ namespace HuarITSolutions
 
                 selectedGameCode = int.Parse(selectedGameId);
 
-                var gameDetails = listOfApprovedGames[selectedGameCode];
+                var gameDetails = listOfApprovedGames.FirstOrDefault(x => x.Id == selectedGameCode);
 
                 // Populate the TextBoxes
                 gameCode.Text = gameDetails.GameCode;

@@ -16,8 +16,15 @@ namespace HuarITSolutions
         public static SQLFunctions sqlFunctions = new SQLFunctions();
         List<ApprovedGames> listOfApprovedGames = new List<ApprovedGames>();
         List<ControlledCombinations> listofControlledCombinations = new List<ControlledCombinations>();
-        protected string selectedGameId;
 
+        protected string selectedGame;
+        protected void Page_Init(object sender, EventArgs e)
+        {
+            if (!Context.User.Identity.IsAuthenticated)
+            {
+                Response.Redirect("~/Login.aspx");
+            }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!this.IsPostBack)
@@ -27,13 +34,42 @@ namespace HuarITSolutions
 
                 listOfApprovedGames = sqlFunctions.getApprovedGames();
 
+                
+
                 foreach (var game in listOfApprovedGames)
                 {
                     gameCode.Items.Add(new ListItem(game.GameCode, game.Id.ToString()));
+
+                    listofControlledCombinations = sqlFunctions.getControlledCombinations(game.GameCode);
+
+                    foreach (var games in listofControlledCombinations)
+                    {
+                        TableRow row = new TableRow();
+
+                        TableCell cell1 = new TableCell();
+                        cell1.Text = games.GameCode;
+                        row.Cells.Add(cell1);
+
+                        TableCell cell2 = new TableCell();
+                        cell2.Text = games.Combination;
+                        row.Cells.Add(cell2);
+
+                        TableCell cell3 = new TableCell();
+                        cell3.Text = games.BetLimit.ToString();
+                        row.Cells.Add(cell3);
+
+
+
+                        // Add row
+                        CombinationsTab.Rows.Add(row);
+                    }
                 }
+
+
+                
             }
 
-            }
+        }
 
         protected void gameCode_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -51,23 +87,24 @@ namespace HuarITSolutions
                 }
             }
             //stored Id value
-            selectedGameId = gameCode.SelectedItem.Value;
-            int selectedGameCode;
-            if (selectedGameId != "0")
+            selectedGame = gameCode.SelectedItem.Text;
+            //int selectedGameCode;
 
-
+            if (selectedGame != "0")
             {
                 //  JavaScript function to enable the TextBox
                 combination.Enabled = true;
                 bLimit.Enabled = true;
 
-                selectedGameCode = int.Parse(selectedGameId);
-                var gameDetails = listofControlledCombinations[selectedGameCode];
+
+                //selectedGameCode = int.Parse(selectedGame);
+                //var gameDetails = listofControlledCombinations.FirstOrDefault(x => x.Id == selectedGameCode);
+
 
 
                 // Populate the TextBoxes
-                combination.Text = gameDetails.Combination;
-                bLimit.Text = gameDetails.BetLimit.ToString();
+                //combination.Text = gameDetails.Combination;
+                //bLimit.Text = gameDetails.BetLimit.ToString();
             }
             else
             {

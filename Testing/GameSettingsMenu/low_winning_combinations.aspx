@@ -15,13 +15,13 @@
                     <div class="row">
                         <div class="col-3">
                             <label><small>Game Code</small></label><br />
-                            <select id="gameCode" name="gameCode"  style="width:230px; height:30px;">
-                              <option value="value">value</option>
-                            </select>
+                             <asp:DropDownList ID="gameCode" runat="server" AutoPostBack="true" OnSelectedIndexChanged="gameCode_SelectedIndexChanged">
+                            <asp:ListItem Value="0">Select Game Code</asp:ListItem>
+                        </asp:DropDownList><br />
                         </div>
                         <div class="col-3">
                             <label><small>Combination</small></label><br />
-                            <asp:TextBox ID="combination" ValidateRequestMode="Disabled" type="text" runat="server"  placeholder="Combination"></asp:TextBox>
+                            <asp:TextBox ID="Combination" ValidateRequestMode="Disabled" type="text" runat="server"  placeholder="Combination"></asp:TextBox>
                         </div>
                         
                         <div class="col-1">
@@ -36,7 +36,7 @@
                     </div>
                     <div  style="height:300px;">
                         <div class="row" style="margin-left:30px;margin-top:30px;  ">
-                            <asp:Table ID="lowcombitab" runat="server" Width="80%" HorizontalAlign="Left" CssClass="table table-bordered" >
+                            <asp:Table ID="lowWinningTable" runat="server" Width="80%" HorizontalAlign="Left" CssClass="table table-bordered" >
                                    <asp:TableHeaderRow>
                                        <asp:TableHeaderCell><small>Game Code</small></asp:TableHeaderCell>
                                        <asp:TableHeaderCell><small>Combination</small></asp:TableHeaderCell>
