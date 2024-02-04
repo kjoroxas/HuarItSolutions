@@ -18,6 +18,7 @@ namespace HuarITSolutions
         List<ApprovedGames> listOfApprovedGames = new List<ApprovedGames>();
         List<ControlledCombinations> listofControlledCombinations = new List<ControlledCombinations>();
 
+
         protected string selectedGame;
         protected void Page_Init(object sender, EventArgs e)
         {
@@ -39,54 +40,39 @@ namespace HuarITSolutions
                 {
                     gameCode.Items.Add(new ListItem(game.GameCode, game.Id.ToString()));
 
-                    listofControlledCombinations = sqlFunctions.getControlledCombinations(game.GameCode);
-
-                    foreach (var games in listofControlledCombinations)
-                    {
-                        TableRow row = new TableRow();
-
-                        TableCell cell1 = new TableCell();
-                        cell1.Text = games.GameCode;
-                        row.Cells.Add(cell1);
-
-                        TableCell cell2 = new TableCell();
-                        cell2.Text = games.Combination;
-                        row.Cells.Add(cell2);
-
-                        TableCell cell3 = new TableCell();
-                        cell3.Text = games.BetLimit.ToString();
-                        row.Cells.Add(cell3);
-
-                        // Add row
-                        CombinationsTab.Rows.Add(row);
-                    }
+                    
                 }
 
                
             }
-            string selectedGameCode = gameCode.SelectedItem.Text;
-            listofControlledCombinations = sqlFunctions.getControlledCombinations(selectedGameCode);
-
-            foreach (var games in listofControlledCombinations)
+            selectedGame = gameCode.SelectedItem.Text;
+            listofControlledCombinations = sqlFunctions.getControlledCombinations(selectedGame);
+            listOfApprovedGames = sqlFunctions.getApprovedGames();
+            foreach (var game in listOfApprovedGames)
             {
-                TableRow row = new TableRow();
+                var gameCode = game.GameCode;
+                var test = sqlFunctions.getControlledCombinations(gameCode);
 
-                TableCell cell1 = new TableCell();
-                cell1.Text = games.GameCode;
-                row.Cells.Add(cell1);
+                foreach (var games in test)
+                {
+                    TableRow row = new TableRow();
 
-                TableCell cell2 = new TableCell();
-                cell2.Text = games.Combination;
-                row.Cells.Add(cell2);
+                    TableCell cell1 = new TableCell();
+                    cell1.Text = games.GameCode;
+                    row.Cells.Add(cell1);
 
-                TableCell cell3 = new TableCell();
-                cell3.Text = games.BetLimit.ToString();
-                row.Cells.Add(cell3);
+                    TableCell cell2 = new TableCell();
+                    cell2.Text = games.Combination;
+                    row.Cells.Add(cell2);
 
-                // Add row
-                CombinationsTab.Rows.Add(row);
+                    TableCell cell3 = new TableCell();
+                    cell3.Text = games.BetLimit.ToString();
+                    row.Cells.Add(cell3);
+
+                    // Add row
+                    CombinationsTab.Rows.Add(row);
+                }
             }
-
         }
 
         protected void gameCode_SelectedIndexChanged(object sender, EventArgs e)
@@ -151,7 +137,7 @@ namespace HuarITSolutions
         }
         protected void saveBtn_click(object sender, EventArgs e)
         {
-            //sqlFunctions.saveControlledCombination(/*place here the GameCode ID choosen*/ ,combination.Text, bLimit.Text);
+            sqlFunctions.saveControlledCombination(selectedGame, combination.Text, bLimit.Text);
         }
 
         protected void deleteBtn_click(object sender, EventArgs e)

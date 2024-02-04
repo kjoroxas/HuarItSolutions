@@ -34,44 +34,32 @@ namespace HuarITSolutions.GameSettingsMenu
                 {
                     gameCode.Items.Add(new ListItem(game.GameCode, game.Id.ToString()));
 
-                    listLowWinningCombinations = sqlFunctions.getLowWinningCombinations(game.GameCode);
-
-                    foreach (var games in listLowWinningCombinations)
-                    {
-                        TableRow row = new TableRow();
-
-                        TableCell cell1 = new TableCell();
-                        cell1.Text = games.GameCode;
-                        row.Cells.Add(cell1);
-
-                        TableCell cell2 = new TableCell();
-                        cell2.Text = games.Combination;
-                        row.Cells.Add(cell2);
-
-                        // Add row
-                        lowWinningTable.Rows.Add(row);
-                    }
-
                 }
             }
 
-            string selectedGameCode = gameCode.SelectedItem.Text;
-            listLowWinningCombinations = sqlFunctions.getLowWinningCombinations(selectedGameCode);
-
-            foreach (var games in listLowWinningCombinations)
+            selectedGame = gameCode.SelectedItem.Text;
+            listLowWinningCombinations = sqlFunctions.getLowWinningCombinations(selectedGame);
+            listOfApprovedGames = sqlFunctions.getApprovedGames();
+            foreach (var game in listOfApprovedGames)
             {
-                TableRow row = new TableRow();
+                var gameCode = game.GameCode;
+                var test = sqlFunctions.getLowWinningCombinations(gameCode);
 
-                TableCell cell1 = new TableCell();
-                cell1.Text = games.GameCode;
-                row.Cells.Add(cell1);
+                foreach (var games in test)
+                {
+                    TableRow row = new TableRow();
 
-                TableCell cell2 = new TableCell();
-                cell2.Text = games.Combination;
-                row.Cells.Add(cell2);
+                    TableCell cell1 = new TableCell();
+                    cell1.Text = games.GameCode;
+                    row.Cells.Add(cell1);
 
-                // Add row
-                lowWinningTable.Rows.Add(row);
+                    TableCell cell2 = new TableCell();
+                    cell2.Text = games.Combination;
+                    row.Cells.Add(cell2);
+
+                    // Add row
+                    lowWinningTable.Rows.Add(row);
+                }
             }
 
         }
@@ -118,20 +106,13 @@ namespace HuarITSolutions.GameSettingsMenu
 
         protected void saveBtn_click(object sender, EventArgs e)
         {
-            //sqlFunctions.saveLowWinCombination(/*place here the GameCode ID choosen*/ ,combination.Text, bLimit.Text);
+            sqlFunctions.saveLowWinCombination(selectedGame, Combination.Text);
         }
 
         protected void deleteBtn_click(object sender, EventArgs e)
         {
             //sqlFunctions.deleteLowWinningCombination(/*place here the GameCode ID choosen*/);
         }
-        protected void viewBtn_click(object sender, EventArgs e)
-        {
-            //for table list
 
-            //var lowWinningCombinationView = sqlFunctions.getLowWinningCombinations(/* place here the GameCode Id*/);
-
-            //code the foreach statement here, to display the data
-        }
     }
 }

@@ -110,3 +110,13 @@
     <%: Scripts.Render("~/Scripts/bootstrap.js") %>
     <%: Scripts.Render("~/Scripts/jquery-3.4.1.js") %>
 </asp:PlaceHolder>
+<script>
+    if (window.devicePixelRatio === 1.5 && window.innerWidth === 2560 && window.innerHeight === 1440) {
+        // If it is, set the zoom level of the document to 83.33% (equivalent to 125%)
+        document.body.style.zoom = "83.33%";
+    }
+    if (window.devicePixelRatio === 1) {
+        // If it is, set the zoom level of the document to 125%
+        document.body.style.zoom = "125%";
+    }
+</script>
