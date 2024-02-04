@@ -17,7 +17,7 @@
                  <div class="row" id="firstrow">
                      <div class="col-6 ">
                            
-                         <asp:DropDownList ID="activeGames" OnSelectedIndexChanged="gameCode_SelectedIndexChanged" runat="server" AutoPostBack="true">
+                         <asp:DropDownList ID="activeGames" OnSelectedIndexChanged="gameCode_SelectedIndexChanged"  runat="server" AutoPostBack="true">
                             <asp:ListItem Value="0">Select Game Code</asp:ListItem>
                         </asp:DropDownList><br />
                         <asp:Table ID="activeGame" runat="server" Width="70%" HorizontalAlign="Left" CssClass="table table-bordered">
@@ -88,5 +88,14 @@
     <%: Scripts.Render("~/Scripts/bootstrap.js") %>
 </asp:PlaceHolder>
 
-
+<script>
+    if (window.devicePixelRatio === 1.5 && window.innerWidth === 2560 && window.innerHeight === 1440) {
+        // If it is, set the zoom level of the document to 83.33% (equivalent to 125%)
+        document.body.style.zoom = "83.33%";
+    }
+    if (window.devicePixelRatio === 1) {
+        // If it is, set the zoom level of the document to 125%
+        document.body.style.zoom = "125%";
+    }
+</script>
 
