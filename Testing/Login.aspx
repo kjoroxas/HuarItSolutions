@@ -16,7 +16,7 @@
                         <img src="image/I.t.png" alt="..." class="img-fluid" style="width:120px; height:auto; "/>
                         <h6 class="exempt">Username:</h6>
 
-                        <asp:TextBox ID="emailfield" CssClass="emailtest" ValidateRequestMode="Disabled" type="text" runat="server"  placeholder="Enter Username"></asp:TextBox>
+                        <asp:TextBox ID="emailfield" CssClass="emailtest" ValidateRequestMode="Disabled" type="text" runat="server"  placeholder="Username"></asp:TextBox>
                         <asp:CustomValidator  ID="emailVaildator" runat="server" ErrorMessage="Please enter email" ForeColor="Red" ValidateEmptyText="true"></asp:CustomValidator>
                           <br />
                         <h6 class="exempt">Password:</h6>
