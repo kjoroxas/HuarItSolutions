@@ -139,6 +139,8 @@ namespace HuarITSolutions
         {
             sqlFunctions.saveControlledCombination(selectedGame, combination.Text, bLimit.Text);
 
+            CombinationsTab.Rows.Clear();
+
             listOfApprovedGames = sqlFunctions.getApprovedGames();
             foreach (var game in listOfApprovedGames)
             {

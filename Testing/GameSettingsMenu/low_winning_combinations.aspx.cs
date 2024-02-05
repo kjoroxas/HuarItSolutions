@@ -108,6 +108,8 @@ namespace HuarITSolutions.GameSettingsMenu
         {
             sqlFunctions.saveLowWinCombination(selectedGame, Combination.Text);
 
+            lowWinningTable.Rows.Clear();
+
             listOfApprovedGames = sqlFunctions.getApprovedGames();
             foreach (var game in listOfApprovedGames)
             {
