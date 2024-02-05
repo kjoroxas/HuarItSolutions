@@ -307,3 +307,43 @@ dropdown-menu{
     margin-bottom:30px;
     width: 200px !important;
 }
+.scrollable-table {
+    overflow-y: auto;
+    height: 300px; /* Adjust as needed */
+}
+.scrollable-table2 {
+    overflow-y: auto;
+    height: 330px; /* Adjust as needed */
+}
+th, .aspNetTable th {
+    position: sticky;
+    top: 0; /* Adjust as needed */
+    background-color: white; /* Or any color that matches your design */
+    z-index: 1; /* To ensure the header stays on top */
+}
+.validator-error {
+    display: block;
+    position: absolute;
+    background-color: #f44336;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 10px;
+    z-index: 1;
+}
+
+.validator-error::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #f44336 transparent;
+}
+.btndesign{
+    background-color:lightgray !important;
+    width:60px;
+
+}

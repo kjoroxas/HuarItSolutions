@@ -102,8 +102,8 @@ namespace HuarITSolutions
                 
             {
                 //  JavaScript function to enable the TextBox
-                gameCode.Enabled = true;
-                printCode.Enabled = true;
+                gameCode.Enabled = false;
+                printCode.Enabled = false;
                 activeGameCheckbox.Enabled = true;
                 lowBet.Enabled = true;
                 lowBetLimit.Enabled = true;
@@ -121,7 +121,6 @@ namespace HuarITSolutions
                 // Populate the TextBoxes
                 gameCode.Text = gameDetails.GameCode;
                 printCode.Text = gameDetails.PrintDescription;
-                activeGameCheckbox.Checked = gameDetails.IsLocal;
                 lowBet.Text = gameDetails.WinningValueLow.ToString();
                 lowBetLimit.Text = gameDetails.LowEndingLimit.ToString();
                 highBet.Text = gameDetails.WinningValueHigh.ToString();

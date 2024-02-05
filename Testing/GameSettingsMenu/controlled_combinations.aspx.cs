@@ -138,6 +138,33 @@ namespace HuarITSolutions
         protected void saveBtn_click(object sender, EventArgs e)
         {
             sqlFunctions.saveControlledCombination(selectedGame, combination.Text, bLimit.Text);
+
+            listOfApprovedGames = sqlFunctions.getApprovedGames();
+            foreach (var game in listOfApprovedGames)
+            {
+                var gameCode = game.GameCode;
+                var test = sqlFunctions.getControlledCombinations(gameCode);
+
+                foreach (var games in test)
+                {
+                    TableRow row = new TableRow();
+
+                    TableCell cell1 = new TableCell();
+                    cell1.Text = games.GameCode;
+                    row.Cells.Add(cell1);
+
+                    TableCell cell2 = new TableCell();
+                    cell2.Text = games.Combination;
+                    row.Cells.Add(cell2);
+
+                    TableCell cell3 = new TableCell();
+                    cell3.Text = games.BetLimit.ToString();
+                    row.Cells.Add(cell3);
+
+                    // Add row
+                    CombinationsTab.Rows.Add(row);
+                }
+            }
         }
 
         protected void deleteBtn_click(object sender, EventArgs e)

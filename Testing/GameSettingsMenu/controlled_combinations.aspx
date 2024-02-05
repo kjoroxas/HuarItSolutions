@@ -5,6 +5,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -34,36 +37,59 @@
                     </div>
                     <div class="col-1">
                         <br />
-                        <asp:Button runat="server" Text="Save" Width="90px" OnClick="saveBtn_click" />
+                        <button type="button" class="btn btndesign" data-toggle="modal"  data-target="#confirmationmodal">
+                        Save
+                        </button>
                     </div>
 
                 </div>
                 <div  style="height:300px;">
                     <div class="row" style="margin-left:30px;margin-top:30px;  ">
-                        <asp:Table ID="CombinationsTab" runat="server" Width="80%" HorizontalAlign="Left" CssClass="table table-bordered" >
-                               <asp:TableHeaderRow>
-                                   <asp:TableHeaderCell><small>Game Code</small></asp:TableHeaderCell>
-                                   <asp:TableHeaderCell><small>Combination</small></asp:TableHeaderCell>
-                                   <asp:TableHeaderCell><small>Bet Limit</small></asp:TableHeaderCell>
-                               </asp:TableHeaderRow>
-                             <asp:TableRow >
+                        <div class="scrollable-table2">
+                            <asp:Table ID="CombinationsTab" runat="server" Width="80%" HorizontalAlign="Left" CssClass="table table-bordered" >
+                                   <asp:TableHeaderRow CssClass="aspNetTable">
+                                       <asp:TableHeaderCell><small>Game Code</small></asp:TableHeaderCell>
+                                       <asp:TableHeaderCell><small>Combination</small></asp:TableHeaderCell>
+                                       <asp:TableHeaderCell><small>Bet Limit</small></asp:TableHeaderCell>
+                                   </asp:TableHeaderRow>
+                                 <asp:TableRow >
 
-                             </asp:TableRow>
+                                 </asp:TableRow>
 
 
-                        </asp:Table>
+                            </asp:Table>
+                        </div>
+
                     </div>
                 </div>
 
               </div>
             </div>
+                <div class="modal fade" id="confirmationmodal" tabindex="-1" role="dialog" aria-labelledby="confirmationmodalLabel" aria-hidden="true" style="margin-top:150px;">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="confirmationmodalLabel">Saving Changes</h5>
+
+                      </div>
+                      <div class="modal-body">
+                        Are you sure about your changes?
+                      </div>
+                      <div class="modal-footer">
+                        <asp:Button ID="btnClose" runat="server" Text="Close" data-dismiss="modal" />
+                        <asp:Button runat="server" Text="Save"  OnClick="saveBtn_click" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
         </div>
     </form>
 </body>
 </html>
 <asp:PlaceHolder runat="server">
     <%: Scripts.Render("~/Scripts/bootstrap.js") %>
-    <%: Scripts.Render("~/Scripts/jquery-3.4.1.js") %>
+    <%: Scripts.Render("~/Scripts/jquery-3.4.1.min.js") %>
+    <%: Scripts.Render("~/Scripts/bootstrap.bundle.js") %>    
 </asp:PlaceHolder>
 <script>
     if (window.devicePixelRatio === 1.5 && window.innerWidth === 2560 && window.innerHeight === 1440) {
@@ -74,4 +100,7 @@
         // If it is, set the zoom level of the document to 125%
         document.body.style.zoom = "125%";
     }
-</script>
+</script>   
+
+
+

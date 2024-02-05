@@ -5,6 +5,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -20,14 +23,17 @@
                          <asp:DropDownList ID="activeGames" OnSelectedIndexChanged="gameCode_SelectedIndexChanged" CssClass="gameCodeDropDown2" runat="server" AutoPostBack="true">
                             <asp:ListItem Value="0">Select Game Code</asp:ListItem>
                         </asp:DropDownList><br />
-                        <asp:Table ID="activeGame" runat="server" Width="70%" HorizontalAlign="Left" CssClass="table table-bordered">
-                               <asp:TableHeaderRow>
-                                   <asp:TableHeaderCell>Game Code</asp:TableHeaderCell>
-                                   <asp:TableHeaderCell>Print Code</asp:TableHeaderCell>
+                         <div class="scrollable-table">
+                            <asp:Table ID="activeGame" runat="server" Width="70%" HorizontalAlign="Left" CssClass="table table-bordered">
+                                       <asp:TableHeaderRow CssClass="aspNetTable">
+                                           <asp:TableHeaderCell>Game Code</asp:TableHeaderCell>
+                                           <asp:TableHeaderCell>Print Code</asp:TableHeaderCell>
 
-                               </asp:TableHeaderRow>
+                                       </asp:TableHeaderRow>
 
-                        </asp:Table>
+                                </asp:Table>
+                            </div>
+
                                                
                        </div>
                     <div class="col-3">
@@ -43,15 +49,16 @@
                         
                        <label><small>Bet Limit (0-31)</small></label><br />
                         <asp:TextBox ID="lowBetLimit" ValidateRequestMode="Disabled" type="text" runat="server"  placeholder="lowBetLimit"></asp:TextBox><br />
-
+                        <asp:RangeValidator ID="RangeValidator1" runat="server" ErrorMessage="Value must be between 0 and 31" ControlToValidate="lowBetLimit" MinimumValue="0" MaximumValue="31" Type="Integer"></asp:RangeValidator>
                        <label><small>Win Value(High)</small></label><br />
                          <asp:TextBox ID="highBet" ValidateRequestMode="Disabled" type="text" runat="server"  placeholder="highBet"></asp:TextBox><br />
 
-                       <label><small>Bet Limit (32-99)</small></label><br />
-                        <asp:TextBox ID="highBetLimit" ValidateRequestMode="Disabled" type="text" runat="server"  placeholder="highBetLimit"></asp:TextBox><br />
-
+                       
                     </div>
                     <div class="col-3">
+                        <label><small>Bet Limit (32-99)</small></label><br />
+                        <asp:TextBox ID="highBetLimit" ValidateRequestMode="Disabled" type="text" runat="server"  placeholder="highBetLimit"></asp:TextBox><br />
+                        <asp:RangeValidator ID="RangeValidator2" runat="server" ErrorMessage="Value must be between 32 and 99" ControlToValidate="highBetLimit" MinimumValue="32" MaximumValue="99" Type="Integer"></asp:RangeValidator>
                        <label><small>Admin Commission</small></label><br />
                         <asp:TextBox ID="AdminCommission" ValidateRequestMode="Disabled" type="text" runat="server"  placeholder="commAdmin"></asp:TextBox><br />
                        
@@ -73,19 +80,40 @@
                         </div>
                         <div class="col">
                             <br />
-                            <asp:Button runat="server" Text="Save" Height="40px" Width="300px" OnClick="saveBtn_click" />
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-light" data-toggle="modal"  data-target="#confirmationmodal" style="height:40px; width:300px;"> Save</button>
                         </div>
                     </div>
              </div>  
 
             </div>
                  
+<!-- Modal -->
+            <div class="modal fade" id="confirmationmodal" tabindex="-1" role="dialog" aria-labelledby="confirmationmodalLabel" aria-hidden="true" style="margin-top:150px;">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="confirmationmodalLabel">Saving Changes</h5>
+
+                  </div>
+                  <div class="modal-body">
+                    Are you sure about your changes?
+                  </div>
+                  <div class="modal-footer">
+                    <asp:Button ID="btnClose" runat="server" Text="Close" data-dismiss="modal" />
+                    <asp:Button runat="server" Text="Save"  OnClick="saveBtn_click" />
+                  </div>
+                </div>
+              </div>
+            </div>
 </div>  
     </form>
 </body>
 </html>
 <asp:PlaceHolder runat="server">
     <%: Scripts.Render("~/Scripts/bootstrap.js") %>
+    <%: Scripts.Render("~/Scripts/jquery-3.4.1.min.js") %>
+    <%: Scripts.Render("~/Scripts/bootstrap.bundle.js") %>    
 </asp:PlaceHolder>
 
 <script>
@@ -98,4 +126,33 @@
         document.body.style.zoom = "125%";
     }
 </script>
+
+<script type="text/javascript">
+    window.onload = function () {
+        var validator1 = document.getElementById('<%= RangeValidator1.ClientID %>');
+        var validator2 = document.getElementById('<%= RangeValidator2.ClientID %>');
+        validator1.className += " validator-error";
+        validator2.className += " validator-error";
+        validator1.onmouseover = validator2.onmouseover = function () {
+            this.style.display = 'block';
+        }
+        validator1.onmouseout = validator2.onmouseout = function () {
+            this.style.display = 'none';
+        }
+    }
+    function showModal() {
+        var validator1 = document.getElementById('<%= RangeValidator1.ClientID %>');
+    var validator2 = document.getElementById('<%= RangeValidator2.ClientID %>');
+
+    if (validator1.isvalid && validator2.isvalid) {
+        // If both validators are valid, show the modal
+        $('#confirmationmodal').modal('show');
+    } else {
+        // If either validator is invalid, prevent the modal from showing
+        $('#confirmationmodal').modal('hide');
+    }
+}
+</script>
+
+
 
