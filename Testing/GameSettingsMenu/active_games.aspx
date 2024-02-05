@@ -17,7 +17,7 @@
                  <div class="row" id="firstrow">
                      <div class="col-6 ">
                            
-                         <asp:DropDownList ID="activeGames" OnSelectedIndexChanged="gameCode_SelectedIndexChanged"  runat="server" AutoPostBack="true">
+                         <asp:DropDownList ID="activeGames" OnSelectedIndexChanged="gameCode_SelectedIndexChanged" CssClass="gameCodeDropDown2" runat="server" AutoPostBack="true">
                             <asp:ListItem Value="0">Select Game Code</asp:ListItem>
                         </asp:DropDownList><br />
                         <asp:Table ID="activeGame" runat="server" Width="70%" HorizontalAlign="Left" CssClass="table table-bordered">
@@ -36,7 +36,7 @@
 
                        <label><small>Print Code</small></label><br />
                         <asp:TextBox ID="printCode" ValidateRequestMode="Disabled" type="text" runat="server"  placeholder="PrintCode"></asp:TextBox><br />
-                        <input type="checkbox"><label><small>Local Game</small></label><br />
+                        <asp:CheckBox ID="activeGameCheckbox" runat="server" CssClass="ActiveGameCheckBox" /><label><small>Local Game</small></label><br />
 
                        <label><small>Win Value(Low)</small></label><br />
                         <asp:TextBox ID="lowBet" ValidateRequestMode="Disabled" type="text" runat="server"  placeholder="lowBet"></asp:TextBox><br />

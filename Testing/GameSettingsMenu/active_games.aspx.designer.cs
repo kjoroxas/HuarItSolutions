@@ -60,6 +60,15 @@ namespace HuarITSolutions
         protected global::System.Web.UI.WebControls.TextBox printCode;
 
         /// <summary>
+        /// activeGameCheckbox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox activeGameCheckbox;
+
+        /// <summary>
         /// lowBet control.
         /// </summary>
         /// <remarks>

@@ -284,11 +284,13 @@ dropdown-menu{
     
 }
 /*active file*/
-.actgamecode{
-    color:red;
-    font-size:11px;
+.ActiveGameCheckBox{
+    margin-top:5px;
+}
+.actgamecode {
+    color: red;
+    font-size: 11px;
     margin-left: 10px;
-
 }
 .actlowbet {
     color: red;
@@ -301,4 +303,7 @@ dropdown-menu{
     width: 200px !important;
 }
 
-
+.gameCodeDropDown2 {
+    margin-bottom:30px;
+    width: 200px !important;
+}
