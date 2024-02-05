@@ -38,6 +38,7 @@ namespace HuarITSolutions
             {
                 gameCode.Enabled = false;
                 printCode.Enabled = false;
+                activeGameCheckbox.Enabled = false;
                 lowBet.Enabled = false;
                 lowBetLimit.Enabled = false;
                 highBet.Enabled = false;
@@ -103,6 +104,7 @@ namespace HuarITSolutions
                 //  JavaScript function to enable the TextBox
                 gameCode.Enabled = true;
                 printCode.Enabled = true;
+                activeGameCheckbox.Enabled = true;
                 lowBet.Enabled = true;
                 lowBetLimit.Enabled = true;
                 highBet.Enabled = true;
@@ -119,6 +121,7 @@ namespace HuarITSolutions
                 // Populate the TextBoxes
                 gameCode.Text = gameDetails.GameCode;
                 printCode.Text = gameDetails.PrintDescription;
+                activeGameCheckbox.Checked = gameDetails.IsLocal;
                 lowBet.Text = gameDetails.WinningValueLow.ToString();
                 lowBetLimit.Text = gameDetails.LowEndingLimit.ToString();
                 highBet.Text = gameDetails.WinningValueHigh.ToString();
@@ -135,6 +138,7 @@ namespace HuarITSolutions
                 // JavaScript function to disable the TextBox
                 gameCode.Enabled = false;
                 printCode.Enabled = false;
+                activeGameCheckbox.Enabled = false;
                 lowBet.Enabled = false;
                 lowBetLimit.Enabled = false;
                 highBet.Enabled = false;
