@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
                 <div>
-                    <div class="card " style="width: 80rem; height:32rem;">
+                    <div class="card " style="width: 87rem; height:37rem;">
                          <div class="card-body">
                          <h5 class="card-title"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><g fill="currentColor"><rect width="5" height="18" x="16" y="3" rx="2"/><rect width="5" height="12" x="9.5" y="9" rx="2"/><rect width="5" height="5" x="3" y="16" rx="2"/></g></svg> Sales Representative</h5>
                              <div style="margin-left:40px;" class="row" id="firstrow">
@@ -30,7 +30,7 @@
 
 
                                    </div>
-                                <div  class="col-5">
+                                <div  class="col-4">
 
                                    <label style="margin-right:50px;"><small>Outlet Code</small></label>
                                    <asp:TextBox ID="OutletCode" Height="20px" Width="300px" ValidateRequestMode="Disabled" type="text" runat="server" ></asp:TextBox><br />
@@ -83,10 +83,7 @@
                                             <br />
                                             <asp:Button runat="server" Text="Delete" Height="30px" Width="60px" />
                                         </div>
-                                        <div class="col-1">
-                                            <br />
-                                            <asp:Button runat="server" Text="Cancel" Height="30px" Width="60px" />
-                                        </div>
+
                                     </div>
                                 </div>
                          </div>  
