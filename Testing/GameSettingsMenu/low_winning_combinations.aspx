@@ -35,7 +35,7 @@
                     </div>
                     <div  style="height:300px;">
                         <div class="row" style="margin-left:30px;margin-top:30px;  ">
-                            <div class="scrollable-table">
+                            <div class="scrollable-table2">
                                 <asp:Table ID="lowWinningTable" runat="server" Width="80%" HorizontalAlign="Left" CssClass="table table-bordered" >
                                        <asp:TableHeaderRow CssClass="aspNetTable">
                                            <asp:TableHeaderCell><small>Game Code</small></asp:TableHeaderCell>
