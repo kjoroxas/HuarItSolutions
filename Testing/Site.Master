@@ -104,14 +104,15 @@
         });
     });
     
+    window.onload = function () {
+        // Get viewport width and height
+        var viewportWidth = window.innerWidth;
+        var viewportHeight = window.innerHeight;
 
-    if (window.devicePixelRatio === 1.5 && window.innerWidth === 2560 && window.innerHeight === 1440) {
-        // If it is, set the zoom level of the document to 83.33% (equivalent to 125%)
-        document.body.style.zoom = "83.33%";
+        if (window.devicePixelRatio === 1 && viewportWidth === 1920 && viewportHeight <= 1080) { 
+
+            document.body.style.zoom = "125%";
+        }
     }
-    if (window.devicePixelRatio === 1) {
-        // If it is, set the zoom level of the document to 125%
-        document.body.style.zoom = "125%";
-    }
-    
+
 </script>
