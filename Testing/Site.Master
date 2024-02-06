@@ -113,10 +113,5 @@
         // If it is, set the zoom level of the document to 125%
         document.body.style.zoom = "125%";
     }
-    // Check if the device pixel ratio is 1 (100%) and the screen resolution is 1366 x 768
-    if (window.devicePixelRatio === 1 && window.innerWidth === 1366 && window.innerHeight === 768) {
-        // If it is, set the zoom level of the document to 68.75%
-        document.body.style.zoom = "50.62%";
-    }
     
 </script>

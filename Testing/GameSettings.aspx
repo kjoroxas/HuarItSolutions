@@ -45,23 +45,23 @@
                                 <div class="buttonContainer">
                                     <asp:Button runat="server" CssClass="closebutton" OnClick="Button1_Click" ></asp:Button>
                                 </div>
-                        <div  class="card " style="width: 80rem; height:32rem; margin-top:20px;">
+                        <div  class="card " style="width: 87rem; height:37rem; margin-top:20px;">
                         <div class="row-lg-7"  >
                             <div class="tab-content" >
                                         <div id="active" class="tab-pane fade show active" role="tabpanel" aria-labelledby="agame">
-                                             <iframe src="GameSettingsMenu/active_games.aspx" style="width:1280px; height:530px; border:none; "></iframe>
+                                             <iframe src="GameSettingsMenu/active_games.aspx" style="width:1393px; height:610px; border:none; "></iframe>
                                         </div>
                                         <div id="combi" class=" tab-pane fade" role="tabpanel" aria-labelledby="combine">
-                                             <iframe src="GameSettingsMenu/controlled_combinations.aspx" style="width:1280px; height:530px; border:none; "></iframe>
+                                             <iframe src="GameSettingsMenu/controlled_combinations.aspx" style="width:1393px; height:610px; border:none; "></iframe>
                                         </div>
                                         <div id="lowcombi" class=" tab-pane fade" role="tabpanel" aria-labelledby="lowb">
-                                             <iframe src="GameSettingsMenu/low_winning_combinations.aspx" style="width:1300px; height:550px; border:none; "></iframe>
+                                             <iframe src="GameSettingsMenu/low_winning_combinations.aspx" style="width:1393px; height:610px; border:none; "></iframe>
                                         </div>
                                         <%--<div id="highcombi" class=" tab-pane fade" role="tabpanel" aria-labelledby="highb">
                                              <iframe src="GameSettingsMenu/highcombi.aspx" style="width:1300px; height:550px; border:none; "></iframe>
                                         </div>--%>
                                         <div id="salesrep" class=" tab-pane fade" role="tabpanel" aria-labelledby="salesr">
-                                               <iframe src="GameSettingsMenu/sales_representative.aspx" style="width:1300px; height:550px; border:none;  "></iframe>
+                                               <iframe src="GameSettingsMenu/sales_representative.aspx" scrolling="no" style="width:87rem; height:37rem; overflow:hidden;  "></iframe>
                                         </div>
                             </div>
                         </div>
