@@ -107,6 +107,31 @@ namespace HuarITSolutions.GameSettingsMenu
         protected void saveBtn_click(object sender, EventArgs e)
         {
             sqlFunctions.saveLowWinCombination(selectedGame, Combination.Text);
+
+            lowWinningTable.Rows.Clear();
+
+            listOfApprovedGames = sqlFunctions.getApprovedGames();
+            foreach (var game in listOfApprovedGames)
+            {
+                var gameCode = game.GameCode;
+                var test = sqlFunctions.getLowWinningCombinations(gameCode);
+
+                foreach (var games in test)
+                {
+                    TableRow row = new TableRow();
+
+                    TableCell cell1 = new TableCell();
+                    cell1.Text = games.GameCode;
+                    row.Cells.Add(cell1);
+
+                    TableCell cell2 = new TableCell();
+                    cell2.Text = games.Combination;
+                    row.Cells.Add(cell2);
+
+                    // Add row
+                    lowWinningTable.Rows.Add(row);
+                }
+            }
         }
 
         protected void deleteBtn_click(object sender, EventArgs e)

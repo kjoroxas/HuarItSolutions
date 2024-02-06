@@ -9,11 +9,11 @@
 <body>
     <form id="form1" runat="server">
                 <div>
-                    <div class="card " style="width: 80rem; height:32rem;">
+                    <div class="card " style="width: 87rem; height:37rem;">
                          <div class="card-body">
                          <h5 class="card-title"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><g fill="currentColor"><rect width="5" height="18" x="16" y="3" rx="2"/><rect width="5" height="12" x="9.5" y="9" rx="2"/><rect width="5" height="5" x="3" y="16" rx="2"/></g></svg> Sales Representative</h5>
-                             <div class="row" id="firstrow">
-                                 <div class="col-5 ">
+                             <div style="margin-left:40px;" class="row" id="firstrow">
+                                 <div class="col-6 ">
                                        <asp:Table ID="activegame" runat="server" Width="70%" HorizontalAlign="Left" CssClass="table table-bordered">
                                            <asp:TableHeaderRow>
                                                <asp:TableHeaderCell>Outlet Code</asp:TableHeaderCell>
@@ -30,75 +30,62 @@
 
 
                                    </div>
-                                <div class="col-3">
+                                <div  class="col-4">
 
-                                   <label><small>Outlet Code</small></label><br />
-                                    <input type="text" id="outcode" name="outcode" required><br />
-                                   <label><small>Device ID</small></label><br />
-                                    <input type="text" id="devid" name="devid" required> <asp:Button runat="server" id="clear" Text="clear" Height="30px" Width="50px"/><br />
+                                   <label style="margin-right:50px;"><small>Outlet Code</small></label>
+                                   <asp:TextBox ID="OutletCode" Height="20px" Width="300px" ValidateRequestMode="Disabled" type="text" runat="server" ></asp:TextBox><br />
+                                   <label style=" margin-top: 10px;margin-right:66px;"><small>Device ID</small></label>
+                                    <asp:TextBox ID="DeviceID" Height="20px" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><asp:Button runat="server" id="clear"  Text="clear" CssClass="small-font clearbutton" Height="20px" Width="50px"/><br />
 
-                                   <label><small>Address</small></label><br />
-                                    <input type="text" id="address" name="address" required><br />
-                                    <label><small>Area</small></label><br />
-                                    <select id="arecode" name="area"  style="width:230px; height:30px;">
-                                        <option value="value">value</option>
-                                    </select>
+                                   <label style=" margin-top: 20px; margin-right:75px;"><small>Address</small></label>
+                                    <asp:TextBox ID="Address" Height="50px" Width="300px" TextMode="MultiLine" Rows="3" CssClass="paragraph-style no-resize" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><br />
 
-                                   <label><small>Mobile Number</small></label><br />
-                                    <input type="text" id="mobino" name="mobino" required><br />
-                                    <label><small>Password</small></label><br />
-                                    <input type="password" id="passw" name="passw" required><br />
+                                    <label style=" margin-top: 10px; margin-right:65px;"><small>Area</small></label>
+                                    <asp:DropDownList ID="AreaCode" Height="20px" CssClass="gameCodeDropDown" runat="server"></asp:DropDownList><br />
 
-                                </div>
-                                <div class="col-3">
+                                   <label style=" margin-top: 10px; margin-right:25px;"><small>Mobile Number</small></label>
+                                    <asp:TextBox ID="MobileNumber" Height="20px" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><br />
 
-                                    <label><small>Confirm Password</small></label><br />
-                                   <input type="password" id="cpassw" name="cpassw" required><br />
-                                   <label><small>Group Account </small></label><br />
-                                    <input type="text" id="groupacc" name="groupacc" required><br />
-                                    <label><small>Commision Type</small></label><br />
-                                    <select id="commitype" name="commitype"  style="width:230px; height:30px;">
-                                        <option value="Admin">Admin</option>
-                                        <option value="Coor">Coor</option>
-                                    </select>
-                                    <br />
-                                   <label><small>Back Pay Type</small></label><br />
-                                    <select id="bcommitype" name="bcommitype"  style="width:230px; height:30px;">
-                                        <option value="Admin">Admin</option>
-                                        <option value="Coor">Coor</option>
-                                    </select><br />
-                                    <label><small>Location</small></label><br />
-                                    <input type="text" id="loc" name="loc" required> <asp:Button runat="server" id="set" Text="set" Height="30px" Width="50px"/><br />
-                                    <input type="checkbox"><label><small>Local Game</small></label><br />
-                                </div>
-                                </div>
-                                <div class="row" >
-                                    <div class="col-5">
-                                        <br />
-                                        <asp:Button runat="server" id="viewton" Text="View" Height="40px" Width="500px"/>
+                                    <label style=" margin-top: 10px; margin-right:65px;"><small>Password</small></label>
+                                    <asp:TextBox ID="Password" Height="20px" ValidateRequestMode="Disabled" type="password" runat="server"  ></asp:TextBox><br />
+
+                                     <label style=" margin-top: 10px; margin-right:11px;"><small>Confirm Password</small></label>
+                                    <asp:TextBox ID="ConfirmPassword" Height="20px" ValidateRequestMode="Disabled" type="password" runat="server"  ></asp:TextBox><br />
+
+                                    <label style=" margin-top: 10px; margin-right:30px;"><small>Group Account </small></label>
+                                     <asp:TextBox ID="GroupAccount" Height="20px" ValidateRequestMode="Disabled" type="password" runat="server"  ></asp:TextBox><br />
+                                    <label style=" margin-top: 10px; margin-right:-10px;"><small>Commision Type</small></label>
+                                    <asp:DropDownList ID="CommisionType" Height="20px" CssClass="gameCodeDropDown" runat="server"></asp:DropDownList><br />
+                                    <label style=" margin-top: 10px; margin-right:7px;"><small>Back Pay Type</small></label>
+                                    <asp:DropDownList ID="BackPayType" Height="20px" CssClass="gameCodeDropDown" runat="server"></asp:DropDownList><br />
+                                    <label style=" margin-top: 10px; margin-right:70px;"><small>Location</small></label>
+                                    <asp:TextBox ID="Location" Height="20px" ValidateRequestMode="Disabled" type="password" runat="server"  ></asp:TextBox><asp:Button runat="server" id="setbutton"  Text="Set" CssClass="small-font clearbutton" Height="20px" Width="50px"/><br />
+                                    <asp:CheckBox ID="IsActive" CssClass="ActiveCheckbox" runat="server" /><label><small>Active</small></label><br />
                                     </div>
-                                    <div class="col-1">
-                                        <br />
-                                        <asp:Button runat="server" Text="New" Height="40px" Width="50px" />
-                                    </div>
-                                    <div class="col-1">
-                                        <br />
-                                        <asp:Button runat="server" Text="Edit" Height="40px" Width="50px" />
-                                    </div>
-                                    <div class="col-1">
-                                        <br />
-                                        <asp:Button runat="server" Text="Save" Height="40px" Width="50px" />
-                                    </div>
-                                    <div class="col-1">
-                                        <br />
-                                        <asp:Button runat="server" Text="Delete" Height="40px" Width="60px" />
-                                    </div>
-                                    <div class="col-1">
-                                        <br />
-                                        <asp:Button runat="server" Text="Cancel" Height="40px" Width="60px" />
+                                 <div style="margin-left:40px;margin-top:-10px;" class="row" >
+                                        <div class="col-6">
+                                            <br />
+
+                                        </div>
+                                        <div class="col-1">
+                                            <br />
+                                            <asp:Button runat="server" Text="New" Height="30px" Width="50px" />
+                                        </div>
+                                        <div class="col-1">
+                                            <br />
+                                            <asp:Button runat="server" Text="Edit" Height="30px" Width="50px" />
+                                        </div>
+                                        <div class="col-1">
+                                            <br />
+                                            <asp:Button runat="server" Text="Save" Height="30px" Width="50px" />
+                                        </div>
+                                        <div class="col-1">
+                                            <br />
+                                            <asp:Button runat="server" Text="Delete" Height="30px" Width="60px" />
+                                        </div>
+
                                     </div>
                                 </div>
-                 
                          </div>  
                    </div>
             </div>
