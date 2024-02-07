@@ -5,6 +5,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -33,34 +40,38 @@
                                 <div  class="col-4">
 
                                    <label style="margin-right:50px;"><small>Outlet Code</small></label>
-                                   <asp:TextBox ID="OutletCode" Height="20px" Width="300px" ValidateRequestMode="Disabled" type="text" runat="server" ></asp:TextBox><br />
+                                   <asp:TextBox ID="outletCode" Height="20px" Width="300px" ValidateRequestMode="Disabled" type="text" runat="server" ></asp:TextBox><br />
                                    <label style=" margin-top: 10px;margin-right:66px;"><small>Device ID</small></label>
-                                    <asp:TextBox ID="DeviceID" Height="20px" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><asp:Button runat="server" id="clear"  Text="clear" CssClass="small-font clearbutton" Height="20px" Width="50px"/><br />
+                                    <asp:TextBox ID="deviceID" Height="20px" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><asp:Button runat="server" id="clear"  Text="clear" CssClass="small-font clearbutton" Height="20px" Width="50px"/><br />
 
                                    <label style=" margin-top: 20px; margin-right:75px;"><small>Address</small></label>
-                                    <asp:TextBox ID="Address" Height="50px" Width="300px" TextMode="MultiLine" Rows="3" CssClass="paragraph-style no-resize" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><br />
+                                    <asp:TextBox ID="address" Height="50px" Width="300px" TextMode="MultiLine" Rows="3" CssClass="paragraph-style no-resize" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><br />
 
                                     <label style=" margin-top: 10px; margin-right:65px;"><small>Area</small></label>
-                                    <asp:DropDownList ID="AreaCode" Height="20px" CssClass="gameCodeDropDown" runat="server"></asp:DropDownList><br />
+                                    <asp:DropDownList ID="areaCode" Height="20px" CssClass="gameCodeDropDown" runat="server"></asp:DropDownList><br />
 
-                                   <label style=" margin-top: 10px; margin-right:25px;"><small>Mobile Number</small></label>
-                                    <asp:TextBox ID="MobileNumber" Height="20px" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><br />
+                                   <label style=" margin-top: 10px; margin-right:30px;"><small>Mobile Number</small></label>
+                                    <asp:TextBox ID="mobileNumber" Height="20px" ValidateRequestMode="Disabled" MaxLength="15" type="in" runat="server"  ></asp:TextBox><br />
 
                                     <label style=" margin-top: 10px; margin-right:65px;"><small>Password</small></label>
-                                    <asp:TextBox ID="Password" Height="20px" ValidateRequestMode="Disabled" type="password" runat="server"  ></asp:TextBox><br />
-
-                                     <label style=" margin-top: 10px; margin-right:11px;"><small>Confirm Password</small></label>
-                                    <asp:TextBox ID="ConfirmPassword" Height="20px" ValidateRequestMode="Disabled" type="password" runat="server"  ></asp:TextBox><br />
-
+                                    <div class="input-group" style="margin-left:125px; margin-top:-30px;">
+                                        
+                                        <asp:TextBox ID="password" Height="20px" ValidateRequestMode="Disabled" type="password" runat="server"  ></asp:TextBox><br />
+                                        <div class="input-group-append">
+                                            <button id="show_password" class="btn btn-outline-secondary" style="height:20px;width:auto;display: flex; align-items: center;justify-content: center;" type="button"><i class="fa-solid fa-eye"></i></button>
+                                        </div>
+                                    </div>
+                                     <label style=" margin-top: 10px; margin-right:16px;"><small>Confirm Password</small></label>
+                                    <asp:TextBox ID="confirmPassword" Height="20px" ValidateRequestMode="Disabled" type="password" runat="server"  ></asp:TextBox><br />
                                     <label style=" margin-top: 10px; margin-right:30px;"><small>Group Account </small></label>
-                                     <asp:TextBox ID="GroupAccount" Height="20px" ValidateRequestMode="Disabled" type="password" runat="server"  ></asp:TextBox><br />
+                                     <asp:TextBox ID="groupAccount" Height="20px" ValidateRequestMode="Disabled" type="password" runat="server"  ></asp:TextBox><br />
                                     <label style=" margin-top: 10px; margin-right:-10px;"><small>Commision Type</small></label>
-                                    <asp:DropDownList ID="CommisionType" Height="20px" CssClass="gameCodeDropDown" runat="server"></asp:DropDownList><br />
+                                    <asp:DropDownList ID="commisionType" Height="20px" CssClass="gameCodeDropDown" runat="server"></asp:DropDownList><br />
                                     <label style=" margin-top: 10px; margin-right:7px;"><small>Back Pay Type</small></label>
-                                    <asp:DropDownList ID="BackPayType" Height="20px" CssClass="gameCodeDropDown" runat="server"></asp:DropDownList><br />
+                                    <asp:DropDownList ID="backPayType" Height="20px" CssClass="gameCodeDropDown" runat="server"></asp:DropDownList><br />
                                     <label style=" margin-top: 10px; margin-right:70px;"><small>Location</small></label>
-                                    <asp:TextBox ID="Location" Height="20px" ValidateRequestMode="Disabled" type="password" runat="server"  ></asp:TextBox><asp:Button runat="server" id="setbutton"  Text="Set" CssClass="small-font clearbutton" Height="20px" Width="50px"/><br />
-                                    <asp:CheckBox ID="IsActive" CssClass="ActiveCheckbox" runat="server" /><label><small>Active</small></label><br />
+                                    <asp:TextBox ID="location" Height="20px" ValidateRequestMode="Disabled" type="password" runat="server"  ></asp:TextBox><asp:Button runat="server" id="setbutton"  Text="Set" CssClass="small-font clearbutton" Height="20px" Width="50px"/><br />
+                                    <asp:CheckBox ID="isActive" CssClass="ActiveCheckbox" runat="server" /><label><small>Active</small></label><br />
                                     </div>
                                  <div style="margin-left:40px;margin-top:-10px;" class="row" >
                                         <div class="col-6">
@@ -88,14 +99,15 @@
                                 </div>
                          </div>  
                    </div>
-            </div>
 
+</div>
     </form>
 </body>
 </html>
 <asp:PlaceHolder runat="server">
     <%: Scripts.Render("~/Scripts/bootstrap.js") %>
-    <%: Scripts.Render("~/Scripts/jquery-3.4.1.js") %>
+    <%: Scripts.Render("~/Scripts/bootstrap.bundle.js") %>    
+
 </asp:PlaceHolder>
 <script>
     if (window.devicePixelRatio === 1.5 && window.innerWidth === 2560 && window.innerHeight === 1440) {
@@ -106,4 +118,32 @@
         // If it is, set the zoom level of the document to 125%
         document.body.style.zoom = "125%";
     }
+    $(document).ready(function () {
+        $('#mobileNumber').keydown(function (e) {
+            var keyCode = (e.which) ? e.which : event.keyCode
+            if (keyCode > 31 && (keyCode < 48 || keyCode > 57))
+                return false;
+            return true;
+        });
+    });
+
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#show_password").click(function () {
+            var $this = $(this);
+            var icon = $this.find("i");
+            var input = $("#<%= password.ClientID %>");
+        if (input.attr("type") == "password") {
+            input.attr("type", "text");
+            icon.removeClass("fa-eye");
+            icon.addClass("fa-eye-slash");
+        } else {
+            input.attr("type", "password");
+            icon.removeClass("fa-eye-slash");
+            icon.addClass("fa-eye");
+        }
+    });
+});
+
 </script>
