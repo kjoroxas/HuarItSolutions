@@ -369,3 +369,10 @@ th, .aspNetTable th {
 .no-resize {
     resize: none; /* Disables the resize handle */
 }
+.field-icon {
+    float: right;
+    margin-left: -200px;
+    margin-top: -25px;
+
+    z-index: 2;
+}
