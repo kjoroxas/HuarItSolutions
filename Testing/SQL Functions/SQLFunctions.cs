@@ -267,5 +267,56 @@ namespace HuarITSolutions.Class
 
         }
 
+
+        public List<SalesRepresentative> getSalesRepresentatives(string gameCode)
+        {
+            List<SalesRepresentative> salesRepresentative = new List<SalesRepresentative>();
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand("Select * From fnControlledCombinations(@gamecode) Order by GameCode, Combination", conn);
+                command.Parameters.AddWithValue("@gamecode", gameCode);
+
+                try
+                {
+                    conn.Open();
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            SalesRepresentative salesRep = new SalesRepresentative();
+                            salesRep.UserID =reader[0].ToString();
+                            salesRep.UserName = reader[1].ToString();
+                            salesRep.DeviceId = Int32.Parse(reader[2].ToString());
+                            salesRep.Name = reader[3].ToString();
+                            salesRep.Address = reader[4].ToString();
+                            salesRep.Area = reader[5].ToString();
+                            salesRep.MobileNumber = Int32.Parse(reader[6].ToString());
+                            salesRep.MobileNumber2 = Int32.Parse(reader[7].ToString());
+                            salesRep.Role = reader[8].ToString();
+                            salesRep.PassWord = reader[9].ToString();
+                            salesRep.Coordinator = reader[10].ToString();
+                            salesRep.Active = Boolean.Parse(reader[11].ToString());
+                            salesRep.Latittude = reader[12].ToString();
+                            salesRep.Longitude = reader[13].ToString();
+                            salesRep.GroupAccount = Int32.Parse(reader[14].ToString());
+                            salesRep.CommissionType = reader[15].ToString();
+                            salesRep.BackPayType = reader[16].ToString();
+                            salesRep.Cluster = reader[17].ToString();
+
+
+                            salesRepresentative.Add(salesRep);
+                        }
+                        return salesRepresentative;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    return salesRepresentative;
+                }
+            }
+
+        }
+
     }
 }
