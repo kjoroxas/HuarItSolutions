@@ -12,42 +12,42 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <div class="card" style="width: 87rem; height:37rem;">
+            <div class="card" style="width: 106rem; height:44rem;">
               <div class="card-body">
-                               <h5 class="card-title"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path fill="currentColor" d="m12 1.148l6.16 9.602H5.84zm0 3.704L9.5 8.75h5zM2 13h9v9H2zm2 2v5h5v-5zm13.5 0a2.5 2.5 0 1 0 0 5a2.5 2.5 0 0 0 0-5M13 17.5a4.5 4.5 0 1 1 9 0a4.5 4.5 0 0 1-9 0"/></svg> Controlled Combinations</h5>
+                               <h5 class="subtitle"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path fill="currentColor" d="m12 1.148l6.16 9.602H5.84zm0 3.704L9.5 8.75h5zM2 13h9v9H2zm2 2v5h5v-5zm13.5 0a2.5 2.5 0 1 0 0 5a2.5 2.5 0 0 0 0-5M13 17.5a4.5 4.5 0 1 1 9 0a4.5 4.5 0 0 1-9 0"/></svg> Controlled Combinations</h5>
                 <div style="margin-left:1px;" class="row">
                     <div class="col-4">
-                        <label style="margin-left:30px; margin-top:3px;"><small>Game Code</small></label><br />
+                        <label class="subheader" style="margin-left:30px; margin-top:3px;"><small>Game Code</small></label><br />
                         <asp:DropDownList ID="gameCode" runat="server" AutoPostBack="true" CssClass="gameCodeDropDown" OnSelectedIndexChanged="gameCode_SelectedIndexChanged">
                             <asp:ListItem Value="0">Select Game Code</asp:ListItem>
                         </asp:DropDownList><br />
                     </div>
                     <div class="col-3">
-                        <label><small>Combination</small></label><br />
-                        <asp:TextBox ID="combination" ValidateRequestMode="Disabled" type="text" runat="server" ></asp:TextBox>
+                        <label class="subheader"><small>Combination</small></label><br />
+                        <asp:TextBox ID="combination" CssClass="textbox" ValidateRequestMode="Disabled" type="text" runat="server" ></asp:TextBox>
 
                     </div>
                     <div class="col-3">
-                        <label><small>Bet Limit</small></label><br />
-                        <asp:TextBox ID="bLimit" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox>
+                        <label class="subheader"><small>Bet Limit</small></label><br />
+                        <asp:TextBox ID="bLimit" CssClass="textbox" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox>
                     </div>
 
-                    <div class="col-1">
+                    <div class="col-2">
                         <br />
-                        <button type="button" class="btn btndesign" data-toggle="modal"  data-target="#confirmationmodal">
+                        <button type="button" class="btn btndesign" data-toggle="modal" style="font-size:18px;width:100px;" data-target="#confirmationmodal">
                         Save
                         </button>
                     </div>
 
                 </div>
-                <div  style="height:300px;">
+                <div  style="height:500px;">
                     <div class="row" style="margin-left:30px;margin-top:30px;  ">
                         <div class="scrollable-table2">
-                            <asp:Table ID="CombinationsTab" runat="server" Width="80%" HorizontalAlign="Left" CssClass="table table-bordered" >
+                            <asp:Table ID="CombinationsTab" runat="server" Width="80%"  HorizontalAlign="Left" CssClass="table table-bordered" style="font-size:20px;" >
                                    <asp:TableHeaderRow CssClass="aspNetTable">
-                                       <asp:TableHeaderCell><small>Game Code</small></asp:TableHeaderCell>
-                                       <asp:TableHeaderCell><small>Combination</small></asp:TableHeaderCell>
-                                       <asp:TableHeaderCell><small>Bet Limit</small></asp:TableHeaderCell>
+                                       <asp:TableHeaderCell>Game Code</asp:TableHeaderCell>
+                                       <asp:TableHeaderCell>Combination</asp:TableHeaderCell>
+                                       <asp:TableHeaderCell>Bet Limit</asp:TableHeaderCell>
                                    </asp:TableHeaderRow>
                                  <asp:TableRow >
 
@@ -88,16 +88,7 @@
     <%: Scripts.Render("~/Scripts/jquery-3.4.1.min.js") %>
     <%: Scripts.Render("~/Scripts/bootstrap.bundle.js") %>    
 </asp:PlaceHolder>
-<script>
-    if (window.devicePixelRatio === 1.5 && window.innerWidth === 2560 && window.innerHeight === 1440) {
-        // If it is, set the zoom level of the document to 83.33% (equivalent to 125%)
-        document.body.style.zoom = "83.33%";
-    }
-    if (window.devicePixelRatio === 1) {
-        // If it is, set the zoom level of the document to 125%
-        document.body.style.zoom = "125%";
-    }
-</script>   
+ 
 
 
 

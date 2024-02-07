@@ -30,7 +30,7 @@ namespace HuarITSolutions
 
             if (!this.IsPostBack)
             {
-                outletCode.Enabled = true;
+                outletCodetext.Enabled = true;
                 deviceID.Enabled = false;
                 address.Enabled = false;
                 areaCode.Enabled = false;
@@ -91,7 +91,7 @@ namespace HuarITSolutions
 
             {
                 //  JavaScript function to enable the TextBox
-                outletCode.Enabled = true;
+                outletCodetext.Enabled = true;
                 deviceID.Enabled = true;
                 address.Enabled = true;
                 areaCode.Enabled = true;
@@ -108,7 +108,7 @@ namespace HuarITSolutions
                 var gameDetails = listOfSales.FirstOrDefault(x => x.UserName == selectedGameCode);
 
                 // Populate the TextBoxes
-                outletCode.Text = gameDetails.UserName;
+                outletCodetext.Text = gameDetails.UserName;
                 deviceID.Text = gameDetails.DeviceId.ToString();
                 address.Text = gameDetails.Address;
                 areaCode.Text = gameDetails.Area;
@@ -125,7 +125,7 @@ namespace HuarITSolutions
             else
             {
                 // JavaScript function to disable the TextBox
-                outletCode.Enabled = false;
+                outletCodetext.Enabled = false;
                 deviceID.Enabled = false;
                 address.Enabled = false;
                 areaCode.Enabled = false;
@@ -137,7 +137,7 @@ namespace HuarITSolutions
                 location.Enabled = false;
                 confirmPassword.Enabled = false;
 
-                outletCode.Text = "";
+                outletCodetext.Text = "";
                 deviceID.Text = "";
                 address.Text = "";
                 areaCode.Text = "";

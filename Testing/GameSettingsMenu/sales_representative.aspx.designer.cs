@@ -24,6 +24,15 @@ namespace HuarITSolutions
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// outletCode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList outletCode;
+
+        /// <summary>
         /// activeGame control.
         /// </summary>
         /// <remarks>
@@ -33,13 +42,13 @@ namespace HuarITSolutions
         protected global::System.Web.UI.WebControls.Table activeGame;
 
         /// <summary>
-        /// outletCode control.
+        /// outletCodetext control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList outletCode;
+        protected global::System.Web.UI.WebControls.TextBox outletCodetext;
 
         /// <summary>
         /// deviceID control.
