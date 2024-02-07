@@ -33,22 +33,22 @@ namespace HuarITSolutions.GameSettingsMenu
         protected global::System.Web.UI.WebControls.Table activegame;
 
         /// <summary>
-        /// OutletCode control.
+        /// outletCode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox OutletCode;
+        protected global::System.Web.UI.WebControls.TextBox outletCode;
 
         /// <summary>
-        /// DeviceID control.
+        /// deviceID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox DeviceID;
+        protected global::System.Web.UI.WebControls.TextBox deviceID;
 
         /// <summary>
         /// clear control.
@@ -60,85 +60,85 @@ namespace HuarITSolutions.GameSettingsMenu
         protected global::System.Web.UI.WebControls.Button clear;
 
         /// <summary>
-        /// Address control.
+        /// address control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Address;
+        protected global::System.Web.UI.WebControls.TextBox address;
 
         /// <summary>
-        /// AreaCode control.
+        /// areaCode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList AreaCode;
+        protected global::System.Web.UI.WebControls.DropDownList areaCode;
 
         /// <summary>
-        /// MobileNumber control.
+        /// mobileNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox MobileNumber;
+        protected global::System.Web.UI.WebControls.TextBox mobileNumber;
 
         /// <summary>
-        /// Password control.
+        /// password control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Password;
+        protected global::System.Web.UI.WebControls.TextBox password;
 
         /// <summary>
-        /// ConfirmPassword control.
+        /// confirmPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ConfirmPassword;
+        protected global::System.Web.UI.WebControls.TextBox confirmPassword;
 
         /// <summary>
-        /// GroupAccount control.
+        /// groupAccount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox GroupAccount;
+        protected global::System.Web.UI.WebControls.TextBox groupAccount;
 
         /// <summary>
-        /// CommisionType control.
+        /// commisionType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList CommisionType;
+        protected global::System.Web.UI.WebControls.DropDownList commisionType;
 
         /// <summary>
-        /// BackPayType control.
+        /// backPayType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList BackPayType;
+        protected global::System.Web.UI.WebControls.DropDownList backPayType;
 
         /// <summary>
-        /// Location control.
+        /// location control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Location;
+        protected global::System.Web.UI.WebControls.TextBox location;
 
         /// <summary>
         /// setbutton control.
@@ -150,12 +150,12 @@ namespace HuarITSolutions.GameSettingsMenu
         protected global::System.Web.UI.WebControls.Button setbutton;
 
         /// <summary>
-        /// IsActive control.
+        /// isActive control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox IsActive;
+        protected global::System.Web.UI.WebControls.CheckBox isActive;
     }
 }
