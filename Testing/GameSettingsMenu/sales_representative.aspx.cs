@@ -29,20 +29,7 @@ namespace HuarITSolutions
             listOfSales = sqlFunctions.getSalesRepresentatives();
 
             if (!this.IsPostBack)
-            {
-                outletCode.Enabled = true;
-                deviceID.Enabled = false;
-                address.Enabled = false;
-                areaCode.Enabled = false;
-                mobileNumber.Enabled = false;
-                password.Enabled = false;
-                groupAccount.Enabled = false;
-                commisionType.Enabled = false;
-                backPayType.Enabled = false;
-                location.Enabled = false;
-                confirmPassword.Enabled = false;
-
-            }
+                defaultStateBtn();
 
             foreach (var game in listOfSales)
             {
@@ -68,6 +55,13 @@ namespace HuarITSolutions
 
         protected void outletCode_SelectedIndexChanged(object sender, EventArgs e)
         {
+            deleteBtn.Visible = true;
+            newBtn.Visible = false;
+            editBtn.Visible = true;
+            cancelBtn.Visible = true; 
+            outletCode.Visible = true;
+            outletCodeText.Visible = false;
+            outletCodeLabel.Visible = false;
             // Get the DropDownList 
             var ddl = (DropDownList)sender;
 
@@ -93,12 +87,13 @@ namespace HuarITSolutions
                 //  JavaScript function to enable the TextBox
                 outletCode.Enabled = true;
                 deviceID.Enabled = true;
+                fullName.Enabled = true;
                 address.Enabled = true;
                 areaCode.Enabled = true;
                 mobileNumber.Enabled = true;
                 password.Enabled = true;
                 groupAccount.Enabled = true;
-                commisionType.Enabled = true;
+                commissionType.Enabled = true;
                 backPayType.Enabled = true;
                 location.Enabled = true;
                 confirmPassword.Enabled = true;
@@ -110,13 +105,14 @@ namespace HuarITSolutions
                 // Populate the TextBoxes
                 outletCode.Text = gameDetails.UserName;
                 deviceID.Text = gameDetails.DeviceId.ToString();
+                fullName.Text = gameDetails.Name.ToString();
                 address.Text = gameDetails.Address;
                 areaCode.Text = gameDetails.Area;
                 mobileNumber.Text = gameDetails.MobileNumber.ToString();
                 password.Text = gameDetails.PassWord.ToString();
                 confirmPassword.Text = gameDetails.PassWord.ToString();
                 groupAccount.Text = gameDetails.GroupAccount.ToString();
-                commisionType.Text = gameDetails.CommissionType.ToString();
+                commissionType.Text = gameDetails.CommissionType.ToString();
                 backPayType.Text = gameDetails.BackPayType.ToString();
                 location.Text = gameDetails.Cluster.ToString();
 
@@ -127,28 +123,113 @@ namespace HuarITSolutions
                 // JavaScript function to disable the TextBox
                 outletCode.Enabled = false;
                 deviceID.Enabled = false;
+                fullName.Enabled = false;
                 address.Enabled = false;
                 areaCode.Enabled = false;
                 mobileNumber.Enabled = false;
                 password.Enabled = false;
                 groupAccount.Enabled = false;
-                commisionType.Enabled = false;
+                commissionType.Enabled = false;
                 backPayType.Enabled = false;
                 location.Enabled = false;
                 confirmPassword.Enabled = false;
 
                 outletCode.Text = "";
                 deviceID.Text = "";
+                fullName.Text = "";
                 address.Text = "";
                 areaCode.Text = "";
                 mobileNumber.Text = "";
                 password.Text = "";
                 confirmPassword.Text = "";
                 groupAccount.Text = "";
-                commisionType.Text = "";
+                commissionType.Text = "";
                 backPayType.Text = "";
                 location.Text = "";
             }
+        }
+        protected void newBtnClick(object sender, EventArgs e)
+        {
+            outletCode.Visible = false;
+            outletCodeText.Visible = true;
+            outletCodeLabel.Visible = true;
+            cancelBtn.Visible = true;
+            editBtn.Visible = false;
+            deleteBtn.Visible = false;
+            newBtn.Visible = false;
+            saveBtn.Visible = true;
+
+            outletCode.Enabled = true;
+            deviceID.Enabled = true;
+            fullName.Enabled = true;
+            address.Enabled = true;
+            areaCode.Enabled = true;
+            mobileNumber.Enabled = true;
+            password.Enabled = true;
+            groupAccount.Enabled = true;
+            commissionType.Enabled = true;
+            backPayType.Enabled = true;
+            location.Enabled = true;
+            confirmPassword.Enabled = true;
+        }
+        protected void saveBtnClick(object sender, EventArgs e)
+        {
+            sqlFunctions.saveSalesRepresentatives(outletCode.Text, fullName.Text, address.Text, areaCode.Text, mobileNumber.Text, password.Text,
+                 isActive.Checked, groupAccount.Text, commissionType.Text, backPayType.Text, 1, location.Text);
+        }
+        protected void editBtnClick(object sender, EventArgs e)
+        {
+            sqlFunctions.saveSalesRepresentatives(outletCode.Text, fullName.Text, address.Text, areaCode.Text, mobileNumber.Text, password.Text,
+                isActive.Checked, groupAccount.Text, commissionType.Text, backPayType.Text, 2, location.Text);
+        }
+        //protected void saveBtn(object sender, EventArgs e)
+        //{
+        //    sqlFunctions.saveSalesRepresentatives(outletCode.Text, fullName.Text, address.Text, areaCode.Text, mobileNumber.Text, password.Text, isActive.Checked, groupAccount.Text, commissionType.Text, backPayType.Text, 1, location.Text)
+        //}
+        protected void deleteBtnClick(object sender, EventArgs e)
+        {
+            sqlFunctions.deleteSalesRepresentatives(outletCode.Text);
+        }
+        protected void cancelBtnClick(object sender, EventArgs e)
+        {
+            defaultStateBtn();
+        }
+
+        private void defaultStateBtn()
+        {
+            newBtn.Visible = true;
+            saveBtn.Visible = false;
+            editBtn.Visible = false;
+            deleteBtn.Visible = false;
+            outletCode.Visible = true;
+            outletCodeText.Visible = false;
+            outletCodeLabel.Visible = false;
+            cancelBtn.Visible = false;
+            outletCode.Enabled = true;
+            deviceID.Enabled = false;
+            fullName.Enabled = false;
+            address.Enabled = false;
+            areaCode.Enabled = false;
+            mobileNumber.Enabled = false;
+            password.Enabled = false;
+            groupAccount.Enabled = false;
+            commissionType.Enabled = false;
+            backPayType.Enabled = false;
+            location.Enabled = false;
+            confirmPassword.Enabled = false;
+
+            //outletCode.Text = "";
+            deviceID.Text = "";
+            fullName.Text = "";
+            address.Text = "";
+            areaCode.Text = "";
+            mobileNumber.Text = "";
+            password.Text = "";
+            confirmPassword.Text = "";
+            groupAccount.Text = "";
+            commissionType.Text = "";
+            backPayType.Text = "";
+            location.Text = "";
         }
 
     }
