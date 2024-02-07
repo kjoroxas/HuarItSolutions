@@ -9,7 +9,7 @@
                         <div class="row mx-auto" >
 
                         <!-- Circular Buttons -->
-                        <div class="col-2">
+                        <div class="col-2 ">
 
                             <asp:Button runat="server" CssClass="filebutton" OnClick="Filesredirectiom" />
                                 <h6 class="catalogtext6">Game Settings </h6>

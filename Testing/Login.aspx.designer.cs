@@ -15,15 +15,6 @@ namespace HuarITSolutions
     {
 
         /// <summary>
-        /// emailfield control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox emailfield;
-
-        /// <summary>
         /// emailVaildator control.
         /// </summary>
         /// <remarks>
@@ -31,6 +22,15 @@ namespace HuarITSolutions
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CustomValidator emailVaildator;
+
+        /// <summary>
+        /// emailfield control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox emailfield;
 
         /// <summary>
         /// passfield control.
