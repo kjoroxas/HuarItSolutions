@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="controlled_combinations.aspx.cs" Inherits="HuarITSolutions.combinations" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="controlled_combinations.aspx.cs" Inherits="HuarITSolutions.Combinations" %>
 <webopt:bundlereference runat="server" path="~/Content/css" />
 <!DOCTYPE html>
 

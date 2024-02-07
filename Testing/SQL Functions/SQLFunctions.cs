@@ -4,9 +4,13 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net;
+using System.Reflection;
 using System.Web;
+using Antlr.Runtime.Misc;
+using System.Xml.Linq;
 using HuarITSolutions.Model;
-using HuarITSolutions.Model;
+using WebGrease.Css.Ast;
 
 namespace HuarITSolutions.Class
 {
@@ -14,9 +18,9 @@ namespace HuarITSolutions.Class
     {
         string connectionString = ConfigurationManager.ConnectionStrings["DBConnectionString"].ConnectionString;
 
-        public List<ApprovedGames> getApprovedGames()
+        public List<ApprovedGamesModel> getApprovedGames()
         {
-            List<ApprovedGames> _appGames = new List<ApprovedGames>();
+            List<ApprovedGamesModel> _appGames = new List<ApprovedGamesModel>();
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -30,7 +34,7 @@ namespace HuarITSolutions.Class
 
                         while (reader.Read())
                         {
-                            ApprovedGames chart = new ApprovedGames();
+                            ApprovedGamesModel chart = new ApprovedGamesModel();
                             chart.Id = int.Parse(reader[0].ToString());
                             chart.GameCode = reader[1].ToString();
                             chart.PrintDescription = reader[2].ToString();
@@ -196,9 +200,9 @@ namespace HuarITSolutions.Class
             }
         }
 
-        public List<ControlledCombinations> getControlledCombinations(string gameCode)
+        public List<ControlledCombinationsModel> getControlledCombinations(string gameCode)
         {
-            List<ControlledCombinations> controlledCombi = new List<ControlledCombinations>();
+            List<ControlledCombinationsModel> controlledCombi = new List<ControlledCombinationsModel>();
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -212,7 +216,7 @@ namespace HuarITSolutions.Class
                     {
                         while (reader.Read())
                         {
-                            ControlledCombinations cCOmbi = new ControlledCombinations();
+                            ControlledCombinationsModel cCOmbi = new ControlledCombinationsModel();
                             cCOmbi.Id = int.Parse(reader[0].ToString());
                             cCOmbi.GameCode = reader[1].ToString();
                             cCOmbi.Combination = reader[2].ToString();
@@ -232,9 +236,9 @@ namespace HuarITSolutions.Class
 
         }
 
-        public List<LowWinningCombinations> getLowWinningCombinations(string gameCode)
+        public List<LowWinningCombinationsModel> getLowWinningCombinations(string gameCode)
         {
-            List<LowWinningCombinations> controlledCombi = new List<LowWinningCombinations>();
+            List<LowWinningCombinationsModel> controlledCombi = new List<LowWinningCombinationsModel>();
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -248,7 +252,7 @@ namespace HuarITSolutions.Class
                     {
                         while (reader.Read())
                         {
-                            LowWinningCombinations cCOmbi = new LowWinningCombinations();
+                            LowWinningCombinationsModel cCOmbi = new LowWinningCombinationsModel();
                             cCOmbi.Id = int.Parse(reader[0].ToString());
                             cCOmbi.GameCode = reader[1].ToString();
                             cCOmbi.Combination = reader[2].ToString();
@@ -267,15 +271,13 @@ namespace HuarITSolutions.Class
 
         }
 
-
-        public List<SalesRepresentative> getSalesRepresentatives(string gameCode)
+        public List<SalesRepresentativeModel> getSalesRepresentatives()
         {
-            List<SalesRepresentative> salesRepresentative = new List<SalesRepresentative>();
+            List<SalesRepresentativeModel> salesRepresentative = new List<SalesRepresentativeModel>();
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                SqlCommand command = new SqlCommand("Select * From fnControlledCombinations(@gamecode) Order by GameCode, Combination", conn);
-                command.Parameters.AddWithValue("@gamecode", gameCode);
+                SqlCommand command = new SqlCommand("Select * From fnSalesRepresentatives()", conn);
 
                 try
                 {
@@ -284,21 +286,21 @@ namespace HuarITSolutions.Class
                     {
                         while (reader.Read())
                         {
-                            SalesRepresentative salesRep = new SalesRepresentative();
+                            SalesRepresentativeModel salesRep = new SalesRepresentativeModel();
                             salesRep.UserID =reader[0].ToString();
                             salesRep.UserName = reader[1].ToString();
-                            salesRep.DeviceId = Int32.Parse(reader[2].ToString());
+                            salesRep.DeviceId = reader[2] == DBNull.Value ? 0 : Int32.Parse(reader[2].ToString());
                             salesRep.Name = reader[3].ToString();
                             salesRep.Address = reader[4].ToString();
                             salesRep.Area = reader[5].ToString();
-                            salesRep.MobileNumber = Int32.Parse(reader[6].ToString());
-                            salesRep.MobileNumber2 = Int32.Parse(reader[7].ToString());
-                            salesRep.Role = reader[8].ToString();
+                            salesRep.MobileNumber = reader[6] == DBNull.Value ? "" : reader[6].ToString();
+                            salesRep.MobileNumber2 = reader[7] == DBNull.Value ? "" : reader[7].ToString();
+                            salesRep.Role = reader[7] == DBNull.Value ? "" : reader[8].ToString();
                             salesRep.PassWord = reader[9].ToString();
-                            salesRep.Coordinator = reader[10].ToString();
-                            salesRep.Active = Boolean.Parse(reader[11].ToString());
-                            salesRep.Latittude = reader[12].ToString();
-                            salesRep.Longitude = reader[13].ToString();
+                            salesRep.Coordinator = reader[10] == DBNull.Value ? "" : reader[10].ToString();
+                            salesRep.Active = Convert.ToBoolean(reader[11]);
+                            salesRep.Latittude = reader[12] == DBNull.Value ? "" : reader[12].ToString();
+                            salesRep.Longitude = reader[13] == DBNull.Value ? "" : reader[13].ToString();
                             salesRep.GroupAccount = Int32.Parse(reader[14].ToString());
                             salesRep.CommissionType = reader[15].ToString();
                             salesRep.BackPayType = reader[16].ToString();
@@ -315,7 +317,60 @@ namespace HuarITSolutions.Class
                     return salesRepresentative;
                 }
             }
+        }
+        public void saveSalesRepresentatives(string username, string name, string address, string area, string mobileNumber, string password, bool active, string groupAccount, string commissionType, string backPayType, int counter, string cluster)
+        {
+            var storedProcName = "spSave_SalesRep";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    using (SqlCommand command = new SqlCommand(storedProcName, conn))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
 
+                        command.Parameters.Add("@UserName", SqlDbType.VarChar).Value = username;
+                        command.Parameters.Add("@Name", SqlDbType.VarChar).Value = name;
+                        command.Parameters.Add("@Address", SqlDbType.VarChar).Value = address;
+                        command.Parameters.Add("@Area", SqlDbType.VarChar).Value = area;
+                        command.Parameters.Add("@MobileNumber", SqlDbType.VarChar).Value = mobileNumber;
+                        command.Parameters.Add("@PassWord", SqlDbType.VarChar).Value = password;
+                        command.Parameters.Add("@Active", SqlDbType.VarChar).Value = active;
+                        command.Parameters.Add("@GroupAccount", SqlDbType.VarChar).Value = groupAccount;
+                        command.Parameters.Add("@CommissionType", SqlDbType.VarChar).Value = commissionType;
+                        command.Parameters.Add("@BackPayType", SqlDbType.VarChar).Value = backPayType;
+                        command.Parameters.Add("@Counter", SqlDbType.VarChar).Value = counter;
+                        command.Parameters.Add("@Cluster", SqlDbType.VarChar).Value = cluster;
+                        conn.Open();
+                        command.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                }
+            }
+        }
+        public void deleteSalesRepresentatives(string outletCode)
+        {
+            var storedProcName = "spDelete_SalesRep";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    using (SqlCommand command = new SqlCommand(storedProcName, conn))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        command.Parameters.Add("@OutletCode", SqlDbType.VarChar).Value = outletCode;
+                        conn.Open();
+                        command.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                }
+            }
         }
 
     }

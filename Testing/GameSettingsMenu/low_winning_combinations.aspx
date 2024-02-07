@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="low_winning_combinations.aspx.cs" Inherits="HuarITSolutions.GameSettingsMenu.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="low_winning_combinations.aspx.cs" Inherits="HuarITSolutions.LowWinning" %>
 <webopt:bundlereference runat="server" path="~/Content/css" />
 <!DOCTYPE html>
 

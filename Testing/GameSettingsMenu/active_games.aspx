@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="active_games.aspx.cs" Inherits="HuarITSolutions.active2" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="active_games.aspx.cs" Inherits="HuarITSolutions.Active" %>
 <webopt:bundlereference runat="server" path="~/Content/css" />
 <!DOCTYPE html>
 

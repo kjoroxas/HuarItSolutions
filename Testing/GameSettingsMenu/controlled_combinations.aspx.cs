@@ -12,11 +12,11 @@ using WebGrease.Css.Ast;
 
 namespace HuarITSolutions
 {
-    public partial class combinations : System.Web.UI.Page
+    public partial class Combinations : System.Web.UI.Page
     {
         public static SQLFunctions sqlFunctions = new SQLFunctions();
-        List<ApprovedGames> listOfApprovedGames = new List<ApprovedGames>();
-        List<ControlledCombinations> listofControlledCombinations = new List<ControlledCombinations>();
+        List<ApprovedGamesModel> listOfApprovedGames = new List<ApprovedGamesModel>();
+        List<ControlledCombinationsModel> listofControlledCombinations = new List<ControlledCombinationsModel>();
 
 
         protected string selectedGame;

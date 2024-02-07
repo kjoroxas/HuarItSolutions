@@ -2,27 +2,19 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
 using System.Linq;
-using System.Web;
-using System.Web.Script.Serialization;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using HuarITSolutions.Class;
 using HuarITSolutions.Model;
-using System.Reflection.Emit;
-using Antlr.Runtime.Tree;
 
 
 namespace HuarITSolutions
 {    
-    public partial class active2 : Page
+    public partial class Active : Page
     {
         public static SQLFunctions sqlFunctions = new SQLFunctions();
-        List<ApprovedGames> listOfApprovedGames = new List<ApprovedGames>();
+        List<ApprovedGamesModel> listOfApprovedGames = new List<ApprovedGamesModel>();
         protected string selectedGameId;
         protected void Page_Init(object sender, EventArgs e)
         {
@@ -33,7 +25,6 @@ namespace HuarITSolutions
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-
             if (!this.IsPostBack)
             {
                 gameCode.Enabled = false;

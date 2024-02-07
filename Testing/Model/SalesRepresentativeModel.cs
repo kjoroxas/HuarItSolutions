@@ -5,7 +5,7 @@ using System.Web;
 
 namespace HuarITSolutions.Model
 {
-    public class SalesRepresentative
+    public class SalesRepresentativeModel
     {
         public string UserID { get; set; } 
         public string UserName { get; set; }
@@ -13,8 +13,8 @@ namespace HuarITSolutions.Model
         public string Name { get; set; }
         public string Address { get; set; }
         public string Area { get; set; }
-        public int MobileNumber { get; set; }
-        public int? MobileNumber2 { get; set; }
+        public string MobileNumber { get; set; }
+        public string MobileNumber2 { get; set; }
         public string Role { get; set; }
         public string PassWord { get; set; }
         public string Coordinator { get; set; }

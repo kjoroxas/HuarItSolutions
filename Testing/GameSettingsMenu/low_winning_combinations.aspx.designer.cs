@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HuarITSolutions.GameSettingsMenu
+namespace HuarITSolutions
 {
 
 
-    public partial class WebForm1
+    public partial class LowWinning
     {
 
         /// <summary>

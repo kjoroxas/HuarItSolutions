@@ -213,10 +213,11 @@
     <Compile Include="Logout.aspx.designer.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Model\ControlledCombinations.cs" />
-    <Compile Include="Model\LowWinningCombinations.cs" />
+    <Compile Include="Model\ControlledCombinationsModel.cs" />
+    <Compile Include="Model\LowWinningCombinationsModel.cs" />
+    <Compile Include="Model\SalesRepresentativeModel.cs" />
     <Compile Include="SQL Functions\SQLFunctions.cs" />
-    <Compile Include="Model\ApprovedGames.cs" />
+    <Compile Include="Model\ApprovedGamesModel.cs" />
     <Compile Include="GameSettingsMenu\controlled_combinations.aspx.cs">
       <DependentUpon>controlled_combinations.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

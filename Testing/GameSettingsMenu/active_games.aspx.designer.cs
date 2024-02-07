@@ -11,7 +11,7 @@ namespace HuarITSolutions
 {
 
 
-    public partial class active2
+    public partial class Active
     {
 
         /// <summary>

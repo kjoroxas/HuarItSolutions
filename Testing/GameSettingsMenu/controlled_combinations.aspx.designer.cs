@@ -11,7 +11,7 @@ namespace HuarITSolutions
 {
 
 
-    public partial class combinations
+    public partial class Combinations
     {
 
         /// <summary>

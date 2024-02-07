@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="sales_representative.aspx.cs" Inherits="HuarITSolutions.GameSettingsMenu.WebForm2" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="sales_representative.aspx.cs" Inherits="HuarITSolutions.SalesRepresentative" %>
 <webopt:bundlereference runat="server" path="~/Content/css" />
 <!DOCTYPE html>
 
@@ -14,7 +14,7 @@
                          <h5 class="card-title"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><g fill="currentColor"><rect width="5" height="18" x="16" y="3" rx="2"/><rect width="5" height="12" x="9.5" y="9" rx="2"/><rect width="5" height="5" x="3" y="16" rx="2"/></g></svg> Sales Representative</h5>
                              <div style="margin-left:40px;" class="row" id="firstrow">
                                  <div class="col-6 ">
-                                       <asp:Table ID="activegame" runat="server" Width="70%" HorizontalAlign="Left" CssClass="table table-bordered">
+                                       <asp:Table ID="activeGame" runat="server" Width="70%" HorizontalAlign="Left" CssClass="table table-bordered">
                                            <asp:TableHeaderRow>
                                                <asp:TableHeaderCell>Outlet Code</asp:TableHeaderCell>
                                                <asp:TableHeaderCell>Name</asp:TableHeaderCell>
@@ -32,35 +32,43 @@
                                    </div>
                                 <div  class="col-4">
 
+                                   <asp:DropDownList ID="outletCode" OnSelectedIndexChanged="outletCode_SelectedIndexChanged" CssClass="gameCodeDropDown2" runat="server" AutoPostBack="true">
+                                       <asp:ListItem Value="0">Select Game Code</asp:ListItem>
+                                   </asp:DropDownList><br />
                                    <label style="margin-right:50px;"><small>Outlet Code</small></label>
-                                   <asp:TextBox ID="OutletCode" Height="20px" Width="300px" ValidateRequestMode="Disabled" type="text" runat="server" ></asp:TextBox><br />
-                                   <label style=" margin-top: 10px;margin-right:66px;"><small>Device ID</small></label>
-                                    <asp:TextBox ID="DeviceID" Height="20px" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><asp:Button runat="server" id="clear"  Text="clear" CssClass="small-font clearbutton" Height="20px" Width="50px"/><br />
 
-                                   <label style=" margin-top: 20px; margin-right:75px;"><small>Address</small></label>
-                                    <asp:TextBox ID="Address" Height="50px" Width="300px" TextMode="MultiLine" Rows="3" CssClass="paragraph-style no-resize" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><br />
+                                   <%--<asp:TextBox ID="OutletCode" Height="20px" Width="300px" ValidateRequestMode="Disabled" type="text" runat="server" ></asp:TextBox><br />--%>
+                                   <label style=" margin-top: 10px;margin-right:66px;"><small>Device ID</small></label>
+                                    <asp:TextBox ID="deviceID" Height="20px" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><asp:Button runat="server" id="clear"  Text="clear" CssClass="small-font clearbutton" Height="20px" Width="50px"/><br />
+                                   
+                                    <label style=" margin-top: 20px; margin-right:75px;"><small>Address</small></label>
+                                    <asp:TextBox ID="address" Height="50px" Width="300px" TextMode="MultiLine" Rows="3" CssClass="paragraph-style no-resize" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><br />
 
                                     <label style=" margin-top: 10px; margin-right:65px;"><small>Area</small></label>
-                                    <asp:DropDownList ID="AreaCode" Height="20px" CssClass="gameCodeDropDown" runat="server"></asp:DropDownList><br />
+                                    <asp:DropDownList ID="areaCode" Height="20px" CssClass="gameCodeDropDown" runat="server"></asp:DropDownList><br />
 
                                    <label style=" margin-top: 10px; margin-right:25px;"><small>Mobile Number</small></label>
-                                    <asp:TextBox ID="MobileNumber" Height="20px" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><br />
+                                    <asp:TextBox ID="mobileNumber" Height="20px" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><br />
 
                                     <label style=" margin-top: 10px; margin-right:65px;"><small>Password</small></label>
-                                    <asp:TextBox ID="Password" Height="20px" ValidateRequestMode="Disabled" type="password" runat="server"  ></asp:TextBox><br />
+                                    <asp:TextBox ID="password" Height="20px" ValidateRequestMode="Disabled" type="password" runat="server"  ></asp:TextBox><br />
 
                                      <label style=" margin-top: 10px; margin-right:11px;"><small>Confirm Password</small></label>
-                                    <asp:TextBox ID="ConfirmPassword" Height="20px" ValidateRequestMode="Disabled" type="password" runat="server"  ></asp:TextBox><br />
+                                    <asp:TextBox ID="confirmPassword" Height="20px" ValidateRequestMode="Disabled" type="password" runat="server"  ></asp:TextBox><br />
 
                                     <label style=" margin-top: 10px; margin-right:30px;"><small>Group Account </small></label>
-                                     <asp:TextBox ID="GroupAccount" Height="20px" ValidateRequestMode="Disabled" type="password" runat="server"  ></asp:TextBox><br />
+                                     <asp:TextBox ID="groupAccount" Height="20px" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><br />
+
                                     <label style=" margin-top: 10px; margin-right:-10px;"><small>Commision Type</small></label>
-                                    <asp:DropDownList ID="CommisionType" Height="20px" CssClass="gameCodeDropDown" runat="server"></asp:DropDownList><br />
+                                    <asp:DropDownList ID="commisionType" Height="20px" CssClass="gameCodeDropDown" runat="server"></asp:DropDownList><br />
+
                                     <label style=" margin-top: 10px; margin-right:7px;"><small>Back Pay Type</small></label>
-                                    <asp:DropDownList ID="BackPayType" Height="20px" CssClass="gameCodeDropDown" runat="server"></asp:DropDownList><br />
+                                    <asp:DropDownList ID="backPayType" Height="20px" CssClass="gameCodeDropDown" runat="server"></asp:DropDownList><br />
+
                                     <label style=" margin-top: 10px; margin-right:70px;"><small>Location</small></label>
-                                    <asp:TextBox ID="Location" Height="20px" ValidateRequestMode="Disabled" type="password" runat="server"  ></asp:TextBox><asp:Button runat="server" id="setbutton"  Text="Set" CssClass="small-font clearbutton" Height="20px" Width="50px"/><br />
-                                    <asp:CheckBox ID="IsActive" CssClass="ActiveCheckbox" runat="server" /><label><small>Active</small></label><br />
+                                    <asp:TextBox ID="location" Height="20px" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><asp:Button runat="server" id="setbutton"  Text="Set" CssClass="small-font clearbutton" Height="20px" Width="50px"/><br />
+                                    
+                                    <asp:CheckBox ID="isActive" CssClass="ActiveCheckbox" runat="server" /><label><small>Active</small></label><br />
                                     </div>
                                  <div style="margin-left:40px;margin-top:-10px;" class="row" >
                                         <div class="col-6">

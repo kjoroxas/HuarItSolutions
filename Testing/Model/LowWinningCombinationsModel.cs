@@ -5,7 +5,7 @@ using System.Web;
 
 namespace HuarITSolutions.Model
 {
-    public class LowWinningCombinations
+    public class LowWinningCombinationsModel
     {
         public int Id { get; set; }
         public string GameCode { get; set; }

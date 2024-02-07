@@ -8,13 +8,13 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using WebGrease.Css.Ast;
 
-namespace HuarITSolutions.GameSettingsMenu
+namespace HuarITSolutions
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class LowWinning : System.Web.UI.Page
     {
         public static SQLFunctions sqlFunctions = new SQLFunctions();
-        List<ApprovedGames> listOfApprovedGames = new List<ApprovedGames>();
-        List<LowWinningCombinations> listLowWinningCombinations = new List<LowWinningCombinations>();
+        List<ApprovedGamesModel> listOfApprovedGames = new List<ApprovedGamesModel>();
+        List<LowWinningCombinationsModel> listLowWinningCombinations = new List<LowWinningCombinationsModel>();
 
         protected string selectedGame; protected void Page_Init(object sender, EventArgs e)
         {
