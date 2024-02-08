@@ -22,7 +22,7 @@
                              <div style="margin-left:40px;" class="row" id="firstrow">
                                  <div class="col-6 ">
                                    <asp:DropDownList ID="outletCode" OnSelectedIndexChanged="outletCode_SelectedIndexChanged" CssClass="gameCodeDropDown2" runat="server" AutoPostBack="true">
-                                       <asp:ListItem Value="0">Select Game Code1</asp:ListItem>
+                                       <asp:ListItem Value="0">Select Game Code</asp:ListItem>
                                    </asp:DropDownList><br />   
                                        
                                      <asp:Table ID="activeGame" runat="server" Width="70%" HorizontalAlign="Left" CssClass="table table-bordered">
@@ -41,26 +41,26 @@
                                    </div>
                                 <div  class="col-4">
 
-                                    <asp:Label ID="outletCodeLabel1" Text="Outlet Code" AssociatedControlID="outletCodeText" EnableViewState="false" runat="server">
-                                        <asp:TextBox ID="outletCodeTextBox" CssClass="textbox2"  ValidateRequestMode="Disabled" type="text" runat="server" />
+                                    <asp:Label ID="outletCodeLabel1" Text="Outlet Code"  CssClassAssociatedControlID="outletCodeText" EnableViewState="false" runat="server">
+                                        <asp:TextBox ID="outletCodeTextBox" CssClass="textbox3"  ValidateRequestMode="Disabled" type="text" runat="server" />
                                     </asp:Label><br />
 
                                     <asp:Label ID="outletCodeLabel" Text="Outlet Code" AssociatedControlID="outletCodeText" EnableViewState="false" runat="server">
-                                        <asp:TextBox ID="outletCodeText" runat="server" />
-                                    </asp:Label><br />
+                                        <asp:TextBox ID="outletCodeText" CssClass="textbox3" runat="server" />
+                                    </asp:Label>
 
 <%--                                   <asp:TextBox ID="outletCode1" Height="20px" Width="300px" ValidateRequestMode="Disabled" type="text" runat="server" ></asp:TextBox><br />--%>
                                    
                                     <label class="subheader" style=" margin-top: 15px;margin-right:68px;"><small>Device ID</small></label>
                                     <asp:TextBox ID="deviceID"  CssClass="textbox2" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox>
 
-                                    <label class="subheader"  style=" margin-top: 10px;margin-right:70px;"><small>Fullname</small></label>
+                                    <label class="subheader"  style=" margin-top: 10px;margin-right:70px; margin-bottom:10px;"><small>Fullname</small></label>
                                     <asp:TextBox ID="fullName" CssClass="textbox2"  ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox>
 
-                                    <label class="subheader" style=" margin-top: 15px; margin-right:77px;"><small>Address</small></label>
+                                    <label class="subheader" style=" margin-top: 5px; margin-right:77px;"><small>Address</small></label>
                                     <asp:TextBox ID="address" Height="50px" Width="300px" TextMode="MultiLine" Rows="3" CssClass="paragraph-style no-resize" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><br />
 
-                                    <label class="subheader" style=" margin-top: 15px; margin-right:72px;"><small>Area</small></label>
+                                    <label class="subheader" style=" margin-top: 10px; margin-right:72px;"><small>Area</small></label>
                                     <asp:DropDownList ID="areaCode" Height="30px" CssClass="gameCodeDropDown" runat="server"></asp:DropDownList><br />
 
                                    <label class="subheader" style=" margin-top: 15px; margin-right:22px;"><small>Mobile Number</small></label>
@@ -75,21 +75,42 @@
                                     </div>
 
                                      <label class="subheader" style=" margin-top: 15px; margin-right:5px;"><small>Confirm Password</small></label>
-                                    <asp:TextBox ID="confirmPassword" CssClass="textbox2" ValidateRequestMode="Disabled" type="password" runat="server"  ></asp:TextBox><br />
+                                    <div class="input-group" style="margin-left:137px; margin-top:-35px;">                                     
+                                        <asp:TextBox ID="confirmPassword" CssClass="textbox2" ValidateRequestMode="Disabled" type="password" runat="server"  ></asp:TextBox><br />
+                                        <div class="input-group-append">
+                                            <button id="show_password2" class="btn btn-outline-secondary" style="height:30px;width:auto;display: flex; align-items: center;justify-content: center; margin-right:10px;" type="button"><i class="fa-solid fa-eye"></i></button>
+                                        </div>
+                                    <asp:CompareValidator ID="comparePasswords" runat="server" ForeColor="Red"
+                                        ControlToValidate="confirmPassword" 
+                                        ControlToCompare="password" 
+                                        Type="String" 
+                                        Operator="Equal" 
+                                        ErrorMessage="Passwords do not match." 
+                                        Display="Dynamic">
+                                    </asp:CompareValidator>
+                                    </div>
 
                                     <label class="subheader" style=" margin-top: 15px; margin-right:24px;"><small>Group Account </small></label>
                                      <asp:TextBox ID="groupAccount" CssClass="textbox2" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><br />
 
                                     <label class="subheader" style=" margin-top: 15px; margin-right:-15px;"><small>Commision Type</small></label>
-                                    <asp:DropDownList ID="commissionType" Height="30px" CssClass="gameCodeDropDown" runat="server"></asp:DropDownList><br />
+                                    <asp:DropDownList ID="commissionType" Height="30px" CssClass="gameCodeDropDown" runat="server">
+                                        <asp:ListItem Value=""></asp:ListItem>
+                                        <asp:ListItem Value="admin">Admin</asp:ListItem>
+                                        <asp:ListItem Value="coor">Coor</asp:ListItem>
+                                    </asp:DropDownList><br />
 
                                     <label class="subheader" style=" margin-top: 15px; margin-right:3px;"><small>Back Pay Type</small></label>
-                                    <asp:DropDownList ID="backPayType" Height="30px" CssClass="gameCodeDropDown" runat="server"></asp:DropDownList><br />
+                                    <asp:DropDownList ID="backPayType" Height="30px" CssClass="gameCodeDropDown" runat="server">
+                                        <asp:ListItem Value=""></asp:ListItem>
+                                        <asp:ListItem Value="admin">Admin</asp:ListItem>
+                                        <asp:ListItem Value="coor">Coor</asp:ListItem>
+                                    </asp:DropDownList><br />
 
                                     <label class="subheader" style=" margin-top: 15px; margin-right:70px;"><small>Location</small></label>
-                                    <asp:TextBox ID="location" CssClass="textbox2" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox>
+                                    <asp:TextBox ID="location" CssClass="textbox2" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><asp:Button runat="server" id="setBtn"  Text="Set" CssClass="small-font clearbutton" Height="40px" Width="50px"/><br />
                                     
-                                    <asp:CheckBox ID="isActive" CssClass="ActiveCheckbox" runat="server" /><label><small>Active</small></label><br />
+                                    <asp:CheckBox ID="isActive" CssClass="ActiveCheckbox" runat="server" /><label style="position: relative; top: -8px; right:4px;"><small>Active</small></label><br />
                                     </div>
                                  <div style="margin-left:40px;margin-top:-20px;" class="row" >
                                         <div class="col-6">
@@ -98,11 +119,11 @@
                                         </div>
                                         <div class="col-1">
                                             <br />
-                                            <asp:Button runat="server" Text="New" ID="newBtn" OnClick="newBtnClick" Height="30px" Width="50px" />
+                                            <asp:Button runat="server" Text="New" ID="newBtn" OnClick="newBtnClick" CssClass="salesNew"/>
                                         </div>
                                         <div class="col-1">
                                             <br />
-                                            <asp:Button runat="server" Text="Save for Edit" ID="editBtn" OnClick="editBtnClick" Height="30px" Width="50px" />
+                                            <asp:Button runat="server" Text="Save for Edit" ID="editBtn" OnClick="editBtnClick" CssClass="salesEdit" />
                                             
                                         </div>
                                         <div class="col-1">
@@ -112,12 +133,12 @@
                                         </div>
                                         <div class="col-1">
                                             <br />
-                                            <asp:Button runat="server" Text="Delete" ID="deleteBtn" OnClick="deleteBtnClick" Height="30px" Width="60px" />
+                                            <asp:Button runat="server" Text="Delete" ID="deleteBtn" OnClick="deleteBtnClick" CssClass="salesDelete" />
                                             
                                         </div>
                                      <div class="col-1">
                                             <br />
-                                            <asp:Button runat="server" Text="Cancel" Height="30px" ID="cancelBtn" OnClick="cancelBtnClick" Width="60px" />
+                                            <asp:Button runat="server" Text="Cancel" Height="30px" ID="cancelBtn" OnClick="cancelBtnClick" CssClass="salesCancel" />
                                         </div>
 
                                     </div>
@@ -135,26 +156,18 @@
 
 </asp:PlaceHolder>
 <script>
-    //if (window.devicePixelRatio === 1.5 && window.innerWidth === 2560 && window.innerHeight === 1440) {
-    //    // If it is, set the zoom level of the document to 83.33% (equivalent to 125%)
-    //    document.body.style.zoom = "83.33%";
-    //}
-    //if (window.devicePixelRatio === 1) {
-    //    // If it is, set the zoom level of the document to 125%
-    //    document.body.style.zoom = "125%";
-    //}
-    //$(document).ready(function () {
-    //    $('#mobileNumber').keydown(function (e) {
-    //        var keyCode = (e.which) ? e.which : event.keyCode
-    //        if (keyCode > 31 && (keyCode < 48 || keyCode > 57))
-    //            return false;
-    //        return true;
-    //    });
-    //});
+    $(document).ready(function () {
+        $('#mobileNumber').keydown(function (e) {
+            var keyCode = (e.which) ? e.which : event.keyCode
+           if (keyCode > 31 && (keyCode < 48 || keyCode > 57))
+               return false;
+            return true;
+       });
+    });
 
 </script>
 <script type="text/javascript">
-    <%--$(document).ready(function () {
+    $(document).ready(function () {
         $("#show_password").click(function () {
             var $this = $(this);
             var icon = $this.find("i");
@@ -168,7 +181,22 @@
             icon.removeClass("fa-eye-slash");
             icon.addClass("fa-eye");
         }
-    });--%>
-});
-
+    })
+    });
+    $(document).ready(function () {
+        $("#show_password2").click(function () {
+            var $this = $(this);
+            var icon = $this.find("i");
+            var input = $("#<%= confirmPassword.ClientID %>");
+            if (input.attr("type") == "password") {
+                input.attr("type", "text");
+                icon.removeClass("fa-eye");
+                icon.addClass("fa-eye-slash");
+            } else {
+                input.attr("type", "password");
+                icon.removeClass("fa-eye-slash");
+                icon.addClass("fa-eye");
+            }
+        })
+    });
 </script>

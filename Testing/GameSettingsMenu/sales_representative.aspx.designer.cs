@@ -141,6 +141,15 @@ namespace HuarITSolutions
         protected global::System.Web.UI.WebControls.TextBox confirmPassword;
 
         /// <summary>
+        /// comparePasswords control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator comparePasswords;
+
+        /// <summary>
         /// groupAccount control.
         /// </summary>
         /// <remarks>
@@ -175,6 +184,15 @@ namespace HuarITSolutions
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox location;
+
+        /// <summary>
+        /// setBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button setBtn;
 
         /// <summary>
         /// isActive control.
