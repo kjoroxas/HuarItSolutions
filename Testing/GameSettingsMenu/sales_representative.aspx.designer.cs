@@ -42,6 +42,24 @@ namespace HuarITSolutions
         protected global::System.Web.UI.WebControls.Table activeGame;
 
         /// <summary>
+        /// outletCodeLabel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label outletCodeLabel1;
+
+        /// <summary>
+        /// outletCodeTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox outletCodeTextBox;
+
+        /// <summary>
         /// outletCodeLabel control.
         /// </summary>
         /// <remarks>
@@ -67,15 +85,6 @@ namespace HuarITSolutions
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox deviceID;
-
-        /// <summary>
-        /// clear control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button clear;
 
         /// <summary>
         /// fullName control.
@@ -166,15 +175,6 @@ namespace HuarITSolutions
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox location;
-
-        /// <summary>
-        /// setbutton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button setbutton;
 
         /// <summary>
         /// isActive control.

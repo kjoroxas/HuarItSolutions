@@ -62,6 +62,8 @@ namespace HuarITSolutions
             outletCode.Visible = true;
             outletCodeText.Visible = false;
             outletCodeLabel.Visible = false;
+            outletCodeTextBox.Visible = true;
+            outletCodeTextBox.Text = outletCode.SelectedItem.Value;
             // Get the DropDownList 
             var ddl = (DropDownList)sender;
 
@@ -150,9 +152,11 @@ namespace HuarITSolutions
         }
         protected void newBtnClick(object sender, EventArgs e)
         {
+            outletCodeTextBox.Visible = false;
             outletCode.Visible = false;
             outletCodeText.Visible = true;
             outletCodeLabel.Visible = true;
+            outletCodeLabel1.Visible = false;
             cancelBtn.Visible = true;
             editBtn.Visible = false;
             deleteBtn.Visible = false;
@@ -197,6 +201,8 @@ namespace HuarITSolutions
 
         private void defaultStateBtn()
         {
+            outletCodeLabel1.Visible = true;
+            outletCodeTextBox.Visible = true;
             newBtn.Visible = true;
             saveBtn.Visible = false;
             editBtn.Visible = false;
@@ -217,6 +223,7 @@ namespace HuarITSolutions
             backPayType.Enabled = false;
             location.Enabled = false;
             confirmPassword.Enabled = false;
+            outletCodeTextBox.Enabled = false;
 
             //outletCode.Text = "";
             deviceID.Text = "";
@@ -230,6 +237,7 @@ namespace HuarITSolutions
             commissionType.Text = "";
             backPayType.Text = "";
             location.Text = "";
+            outletCodeTextBox.Text = "";
         }
 
     }

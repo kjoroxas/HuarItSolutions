@@ -21,10 +21,11 @@
                          <h5 class="card-title"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><g fill="currentColor"><rect width="5" height="18" x="16" y="3" rx="2"/><rect width="5" height="12" x="9.5" y="9" rx="2"/><rect width="5" height="5" x="3" y="16" rx="2"/></g></svg> Sales Representative</h5>
                              <div style="margin-left:40px;" class="row" id="firstrow">
                                  <div class="col-6 ">
-                                                                        <asp:DropDownList ID="outletCode" OnSelectedIndexChanged="outletCode_SelectedIndexChanged" CssClass="gameCodeDropDown2" runat="server" AutoPostBack="true">
-                                       <asp:ListItem Value="0">Select Game Code</asp:ListItem>
-                                   </asp:DropDownList><br />
-                                       <asp:Table ID="activeGame" runat="server" Width="70%" HorizontalAlign="Left" CssClass="table table-bordered">
+                                   <asp:DropDownList ID="outletCode" OnSelectedIndexChanged="outletCode_SelectedIndexChanged" CssClass="gameCodeDropDown2" runat="server" AutoPostBack="true">
+                                       <asp:ListItem Value="0">Select Game Code1</asp:ListItem>
+                                   </asp:DropDownList><br />   
+                                       
+                                     <asp:Table ID="activeGame" runat="server" Width="70%" HorizontalAlign="Left" CssClass="table table-bordered">
                                            <asp:TableHeaderRow>
                                                <asp:TableHeaderCell>Outlet Code</asp:TableHeaderCell>
                                                <asp:TableHeaderCell>Name</asp:TableHeaderCell>
@@ -40,16 +41,18 @@
                                    </div>
                                 <div  class="col-4">
 
-                                   <label class="subheader" style="margin-right:50px;"><small>Outlet Code</small></label>
+                                    <asp:Label ID="outletCodeLabel1" Text="Outlet Code" AssociatedControlID="outletCodeText" EnableViewState="false" runat="server">
+                                        <asp:TextBox ID="outletCodeTextBox" CssClass="textbox2"  ValidateRequestMode="Disabled" type="text" runat="server" />
+                                    </asp:Label><br />
 
-                                    <asp:Label ID="outletCodeLabel" Text="Outlet Code:" AssociatedControlID="outletCodeText" EnableViewState="false" runat="server">
+                                    <asp:Label ID="outletCodeLabel" Text="Outlet Code" AssociatedControlID="outletCodeText" EnableViewState="false" runat="server">
                                         <asp:TextBox ID="outletCodeText" runat="server" />
                                     </asp:Label><br />
 
 <%--                                   <asp:TextBox ID="outletCode1" Height="20px" Width="300px" ValidateRequestMode="Disabled" type="text" runat="server" ></asp:TextBox><br />--%>
                                    
                                     <label class="subheader" style=" margin-top: 15px;margin-right:68px;"><small>Device ID</small></label>
-                                    <asp:TextBox ID="deviceID"  CssClass="textbox2" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><asp:Button runat="server" id="clear"  Text="clear" CssClass="small-font clearbutton" Height="30px" Width="80px"/><br />
+                                    <asp:TextBox ID="deviceID"  CssClass="textbox2" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox>
 
                                     <label class="subheader"  style=" margin-top: 10px;margin-right:70px;"><small>Fullname</small></label>
                                     <asp:TextBox ID="fullName" CssClass="textbox2"  ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox>
@@ -84,7 +87,7 @@
                                     <asp:DropDownList ID="backPayType" Height="30px" CssClass="gameCodeDropDown" runat="server"></asp:DropDownList><br />
 
                                     <label class="subheader" style=" margin-top: 15px; margin-right:70px;"><small>Location</small></label>
-                                    <asp:TextBox ID="location" CssClass="textbox2" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><asp:Button runat="server" id="setbutton"  Text="Set" CssClass="small-font clearbutton" Height="40px" Width="50px"/><br />
+                                    <asp:TextBox ID="location" CssClass="textbox2" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox>
                                     
                                     <asp:CheckBox ID="isActive" CssClass="ActiveCheckbox" runat="server" /><label><small>Active</small></label><br />
                                     </div>
@@ -99,7 +102,7 @@
                                         </div>
                                         <div class="col-1">
                                             <br />
-                                            <asp:Button runat="server" Text="Edit" ID="editBtn" OnClick="editBtnClick" Height="30px" Width="50px" />
+                                            <asp:Button runat="server" Text="Save for Edit" ID="editBtn" OnClick="editBtnClick" Height="30px" Width="50px" />
                                             
                                         </div>
                                         <div class="col-1">
