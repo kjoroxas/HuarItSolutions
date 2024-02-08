@@ -26,15 +26,22 @@ namespace HuarITSolutions
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            listOfSales = sqlFunctions.getSalesRepresentatives();
+            
 
             if (!this.IsPostBack)
+            {
+                setBtn.Visible = false;
+                listOfSales = sqlFunctions.getSalesRepresentatives();
+                foreach (var game in listOfSales)
+                {
+                    outletCode.Items.Add(new ListItem(game.UserName));
+                }
+            }
                 defaultStateBtn();
 
+            listOfSales = sqlFunctions.getSalesRepresentatives();
             foreach (var game in listOfSales)
             {
-                outletCode.Items.Add(new ListItem(game.UserName));
-
                 TableRow row = new TableRow();
 
                 TableCell cell1 = new TableCell();
@@ -162,7 +169,8 @@ namespace HuarITSolutions
             deleteBtn.Visible = false;
             newBtn.Visible = false;
             saveBtn.Visible = true;
-
+            setBtn.Visible = true;
+            isActive.Enabled = true;
             outletCode.Enabled = true;
             deviceID.Enabled = true;
             fullName.Enabled = true;
@@ -203,6 +211,7 @@ namespace HuarITSolutions
         {
             outletCodeLabel1.Visible = true;
             outletCodeTextBox.Visible = true;
+            isActive.Enabled = false;
             newBtn.Visible = true;
             saveBtn.Visible = false;
             editBtn.Visible = false;

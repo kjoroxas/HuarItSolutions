@@ -42,7 +42,7 @@
 
                        <label class="subheader" style=" margin-top: 20px; margin-left:30px; margin-right:7px;"><small>Print Code</small></label>
                         <asp:TextBox ID="printCode" CssClass="textbox" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><br /><br />
-                        <asp:CheckBox ID="activeGameCheckbox" runat="server" CssClass="ActiveGameCheckBox" /><label class="subheader"><small>Local Game</small></label><br /><br />
+                        <asp:CheckBox ID="activeGameCheckbox" runat="server" CssClass="ActiveGameCheckBox" /><label style="position: relative; top: -6px; left:4px;" class="subheader"><small>Local Game</small></label><br /><br />
 
                        <label class="subheader" style="margin-right:6px;"><small>Win Value(Low)</small></label>
                         <asp:TextBox ID="lowBet" CssClass="textbox" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><br />
