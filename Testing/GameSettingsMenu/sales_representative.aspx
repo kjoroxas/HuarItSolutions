@@ -16,7 +16,7 @@
 <body>
     <form id="form1" runat="server">
                 <div>
-                    <div class="card " style="width: 106rem; height:44rem;">
+                    <div class="card " style="width: 107.99rem; height:46rem;">
                          <div class="card-body">
                          <h5 class="card-title"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><g fill="currentColor"><rect width="5" height="18" x="16" y="3" rx="2"/><rect width="5" height="12" x="9.5" y="9" rx="2"/><rect width="5" height="5" x="3" y="16" rx="2"/></g></svg> Sales Representative</h5>
                              <div style="margin-left:40px;" class="row" id="firstrow">
@@ -61,7 +61,11 @@
                                     <asp:TextBox ID="address" Height="50px" Width="300px" TextMode="MultiLine" Rows="3" CssClass="paragraph-style no-resize" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><br />
 
                                     <label class="subheader" style=" margin-top: 10px; margin-right:72px;"><small>Area</small></label>
-                                    <asp:DropDownList ID="areaCode" Height="30px" CssClass="gameCodeDropDown" runat="server"></asp:DropDownList><br />
+                                    <asp:DropDownList ID="areaCode" Height="30px" CssClass="gameCodeDropDown" runat="server">
+                                        <asp:ListItem Value=""></asp:ListItem>
+                                        <asp:ListItem Value="area1">Area 1</asp:ListItem>
+                                        <asp:ListItem Value="area2">Area 2</asp:ListItem>
+                                    </asp:DropDownList><br />
 
                                    <label class="subheader" style=" margin-top: 15px; margin-right:22px;"><small>Mobile Number</small></label>
                                     <asp:TextBox ID="mobileNumber" CssClass="textbox2" ValidateRequestMode="Disabled" MaxLength="15" type="in" runat="server"  ></asp:TextBox><br />
@@ -113,33 +117,19 @@
                                     <asp:CheckBox ID="isActive" CssClass="ActiveCheckbox" runat="server" /><label style="position: relative; top: -8px; right:4px;"><small>Active</small></label><br />
                                     </div>
                                  <div style="margin-left:40px;margin-top:-20px;" class="row" >
-                                        <div class="col-6">
+                                        <div class="col-3">
                                             <br />
 
                                         </div>
-                                        <div class="col-1">
-                                            <br />
-                                            <asp:Button runat="server" Text="New" ID="newBtn" OnClick="newBtnClick" CssClass="salesNew"/>
-                                        </div>
-                                        <div class="col-1">
+                                        <div class="col-9" >
                                             <br />
                                             <asp:Button runat="server" Text="Save for Edit" ID="editBtn" OnClick="editBtnClick" CssClass="salesEdit" />
-                                            
-                                        </div>
-                                        <div class="col-1">
-                                            <br />
-                                            <asp:Button runat="server" Text="Save" ID="saveBtn" OnClick="saveBtnClick" Height="30px" Width="50px" />
-                                            
-                                        </div>
-                                        <div class="col-1">
-                                            <br />
+                                            <asp:Button runat="server" Text="Save" ID="saveBtn" OnClick="saveBtnClick" CssClass="salesSave" />
+                                            <asp:Button runat="server" Text="New" ID="newBtn" OnClick="newBtnClick" CssClass="salesNew"/>
                                             <asp:Button runat="server" Text="Delete" ID="deleteBtn" OnClick="deleteBtnClick" CssClass="salesDelete" />
-                                            
-                                        </div>
-                                     <div class="col-1">
-                                            <br />
                                             <asp:Button runat="server" Text="Cancel" Height="30px" ID="cancelBtn" OnClick="cancelBtnClick" CssClass="salesCancel" />
                                         </div>
+
 
                                     </div>
                                 </div>

@@ -106,6 +106,7 @@ namespace HuarITSolutions
                 backPayType.Enabled = true;
                 location.Enabled = true;
                 confirmPassword.Enabled = true;
+                isActive.Enabled = true;
 
                 selectedGameCode = selectedOutletCode;
 
@@ -142,6 +143,7 @@ namespace HuarITSolutions
                 backPayType.Enabled = false;
                 location.Enabled = false;
                 confirmPassword.Enabled = false;
+                isActive.Enabled = false;
 
                 outletCode.Text = "";
                 deviceID.Text = "";
@@ -213,10 +215,12 @@ namespace HuarITSolutions
             outletCodeTextBox.Visible = true;
             isActive.Enabled = false;
             newBtn.Visible = true;
+            newBtn.Enabled = true;
             saveBtn.Visible = false;
             editBtn.Visible = false;
             deleteBtn.Visible = false;
             outletCode.Visible = true;
+            setBtn.Visible = false;
             outletCodeText.Visible = false;
             outletCodeLabel.Visible = false;
             cancelBtn.Visible = false;
