@@ -188,7 +188,7 @@ namespace HuarITSolutions
         }
         protected void saveBtnClick(object sender, EventArgs e)
         {
-            sqlFunctions.saveSalesRepresentatives(outletCode.Text, fullName.Text, address.Text, areaCode.Text, mobileNumber.Text, password.Text,
+            sqlFunctions.saveSalesRepresentatives(outletCodeText.Text, fullName.Text, address.Text, areaCode.Text, mobileNumber.Text, password.Text,
                  isActive.Checked, groupAccount.Text, commissionType.Text, backPayType.Text, 1, location.Text);
         }
         protected void editBtnClick(object sender, EventArgs e)
@@ -239,18 +239,18 @@ namespace HuarITSolutions
             outletCodeTextBox.Enabled = false;
 
             //outletCode.Text = "";
-            deviceID.Text = "";
-            fullName.Text = "";
-            address.Text = "";
-            areaCode.Text = "";
-            mobileNumber.Text = "";
-            password.Text = "";
-            confirmPassword.Text = "";
-            groupAccount.Text = "";
-            commissionType.Text = "";
-            backPayType.Text = "";
-            location.Text = "";
-            outletCodeTextBox.Text = "";
+            //deviceID.Text = "";
+            //fullName.Text = "";
+            //address.Text = "";
+            //areaCode.Text = "";
+            //mobileNumber.Text = "";
+            //password.Text = "";
+            //confirmPassword.Text = "";
+            //groupAccount.Text = "";
+            //commissionType.Text = "";
+            //backPayType.Text = "";
+            //location.Text = "";
+            //outletCodeTextBox.Text = "";
         }
 
     }

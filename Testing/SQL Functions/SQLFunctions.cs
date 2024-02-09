@@ -287,9 +287,9 @@ namespace HuarITSolutions.Class
                         while (reader.Read())
                         {
                             SalesRepresentativeModel salesRep = new SalesRepresentativeModel();
-                            salesRep.UserID =reader[0].ToString();
+                            salesRep.UserID = reader[0].ToString();
                             salesRep.UserName = reader[1].ToString();
-                            salesRep.DeviceId = reader[2] == DBNull.Value ? 0 : Int32.Parse(reader[2].ToString());
+                            salesRep.DeviceId = reader[2].ToString();//reader[2] == DBNull.Value ? 0 : Int32.Parse(reader[2].ToString());
                             salesRep.Name = reader[3].ToString();
                             salesRep.Address = reader[4].ToString();
                             salesRep.Area = reader[5].ToString();
@@ -301,7 +301,7 @@ namespace HuarITSolutions.Class
                             salesRep.Active = Convert.ToBoolean(reader[11]);
                             salesRep.Latittude = reader[12] == DBNull.Value ? "" : reader[12].ToString();
                             salesRep.Longitude = reader[13] == DBNull.Value ? "" : reader[13].ToString();
-                            salesRep.GroupAccount = Int32.Parse(reader[14].ToString());
+                            salesRep.GroupAccount =reader[14].ToString();
                             salesRep.CommissionType = reader[15].ToString();
                             salesRep.BackPayType = reader[16].ToString();
                             salesRep.Cluster = reader[17].ToString();

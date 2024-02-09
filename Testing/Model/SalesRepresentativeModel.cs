@@ -9,7 +9,7 @@ namespace HuarITSolutions.Model
     {
         public string UserID { get; set; } 
         public string UserName { get; set; }
-        public int? DeviceId { get; set; }
+        public string DeviceId { get; set; }
         public string Name { get; set; }
         public string Address { get; set; }
         public string Area { get; set; }
@@ -21,7 +21,7 @@ namespace HuarITSolutions.Model
         public bool Active { get; set; }
         public string Latittude { get; set; }
         public string Longitude { get; set; }
-        public int GroupAccount { get; set; }
+        public string GroupAccount { get; set; }
         public string CommissionType { get; set; }
         public string BackPayType { get; set; }
         public string Cluster { get; set; }
