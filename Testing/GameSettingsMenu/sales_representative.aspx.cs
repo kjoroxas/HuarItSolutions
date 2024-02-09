@@ -30,7 +30,6 @@ namespace HuarITSolutions
 
             if (!this.IsPostBack)
             {
-                setBtn.Visible = false;
                 listOfSales = sqlFunctions.getSalesRepresentatives();
                 foreach (var game in listOfSales)
                 {
@@ -125,12 +124,12 @@ namespace HuarITSolutions
                 commissionType.Text = gameDetails.CommissionType.ToString();
                 backPayType.Text = gameDetails.BackPayType.ToString();
                 location.Text = gameDetails.Cluster.ToString();
-
+                isActive.Checked = gameDetails.Active;
 
             }
             else
             {
-                // JavaScript function to disable the TextBox
+
                 outletCode.Enabled = false;
                 deviceID.Enabled = false;
                 fullName.Enabled = false;
@@ -145,18 +144,19 @@ namespace HuarITSolutions
                 confirmPassword.Enabled = false;
                 isActive.Enabled = false;
 
-                outletCode.Text = "";
+                outletCode.SelectedIndex = 0;
                 deviceID.Text = "";
                 fullName.Text = "";
                 address.Text = "";
-                areaCode.Text = "";
                 mobileNumber.Text = "";
                 password.Text = "";
                 confirmPassword.Text = "";
                 groupAccount.Text = "";
-                commissionType.Text = "";
-                backPayType.Text = "";
                 location.Text = "";
+
+                areaCode.SelectedIndex = 0;
+                commissionType.SelectedIndex = 0;
+                backPayType.SelectedIndex = 0;
             }
         }
         protected void newBtnClick(object sender, EventArgs e)
@@ -171,7 +171,6 @@ namespace HuarITSolutions
             deleteBtn.Visible = false;
             newBtn.Visible = false;
             saveBtn.Visible = true;
-            setBtn.Visible = true;
             isActive.Enabled = true;
             outletCode.Enabled = true;
             deviceID.Enabled = true;
@@ -207,6 +206,34 @@ namespace HuarITSolutions
         protected void cancelBtnClick(object sender, EventArgs e)
         {
             defaultStateBtn();
+
+
+            outletCodeText.Text = String.Empty;
+            deviceID.Text = String.Empty;
+            fullName.Text = String.Empty;
+            address.Text = String.Empty;
+            mobileNumber.Text = String.Empty;
+            password.Text = String.Empty;
+            confirmPassword.Text = String.Empty;
+            groupAccount.Text = String.Empty;
+            location.Text = String.Empty;
+            outletCodeTextBox.Text = String.Empty;
+
+            areaCode.SelectedIndex = 0;
+            commissionType.SelectedIndex = 0;
+            backPayType.SelectedIndex = 0;
+
+            isActive.Checked = false;
+
+            // Check if the item with value "0" already exists
+
+            ListItem selectGameCodeItem = outletCode.Items.FindByValue("0");
+            if (selectGameCodeItem == null)
+            {
+                // Add the item with value "0" back to the dropdown list
+                outletCode.Items.Insert(0, new ListItem("Select Outlet Code", "0"));
+            }
+            outletCode.SelectedIndex = 0;
         }
 
         private void defaultStateBtn()
@@ -220,7 +247,6 @@ namespace HuarITSolutions
             editBtn.Visible = false;
             deleteBtn.Visible = false;
             outletCode.Visible = true;
-            setBtn.Visible = false;
             outletCodeText.Visible = false;
             outletCodeLabel.Visible = false;
             cancelBtn.Visible = false;

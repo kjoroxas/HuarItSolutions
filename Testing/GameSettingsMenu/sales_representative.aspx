@@ -22,7 +22,7 @@
                              <div style="margin-left:40px;" class="row" id="firstrow">
                                  <div class="col-6 ">
                                    <asp:DropDownList ID="outletCode" OnSelectedIndexChanged="outletCode_SelectedIndexChanged" CssClass="gameCodeDropDown2" runat="server" AutoPostBack="true">
-                                       <asp:ListItem Value="0">Select Game Code</asp:ListItem>
+                                       <asp:ListItem Value="0">Select Outlet Code</asp:ListItem>
                                    </asp:DropDownList><br />   
                                        
                                      <asp:Table ID="activeGame" runat="server" Width="70%" HorizontalAlign="Left" CssClass="table table-bordered">
@@ -62,7 +62,7 @@
 
                                     <label class="subheader" style=" margin-top: 10px; margin-right:72px;"><small>Area</small></label>
                                     <asp:DropDownList ID="areaCode" Height="30px" CssClass="gameCodeDropDown" runat="server">
-                                        <asp:ListItem Value=""></asp:ListItem>
+                                        <asp:ListItem Value=0>Select Area Code</asp:ListItem>
                                         <asp:ListItem Value="area1">Area 1</asp:ListItem>
                                         <asp:ListItem Value="area2">Area 2</asp:ListItem>
                                     </asp:DropDownList><br />
@@ -99,20 +99,20 @@
 
                                     <label class="subheader" style=" margin-top: 15px; margin-right:-15px;"><small>Commision Type</small></label>
                                     <asp:DropDownList ID="commissionType" Height="30px" CssClass="gameCodeDropDown" runat="server">
-                                        <asp:ListItem Value=""></asp:ListItem>
+                                        <asp:ListItem Value=0>Select Commision Type</asp:ListItem>
                                         <asp:ListItem Value="admin">Admin</asp:ListItem>
                                         <asp:ListItem Value="coor">Coor</asp:ListItem>
                                     </asp:DropDownList><br />
 
                                     <label class="subheader" style=" margin-top: 15px; margin-right:3px;"><small>Back Pay Type</small></label>
                                     <asp:DropDownList ID="backPayType" Height="30px" CssClass="gameCodeDropDown" runat="server">
-                                        <asp:ListItem Value=""></asp:ListItem>
+                                        <asp:ListItem Value=0>Select Back Pay Type</asp:ListItem>
                                         <asp:ListItem Value="admin">Admin</asp:ListItem>
                                         <asp:ListItem Value="coor">Coor</asp:ListItem>
                                     </asp:DropDownList><br />
 
                                     <label class="subheader" style=" margin-top: 15px; margin-right:70px;"><small>Location</small></label>
-                                    <asp:TextBox ID="location" CssClass="textbox2" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><asp:Button runat="server" id="setBtn"  Text="Set" CssClass="small-font clearbutton" Height="40px" Width="50px"/><br />
+                                    <asp:TextBox ID="location" CssClass="textbox2" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox>
                                     
                                     <asp:CheckBox ID="isActive" CssClass="ActiveCheckbox" runat="server" /><label style="position: relative; top: -8px; right:4px;"><small>Active</small></label><br />
                                     </div>
@@ -124,24 +124,40 @@
                                         <div class="col-9" >
                                             <br />
                                             <asp:Button runat="server" Text="Save for Edit" ID="editBtn" OnClick="editBtnClick" CssClass="salesEdit" />
-                                            <asp:Button runat="server" Text="Save" ID="saveBtn" OnClick="saveBtnClick" CssClass="salesSave" />
+                                            <asp:Button runat="server" Text="Save" ID="saveBtn" CssClass="salesSave" />
                                             <asp:Button runat="server" Text="New" ID="newBtn" OnClick="newBtnClick" CssClass="salesNew"/>
                                             <asp:Button runat="server" Text="Delete" ID="deleteBtn" OnClick="deleteBtnClick" CssClass="salesDelete" />
                                             <asp:Button runat="server" Text="Cancel" Height="30px" ID="cancelBtn" OnClick="cancelBtnClick" CssClass="salesCancel" />
                                         </div>
 
-
                                     </div>
                                 </div>
                          </div>  
                    </div>
+                <div class="modal fade" id="confirmationmodal" tabindex="-1" role="dialog" aria-labelledby="confirmationmodalLabel" aria-hidden="true" style="margin-top:150px;">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="confirmationmodalLabel">Saving Changes</h5>
 
+                      </div>
+                      <div class="modal-body">
+                        Are you sure about your changes?
+                      </div>
+                      <div class="modal-footer">
+                        <asp:Button ID="btnClose" runat="server" Text="Close" data-dismiss="modal" />
+                        <asp:Button runat="server" Text="Save" ID="SaveBtn2" OnClick="saveBtnClick" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
 </div>
     </form>
 </body>
 </html>
 <asp:PlaceHolder runat="server">
     <%: Scripts.Render("~/Scripts/bootstrap.js") %>
+    <%: Scripts.Render("~/Scripts/jquery-3.4.1.min.js") %>
     <%: Scripts.Render("~/Scripts/bootstrap.bundle.js") %>    
 
 </asp:PlaceHolder>
@@ -189,4 +205,13 @@
             }
         })
     });
+
+
+    $("#<%= saveBtn.ClientID %>").click(function (e) {
+        $('#confirmationmodal').modal('show');
+        e.preventDefault();
+        return false;
+    });
+
+
 </script>
