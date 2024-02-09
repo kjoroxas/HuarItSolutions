@@ -419,6 +419,7 @@ th, .aspNetTable th {
 }
 
 
+
 .ActiveCheckbox input {
     margin-left: 5px;
     margin-right: 10px;
@@ -455,4 +456,9 @@ passwordMatchvalidator{
     margin-left: 505px;
     width: 80px;
     height: 30px;
+}
+.Field{
+    margin-left:1000px;
+    font-size:18px;
+    margin-top: 10px;
 }
