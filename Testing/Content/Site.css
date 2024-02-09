@@ -345,6 +345,10 @@ button
     height: 600px; /* Adjust as needed */
 
 }
+.scrollable-table3 {
+    overflow-y: auto;
+    height: 525px; /* Adjust as needed */
+}
 th, .aspNetTable th {
     position: sticky;
     top: 0; /* Adjust as needed */

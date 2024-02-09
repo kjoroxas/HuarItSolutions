@@ -204,6 +204,8 @@ namespace HuarITSolutions
             backPayType.Enabled = true;
             location.Enabled = true;
             confirmPassword.Enabled = true;
+
+
         }
         protected void saveBtnClick(object sender, EventArgs e)
         {
@@ -366,6 +368,64 @@ namespace HuarITSolutions
             backPayType.SelectedIndex = 0;
 
             isActive.Checked = false;
+
+            // Clear 
+
+            outletCode.Items.Clear();
+
+            // Get the list 
+            listOfSales = sqlFunctions.getSalesRepresentatives();
+
+            // Loop 
+            foreach (var game in listOfSales)
+            {
+                outletCode.Items.Add(new ListItem(game.UserName));
+            }
+
+            // Find item with value "0"
+            ListItem selectGameCodeItem = outletCode.Items.FindByValue("0");
+
+            // If item with value "0" is not found, add it back 
+            if (selectGameCodeItem == null)
+            {
+                outletCode.Items.Insert(0, new ListItem("Select Outlet Code", "0"));
+            }
+
+            // Set to 0
+            outletCode.SelectedIndex = 0;
+
+            // Get the list 
+            listOfSales = sqlFunctions.getSalesRepresentatives();
+
+            // Save header row
+            TableRow headerRow = activeGame.Rows[0];
+
+            // Clear
+            activeGame.Rows.Clear();
+
+            // Add the header 
+            activeGame.Rows.Add(headerRow);
+
+            // Loop
+            foreach (var game in listOfSales)
+            {
+                TableRow row = new TableRow();
+
+                TableCell cell1 = new TableCell();
+                cell1.Text = game.UserName;
+                row.Cells.Add(cell1);
+
+                TableCell cell2 = new TableCell();
+                cell2.Text = game.Name.ToString();
+                row.Cells.Add(cell2);
+
+                TableCell cell3 = new TableCell();
+                cell3.Text = game.GroupAccount.ToString();
+                row.Cells.Add(cell3);
+
+                // Add 
+                activeGame.Rows.Add(row);
+            }
         }
         protected void cancelBtnClick(object sender, EventArgs e)
         {
@@ -466,6 +526,11 @@ namespace HuarITSolutions
             //location.Text = "";
             //outletCodeTextBox.Text = "";
         }
+
+
+
+
+
 
     }
 }

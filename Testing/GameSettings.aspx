@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="GameSettings.aspx.cs" Inherits="HuarITSolutions.GameSettings2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
             <div class="row">
 
             <div id="sidettons" class="col-sm-auto  sticky-top custom-column-spacing ">
@@ -85,6 +87,23 @@
     <%: Scripts.Render("~/Scripts/bootstrap.js") %>
     <%: Scripts.Render("~/Scripts/bootstrap.bundle.js") %>    
 </asp:PlaceHolder>
+    <script>
+        $("#agame").click(function () {
+            $("#active iframe").attr("src", $("#active iframe").attr("src"));
+        });
+
+        $("#combine").click(function () {
+            $("#combi iframe").attr("src", $("#combi iframe").attr("src"));
+        });
+        $("#lowb").click(function () {
+            $("#lowcombi iframe").attr("src", $("#lowcombi iframe").attr("src"));
+        });
+
+        $("#salesr").click(function () {
+            $("#salesrep iframe").attr("src", $("#salesrep iframe").attr("src"));
+        });
+
+    </script>
 
 </asp:Content>
 
