@@ -190,24 +190,44 @@ namespace HuarITSolutions
             sqlFunctions.saveSalesRepresentatives(outletCodeText.Text, fullName.Text, address.Text, areaCode.Text, mobileNumber.Text, password.Text,
                  isActive.Checked, groupAccount.Text, commissionType.Text, backPayType.Text, 1, location.Text);
 
-            // Clear the list
+            // Clear 
+
             outletCode.Items.Clear();
 
+            // Get the list 
             listOfSales = sqlFunctions.getSalesRepresentatives();
 
+            // Loop 
             foreach (var game in listOfSales)
             {
                 outletCode.Items.Add(new ListItem(game.UserName));
             }
 
+            // Find item with value "0"
+            ListItem selectGameCodeItem = outletCode.Items.FindByValue("0");
 
-            // Clear the table
-            activeGame.Rows.Clear();
+            // If item with value "0" is not found, add it back 
+            if (selectGameCodeItem == null)
+            {
+                outletCode.Items.Insert(0, new ListItem("Select Outlet Code", "0"));
+            }
 
-            // Get the list of sales representatives
+            // Set to 0
+            outletCode.SelectedIndex = 0;
+
+            // Get the list 
             listOfSales = sqlFunctions.getSalesRepresentatives();
 
-            // Loop through the list and add each representative to the table
+            // Save header row
+            TableRow headerRow = activeGame.Rows[0];
+
+            // Clear
+            activeGame.Rows.Clear();
+
+            // Add the header 
+            activeGame.Rows.Add(headerRow);
+
+            // Loop
             foreach (var game in listOfSales)
             {
                 TableRow row = new TableRow();
@@ -224,9 +244,10 @@ namespace HuarITSolutions
                 cell3.Text = game.GroupAccount.ToString();
                 row.Cells.Add(cell3);
 
-                // Add the row to the table
+                // Add 
                 activeGame.Rows.Add(row);
             }
+
 
             outletCodeText.Text = String.Empty;
             deviceID.Text = String.Empty;
