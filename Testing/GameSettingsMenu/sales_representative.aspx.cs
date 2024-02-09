@@ -83,8 +83,28 @@ namespace HuarITSolutions
                     ddl.Items.Remove(selectGameCodeItem);
                 }
             }
-            //stored Id value
-            selectedOutletCode = outletCode.SelectedItem.Value;
+            // Get the areaCode DropDownList and remove ListItem with value "0"
+            ListItem selectAreaCodeItem = areaCode.Items.FindByValue("0");
+            if (selectAreaCodeItem != null)
+            {
+                areaCode.Items.Remove(selectAreaCodeItem);
+            }
+            // Get the commissionType DropDownList and remove ListItem with value "0"
+            ListItem selectCommissionTypeItem = commissionType.Items.FindByValue("0");
+            if (selectCommissionTypeItem != null)
+            {
+                commissionType.Items.Remove(selectCommissionTypeItem);
+            }
+
+            // Get the backPayType DropDownList and remove ListItem with value "0"
+            ListItem selectBackPayTypeItem = backPayType.Items.FindByValue("0");
+            if (selectBackPayTypeItem != null)
+            {
+                backPayType.Items.Remove(selectBackPayTypeItem);
+            }
+
+        //stored Id value
+        selectedOutletCode = outletCode.SelectedItem.Value;
 
             string selectedGameCode;
             // Enable or disable  TextBox 
@@ -270,6 +290,55 @@ namespace HuarITSolutions
         {
             sqlFunctions.saveSalesRepresentatives(outletCode.Text, fullName.Text, address.Text, areaCode.Text, mobileNumber.Text, password.Text,
                 isActive.Checked, groupAccount.Text, commissionType.Text, backPayType.Text, 2, location.Text);
+
+            outletCodeText.Text = String.Empty;
+            deviceID.Text = String.Empty;
+            fullName.Text = String.Empty;
+            address.Text = String.Empty;
+            mobileNumber.Text = String.Empty;
+            password.Text = String.Empty;
+            confirmPassword.Text = String.Empty;
+            groupAccount.Text = String.Empty;
+            location.Text = String.Empty;
+            outletCodeTextBox.Text = String.Empty;
+
+            areaCode.SelectedIndex = 0;
+            commissionType.SelectedIndex = 0;
+            backPayType.SelectedIndex = 0;
+
+            isActive.Checked = false;
+            ListItem selectGameCodeItem = outletCode.Items.FindByValue("0");
+            if (selectGameCodeItem == null)
+            {
+                // Add the item with value "0" back to the dropdown list
+                outletCode.Items.Insert(0, new ListItem("Select Outlet Code", "0"));
+            }
+            outletCode.SelectedIndex = 0;
+
+            // Check if the item with value "0" is already in the dropdown list
+            ListItem selectCommissionTypeItem = commissionType.Items.FindByValue("0");
+            if (selectCommissionTypeItem == null)
+            {
+                // Add the item with value "0" back to the dropdown list
+                commissionType.Items.Insert(0, new ListItem("Select Commission Type", "0"));
+            }
+
+            ListItem selectBackPayTypeItem = backPayType.Items.FindByValue("0");
+            if (selectBackPayTypeItem == null)
+            {
+                backPayType.Items.Insert(0, new ListItem("Select Back Pay Type", "0"));
+            }
+
+            ListItem selectAreaCodeItem = areaCode.Items.FindByValue("0");
+            if (selectAreaCodeItem == null)
+            {
+                areaCode.Items.Insert(0, new ListItem("Select Area Code", "0"));
+            }
+
+            // Set the selected value to "0"
+            commissionType.SelectedValue = "0";
+            backPayType.SelectedValue = "0";
+            areaCode.SelectedValue = "0";
         }
         //protected void saveBtn(object sender, EventArgs e)
         //{
@@ -278,6 +347,25 @@ namespace HuarITSolutions
         protected void deleteBtnClick(object sender, EventArgs e)
         {
             sqlFunctions.deleteSalesRepresentatives(outletCode.Text);
+
+
+
+            outletCodeText.Text = String.Empty;
+            deviceID.Text = String.Empty;
+            fullName.Text = String.Empty;
+            address.Text = String.Empty;
+            mobileNumber.Text = String.Empty;
+            password.Text = String.Empty;
+            confirmPassword.Text = String.Empty;
+            groupAccount.Text = String.Empty;
+            location.Text = String.Empty;
+            outletCodeTextBox.Text = String.Empty;
+
+            areaCode.SelectedIndex = 0;
+            commissionType.SelectedIndex = 0;
+            backPayType.SelectedIndex = 0;
+
+            isActive.Checked = false;
         }
         protected void cancelBtnClick(object sender, EventArgs e)
         {
@@ -310,6 +398,30 @@ namespace HuarITSolutions
                 outletCode.Items.Insert(0, new ListItem("Select Outlet Code", "0"));
             }
             outletCode.SelectedIndex = 0;
+            // Check if the item with value "0" is already in the dropdown list
+            ListItem selectCommissionTypeItem = commissionType.Items.FindByValue("0");
+            if (selectCommissionTypeItem == null)
+            {
+                // Add the item with value "0" back to the dropdown list
+                commissionType.Items.Insert(0, new ListItem("Select Commission Type", "0"));
+            }
+
+            ListItem selectBackPayTypeItem = backPayType.Items.FindByValue("0");
+            if (selectBackPayTypeItem == null)
+            {
+                backPayType.Items.Insert(0, new ListItem("Select Back Pay Type", "0"));
+            }
+
+            ListItem selectAreaCodeItem = areaCode.Items.FindByValue("0");
+            if (selectAreaCodeItem == null)
+            {
+                areaCode.Items.Insert(0, new ListItem("Select Area Code", "0"));
+            }
+
+            // Set the selected value to "0"
+            commissionType.SelectedValue = "0";
+            backPayType.SelectedValue = "0";
+            areaCode.SelectedValue = "0";
         }
 
         private void defaultStateBtn()
