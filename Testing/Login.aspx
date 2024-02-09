@@ -4,7 +4,7 @@
 
     <main>
         <section class="row mb-40" style="margin-left:30px;" aria-labelledby="aspnetTitle">
-            <h1 id="aspnetTitle"  class="Title">STL Management System Web</h1>
+            <h1 id="aspnetTitle"  class="Title2">STL Management System Web</h1>
         </section>
 
         <div class="row mb-40" id="loginsection">

@@ -204,15 +204,6 @@ namespace HuarITSolutions
         protected global::System.Web.UI.WebControls.CheckBox isActive;
 
         /// <summary>
-        /// newBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button newBtn;
-
-        /// <summary>
         /// editBtn control.
         /// </summary>
         /// <remarks>
@@ -229,6 +220,15 @@ namespace HuarITSolutions
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button saveBtn;
+
+        /// <summary>
+        /// newBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button newBtn;
 
         /// <summary>
         /// deleteBtn control.
