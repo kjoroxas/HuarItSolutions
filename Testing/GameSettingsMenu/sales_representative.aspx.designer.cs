@@ -186,15 +186,6 @@ namespace HuarITSolutions
         protected global::System.Web.UI.WebControls.TextBox location;
 
         /// <summary>
-        /// setBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button setBtn;
-
-        /// <summary>
         /// isActive control.
         /// </summary>
         /// <remarks>
@@ -247,5 +238,23 @@ namespace HuarITSolutions
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button cancelBtn;
+
+        /// <summary>
+        /// btnClose control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnClose;
+
+        /// <summary>
+        /// SaveBtn2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button SaveBtn2;
     }
 }
