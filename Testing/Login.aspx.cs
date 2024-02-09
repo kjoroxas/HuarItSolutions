@@ -86,7 +86,6 @@ namespace HuarITSolutions
 
         }
 
-
         private bool AuthenticateUser(string username, string password)
         {
             byte[] bytes = Encoding.UTF8.GetBytes(password);
@@ -112,6 +111,17 @@ namespace HuarITSolutions
                 return false;
         }
 
+        protected void emailVaildator_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            string username = emailfield.Text;
+            string password = passfield.Text;
+
+            // Call your AuthenticateUser method
+            bool isAuthenticated = AuthenticateUser(username, password);
+
+            // Set the IsValid property based on the authentication result
+            args.IsValid = isAuthenticated;
+        }
     }
 
 }

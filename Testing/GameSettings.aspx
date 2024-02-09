@@ -79,5 +79,12 @@
         overflow: hidden; 
     }
 </style>
+
+<asp:PlaceHolder runat="server">
+    <%: Scripts.Render("~/Scripts/jquery-3.4.1.min.js") %>
+    <%: Scripts.Render("~/Scripts/bootstrap.js") %>
+    <%: Scripts.Render("~/Scripts/bootstrap.bundle.js") %>    
+</asp:PlaceHolder>
+
 </asp:Content>
 

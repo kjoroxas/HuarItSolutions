@@ -14,7 +14,7 @@
                       <div class="card-body">
                         <h5 class="card-title subtitle" id="logintitle">Login</h5>
                         <img src="image/I.t.png" alt="..." class="img-fluid" style="width:250px; height:auto; "/><br />
-                        <asp:CustomValidator  ID="emailVaildator" runat="server" ErrorMessage="Please enter email" ForeColor="Red" ValidateEmptyText="true"></asp:CustomValidator>
+                          <asp:CustomValidator ID="emailVaildator" runat="server" ErrorMessage="Invalid username or password. Please try again" ForeColor="Red" ValidateEmptyText="true" OnServerValidate="emailVaildator_ServerValidate"></asp:CustomValidator>
                           <h6 class="exempt subheader">Username:</h6>
 
                         <asp:TextBox ID="emailfield" CssClass="emailtest" ValidateRequestMode="Disabled" type="text" runat="server"  placeholder="Username"></asp:TextBox>
