@@ -25,7 +25,9 @@
                                        <asp:ListItem Value="0">Select Outlet Code</asp:ListItem>
                                    </asp:DropDownList><br />   
                                        
-                                     <asp:Table ID="activeGame" runat="server" Width="70%" HorizontalAlign="Left" CssClass="table table-bordered">
+
+                                    <div class="scrollable-table3">
+                                        <asp:Table ID="activeGame" runat="server" Width="70%" HorizontalAlign="Left" CssClass="table table-bordered">
                                            <asp:TableHeaderRow>
                                                <asp:TableHeaderCell>Outlet Code</asp:TableHeaderCell>
                                                <asp:TableHeaderCell>Name</asp:TableHeaderCell>
@@ -36,7 +38,7 @@
 
                                          </asp:TableRow>
                                        </asp:Table>
-
+                                     </div>
 
                                    </div>
                                 <div  class="col-4">
@@ -212,5 +214,11 @@
         e.preventDefault();
         return false;
     });
-
+    $(document).ready(function () {
+        $("#<%=areaCode.ClientID%>, #<%=commissionType.ClientID%>, #<%=backPayType.ClientID%>").change(function () {
+            if ($(this).val() != 0) {
+                $(this).find('option[value=0]').remove();
+            }
+        });
+        });
 </script>
