@@ -134,7 +134,7 @@
                                 </div>
                          </div>  
                    </div>
-                <div class="modal fade" id="confirmationmodal" tabindex="-1" role="dialog" aria-labelledby="confirmationmodalLabel" aria-hidden="true" style="margin-top:150px;">
+                <div class="modal fade" id="confirmationmodal" tabindex="-1" role="dialog" aria-labelledby="confirmationmodalLabel" aria-hidden="true" style="margin-top:210px;">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
