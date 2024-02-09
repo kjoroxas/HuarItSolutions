@@ -189,6 +189,61 @@ namespace HuarITSolutions
         {
             sqlFunctions.saveSalesRepresentatives(outletCodeText.Text, fullName.Text, address.Text, areaCode.Text, mobileNumber.Text, password.Text,
                  isActive.Checked, groupAccount.Text, commissionType.Text, backPayType.Text, 1, location.Text);
+
+            // Clear the list
+            outletCode.Items.Clear();
+
+            listOfSales = sqlFunctions.getSalesRepresentatives();
+
+            foreach (var game in listOfSales)
+            {
+                outletCode.Items.Add(new ListItem(game.UserName));
+            }
+
+
+            // Clear the table
+            activeGame.Rows.Clear();
+
+            // Get the list of sales representatives
+            listOfSales = sqlFunctions.getSalesRepresentatives();
+
+            // Loop through the list and add each representative to the table
+            foreach (var game in listOfSales)
+            {
+                TableRow row = new TableRow();
+
+                TableCell cell1 = new TableCell();
+                cell1.Text = game.UserName;
+                row.Cells.Add(cell1);
+
+                TableCell cell2 = new TableCell();
+                cell2.Text = game.Name.ToString();
+                row.Cells.Add(cell2);
+
+                TableCell cell3 = new TableCell();
+                cell3.Text = game.GroupAccount.ToString();
+                row.Cells.Add(cell3);
+
+                // Add the row to the table
+                activeGame.Rows.Add(row);
+            }
+
+            outletCodeText.Text = String.Empty;
+            deviceID.Text = String.Empty;
+            fullName.Text = String.Empty;
+            address.Text = String.Empty;
+            mobileNumber.Text = String.Empty;
+            password.Text = String.Empty;
+            confirmPassword.Text = String.Empty;
+            groupAccount.Text = String.Empty;
+            location.Text = String.Empty;
+            outletCodeTextBox.Text = String.Empty;
+
+            areaCode.SelectedIndex = 0;
+            commissionType.SelectedIndex = 0;
+            backPayType.SelectedIndex = 0;
+
+            isActive.Checked = false;
         }
         protected void editBtnClick(object sender, EventArgs e)
         {
