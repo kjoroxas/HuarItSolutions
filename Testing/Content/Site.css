@@ -4,7 +4,7 @@
 }
 .Title2 {
     font-size: 48px;
-    margin-left:270px;
+    text-align:center;
 }
 .subtitle{
     font-size:26px;
@@ -31,33 +31,8 @@ footer {
 
 }
 
-@media (min-width: 768px) {
-    .container-fluid {
-        width: 750px;
-    }
-}
 
-@media (min-width: 992px) {
-    .container {
-        width: 970px;
-    }
-}
 
-@media (min-width: 1200px) {
-    .container {
-        width: 1170px;
-    }
-}
-@media (min-width: 1080px) {
-    .container {
-        width: 1080px;
-    }
-}
-@media (min-width: 2400px) {
-    .container {
-        width: 2340px;
-    }
-}
 /* Set widths on the form inputs since otherwise they're 100% wide */
 input,
 select,
@@ -74,12 +49,16 @@ textarea {
         margin-left: 10px;
         margin-bottom: 20px;
     }
-    .emailtest {
-        width: 500px;
-        height: 40px;
-        font-size: 18px;
-        margin-bottom: 20px;
-    }
+.loginlogopc {
+    width: 250px;
+    height: auto;
+}
+.emailtest {
+    width: 500px;
+    height: 40px;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
     login{
         margin-top: 10px;
     }
@@ -106,17 +85,14 @@ textarea {
         cursor: pointer;
         border-radius: 5px;
     }
+.pcLoginCard {
 
-    .loginbutton:hover {
-        background-color: #2980b9;
-    }
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-    .body-content {
-        padding: 0;
-    }
+    width: 25rem;
+    height: 31rem;
 }
-
+.loginbutton:hover {
+    background-color: #2980b9;
+}
 
 /*Catalog Page*/
 #UserControl{
@@ -144,7 +120,7 @@ dropdown-menu{
 }
 #catalogtitle {
     margin-top: 140px;
-    margin-left: 500px;
+
     font-size: 84px;
 }
 .catalogtext {
@@ -153,7 +129,7 @@ dropdown-menu{
 }
 .catalogtext2 {
     font-size: 2.25rem;
-    margin-left: -5px;
+    margin-left: 10px;
 }
 .catalogtext3 {
     font-size: 2.25rem;
@@ -170,7 +146,7 @@ dropdown-menu{
 }
 .catalogtext6 {
     font-size: 2.25rem;
-    margin-left: -80px;
+    margin-left: 10px;
 }
 .catalogtext7 {
     font-size: 2.25rem;
@@ -465,4 +441,308 @@ passwordMatchvalidator{
     margin-left:1000px;
     font-size:18px;
     margin-top: 10px;
+}
+#catalogtitle2{
+    display: none;
+}
+.filecard {
+    width: 110rem;
+    height: 46rem;
+    margin-top: 40px;
+}
+.specifc {
+    width: 106rem;
+    height: 45rem;
+    border: none;
+}
+.specificcard {
+    width: 107.99rem;
+    height: 46rem;
+}
+.gamesettingsmobile{
+    display:none;
+}
+/* Mobile CSS*/
+@media screen and (min-width: 360px) and (max-width: 500px) {
+    .body-content {
+        padding: 0;
+    }
+/*mobile login*/
+
+    .mobileLogincard {
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        width: 20rem;
+        height: 31rem;
+
+    }
+
+    .loginlogopc {
+        width: 150px;
+        height: auto;
+    }
+
+    .Title2 {
+        margin-top: auto !important;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 24px;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    footer {
+        font-size: 20px;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+    }
+
+    #loginsection {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 80vh;
+
+        margin: 0;
+    }
+    #logintitle {
+        margin-top: 5px;
+        margin-bottom: 20px;
+    }
+    /*Catalog Mobile*/
+    #UserControl {
+        position: fixed;
+        top: 0;
+        right: 0;
+    }
+    #catalogtitle {
+        font-size: 36px;
+        margin-top: 35px;
+        display:none;
+    }
+    .mobitext {
+        font-size: 36px;
+    }
+    .mobilerow {
+        margin-right: 90px;
+
+    }
+    .test{
+
+    }
+    #catalog {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+        margin: 0;
+    }
+
+    #catalogbuttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items:center;
+
+        height: 80vh;
+        margin: 0;
+
+    }
+    .filebutton {
+        background: url('https://api.iconify.design/mdi/file.svg') no-repeat center center / contain;
+        background-color: lightgray;
+        width: 70px;
+        height: 70px;
+        border: none;
+        text-indent: -9999px;
+        border-radius: 15px;
+        margin-left: 30px;
+    }
+
+    .salesbutton {
+        background: url('https://api.iconify.design/icon-park-solid/sales-report.svg') no-repeat center center / contain;
+        background-color: lightgray;
+        width: 70px;
+        height: 70px;
+        border: none;
+        text-indent: -9999px;
+        border-radius: 15px;
+        margin-left: 30px;
+    }
+
+    .collectionsbutton {
+        background: url('https://api.iconify.design/ic/baseline-collections.svg') no-repeat center center / contain;
+        background-color: lightgray;
+        width: 70px;
+        height: 70px;
+        border: none;
+        text-indent: -9999px;
+        border-radius: 15px;
+        margin-left: 30px;
+    }
+
+    .accountingbutton {
+        background: url('https://api.iconify.design/map/accounting.svg') no-repeat center center / contain;
+        background-color: lightgray;
+        width: 70px;
+        height: 70px;
+        border: none;
+        text-indent: -9999px;
+        border-radius: 15px;
+        margin-left: 30px;
+    }
+
+    .reportsbutton {
+        background: url('https://api.iconify.design/iconoir/reports-solid.svg') no-repeat center center / contain;
+        background-color: lightgray;
+        width: 70px;
+        height: 70px;
+        border: none;
+        text-indent: -9999px;
+        border-radius: 15px;
+        margin-left: 30px;
+    }
+
+    .settingsbutton {
+        background: url('https://api.iconify.design/material-symbols/settings.svg') no-repeat center center / contain;
+        background-color: lightgray;
+        width: 70px;
+        height: 70px;
+        border: none;
+        text-indent: -9999px;
+        border-radius: 15px;
+        margin-left: 30px;
+    }
+    .catalogrow {
+        display: flex;
+        justify-content: center; /* align horizontal */
+        align-items: center; /* align vertical */
+    }
+    #catalogtitle {
+        margin-bottom: 20px;
+        display:none;
+        font-size: 36px;
+
+    }
+    .left{
+        margin-left:60px;
+    }
+    #catalogtitle2 {
+        margin-top: 50px;
+        margin-bottom: 50px;
+        font-size: 36px;
+        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .catalogtext {
+        margin-left: 5px;
+        font-size: 1.25rem;
+    }
+
+    .catalogtext2 {
+        font-size: 1.25rem;
+        margin-left: 42px;
+    }
+
+    .catalogtext3 {
+        font-size: 1.25rem;
+        margin-left: 10px;
+    }
+
+    .catalogtext4 {
+        font-size: 1.25rem;
+        margin-left: 10px;
+    }
+
+    .catalogtext5 {
+        font-size: 1.25rem;
+        margin-left:10px;
+        margin-top: -10px
+    }
+
+    .catalogtext6 {
+        font-size: 1.25rem;
+        margin-left: 50px;
+
+    }
+
+    .catalogtext7 {
+        font-size: 1.25rem;
+        margin-left: 30px;
+    }
+    /*Specificfiles*/
+
+    .filecard {
+        width: 24rem;
+        height: 125rem;
+        margin-top: 30px !important;
+    }
+    .specifc {
+        width: 24rem;
+        height: 125rem;
+        border: none;
+
+    }
+    .specificcard {
+        width: 24rem;
+        height: 125rem;
+        border: none !important;
+
+    }
+    #sidettons {
+
+        display:none;
+    }
+    #agame{
+        margin-right:50px;
+    }
+    .margin{
+        margin-right:500px !important;
+    }
+    .left{
+        margin-left:50px;
+        margin-bottom:30px;
+    }
+    .scrollable-table {
+        overflow-y: auto;
+        height: 400px; /* Adjust as needed */
+        width:400px;
+    }
+
+    .buttonContainer {
+        position: fixed;
+        top: 10%;
+        right: 0;
+    }
+
+    .closebutton {
+        background: url('https://api.iconify.design/icon-park-solid/back.svg') no-repeat center center / contain;
+        background-color: none;
+        width: 60px;
+        height: 60px;
+        border: none;
+        text-indent: -9999px;
+        border-radius: 10px;
+    }
+    .gamesettingsmobile {
+        display: block;
+        margin-top: 100px !important;
+        width: 300px;
+        display: flex;
+        justify-content: center; /* align horizontal */
+        align-items: center; /* align vertical */
+    }
+    /*Active Game*/
+    #SaveModal {
+        margin-left: 50px;
+    }
+    #blankspace{
+        display:none;
+    }
 }

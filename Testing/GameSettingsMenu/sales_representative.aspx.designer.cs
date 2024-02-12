@@ -87,6 +87,15 @@ namespace HuarITSolutions
         protected global::System.Web.UI.WebControls.TextBox deviceID;
 
         /// <summary>
+        /// setBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button setBtn;
+
+        /// <summary>
         /// fullName control.
         /// </summary>
         /// <remarks>
@@ -184,6 +193,15 @@ namespace HuarITSolutions
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox location;
+
+        /// <summary>
+        /// clearBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button clearBtn;
 
         /// <summary>
         /// isActive control.

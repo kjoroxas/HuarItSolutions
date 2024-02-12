@@ -7,17 +7,82 @@
     <meta name="viewport" content="width=device-width" />
     <title></title>
     <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <webopt:bundlereference runat="server" path="~/Content/bootstrap.css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 </head>
 <body>
+
     <form id="form1" runat="server">
+                <div class="container">
+        <div class="dropdown" id="UserControl" contenteditable="inherit">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                Welcome, <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M8 7a4 4 0 1 1 8 0a4 4 0 0 1-8 0m0 6a5 5 0 0 0-5 5a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3a5 5 0 0 0-5-5z" clip-rule="evenodd"/></svg> dev
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><asp:Button ID="LogOutButton" CssClass="logout" runat="server" Text="Logout" OnClick="LogOutButton_Click" /></li>
+          
+            </ul>
+        </div>
+    </div>
     <div>
-        <h1>Mobile Master Page</h1>
         <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
         <section class="content-wrapper main-content clear-fix">
             <asp:ContentPlaceHolder runat="server" ID="MainContent" />
         </section>
-        <friendlyUrls:ViewSwitcher runat="server" />
     </div>
     </form>
+            <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/Scripts/bootstrap.js") %>
+        <%: Scripts.Render("~/Scripts/jquery-3.4.1.min.js") %>
+        <%: Scripts.Render("~/Scripts/bootstrap.bundle.js") %>    
+    </asp:PlaceHolder>
+     <footer class="bg-body-tertiary text-center text-lg-start mobilefooter">
+
+          <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                &copy; <%: DateTime.Now.Year %> - Huar I.T. Solutions
+          </div>
+
+        </footer>
 </body>
 </html>
+
+<script>
+    $(document).ready(function () {
+       
+        $('.btn-custom').on('click', function () {
+            // If button is  active
+            if ($(this).hasClass('active')) {
+                return;
+            }
+
+            // Get the data-target 
+            var targetId = $(this).data('target');
+
+            // Hide tab panes
+            $('.tab-pane').fadeOut(200, function () {
+                $(this).removeClass('show active');
+            });
+
+            // Show the specific tab pane
+            $(targetId).delay(200).fadeIn(200, function () {
+                $(this).addClass('show active');
+            });
+
+            // Remove active class 
+            $('.btn-custom').removeClass('active');
+
+            // Add active class to the clicked button and disable it
+            $(this).addClass('active');
+        });
+    });
+
+
+</script>

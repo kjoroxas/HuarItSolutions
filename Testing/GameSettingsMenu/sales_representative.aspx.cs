@@ -61,6 +61,8 @@ namespace HuarITSolutions
 
         protected void outletCode_SelectedIndexChanged(object sender, EventArgs e)
         {
+            setBtn.Visible = true;
+            clearBtn.Visible = true;
             deleteBtn.Visible = true;
             newBtn.Visible = false;
             editBtn.Visible = true;
@@ -181,6 +183,8 @@ namespace HuarITSolutions
         }
         protected void newBtnClick(object sender, EventArgs e)
         {
+            setBtn.Visible = true;
+            clearBtn.Visible = true;
             outletCodeTextBox.Visible = false;
             outletCode.Visible = false;
             outletCodeText.Visible = true;
@@ -486,6 +490,8 @@ namespace HuarITSolutions
 
         private void defaultStateBtn()
         {
+            setBtn.Visible = false;
+            clearBtn.Visible = false;
             outletCodeLabel1.Visible = true;
             outletCodeTextBox.Visible = true;
             isActive.Enabled = false;
