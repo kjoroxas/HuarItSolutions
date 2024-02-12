@@ -3,17 +3,17 @@
 <asp:Content ID="LoginView" ContentPlaceHolderID="MainContent" runat="server">
 
     <main>
-        <section class="row mb-40" style="margin-left:30px;" aria-labelledby="aspnetTitle">
+        <section class="row mb-40 d-flex justify-content-center "  aria-labelledby="aspnetTitle">
             <h1 id="aspnetTitle"  class="Title2">STL Management System Web</h1>
         </section>
 
-        <div class="row mb-40" id="loginsection">
+        <div class="row d-flex justify-content-center"  id="loginsection">
             <center>
             <section class="col-lg-6" id="login">
-                    <div class="card" style="margin-bottom:30px;width: 25rem; height: 31rem;">
+                    <div class="card pcLoginCard mobileLogincard mx-auto" >
                       <div class="card-body">
                         <h5 class="card-title subtitle" id="logintitle">Login</h5>
-                        <img src="image/I.t.png" alt="..." class="img-fluid" style="width:250px; height:auto; "/><br />
+                        <img src="image/I.t.png" alt="..." class="img-fluid loginlogopc" /><br />
                           <asp:CustomValidator ID="emailVaildator" runat="server" ErrorMessage="Invalid username or password. Please try again" ForeColor="Red" ValidateEmptyText="true" OnServerValidate="emailVaildator_ServerValidate"></asp:CustomValidator>
                           <h6 class="exempt subheader">Username:</h6>
 
@@ -47,5 +47,15 @@
         footer{
             margin-top:-30px;
         }
+        @media screen and (min-width: 375px) and (max-width: 500px) {
+            html, body {
+              height: 100%;
+              margin: 0;
+              padding: 0;
+              overflow: hidden; /* This will disable scrolling */
+
+            }
+        }
     </style>
+
 </asp:Content>
