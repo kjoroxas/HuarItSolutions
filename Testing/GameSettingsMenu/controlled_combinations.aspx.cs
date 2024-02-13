@@ -31,6 +31,8 @@ namespace HuarITSolutions
         {
             if (!this.IsPostBack)
             {
+                saveModal.Enabled = false;
+                deleteBtn.Enabled = false;
                 combination.Enabled = false;
                 bLimit.Enabled = false;
 
@@ -97,6 +99,8 @@ namespace HuarITSolutions
             if (selectedGame != "0")
             {
                 //  JavaScript function to enable the TextBox
+                saveModal.Enabled = true;
+                deleteBtn.Enabled = true;
                 combination.Enabled = true;
                 bLimit.Enabled = true;
 
@@ -124,8 +128,9 @@ namespace HuarITSolutions
             else
             {
                 // JavaScript function to disable the TextBox
-               
 
+                saveModal.Enabled = false;
+                deleteBtn.Enabled = false;
                 combination.Enabled = false;
                 //combination.Text = 
                 bLimit.Enabled = false;

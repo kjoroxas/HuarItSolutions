@@ -12,35 +12,37 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <div class="card specificcard" >
+            <div class="card specificcard specificcard2" >
               <div class="card-body">
                                <h5 class="subtitle"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path fill="currentColor" d="m12 1.148l6.16 9.602H5.84zm0 3.704L9.5 8.75h5zM2 13h9v9H2zm2 2v5h5v-5zm13.5 0a2.5 2.5 0 1 0 0 5a2.5 2.5 0 0 0 0-5M13 17.5a4.5 4.5 0 1 1 9 0a4.5 4.5 0 0 1-9 0"/></svg> Controlled Combinations</h5>
                 <div style="margin-left:1px;" class="row">
-                    <div class="col-4">
+                    <div class="col-3 margin">
                         <label class="subheader" style="margin-left:30px; margin-top:3px;"><small>Game Code</small></label><br />
                         <asp:DropDownList ID="gameCode" runat="server" AutoPostBack="true" CssClass="gameCodeDropDown" OnSelectedIndexChanged="gameCode_SelectedIndexChanged">
                             <asp:ListItem Value="0">Select Game Code</asp:ListItem>
                         </asp:DropDownList><br />
                     </div>
-                    <div class="col-3">
+                    <div class="col-3 margin center">
                         <label class="subheader"><small>Combination</small></label><br />
                         <asp:TextBox ID="combination" CssClass="textbox" ValidateRequestMode="Disabled" type="text" runat="server" ></asp:TextBox>
 
                     </div>
-                    <div class="col-3">
+                    <div class="col-3 margin center">
                         <label class="subheader"><small>Bet Limit</small></label><br />
                         <asp:TextBox ID="bLimit" CssClass="textbox" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox>
                     </div>
 
-                    <div class="col-2">
+                    <div class="col-1 space">
                         <br />
-                        <button type="button" class="btn btndesign" data-toggle="modal" style="font-size:18px;width:100px;" data-target="#confirmationmodal">
-                        Save
-                        </button>
+                        <asp:Button ID="saveModal" runat="server" Text="Save" Width="100px" Height="40px" />
                     </div>
+                    <div class="col-1">
+                        <br />
+                        <asp:Button ID="deleteBtn" runat="server" Text="Delete" Width="100px" Height="40px" />
 
+                    </div>
                 </div>
-                <div  style="height:500px;">
+                <div  style="height:450px;">
                     <div class="row" style="margin-left:30px;margin-top:30px;  ">
                         <div class="scrollable-table2">
                             <asp:Table ID="CombinationsTab" runat="server" Width="80%"  HorizontalAlign="Left" CssClass="table table-bordered" style="font-size:20px;" >
@@ -88,7 +90,14 @@
     <%: Scripts.Render("~/Scripts/jquery-3.4.1.min.js") %>
     <%: Scripts.Render("~/Scripts/bootstrap.bundle.js") %>    
 </asp:PlaceHolder>
- 
+<script>
+
+    $("#<%= saveModal.ClientID %>").click(function (e) {
+        $('#confirmationmodal').modal('show');
+        e.preventDefault();
+        return false;
+    });
+</script>
 
 
 

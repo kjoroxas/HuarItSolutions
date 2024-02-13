@@ -20,7 +20,7 @@
                          <div class="card-body">
                          <h5 class="card-title"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path fill="currentColor" d="M18.72 14.76c.35-.85.54-1.76.54-2.76c0-.72-.11-1.41-.3-2.05c-.65.15-1.33.23-2.04.23A9.07 9.07 0 0 1 9.5 6.34a9.21 9.21 0 0 1-4.73 4.88c-.04.25-.04.52-.04.78A7.27 7.27 0 0 0 12 19.27c1.05 0 2.06-.23 2.97-.64c.57 1.09.83 1.63.81 1.63c-1.64.55-2.91.82-3.78.82c-2.42 0-4.73-.95-6.43-2.66a9.03 9.03 0 0 1-2.24-3.69H2v-4.55h1.09a9.09 9.09 0 0 1 15.33-4.6a8.991 8.991 0 0 1 2.47 4.6H22v4.55h-.06L18.38 18l-5.3-.6v-1.67h4.83zm-9.45-2.99c.3 0 .59.12.8.34a1.136 1.136 0 0 1 0 1.6c-.21.21-.5.33-.8.33c-.63 0-1.14-.5-1.14-1.13c0-.63.51-1.14 1.14-1.14m5.45 0c.63 0 1.13.51 1.13 1.14c0 .63-.5 1.13-1.13 1.13c-.63 0-1.14-.5-1.14-1.13a1.14 1.14 0 0 1 1.14-1.14"/></svg> Sales Representative</h5>
                              <div style="margin-left:40px;" class="row" id="firstrow">
-                                 <div class="col-6 ">
+                                 <div class="col-6 margin">
                                    <asp:DropDownList ID="outletCode" OnSelectedIndexChanged="outletCode_SelectedIndexChanged" CssClass="gameCodeDropDown2" runat="server" AutoPostBack="true">
                                        <asp:ListItem Value="0">Select Outlet Code</asp:ListItem>
                                    </asp:DropDownList><br />   
@@ -41,7 +41,7 @@
                                      </div>
 
                                    </div>
-                                <div  class="col-4">
+                                <div  class="col-4 margin">
 
                                     <asp:Label ID="outletCodeLabel1" Text="Outlet Code"  CssClassAssociatedControlID="outletCodeText" EnableViewState="false" runat="server">
                                         <asp:TextBox ID="outletCodeTextBox" CssClass="textbox3"  ValidateRequestMode="Disabled" type="text" runat="server" />
@@ -50,28 +50,36 @@
                                     <asp:Label ID="outletCodeLabel" Text="Outlet Code" AssociatedControlID="outletCodeText" EnableViewState="false" runat="server">
                                         <asp:TextBox ID="outletCodeText" CssClass="textbox3" runat="server" />
                                     </asp:Label>
-
+                                    <asp:RequiredFieldValidator ID="outletCodeTextValidator" runat="server" ControlToValidate="outletCodeText" ErrorMessage="Please Enter an Outlet Code." CssClass="new-validator-error" Display="Dynamic"></asp:RequiredFieldValidator>
 <%--                                   <asp:TextBox ID="outletCode1" Height="20px" Width="300px" ValidateRequestMode="Disabled" type="text" runat="server" ></asp:TextBox><br />--%>
                                    
                                     <label class="subheader" style=" margin-top: 15px;margin-right:68px;"><small>Device ID</small></label>
-                                    <asp:TextBox ID="deviceID"  CssClass="textbox2" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><asp:Button ID="setBtn" runat="server" Text="Set" /><br />
+                                    <asp:TextBox ID="deviceID"  CssClass="textbox2" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><asp:Button ID="clearBtn" runat="server" Text="Clear" /><br />
 
                                     <label class="subheader"  style=" margin-top: 10px;margin-right:70px; margin-bottom:10px;"><small>Fullname</small></label>
                                     <asp:TextBox ID="fullName" CssClass="textbox2"  ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox>
-
+                                    <asp:RequiredFieldValidator ID="fullNameValidator" runat="server" ControlToValidate="fullName" ErrorMessage="Please enter your full name." CssClass="new-validator-error" Display="Dynamic"></asp:RequiredFieldValidator>
                                     <label class="subheader" style=" margin-top: 5px; margin-right:77px;"><small>Address</small></label>
                                     <asp:TextBox ID="address" Height="50px" Width="300px" TextMode="MultiLine" Rows="3" CssClass="paragraph-style no-resize" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><br />
-
+                                    <asp:RequiredFieldValidator ID="addressValidator" runat="server" ControlToValidate="address" ErrorMessage="Please enter address." CssClass="new-validator-error" Display="Dynamic"></asp:RequiredFieldValidator>
                                     <label class="subheader" style=" margin-top: 10px; margin-right:72px;"><small>Area</small></label>
-                                    <asp:DropDownList ID="areaCode" Height="30px" CssClass="gameCodeDropDown" runat="server">
+                                    <asp:DropDownList ID="areaCode"  Height="30px" CssClass="gameCodeDropDown" runat="server">
                                         <asp:ListItem Value=0>Select Area Code</asp:ListItem>
                                         <asp:ListItem Value="area1">Area 1</asp:ListItem>
                                         <asp:ListItem Value="area2">Area 2</asp:ListItem>
                                     </asp:DropDownList><br />
-
+                                    <asp:RequiredFieldValidator 
+                                        ControlToValidate="areaCode" 
+                                        ID="areaCodeValidator"
+                                        ErrorMessage="Please select an area code" 
+                                        InitialValue="0" 
+                                        runat="server" 
+                                        CssClass="new-validator-error"
+                                        Display="Dynamic">
+                                    </asp:RequiredFieldValidator>
                                    <label class="subheader" style=" margin-top: 15px; margin-right:22px;"><small>Mobile Number</small></label>
                                     <asp:TextBox ID="mobileNumber" CssClass="textbox2" ValidateRequestMode="Disabled" MaxLength="15" type="in" runat="server"  ></asp:TextBox><br />
-
+                                    <asp:RequiredFieldValidator ID="mobileNumberValidator" runat="server" ControlToValidate="mobileNumber" ErrorMessage="Please enter mobile number." CssClass="new-validator-error" Display="Dynamic"></asp:RequiredFieldValidator>
                                     <label style=" margin-top: 10px; margin-right:65px;"><small>Password</small></label>
                                     <div class="input-group" style="margin-left:137px; margin-top:-30px;">                                     
                                         <asp:TextBox ID="password" CssClass="textbox2" ValidateRequestMode="Disabled" type="password" runat="server"  ></asp:TextBox><br />
@@ -79,13 +87,14 @@
                                             <button id="show_password" class="btn btn-outline-secondary" style="height:30px;width:auto;display: flex; align-items: center;justify-content: center;" type="button"><i class="fa-solid fa-eye"></i></button>
                                         </div>
                                     </div>
-
+                                    <asp:RequiredFieldValidator ID="passwordValidator" runat="server" ControlToValidate="password" ErrorMessage="Please enter password." CssClass="new-validator-error" Display="Dynamic"></asp:RequiredFieldValidator>
                                      <label class="subheader" style=" margin-top: 15px; margin-right:5px;"><small>Confirm Password</small></label>
                                     <div class="input-group" style="margin-left:137px; margin-top:-35px;">                                     
                                         <asp:TextBox ID="confirmPassword" CssClass="textbox2" ValidateRequestMode="Disabled" type="password" runat="server"  ></asp:TextBox><br />
                                         <div class="input-group-append">
                                             <button id="show_password2" class="btn btn-outline-secondary" style="height:30px;width:auto;display: flex; align-items: center;justify-content: center; margin-right:10px;" type="button"><i class="fa-solid fa-eye"></i></button>
                                         </div>
+                                   
                                     <asp:CompareValidator ID="comparePasswords" runat="server" ForeColor="Red"
                                         ControlToValidate="confirmPassword" 
                                         ControlToCompare="password" 
@@ -95,31 +104,55 @@
                                         Display="Dynamic">
                                     </asp:CompareValidator>
                                     </div>
-
+                                     <asp:RequiredFieldValidator ID="confirmPasswordValidator" runat="server" ControlToValidate="confirmPassword" ErrorMessage="Confirm your password." CssClass="new-validator-error" Display="Dynamic"></asp:RequiredFieldValidator>
                                     <label class="subheader" style=" margin-top: 15px; margin-right:24px;"><small>Group Account </small></label>
-                                     <asp:TextBox ID="groupAccount" CssClass="textbox2" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><br />
+                                     <asp:TextBox ID="groupAccount" CssClass="textbox2" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox>    <br />
+                                    <asp:RequiredFieldValidator ID="groupAccountValidator" runat="server" ControlToValidate="groupAccount" ErrorMessage="Group account is required." CssClass="new-validator-error" Display="Dynamic"></asp:RequiredFieldValidator>
 
                                     <label class="subheader" style=" margin-top: 15px; margin-right:-15px;"><small>Commision Type</small></label>
-                                    <asp:DropDownList ID="commissionType" Height="30px" CssClass="gameCodeDropDown" runat="server">
+                                    <asp:DropDownList ID="commissionType"  Height="30px" CssClass="gameCodeDropDown" runat="server">
                                         <asp:ListItem Value=0>Select Commision Type</asp:ListItem>
                                         <asp:ListItem Value="admin">Admin</asp:ListItem>
                                         <asp:ListItem Value="coor">Coor</asp:ListItem>
                                     </asp:DropDownList><br />
-
+                                    <asp:RequiredFieldValidator 
+                                        ControlToValidate="commissionType" 
+                                        ID="commissionTypeValidator" 
+                                    
+                                        ErrorMessage="Please select a commission type" 
+                                        InitialValue="0" 
+                                        runat="server" 
+                                        CssClass="new-validator-error"
+                                        Display="Dynamic">
+                                    </asp:RequiredFieldValidator>
                                     <label class="subheader" style=" margin-top: 15px; margin-right:3px;"><small>Back Pay Type</small></label>
-                                    <asp:DropDownList ID="backPayType" Height="30px" CssClass="gameCodeDropDown" runat="server">
+                                    <asp:DropDownList ID="backPayType"  Height="30px" CssClass="gameCodeDropDown" runat="server">
                                         <asp:ListItem Value=0>Select Back Pay Type</asp:ListItem>
                                         <asp:ListItem Value="admin">Admin</asp:ListItem>
                                         <asp:ListItem Value="coor">Coor</asp:ListItem>
                                     </asp:DropDownList><br />
-
+                                    <asp:RequiredFieldValidator 
+                                        ControlToValidate="backPayType" 
+                                        ID="backPayTypeValidator" 
+                                        
+                                        ErrorMessage="Please select a commission type" 
+                                        InitialValue="0" 
+                                        runat="server" 
+                                        CssClass="new-validator-error"
+                                        Display="Dynamic">
+                                    </asp:RequiredFieldValidator>
                                     <label class="subheader" style=" margin-top: 15px; margin-right:70px;"><small>Location</small></label>
-                                    <asp:TextBox ID="location" CssClass="textbox2" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><asp:Button ID="clearBtn" runat="server" Text="Clear" /><br />
-                                    
+                                    <asp:TextBox ID="location" CssClass="textbox2" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><asp:Button ID="setBtn" runat="server" Text="Set" /><br />
+                                     <asp:RequiredFieldValidator ID="locationValidator" runat="server" ControlToValidate="location" ErrorMessage="Location is Required." CssClass="new-validator-error" Display="Dynamic"></asp:RequiredFieldValidator>
                                     <asp:CheckBox ID="isActive" CssClass="ActiveCheckbox" runat="server" /><label style="position: relative; top: -8px; right:4px;"><small>Active</small></label><br />
+                                    <asp:CustomValidator ID="isActivevalidator" runat="server" 
+                                        ErrorMessage="Click the checkbox " 
+                                        CssClass="new-validator-error"
+                                        OnServerValidate="isActivevalidator_ServerValidate">
+                                    </asp:CustomValidator>
                                     </div>
-                                 <div style="margin-left:40px;margin-top:-20px;" class="row" >
-                                        <div class="col-3">
+                                 <div  class="row pcsalesbuttons" >
+                                        <div class="col-3 margin">
                                             <br />
 
                                         </div>
@@ -129,7 +162,7 @@
                                             <asp:Button runat="server" Text="Save" ID="saveBtn" CssClass="salesSave" />
                                             <asp:Button runat="server" Text="New" ID="newBtn" OnClick="newBtnClick" CssClass="salesNew"/>
                                             <asp:Button runat="server" Text="Delete" ID="deleteBtn" OnClick="deleteBtnClick" CssClass="salesDelete" />
-                                            <asp:Button runat="server" Text="Cancel" Height="30px" ID="cancelBtn" OnClick="cancelBtnClick" CssClass="salesCancel" />
+                                            <asp:Button runat="server" Text="Cancel" Height="30px" ID="cancelBtn" OnClick="cancelBtnClick" CausesValidation="False" CssClass="salesCancel" />
                                         </div>
 
                                     </div>
@@ -147,7 +180,7 @@
                         Are you sure about your changes?
                       </div>
                       <div class="modal-footer">
-                        <asp:Button ID="btnClose" runat="server" Text="Close" data-dismiss="modal" />
+                        <asp:Button ID="btnClose" runat="server" Text="Close"  />
                         <asp:Button runat="server" Text="Save" ID="SaveBtn2" OnClick="saveBtnClick" />
                       </div>
                     </div>
@@ -214,10 +247,184 @@
         e.preventDefault();
         return false;
     });
+    $("#<%= btnClose.ClientID %>").click(function (e) {
+        $('#confirmationmodal').modal('hide');
+        e.preventDefault();
+        return false;
+    });
     $(document).ready(function () {
         $("#<%=areaCode.ClientID%>, #<%=commissionType.ClientID%>, #<%=backPayType.ClientID%>").change(function () {
             if ($(this).val() != 0) {
                 $(this).find('option[value=0]').remove();
+            }
+        });
+    });
+
+
+</script>
+<script type="text/javascript">
+    /*this disables save button if fields are not all filled */
+    window.onload = function () {
+        var textboxes = document.querySelectorAll('input[type=text], input[type=password], input[type=email]');
+        var dropdowns = document.getElementsByTagName('select');
+        var checkboxes = document.querySelectorAll('input[type=checkbox]');
+        var saveBtn = document.getElementById('saveBtn');
+        var groupAccount = document.getElementById('<%= groupAccount.ClientID %>');
+
+        function checkFields() {
+            for (var i = 0; i < textboxes.length; i++) {
+                if (textboxes[i].value.trim() == '') {
+                    return false;
+                }
+            }
+            for (var i = 0; i < dropdowns.length; i++) {
+                if (dropdowns[i].value == '') {
+                    return false;
+                }
+            }
+            for (var i = 0; i < checkboxes.length; i++) {
+                if (!checkboxes[i].checked) {
+                    return false;
+                }
+            }
+            // Add your groupAccount validation here
+            if (groupAccount.value.trim() == '') {
+                return false;
+            }
+            return true;
+        }
+
+        function enableDisableSaveBtn() {
+            if (checkFields()) {
+                saveBtn.disabled = false;
+            } else {
+                saveBtn.disabled = true;
+            }
+        }
+
+        for (var i = 0; i < textboxes.length; i++) {
+            textboxes[i].addEventListener('input', enableDisableSaveBtn);
+        }
+        for (var i = 0; i < dropdowns.length; i++) {
+            dropdowns[i].addEventListener('change', enableDisableSaveBtn);
+        }
+        for (var i = 0; i < checkboxes.length; i++) {
+            checkboxes[i].addEventListener('change', enableDisableSaveBtn);
+        }
+
+        // Add an event listener for the groupAccount field
+        groupAccount.addEventListener('input', enableDisableSaveBtn);
+
+        enableDisableSaveBtn();
+    }
+    /*Validators */
+    $(document).ready(function () {
+        $('#<%= groupAccount.ClientID %>').blur(function () {
+            if ($(this).val().length == 0) {
+                $('#<%= groupAccountValidator.ClientID %>').show();
+        } else {
+            $('#<%= groupAccountValidator.ClientID %>').hide();
+        }
+    });
+    });
+    $(document).ready(function () {
+        $('#<%= outletCodeText.ClientID %>').blur(function () {
+                if ($(this).val().length == 0) {
+                    $('#<%= outletCodeTextValidator.ClientID %>').show();
+        } else {
+                $('#<%= outletCodeTextValidator.ClientID %>').hide();
+            }
+        });
+    });
+
+    $(document).ready(function () {
+        $('#<%= fullName.ClientID %>').blur(function () {
+                if ($(this).val().length == 0) {
+                    $('#<%= fullNameValidator.ClientID %>').show();
+        } else {
+                $('#<%= fullNameValidator.ClientID %>').hide();
+            }
+        });
+    });
+    $(document).ready(function () {
+        $('#<%= address.ClientID %>').blur(function () {
+                    if ($(this).val().length == 0) {
+                        $('#<%= addressValidator.ClientID %>').show();
+        } else {
+                $('#<%= addressValidator.ClientID %>').hide();
+            }
+        });
+    });
+    $(document).ready(function () {
+        $('#<%= mobileNumber.ClientID %>').blur(function () {
+                if ($(this).val().length == 0) {
+                    $('#<%= mobileNumberValidator.ClientID %>').show();
+        } else {
+                $('#<%= mobileNumberValidator.ClientID %>').hide();
+            }
+        });
+    });
+    $(document).ready(function () {
+        $('#<%= password.ClientID %>').blur(function () {
+                    if ($(this).val().length == 0) {
+                        $('#<%= passwordValidator.ClientID %>').show();
+        } else {
+                $('#<%= passwordValidator.ClientID %>').hide();
+            }
+        });
+    });
+
+    $(document).ready(function () {
+        $('#<%= confirmPassword.ClientID %>').blur(function () {
+                if ($(this).val().length == 0) {
+                    $('#<%= confirmPasswordValidator.ClientID %>').show();
+        } else {
+                $('#<%= confirmPasswordValidator.ClientID %>').hide();
+            }
+        });
+    });
+    $(document).ready(function () {
+        $('#<%= location.ClientID %>').blur(function () {
+                if ($(this).val().length == 0) {
+                    $('#<%= locationValidator.ClientID %>').show();
+        } else {
+                $('#<%= locationValidator.ClientID %>').hide();
+            }
+        });
+    });
+    $(document).ready(function () {
+        $('#<%= areaCode.ClientID %>').blur(function () {
+                if ($(this).val().length == 0) {
+                    $('#<%= areaCodeValidator.ClientID %>').show();
+        } else {
+                $('#<%= areaCodeValidator.ClientID %>').hide();
+            }
+        });
+    });
+    $(document).ready(function () {
+        $('#<%= commissionType.ClientID %>').blur(function () {
+            if ($(this).val().length == 0) {
+                $('#<%= commissionTypeValidator.ClientID %>').show();
+        } else {
+                $('#<%= commissionTypeValidator.ClientID %>').hide();
+            }
+        });
+    });
+    $(document).ready(function () {
+        $('#<%= backPayType.ClientID %>').blur(function () {
+                if ($(this).val().length == 0) {
+                    $('#<%= backPayTypeValidator.ClientID %>').show();
+        } else {
+                $('#<%= backPayTypeValidator.ClientID %>').hide();
+            }
+        });
+    });
+    $(document).ready(function () {
+        $('#<%= isActive.ClientID %>').blur(function () {
+                if ($(this).val().length == 0) {
+                    $('#<%= isActivevalidator.ClientID %>').show();
+        } else {
+                $('#<%= isActivevalidator.ClientID %>').hide();
             }
         });
         });

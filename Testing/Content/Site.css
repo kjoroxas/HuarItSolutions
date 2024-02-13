@@ -19,7 +19,13 @@
     padding-left: 15px;
     padding-right: 15px;
 }
+.mobilespecific {
+    display: none;
+}
 
+.pcspecific {
+    display: block;
+}
 /*Footer*/
 footertext {
     margin: 0 !important;
@@ -30,8 +36,6 @@ footer {
     font-size:20px;
 
 }
-
-
 
 /* Set widths on the form inputs since otherwise they're 100% wide */
 input,
@@ -278,10 +282,21 @@ button
     margin-right:0 !important;
 }
 /*active file*/
-.ActiveGameCheckBox{
-    margin-top:5px;
+.pcgamecode {
+    margin-left: 30px;
+}
+.pcprintcode {
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-right: 7px;
+}
+.pccoorcommission {
+    margin-top: 8px;
+    margin-right: 10px;
+}
+.ActiveGameCheckBox {
+    margin-top: 5px;
     margin-left: 120px;
-
 }
 .ActiveGameCheckBox input {
     width: 25px;
@@ -318,8 +333,11 @@ button
 .scrollable-table2 {
     overflow-y: auto;
 
-    height: 600px; /* Adjust as needed */
+    height: 500px; /* Adjust as needed */
 
+}
+.text{
+    margin-top:5px;
 }
 .scrollable-table3 {
     overflow-y: auto;
@@ -352,6 +370,8 @@ th, .aspNetTable th {
     border-style: solid;
     border-color: transparent transparent #f44336 transparent;
 }
+
+
 .btndesign{
     background-color:lightgray !important;
     width:60px;
@@ -397,7 +417,10 @@ th, .aspNetTable th {
     margin-left: 53px;
     
 }
-
+.pcsalesbuttons {
+    margin-left:40px;
+    margin-top:-20px;
+}
 
 
 .ActiveCheckbox input {
@@ -448,7 +471,7 @@ passwordMatchvalidator{
 .filecard {
     width: 110rem;
     height: 46rem;
-    margin-top: 40px;
+    margin-top: 30px;
 }
 .specifc {
     width: 106rem;
@@ -462,6 +485,34 @@ passwordMatchvalidator{
 .gamesettingsmobile{
     display:none;
 }
+/*Validators for sales*/
+
+.new-validator-error {
+    display: block;
+    position: absolute;
+    background-color: indianred; /* Change the color to your preference */
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 10px;
+    z-index: 1;
+    margin-left: 350px;
+    margin-top: -40px;
+    font-size: 12px;
+}
+
+    .new-validator-error::after {
+        content: "";
+        position: absolute;
+        bottom: 120%;
+        left: 0%;
+        margin-left: -10px;
+        margin-bottom: -30px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent indianred transparent transparent; /* Change the color to match the background-color */
+    }
+
 /* Mobile CSS*/
 @media screen and (min-width: 360px) and (max-width: 500px) {
     .body-content {
@@ -677,23 +728,41 @@ passwordMatchvalidator{
         margin-left: 30px;
     }
     /*Specificfiles*/
-
+    #activeGametext {
+        margin-left: 10px;
+    }
+    #agame{
+        margin-left:60px;
+    }
+    #combine{
+        margin-left:60px;
+    }
     .filecard {
-        width: 24rem;
+        width: 28rem;
         height: 125rem;
         margin-top: 30px !important;
+        border: none;
     }
     .specifc {
-        width: 24rem;
+        width: 28rem;
         height: 125rem;
         border: none;
 
     }
+    .specifc2 {
+        width: 28rem;
+        height: 65rem;
+        border: none;
+    }
     .specificcard {
-        width: 24rem;
+        width: 28rem;
         height: 125rem;
-        border: none !important;
 
+
+    }
+    .specificcard2 {
+        width: 28rem;
+        height: 65rem;
     }
     #sidettons {
 
@@ -732,17 +801,68 @@ passwordMatchvalidator{
     }
     .gamesettingsmobile {
         display: block;
-        margin-top: 100px !important;
+        margin-top: 30px !important;
         width: 300px;
         display: flex;
         justify-content: center; /* align horizontal */
         align-items: center; /* align vertical */
     }
+    .gamesettingsmobilerow {
+        display: flex;
+        justify-content: center; /* align horizontal */
+        align-items: center; /* align vertical */
+    }
+    .mobilespecific {
+        display: block;
+    }
+    .pcspecific {
+        display: none;
+    }
     /*Active Game*/
+    .mobilegamecode {
+        margin-left: 0px;
+    }
+    .mobileprintcode {
+        margin-top: 20px;
+        margin-left: 0px;
+        margin-right: 7px;
+    }
+    
+    .mobilecommission{
+        margin-top:-50px;
+    }
     #SaveModal {
         margin-left: 50px;
     }
     #blankspace{
         display:none;
+    }
+    .ActiveCheckbox input {
+        margin-left: 5px;
+        margin-right: 10px;
+        width: 25px;
+        height: 25px;
+    }
+    .ActiveGameCheckbox {
+        margin-left: 0px;
+    }
+    /*Controlled Combinations*/
+    .space {
+        margin-right:200px;
+        margin-left:-20px;
+    }
+    .center{
+        margin-left:30px;
+        margin-top:20px;
+    }
+    .scrollable-table3 {
+        overflow-y: auto;
+        height: 400px; /* Adjust as needed */
+        width: 400px;
+        margin-bottom:20px;
+    }
+    .pcsalesbuttons {
+        margin-left: 40px;
+        margin-top: -20px;
     }
 }

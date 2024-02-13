@@ -12,27 +12,31 @@
 <body>
     <form id="form1" runat="server">
             <div>
-                <div class="card specificcard" >
+                <div class="card specificcard specificcard2" >
                   <div class="card-body">
                         <h5 class="subtitle"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path fill="currentColor" d="M23 12c0 6.08-4.92 11-11 11S1 18.08 1 12S5.92 1 12 1s11 4.92 11 11M13 4.06c2.13.27 4.07 1.39 5.37 3.1l1.74-1A10 10 0 0 0 13 2zm-9.11 2.1l1.74 1A8.022 8.022 0 0 1 11 4.06V2a10 10 0 0 0-7.11 4.16m-1 9.94l1.73-1a8.03 8.03 0 0 1 0-6.2l-1.73-1a9.864 9.864 0 0 0 0 8.2M11 19.94a8.022 8.022 0 0 1-5.37-3.1l-1.74 1A10 10 0 0 0 11 22zm9.11-2.1l-1.74-1a8.022 8.022 0 0 1-5.37 3.1v2c2.85-.29 5.44-1.78 7.11-4.1m1-1.74c1.19-2.6 1.19-5.6 0-8.2l-1.73 1a8.03 8.03 0 0 1 0 6.2zM15 12l-3-5l-3 5l3 5z"/></svg> Low-Winning Combinations</h5>
                     <div style="margin-left:1px;" class="row">
-                        <div class="col-4">
+                        <div class="col-3 margin">
                             <label class="subheader" style="margin-left:30px; margin-top:3px;"><small>Game Code</small></label><br />
                              <asp:DropDownList ID="gameCode" CssClass="gameCodeDropDown" runat="server" AutoPostBack="true" OnSelectedIndexChanged="gameCode_SelectedIndexChanged">
                             <asp:ListItem Value="0">Select Game Code</asp:ListItem>
                         </asp:DropDownList><br />
                         </div>
-                        <div class="col-4">
-                            <label><small>Combination</small></label><br />
+                        <div class="col-3 margin center">
+                            <label class="text"><small>Combination</small></label><br />
                             <asp:TextBox ID="Combination" CssClass="textbox" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox>
                         </div>
                         
-                        <div class="col-2">
+                        <div class="col-1 space">
                             <br />
-                        <button type="button" class="btn btndesign" style="font-size:18px;width:100px;" data-toggle="modal" data-target="#confirmationmodal"> Save</button>
+                        <asp:Button ID="saveModal" runat="server" Text="Save" Width="100px" Height="40px" />
                         </div>
-
+                          <div class="col-1">
+                          <br />
+                              <asp:Button ID="deleteBtn" runat="server" Text="Delete" Width="100px" Height="40px" />
+                      </div>
                     </div>
+
                     <div  style="height:300px;">
                         <div class="row" style="margin-left:30px;margin-top:30px;  ">
                             <div class="scrollable-table2">
@@ -72,6 +76,7 @@
                   </div>
                 </div>
 </div>
+
     </form>
 </body>
 </html>
@@ -80,3 +85,11 @@
     <%: Scripts.Render("~/Scripts/jquery-3.4.1.min.js") %>
     <%: Scripts.Render("~/Scripts/bootstrap.bundle.js") %>    
 </asp:PlaceHolder>
+<script>
+
+    $("#<%= saveModal.ClientID %>").click(function (e) {
+        $('#confirmationmodal').modal('show');
+        e.preventDefault();
+        return false;
+    });
+</script>
