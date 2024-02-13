@@ -183,6 +183,18 @@ namespace HuarITSolutions
         }
         protected void newBtnClick(object sender, EventArgs e)
         {
+            isActivevalidator.Visible = true;
+            backPayTypeValidator.Visible = true;
+            commissionTypeValidator.Visible = true;
+            areaCodeValidator.Visible = true;
+            locationValidator.Visible = true;
+            confirmPasswordValidator.Visible = true;
+            passwordValidator.Visible = true;
+            mobileNumberValidator.Visible = true;
+            addressValidator.Visible = true;
+            fullNameValidator.Visible=true;  
+            outletCodeTextValidator.Visible = true;
+            groupAccountValidator.Visible = true;
             setBtn.Visible = true;
             clearBtn.Visible = true;
             outletCodeTextBox.Visible = false;
@@ -487,9 +499,24 @@ namespace HuarITSolutions
             backPayType.SelectedValue = "0";
             areaCode.SelectedValue = "0";
         }
-
+        protected void isActivevalidator_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            args.IsValid = isActive.Checked;
+        }
         private void defaultStateBtn()
         {
+            isActivevalidator.Visible = false;
+            backPayTypeValidator.Visible = false;
+            commissionTypeValidator.Visible = false;
+            areaCodeValidator.Visible = false;
+            locationValidator.Visible = false;
+            confirmPasswordValidator.Visible = false;
+            passwordValidator.Visible = false;
+            mobileNumberValidator.Visible = false;
+            addressValidator.Visible = false;
+            fullNameValidator.Visible = false;
+            outletCodeTextValidator.Visible = false;
+            groupAccountValidator.Visible = false;
             setBtn.Visible = false;
             clearBtn.Visible = false;
             outletCodeLabel1.Visible = true;

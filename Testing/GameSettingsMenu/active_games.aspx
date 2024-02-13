@@ -37,10 +37,10 @@
                                                
                        </div>
                     <div class="col-4 margin left">
-                       <label class="subheader" style="margin-left:30px;"><small>Game Code</small></label>
+                       <label class="subheader pcgamecode mobilegamecode" ><small>Game Code</small></label>
                         <asp:TextBox ID="gameCode" CssClass="textbox" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><br />
 
-                       <label class="subheader" style=" margin-top: 20px; margin-left:30px; margin-right:7px;"><small>Print Code</small></label>
+                       <label class="subheader pcprintcode mobileprintcode" ><small>Print Code</small></label>
                         <asp:TextBox ID="printCode" CssClass="textbox" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><br /><br />
                         <asp:CheckBox ID="activeGameCheckbox" runat="server" CssClass="ActiveGameCheckBox" /><label style="position: relative; top: -6px; left:4px;" class="subheader"><small>Local Game</small></label><br /><br />
 
@@ -68,7 +68,7 @@
                         <label class="subheader" style=" margin-top: 20px;margin-right:20px;"><small>Back Pay(Admin)</small></label>
                         <asp:TextBox ID="AdminPay" CssClass="textbox" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><br />   <br /> <br /><br />      
 
-                       <label class="subheader" style="margin-top: 8px; margin-right:10px;"><small>Coor Commission</small></label>
+                       <label class="subheader pccoorcommission mobilecommission" ><small>Coor Commission</small></label>
                         <asp:TextBox ID="CoorCommission" CssClass="textbox" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><br />
 
                        <label class="subheader" style="margin-top: 15px; margin-right:30px;"><small>Back Pay(Coor)</small></label>
@@ -84,7 +84,7 @@
                         <div class="col" style="margin-top:50px;">
                             <br />
                             <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-light" data-toggle="modal" id="SaveModal" data-target="#confirmationmodal" style="margin-top:-20px; height:40px; width:300px; font-size:18px;"> Save</button>
+                            <asp:Button ID="saveModal" runat="server" Text="Save" Width="300px" Height="40px" />
                         </div>
                     </div>
              </div>  
@@ -159,8 +159,16 @@
     validator1.onmouseout = validator2.onmouseout = function () {
         this.style.display = 'none';
     }
-};
+    };
+
 </script>
 
+<script>
 
+    $("#<%= saveModal.ClientID %>").click(function (e) {
+        $('#confirmationmodal').modal('show');
+        e.preventDefault();
+        return false;
+    });
+</script>
 

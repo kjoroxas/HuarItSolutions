@@ -78,6 +78,15 @@ namespace HuarITSolutions
         protected global::System.Web.UI.WebControls.TextBox outletCodeText;
 
         /// <summary>
+        /// outletCodeTextValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator outletCodeTextValidator;
+
+        /// <summary>
         /// deviceID control.
         /// </summary>
         /// <remarks>
@@ -87,13 +96,13 @@ namespace HuarITSolutions
         protected global::System.Web.UI.WebControls.TextBox deviceID;
 
         /// <summary>
-        /// setBtn control.
+        /// clearBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button setBtn;
+        protected global::System.Web.UI.WebControls.Button clearBtn;
 
         /// <summary>
         /// fullName control.
@@ -105,6 +114,15 @@ namespace HuarITSolutions
         protected global::System.Web.UI.WebControls.TextBox fullName;
 
         /// <summary>
+        /// fullNameValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator fullNameValidator;
+
+        /// <summary>
         /// address control.
         /// </summary>
         /// <remarks>
@@ -112,6 +130,15 @@ namespace HuarITSolutions
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox address;
+
+        /// <summary>
+        /// addressValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator addressValidator;
 
         /// <summary>
         /// areaCode control.
@@ -123,6 +150,15 @@ namespace HuarITSolutions
         protected global::System.Web.UI.WebControls.DropDownList areaCode;
 
         /// <summary>
+        /// areaCodeValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator areaCodeValidator;
+
+        /// <summary>
         /// mobileNumber control.
         /// </summary>
         /// <remarks>
@@ -132,6 +168,15 @@ namespace HuarITSolutions
         protected global::System.Web.UI.WebControls.TextBox mobileNumber;
 
         /// <summary>
+        /// mobileNumberValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator mobileNumberValidator;
+
+        /// <summary>
         /// password control.
         /// </summary>
         /// <remarks>
@@ -139,6 +184,15 @@ namespace HuarITSolutions
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox password;
+
+        /// <summary>
+        /// passwordValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator passwordValidator;
 
         /// <summary>
         /// confirmPassword control.
@@ -159,6 +213,15 @@ namespace HuarITSolutions
         protected global::System.Web.UI.WebControls.CompareValidator comparePasswords;
 
         /// <summary>
+        /// confirmPasswordValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator confirmPasswordValidator;
+
+        /// <summary>
         /// groupAccount control.
         /// </summary>
         /// <remarks>
@@ -166,6 +229,15 @@ namespace HuarITSolutions
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox groupAccount;
+
+        /// <summary>
+        /// groupAccountValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator groupAccountValidator;
 
         /// <summary>
         /// commissionType control.
@@ -177,6 +249,15 @@ namespace HuarITSolutions
         protected global::System.Web.UI.WebControls.DropDownList commissionType;
 
         /// <summary>
+        /// commissionTypeValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator commissionTypeValidator;
+
+        /// <summary>
         /// backPayType control.
         /// </summary>
         /// <remarks>
@@ -184,6 +265,15 @@ namespace HuarITSolutions
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList backPayType;
+
+        /// <summary>
+        /// backPayTypeValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator backPayTypeValidator;
 
         /// <summary>
         /// location control.
@@ -195,13 +285,22 @@ namespace HuarITSolutions
         protected global::System.Web.UI.WebControls.TextBox location;
 
         /// <summary>
-        /// clearBtn control.
+        /// setBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button clearBtn;
+        protected global::System.Web.UI.WebControls.Button setBtn;
+
+        /// <summary>
+        /// locationValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator locationValidator;
 
         /// <summary>
         /// isActive control.
@@ -211,6 +310,15 @@ namespace HuarITSolutions
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox isActive;
+
+        /// <summary>
+        /// isActivevalidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator isActivevalidator;
 
         /// <summary>
         /// editBtn control.

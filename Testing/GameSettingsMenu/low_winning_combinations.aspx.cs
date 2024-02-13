@@ -27,6 +27,8 @@ namespace HuarITSolutions
         {
             if (!this.IsPostBack)
             {
+                saveModal.Enabled = false;
+                deleteBtn.Enabled = false;
                 Combination.Enabled = false;
                 listOfApprovedGames = sqlFunctions.getApprovedGames();
 
@@ -84,6 +86,8 @@ namespace HuarITSolutions
 
             if (selectedGame != "0")
             {
+                saveModal.Enabled = true;
+                deleteBtn.Enabled = true;
                 Combination.Enabled = true;
                 var gameDetails = listLowWinningCombinations.FirstOrDefault(x => x.GameCode == selectedGame);
                 if (gameDetails != null)
@@ -98,6 +102,8 @@ namespace HuarITSolutions
             }
             else
             {
+                saveModal.Enabled = false;
+                deleteBtn.Enabled = false;
                 Combination.Enabled = false;
 
             }

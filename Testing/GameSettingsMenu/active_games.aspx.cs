@@ -27,6 +27,7 @@ namespace HuarITSolutions
         {
             if (!this.IsPostBack)
             {
+                saveModal.Enabled = false;
                 gameCode.Enabled = false;
                 printCode.Enabled = false;
                 activeGameCheckbox.Enabled = false;
@@ -92,6 +93,7 @@ namespace HuarITSolutions
 
                 
             {
+                saveModal.Enabled = true;
                 //  JavaScript function to enable the TextBox
                 gameCode.Enabled = false;
                 printCode.Enabled = false;
@@ -125,6 +127,7 @@ namespace HuarITSolutions
             }
                 else
             {
+                saveModal.Enabled = false;
                 // JavaScript function to disable the TextBox
                 gameCode.Enabled = false;
                 printCode.Enabled = false;
