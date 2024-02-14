@@ -44,15 +44,18 @@ textarea {
     max-width: 280px;
 }
 /*This pertains to the login page*/
-    .passtest {
-        width: 2000px;
-        margin-bottom: 20px;
-        height: 40px;
-        font-size: 18px;
-        margin-right: 10px;
-        margin-left: 10px;
-        margin-bottom: 20px;
-    }
+.loginvalidator{
+    font-size:18px;
+}
+.passtest {
+    width: 2000px;
+    margin-bottom: 20px;
+    height: 40px;
+    font-size: 18px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
 .loginlogopc {
     width: 250px;
     height: auto;
@@ -77,7 +80,7 @@ textarea {
     }
 
     #loginsection {
-        margin-top: 90px;
+        margin-top: 60px;
         margin-bottom: 180px;
     }
     .loginbutton {
@@ -512,6 +515,106 @@ passwordMatchvalidator{
         border-style: solid;
         border-color: transparent indianred transparent transparent; /* Change the color to match the background-color */
     }
+.outlet-validator-error {
+    display: block;
+    position: absolute;
+    background-color: indianred; /* Change the color to your preference */
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 10px;
+    z-index: 1;
+    top: 20px; /* adjust as needed */
+    left: 350px; /* adjust as needed */
+    font-size: 12px;
+}
+
+    .outlet-validator-error::after {
+        content: "";
+        position: absolute;
+        bottom: 120%;
+        left: 0%;
+        margin-left: -10px;
+        margin-bottom: -30px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent indianred transparent transparent; /* Change the color to match the background-color */
+    }
+.device-validator-error {
+    display: block;
+    position: absolute;
+    background-color: indianred; /* Change the color to your preference */
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 10px;
+    z-index: 1;
+    top: 70px; /* adjust as needed */
+    left: 400px; /* adjust as needed */
+    font-size: 12px;
+}
+
+    .device-validator-error::after {
+        content: "";
+        position: absolute;
+        bottom: 120%;
+        left: 0%;
+        margin-left: -10px;
+        margin-bottom: -30px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent indianred transparent transparent; /* Change the color to match the background-color */
+    }
+.device2-validator-error {
+    display: block;
+    position: absolute;
+    background-color: indianred; /* Change the color to your preference */
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 10px;
+    z-index: 1;
+    top: 40px; /* adjust as needed */
+    left: 400px; /* adjust as needed */
+    font-size: 12px;
+}
+
+    .device2-validator-error::after {
+        content: "";
+        position: absolute;
+        bottom: 120%;
+        left: 0%;
+        margin-left: -10px;
+        margin-bottom: -30px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent indianred transparent transparent; /* Change the color to match the background-color */
+    }
+.name-validator-error {
+    display: block;
+    position: absolute;
+    background-color: indianred; /* Change the color to your preference */
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 10px;
+    z-index: 1;
+    top: 110px; /* adjust as needed */
+    left: 370px; /* adjust as needed */
+    font-size: 12px;
+}
+
+    .name-validator-error::after {
+        content: "";
+        position: absolute;
+        bottom: 120%;
+        left: 0%;
+        margin-left: -10px;
+        margin-bottom: -30px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent indianred transparent transparent; /* Change the color to match the background-color */
+    }
 
 /* Mobile CSS*/
 @media screen and (min-width: 360px) and (max-width: 500px) {
@@ -519,7 +622,10 @@ passwordMatchvalidator{
         padding: 0;
     }
 /*mobile login*/
-
+    .exempt {
+        text-align: left;
+        margin-left: 10px;
+    }
     .mobileLogincard {
         justify-content: center;
         align-items: center;

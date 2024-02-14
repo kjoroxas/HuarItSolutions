@@ -87,6 +87,15 @@ namespace HuarITSolutions
         protected global::System.Web.UI.WebControls.RequiredFieldValidator outletCodeTextValidator;
 
         /// <summary>
+        /// outletCodeTextexistVaildator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator outletCodeTextexistVaildator;
+
+        /// <summary>
         /// deviceID control.
         /// </summary>
         /// <remarks>
@@ -103,6 +112,24 @@ namespace HuarITSolutions
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button clearBtn;
+
+        /// <summary>
+        /// deviceIDValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator deviceIDValidator;
+
+        /// <summary>
+        /// deviceIDValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator deviceIDValidator1;
 
         /// <summary>
         /// fullName control.

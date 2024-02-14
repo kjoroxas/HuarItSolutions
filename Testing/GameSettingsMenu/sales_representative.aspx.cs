@@ -61,6 +61,11 @@ namespace HuarITSolutions
 
         protected void outletCode_SelectedIndexChanged(object sender, EventArgs e)
         {
+            deviceIDValidator1.Visible = true;
+            mobileNumberValidator.Visible = true;
+            locationValidator.Visible = true;
+            addressValidator.Visible = true;
+            groupAccountValidator.Visible = true;
             setBtn.Visible = true;
             clearBtn.Visible = true;
             deleteBtn.Visible = true;
@@ -114,7 +119,9 @@ namespace HuarITSolutions
 
 
             {
-                //  JavaScript function to enable the TextBox
+
+                string script = "enableDisableEditBtn();";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "enableDisableEditBtn", script, true);
                 outletCode.Enabled = true;
                 deviceID.Enabled = true;
                 fullName.Enabled = true;
@@ -183,6 +190,8 @@ namespace HuarITSolutions
         }
         protected void newBtnClick(object sender, EventArgs e)
         {
+            outletCodeTextexistVaildator.Visible = true;
+            deviceIDValidator.Visible = true;
             isActivevalidator.Visible = true;
             backPayTypeValidator.Visible = true;
             commissionTypeValidator.Visible = true;
@@ -505,6 +514,9 @@ namespace HuarITSolutions
         }
         private void defaultStateBtn()
         {
+            outletCodeTextexistVaildator.Visible = false;
+            deviceIDValidator1.Visible = false;
+            deviceIDValidator.Visible = false;
             isActivevalidator.Visible = false;
             backPayTypeValidator.Visible = false;
             commissionTypeValidator.Visible = false;
@@ -561,7 +573,17 @@ namespace HuarITSolutions
         }
 
 
+        protected void outletCodeTextexistVaildator_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            string outletcode = outletCodeText.Text;
 
+            listOfSales = sqlFunctions.getSalesRepresentatives();
+
+            bool Exists = !listOfSales.Any(x => x.UserName.ToUpper() == outletCodeText.Text.ToUpper());
+
+            // Set the IsValid property based on the authentication result
+            args.IsValid = Exists;
+        }
 
 
 

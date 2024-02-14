@@ -50,15 +50,17 @@
                                     <asp:Label ID="outletCodeLabel" Text="Outlet Code" AssociatedControlID="outletCodeText" EnableViewState="false" runat="server">
                                         <asp:TextBox ID="outletCodeText" CssClass="textbox3" runat="server" />
                                     </asp:Label>
-                                    <asp:RequiredFieldValidator ID="outletCodeTextValidator" runat="server" ControlToValidate="outletCodeText" ErrorMessage="Please Enter an Outlet Code." CssClass="new-validator-error" Display="Dynamic"></asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="outletCodeTextValidator" runat="server" ControlToValidate="outletCodeText" ErrorMessage="Please Enter an Outlet Code." CssClass="outlet-validator-error" Display="Dynamic"></asp:RequiredFieldValidator>
 <%--                                   <asp:TextBox ID="outletCode1" Height="20px" Width="300px" ValidateRequestMode="Disabled" type="text" runat="server" ></asp:TextBox><br />--%>
-                                   
+                                    <asp:CustomValidator ID="outletCodeTextexistVaildator" runat="server" ErrorMessage="Outlet Code already exists" ForeColor="Red" CSSClass="outlet-validator-error" ValidateEmptyText="true" OnServerValidate="outletCodeTextexistVaildator_ServerValidate"></asp:CustomValidator>
+
                                     <label class="subheader" style=" margin-top: 15px;margin-right:68px;"><small>Device ID</small></label>
                                     <asp:TextBox ID="deviceID"  CssClass="textbox2" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><asp:Button ID="clearBtn" runat="server" Text="Clear" /><br />
-
+                                    <asp:RequiredFieldValidator ID="deviceIDValidator" runat="server" ControlToValidate="deviceID" ErrorMessage="Device ID is needed." CssClass="device-validator-error" Display="Dynamic"></asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="deviceIDValidator1" runat="server" ControlToValidate="deviceID" ErrorMessage="Device ID is needed." CssClass="device2-validator-error" Display="Dynamic"></asp:RequiredFieldValidator>
                                     <label class="subheader"  style=" margin-top: 10px;margin-right:70px; margin-bottom:10px;"><small>Fullname</small></label>
                                     <asp:TextBox ID="fullName" CssClass="textbox2"  ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="fullNameValidator" runat="server" ControlToValidate="fullName" ErrorMessage="Please enter your full name." CssClass="new-validator-error" Display="Dynamic"></asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="fullNameValidator" runat="server" ControlToValidate="fullName" ErrorMessage="Please enter your full name." CssClass="name-validator-error" Display="Dynamic"></asp:RequiredFieldValidator>
                                     <label class="subheader" style=" margin-top: 5px; margin-right:77px;"><small>Address</small></label>
                                     <asp:TextBox ID="address" Height="50px" Width="300px" TextMode="MultiLine" Rows="3" CssClass="paragraph-style no-resize" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><br />
                                     <asp:RequiredFieldValidator ID="addressValidator" runat="server" ControlToValidate="address" ErrorMessage="Please enter address." CssClass="new-validator-error" Display="Dynamic"></asp:RequiredFieldValidator>
@@ -80,7 +82,7 @@
                                    <label class="subheader" style=" margin-top: 15px; margin-right:22px;"><small>Mobile Number</small></label>
                                     <asp:TextBox ID="mobileNumber" CssClass="textbox2" ValidateRequestMode="Disabled" MaxLength="15" type="in" runat="server"  ></asp:TextBox><br />
                                     <asp:RequiredFieldValidator ID="mobileNumberValidator" runat="server" ControlToValidate="mobileNumber" ErrorMessage="Please enter mobile number." CssClass="new-validator-error" Display="Dynamic"></asp:RequiredFieldValidator>
-                                    <label style=" margin-top: 10px; margin-right:65px;"><small>Password</small></label>
+                                    <label class="subheader" style=" margin-top: 10px; margin-right:65px;"><small>Password</small></label>
                                     <div class="input-group" style="margin-left:137px; margin-top:-30px;">                                     
                                         <asp:TextBox ID="password" CssClass="textbox2" ValidateRequestMode="Disabled" type="password" runat="server"  ></asp:TextBox><br />
                                         <div class="input-group-append">
@@ -265,58 +267,96 @@
 <script type="text/javascript">
     /*this disables save button if fields are not all filled */
     window.onload = function () {
-        var textboxes = document.querySelectorAll('input[type=text], input[type=password], input[type=email]');
+        var textboxes = document.querySelectorAll('input[type=text], input[type=password], input[type=email], #address, #mobileNumber, #<%= deviceID.ClientID %>');
         var dropdowns = document.getElementsByTagName('select');
-        var checkboxes = document.querySelectorAll('input[type=checkbox]');
         var saveBtn = document.getElementById('saveBtn');
+        var editBtn = document.getElementById('editBtn');
         var groupAccount = document.getElementById('<%= groupAccount.ClientID %>');
 
-        function checkFields() {
-            for (var i = 0; i < textboxes.length; i++) {
-                if (textboxes[i].value.trim() == '') {
-                    return false;
-                }
-            }
-            for (var i = 0; i < dropdowns.length; i++) {
-                if (dropdowns[i].value == '') {
-                    return false;
-                }
-            }
-            for (var i = 0; i < checkboxes.length; i++) {
-                if (!checkboxes[i].checked) {
-                    return false;
-                }
-            }
-            // Add your groupAccount validation here
-            if (groupAccount.value.trim() == '') {
+        var password = document.querySelector('input[type=password]');
+        var confirmPassword = document.querySelector('#confirmPassword'); // assuming the id of confirm password field is 'confirmPassword'
+
+    function checkFieldsForSave() {
+        for (var i = 0; i < textboxes.length; i++) {
+            if (textboxes[i].value.trim() == '') {
                 return false;
             }
-            return true;
         }
-
-        function enableDisableSaveBtn() {
-            if (checkFields()) {
-                saveBtn.disabled = false;
-            } else {
-                saveBtn.disabled = true;
+        for (var i = 0; i < dropdowns.length; i++) {
+            if (dropdowns[i].value == '') {
+                return false;
             }
         }
 
+        if (groupAccount.value.trim() == '') {
+            return false;
+        }
+        if (password.value !== confirmPassword.value) {
+            return false;
+        }
+        return true;
+        }
+
+    function checkFieldsForEdit() {
         for (var i = 0; i < textboxes.length; i++) {
-            textboxes[i].addEventListener('input', enableDisableSaveBtn);
+            if (textboxes[i].value.trim() == '') {
+                return false;
+            }
         }
         for (var i = 0; i < dropdowns.length; i++) {
-            dropdowns[i].addEventListener('change', enableDisableSaveBtn);
+            if (dropdowns[i].value == '') {
+                return false;
+            }
         }
-        for (var i = 0; i < checkboxes.length; i++) {
-            checkboxes[i].addEventListener('change', enableDisableSaveBtn);
+        if (groupAccount.value.trim() == '') {
+            return false;
         }
-
-        // Add an event listener for the groupAccount field
-        groupAccount.addEventListener('input', enableDisableSaveBtn);
-
-        enableDisableSaveBtn();
+        if (password.value !== confirmPassword.value) {
+            return false;
+        }
+        return true;
     }
+
+
+    function enableDisableSaveBtn() {
+        if (checkFieldsForSave()) {
+            saveBtn.disabled = false;
+        } else {
+            saveBtn.disabled = true;
+        }
+    }
+
+    function enableDisableEditBtn() {
+        if (checkFieldsForEdit()) {
+            editBtn.disabled = false;
+        } else {
+            editBtn.disabled = true;
+        }
+    }
+
+    for (var i = 0; i < textboxes.length; i++) {
+        textboxes[i].addEventListener('input', enableDisableSaveBtn);
+    }
+    for (var i = 0; i < dropdowns.length; i++) {
+        dropdowns[i].addEventListener('change', enableDisableSaveBtn);
+    }
+    groupAccount.addEventListener('input', enableDisableSaveBtn);
+        confirmPassword.addEventListener('input', enableDisableSaveBtn);
+
+    for (var i = 0; i < textboxes.length; i++) {
+        textboxes[i].addEventListener('input', enableDisableEditBtn);
+    }
+    for (var i = 0; i < dropdowns.length; i++) {
+        dropdowns[i].addEventListener('change', enableDisableEditBtn);
+    }
+    groupAccount.addEventListener('input', enableDisableEditBtn);
+        confirmPassword.addEventListener('input', enableDisableEditBtn);
+
+    enableDisableSaveBtn();
+    enableDisableEditBtn();
+}
+
+   
     /*Validators */
     $(document).ready(function () {
         $('#<%= groupAccount.ClientID %>').blur(function () {
@@ -336,7 +376,25 @@
             }
         });
     });
+    $(document).ready(function () {
+        $('#<%= deviceID.ClientID %>').blur(function () {
+                if ($(this).val().length == 0) {
+                    $('#<%= deviceIDValidator.ClientID %>').show();
+        } else {
+                $('#<%= deviceIDValidator.ClientID %>').hide();
+            }
+        });
+    });
 
+    $(document).ready(function () {
+        $('#<%= deviceID.ClientID %>').blur(function () {
+                if ($(this).val().length == 0) {
+                    $('#<%= deviceIDValidator1.ClientID %>').show();
+        } else {
+                $('#<%= deviceIDValidator1.ClientID %>').hide();
+            }
+        });
+        });
     $(document).ready(function () {
         $('#<%= fullName.ClientID %>').blur(function () {
                 if ($(this).val().length == 0) {
@@ -427,5 +485,7 @@
                 $('#<%= isActivevalidator.ClientID %>').hide();
             }
         });
-        });
+    });
+
+
 </script>
