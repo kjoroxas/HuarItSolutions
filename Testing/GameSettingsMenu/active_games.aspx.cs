@@ -27,6 +27,7 @@ namespace HuarITSolutions
         {
             if (!this.IsPostBack)
             {
+                RangeValidator1.Enabled = false; RangeValidator2.Enabled=false;
                 saveModal.Enabled = false;
                 gameCode.Enabled = false;
                 printCode.Enabled = false;
@@ -93,6 +94,7 @@ namespace HuarITSolutions
 
                 
             {
+                RangeValidator1.Enabled = true; RangeValidator2.Enabled = true;
                 saveModal.Enabled = true;
                 //  JavaScript function to enable the TextBox
                 gameCode.Enabled = false;

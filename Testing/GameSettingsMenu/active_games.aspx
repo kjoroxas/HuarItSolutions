@@ -50,13 +50,13 @@
                         
                        <label class="subheader" style="margin-top: 20px; margin-right:6px;"><small>Bet Limit (0-31)</small></label>
                         <asp:TextBox ID="lowBetLimit" CssClass="textbox" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><br />
-                        <asp:RangeValidator ID="RangeValidator1" runat="server" ErrorMessage="Value must be between 0 and 31" ControlToValidate="lowBetLimit" MinimumValue="0" MaximumValue="31" Type="Integer" Display="Dynamic"></asp:RangeValidator>
+                        <asp:RangeValidator ID="RangeValidator1" CssClass="validator-error" runat="server" ErrorMessage="Value must be between 0 and 31" ControlToValidate="lowBetLimit" MinimumValue="0" MaximumValue="31" Type="Integer" Display="Dynamic"></asp:RangeValidator>
 
                          <label class="subheader" style="margin-top: 20px; margin-right:2px;"><small>Win Value(High)</small></label>
                         <asp:TextBox ID="highBet" CssClass="textbox" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><br />
                         <label class="subheader" style="margin-top: 20px;"><small>Bet Limit (32-99)</small></label>
                         <asp:TextBox ID="highBetLimit" CssClass="textbox" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><br />
-                        <asp:RangeValidator ID="RangeValidator2" runat="server" ErrorMessage="Value must be between 32 and 99" ControlToValidate="highBetLimit" MinimumValue="32" MaximumValue="99" Type="Integer" Display="Dynamic"></asp:RangeValidator>
+                        <asp:RangeValidator ID="RangeValidator2" CssClass="validator-error" runat="server" ErrorMessage="Value must be between 32 and 99" ControlToValidate="highBetLimit" MinimumValue="32" MaximumValue="99" Type="Integer" Display="Dynamic"></asp:RangeValidator>
 
                        
                     </div>
@@ -121,45 +121,28 @@
 
 
 <script type="text/javascript">
-    window.onload = function () {
-        var lowBetLimit = document.getElementById('<%= lowBetLimit.ClientID %>');
-    var highBetLimit = document.getElementById('<%= highBetLimit.ClientID %>');
-    var validator1 = document.getElementById('<%= RangeValidator1.ClientID %>');
-    var validator2 = document.getElementById('<%= RangeValidator2.ClientID %>');
+    $(document).ready(function () {
+        var button = $('#<%= saveModal.ClientID %>'); // replace with your button id
+    var lowBetLimit = $('#<%= lowBetLimit.ClientID %>');
+    var highBetLimit = $('#<%= highBetLimit.ClientID %>');
+    var rangeValidator1 = document.getElementById('<%= RangeValidator1.ClientID %>');
+    var rangeValidator2 = document.getElementById('<%= RangeValidator2.ClientID %>');
 
     function ValidateRange() {
-        var lowBetValue = parseInt(lowBetLimit.value);
-        var highBetValue = parseInt(highBetLimit.value);
+        var lowBetValue = parseInt(lowBetLimit.val());
+        var highBetValue = parseInt(highBetLimit.val());
 
-        var button = document.getElementById('SaveModal'); // replace with your button id
-
-        if ((lowBetValue >= 0 && lowBetValue <= 31) && (highBetValue >= 32 && highBetValue <= 99)) {
-            button.disabled = false;
-            validator1.style.display = 'none';
-            validator2.style.display = 'none';
+        if (rangeValidator1.isvalid && rangeValidator2.isvalid) {
+            button.prop('disabled', false); // Enable the button
         } else {
-            button.disabled = true;
-            if (!(lowBetValue >= 0 && lowBetValue <= 31)) {
-                validator1.style.display = 'block';
-            }
-            if (!(highBetValue >= 32 && highBetValue <= 99)) {
-                validator2.style.display = 'block';
-            }
+            button.prop('disabled', true); // Disable the button
         }
     }
 
-    lowBetLimit.onchange = ValidateRange;
-    highBetLimit.onchange = ValidateRange;
+    lowBetLimit.change(ValidateRange);
+    highBetLimit.change(ValidateRange);
+});
 
-    validator1.className += " validator-error";
-    validator2.className += " validator-error";
-    validator1.onmouseover = validator2.onmouseover = function () {
-        this.style.display = 'block';
-    }
-    validator1.onmouseout = validator2.onmouseout = function () {
-        this.style.display = 'none';
-    }
-    };
 
 </script>
 
@@ -167,6 +150,11 @@
 
     $("#<%= saveModal.ClientID %>").click(function (e) {
         $('#confirmationmodal').modal('show');
+        e.preventDefault();
+        return false;
+    });
+    $("#<%= btnClose.ClientID %>").click(function (e) {
+        $('#confirmationmodal').modal('hide');
         e.preventDefault();
         return false;
     });
