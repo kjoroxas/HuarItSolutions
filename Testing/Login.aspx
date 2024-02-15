@@ -9,13 +9,13 @@
 
         <div class="row d-flex justify-content-center"  id="loginsection">
             <center>
-           <asp:CustomValidator ID="emailVaildator" runat="server" ErrorMessage="Invalid Username or Password.<br /> Please try again" ForeColor="Red" CSSClass="loginvalidator" ValidateEmptyText="true" OnServerValidate="emailVaildator_ServerValidate"></asp:CustomValidator>
+           
             <section class="col-lg-6" id="login">
                     <div class="card pcLoginCard mobileLogincard mx-auto" >
                       <div class="card-body">
                         <h5 class="card-title subtitle" id="logintitle">Login</h5>
                         <img src="image/I.t.png" alt="..." class="img-fluid loginlogopc" /><br />
-                          
+                          <asp:CustomValidator ID="emailVaildator" runat="server" ErrorMessage="Invalid Username or Password.<br /> Please try again" ForeColor="Red" CSSClass="loginvalidator" ValidateEmptyText="true" OnServerValidate="emailVaildator_ServerValidate"></asp:CustomValidator>
                           <h6 class="exempt subheader">Username:</h6>
 
                         <asp:TextBox ID="emailfield" CssClass="emailtest" ValidateRequestMode="Disabled" type="text" runat="server"  placeholder="Username"></asp:TextBox>
