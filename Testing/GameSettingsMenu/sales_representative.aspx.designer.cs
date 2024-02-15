@@ -87,13 +87,13 @@ namespace HuarITSolutions
         protected global::System.Web.UI.WebControls.RequiredFieldValidator outletCodeTextValidator;
 
         /// <summary>
-        /// outletCodeTextexistVaildator control.
+        /// outletCodeTextexistValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator outletCodeTextexistVaildator;
+        protected global::System.Web.UI.WebControls.CustomValidator outletCodeTextexistValidator;
 
         /// <summary>
         /// deviceID control.
@@ -112,24 +112,6 @@ namespace HuarITSolutions
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button clearBtn;
-
-        /// <summary>
-        /// deviceIDValidator control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator deviceIDValidator;
-
-        /// <summary>
-        /// deviceIDValidator1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator deviceIDValidator1;
 
         /// <summary>
         /// fullName control.
@@ -319,15 +301,6 @@ namespace HuarITSolutions
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button setBtn;
-
-        /// <summary>
-        /// locationValidator control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator locationValidator;
 
         /// <summary>
         /// isActive control.

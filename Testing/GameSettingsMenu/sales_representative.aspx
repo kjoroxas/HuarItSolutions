@@ -52,12 +52,10 @@
                                     </asp:Label>
                                     <asp:RequiredFieldValidator ID="outletCodeTextValidator" runat="server" ControlToValidate="outletCodeText" ErrorMessage="Please Enter an Outlet Code." CssClass="outlet-validator-error" Display="Dynamic"></asp:RequiredFieldValidator>
 <%--                                   <asp:TextBox ID="outletCode1" Height="20px" Width="300px" ValidateRequestMode="Disabled" type="text" runat="server" ></asp:TextBox><br />--%>
-                                    <asp:CustomValidator ID="outletCodeTextexistVaildator" runat="server" ErrorMessage="Outlet Code already exists" ForeColor="Red" CSSClass="outlet-validator-error" ValidateEmptyText="true" OnServerValidate="outletCodeTextexistVaildator_ServerValidate"></asp:CustomValidator>
-
+                                    <asp:CustomValidator ID="outletCodeTextexistValidator" runat="server" ErrorMessage="Outlet Code already exists" CssClass="outlet-validator-error" Display="Dynamic" ></asp:CustomValidator>
                                     <label class="subheader" style=" margin-top: 15px;margin-right:68px;"><small>Device ID</small></label>
                                     <asp:TextBox ID="deviceID"  CssClass="textbox2" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><asp:Button ID="clearBtn" runat="server" Text="Clear" /><br />
-                                    <asp:RequiredFieldValidator ID="deviceIDValidator" runat="server" ControlToValidate="deviceID" ErrorMessage="Device ID is needed." CssClass="device-validator-error" Display="Dynamic"></asp:RequiredFieldValidator>
-                                    <asp:RequiredFieldValidator ID="deviceIDValidator1" runat="server" ControlToValidate="deviceID" ErrorMessage="Device ID is needed." CssClass="device2-validator-error" Display="Dynamic"></asp:RequiredFieldValidator>
+                                    
                                     <label class="subheader"  style=" margin-top: 10px;margin-right:70px; margin-bottom:10px;"><small>Fullname</small></label>
                                     <asp:TextBox ID="fullName" CssClass="textbox2"  ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="fullNameValidator" runat="server" ControlToValidate="fullName" ErrorMessage="Please enter your full name." CssClass="name-validator-error" Display="Dynamic"></asp:RequiredFieldValidator>
@@ -145,7 +143,7 @@
                                     </asp:RequiredFieldValidator>
                                     <label class="subheader" style=" margin-top: 15px; margin-right:70px;"><small>Location</small></label>
                                     <asp:TextBox ID="location" CssClass="textbox2" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><asp:Button ID="setBtn" runat="server" Text="Set" /><br />
-                                     <asp:RequiredFieldValidator ID="locationValidator" runat="server" ControlToValidate="location" ErrorMessage="Location is Required." CssClass="new-validator-error" Display="Dynamic"></asp:RequiredFieldValidator>
+                                    
                                     <asp:CheckBox ID="isActive" CssClass="ActiveCheckbox" runat="server" /><label style="position: relative; top: -8px; right:4px;"><small>Active</small></label><br />
                                     <asp:CustomValidator ID="isActivevalidator" runat="server" 
                                         ErrorMessage="Click the checkbox " 
@@ -267,7 +265,7 @@
 <script type="text/javascript">
     /*this disables save button if fields are not all filled */
     window.onload = function () {
-        var textboxes = document.querySelectorAll('input[type=text], input[type=password], input[type=email], #address, #mobileNumber, #<%= deviceID.ClientID %>');
+        var textboxes = document.querySelectorAll('input[type=text], input[type=password], input[type=email], #address, #mobileNumber');
         var dropdowns = document.getElementsByTagName('select');
         var saveBtn = document.getElementById('saveBtn');
         var editBtn = document.getElementById('editBtn');
@@ -275,47 +273,60 @@
 
         var password = document.querySelector('input[type=password]');
         var confirmPassword = document.querySelector('#confirmPassword'); // assuming the id of confirm password field is 'confirmPassword'
+        var ignoreFields = ['#deviceID', '#location']; // replace with the IDs of the fields you want to ignore
 
-    function checkFieldsForSave() {
-        for (var i = 0; i < textboxes.length; i++) {
-            if (textboxes[i].value.trim() == '') {
+        function checkFieldsForSave() {
+            for (var i = 0; i < textboxes.length; i++) {
+                if (ignoreFields.includes(textboxes[i].id)) {
+                    continue;
+                }
+                if (textboxes[i].value.trim() == '') {
+                    return false;
+                }
+            }
+            for (var i = 0; i < dropdowns.length; i++) {
+                if (ignoreFields.includes(dropdowns[i].id)) {
+                    continue;
+                }
+                if (dropdowns[i].value == '') {
+                    return false;
+                }
+            }
+
+            if (groupAccount.value.trim() == '' && !ignoreFields.includes(groupAccount.id)) {
                 return false;
             }
-        }
-        for (var i = 0; i < dropdowns.length; i++) {
-            if (dropdowns[i].value == '') {
+            if (password.value !== confirmPassword.value) {
                 return false;
             }
+            return true;
         }
 
-        if (groupAccount.value.trim() == '') {
-            return false;
-        }
-        if (password.value !== confirmPassword.value) {
-            return false;
-        }
-        return true;
-        }
-
-    function checkFieldsForEdit() {
-        for (var i = 0; i < textboxes.length; i++) {
-            if (textboxes[i].value.trim() == '') {
+        function checkFieldsForEdit() {
+            for (var i = 0; i < textboxes.length; i++) {
+                if (ignoreFields.includes(textboxes[i].id)) {
+                    continue;
+                }
+                if (textboxes[i].value.trim() == '') {
+                    return false;
+                }
+            }
+            for (var i = 0; i < dropdowns.length; i++) {
+                if (ignoreFields.includes(dropdowns[i].id)) {
+                    continue;
+                }
+                if (dropdowns[i].value == '') {
+                    return false;
+                }
+            }
+            if (groupAccount.value.trim() == '' && !ignoreFields.includes(groupAccount.id)) {
                 return false;
             }
-        }
-        for (var i = 0; i < dropdowns.length; i++) {
-            if (dropdowns[i].value == '') {
+            if (password.value !== confirmPassword.value) {
                 return false;
             }
+            return true;
         }
-        if (groupAccount.value.trim() == '') {
-            return false;
-        }
-        if (password.value !== confirmPassword.value) {
-            return false;
-        }
-        return true;
-    }
 
 
     function enableDisableSaveBtn() {
@@ -377,24 +388,15 @@
         });
     });
     $(document).ready(function () {
-        $('#<%= deviceID.ClientID %>').blur(function () {
+        $('#<%= outletCodeText.ClientID %>').blur(function () {
                 if ($(this).val().length == 0) {
-                    $('#<%= deviceIDValidator.ClientID %>').show();
+                    $('#<%= outletCodeTextexistValidator.ClientID %>').show();
         } else {
-                $('#<%= deviceIDValidator.ClientID %>').hide();
+                $('#<%= outletCodeTextexistValidator.ClientID %>').hide();
             }
         });
-    });
+        });
 
-    $(document).ready(function () {
-        $('#<%= deviceID.ClientID %>').blur(function () {
-                if ($(this).val().length == 0) {
-                    $('#<%= deviceIDValidator1.ClientID %>').show();
-        } else {
-                $('#<%= deviceIDValidator1.ClientID %>').hide();
-            }
-        });
-        });
     $(document).ready(function () {
         $('#<%= fullName.ClientID %>').blur(function () {
                 if ($(this).val().length == 0) {
@@ -441,15 +443,7 @@
             }
         });
     });
-    $(document).ready(function () {
-        $('#<%= location.ClientID %>').blur(function () {
-                if ($(this).val().length == 0) {
-                    $('#<%= locationValidator.ClientID %>').show();
-        } else {
-                $('#<%= locationValidator.ClientID %>').hide();
-            }
-        });
-    });
+
     $(document).ready(function () {
         $('#<%= areaCode.ClientID %>').blur(function () {
                 if ($(this).val().length == 0) {

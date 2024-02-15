@@ -61,9 +61,9 @@ namespace HuarITSolutions
 
         protected void outletCode_SelectedIndexChanged(object sender, EventArgs e)
         {
-            deviceIDValidator1.Visible = true;
+
             mobileNumberValidator.Visible = true;
-            locationValidator.Visible = true;
+
             addressValidator.Visible = true;
             groupAccountValidator.Visible = true;
             setBtn.Visible = true;
@@ -190,13 +190,13 @@ namespace HuarITSolutions
         }
         protected void newBtnClick(object sender, EventArgs e)
         {
-            outletCodeTextexistVaildator.Visible = true;
-            deviceIDValidator.Visible = true;
+            outletCodeTextexistValidator.Visible = true;
+
             isActivevalidator.Visible = true;
             backPayTypeValidator.Visible = true;
             commissionTypeValidator.Visible = true;
             areaCodeValidator.Visible = true;
-            locationValidator.Visible = true;
+
             confirmPasswordValidator.Visible = true;
             passwordValidator.Visible = true;
             mobileNumberValidator.Visible = true;
@@ -514,14 +514,13 @@ namespace HuarITSolutions
         }
         private void defaultStateBtn()
         {
-            outletCodeTextexistVaildator.Visible = false;
-            deviceIDValidator1.Visible = false;
-            deviceIDValidator.Visible = false;
+            outletCodeTextexistValidator.Visible = false;
+
             isActivevalidator.Visible = false;
             backPayTypeValidator.Visible = false;
             commissionTypeValidator.Visible = false;
             areaCodeValidator.Visible = false;
-            locationValidator.Visible = false;
+
             confirmPasswordValidator.Visible = false;
             passwordValidator.Visible = false;
             mobileNumberValidator.Visible = false;
@@ -571,21 +570,12 @@ namespace HuarITSolutions
             //location.Text = "";
             //outletCodeTextBox.Text = "";
         }
-
-
-        protected void outletCodeTextexistVaildator_ServerValidate(object source, ServerValidateEventArgs args)
+        protected void outletCodeTextexistValidator_ServerValidate(object source, ServerValidateEventArgs args)
         {
-            string outletcode = outletCodeText.Text;
-
-            listOfSales = sqlFunctions.getSalesRepresentatives();
-
             bool Exists = !listOfSales.Any(x => x.UserName.ToUpper() == outletCodeText.Text.ToUpper());
 
             // Set the IsValid property based on the authentication result
             args.IsValid = Exists;
         }
-
-
-
     }
 }
