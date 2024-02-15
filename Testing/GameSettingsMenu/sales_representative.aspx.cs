@@ -132,7 +132,7 @@ namespace HuarITSolutions
                 groupAccount.Enabled = true;
                 commissionType.Enabled = true;
                 backPayType.Enabled = true;
-                location.Enabled = true;
+                location.Enabled = false;
                 confirmPassword.Enabled = true;
                 isActive.Enabled = true;
 
@@ -577,5 +577,24 @@ namespace HuarITSolutions
             // Set the IsValid property based on the authentication result
             args.IsValid = Exists;
         }
+
+
+       /* public ActionResult ValidateNumber(string number)
+        {
+            bool exists !listOfSales.Any(x => x.UserName.ToUpper() == outletCodeText.Text.ToUpper());
+
+            if (exists)
+            {
+                ViewBag.Message = "Error: The number already exists.";
+                ViewBag.IsError = true;
+            }
+            else
+            {
+                ViewBag.Message = "Are you sure?";
+                ViewBag.IsError = false;
+            }
+
+            return View(); 
+        }*/
     }
 }

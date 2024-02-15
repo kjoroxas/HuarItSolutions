@@ -186,6 +186,31 @@
                     </div>
                   </div>
                 </div>
+                    <%-- 
+                <div class="modal fade" id="confirmationmodal" tabindex="-1" role="dialog" aria-labelledby="confirmationmodalLabel" aria-hidden="true" style="margin-top:210px;">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="confirmationmodalLabel">/h5>
+
+                      </div>
+                      <div class="modal-body">
+                         @ViewBag.Message
+                      </div>
+                      <div class="modal-footer">
+                          @if (ViewBag.IsError)
+                                {
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">OK</button>
+                                }
+                                else
+                                {
+                                    <asp:Button ID="Button1" runat="server" Text="Cancel"  />
+                                    <asp:Button runat="server" Text="Save" ID="Button2" OnClick="saveBtnClick" />
+                                }
+                      </div>
+                    </div>
+                  </div>
+                </div>--%>
 </div>
     </form>
 </body>
