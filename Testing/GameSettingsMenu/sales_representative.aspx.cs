@@ -123,7 +123,7 @@ namespace HuarITSolutions
                 string script = "enableDisableEditBtn();";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "enableDisableEditBtn", script, true);
                 outletCode.Enabled = true;
-                deviceID.Enabled = true;
+                deviceID.Enabled = false;
                 fullName.Enabled = true;
                 address.Enabled = true;
                 areaCode.Enabled = true;
@@ -218,7 +218,7 @@ namespace HuarITSolutions
             saveBtn.Visible = true;
             isActive.Enabled = true;
             outletCode.Enabled = true;
-            deviceID.Enabled = true;
+            deviceID.Enabled = false;
             fullName.Enabled = true;
             address.Enabled = true;
             areaCode.Enabled = true;
@@ -227,7 +227,7 @@ namespace HuarITSolutions
             groupAccount.Enabled = true;
             commissionType.Enabled = true;
             backPayType.Enabled = true;
-            location.Enabled = true;
+            location.Enabled = false;
             confirmPassword.Enabled = true;
 
 
@@ -552,7 +552,7 @@ namespace HuarITSolutions
             groupAccount.Enabled = false;
             commissionType.Enabled = false;
             backPayType.Enabled = false;
-            location.Enabled = false;
+            location.Enabled = true;
             confirmPassword.Enabled = false;
             outletCodeTextBox.Enabled = false;
 
