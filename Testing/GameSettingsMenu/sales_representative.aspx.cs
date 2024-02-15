@@ -552,7 +552,7 @@ namespace HuarITSolutions
             groupAccount.Enabled = false;
             commissionType.Enabled = false;
             backPayType.Enabled = false;
-            location.Enabled = true;
+            location.Enabled = false;
             confirmPassword.Enabled = false;
             outletCodeTextBox.Enabled = false;
 
