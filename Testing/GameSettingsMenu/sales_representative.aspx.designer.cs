@@ -87,15 +87,6 @@ namespace HuarITSolutions
         protected global::System.Web.UI.WebControls.RequiredFieldValidator outletCodeTextValidator;
 
         /// <summary>
-        /// outletCodeTextexistValidator control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator outletCodeTextexistValidator;
-
-        /// <summary>
         /// deviceID control.
         /// </summary>
         /// <remarks>
@@ -366,6 +357,24 @@ namespace HuarITSolutions
         protected global::System.Web.UI.WebControls.Button cancelBtn;
 
         /// <summary>
+        /// Confirmation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Confirmation;
+
+        /// <summary>
+        /// Exist control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Exist;
+
+        /// <summary>
         /// btnClose control.
         /// </summary>
         /// <remarks>
@@ -382,5 +391,14 @@ namespace HuarITSolutions
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button SaveBtn2;
+
+        /// <summary>
+        /// okBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button okBtn;
     }
 }
