@@ -1,6 +1,7 @@
 ﻿using HuarITSolutions.Class;
 using HuarITSolutions.Model;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -190,7 +191,7 @@ namespace HuarITSolutions
         }
         protected void newBtnClick(object sender, EventArgs e)
         {
-            outletCodeTextexistValidator.Visible = true;
+
 
             isActivevalidator.Visible = true;
             backPayTypeValidator.Visible = true;
@@ -218,7 +219,7 @@ namespace HuarITSolutions
             saveBtn.Visible = true;
             isActive.Enabled = true;
             outletCode.Enabled = true;
-            deviceID.Enabled = false;
+            deviceID.Enabled = true;
             fullName.Enabled = true;
             address.Enabled = true;
             areaCode.Enabled = true;
@@ -227,7 +228,7 @@ namespace HuarITSolutions
             groupAccount.Enabled = true;
             commissionType.Enabled = true;
             backPayType.Enabled = true;
-            location.Enabled = false;
+            location.Enabled = true;
             confirmPassword.Enabled = true;
 
 
@@ -514,7 +515,7 @@ namespace HuarITSolutions
         }
         private void defaultStateBtn()
         {
-            outletCodeTextexistValidator.Visible = false;
+
 
             isActivevalidator.Visible = false;
             backPayTypeValidator.Visible = false;
@@ -570,31 +571,35 @@ namespace HuarITSolutions
             //location.Text = "";
             //outletCodeTextBox.Text = "";
         }
-        protected void outletCodeTextexistValidator_ServerValidate(object source, ServerValidateEventArgs args)
+
+
+        protected void saveBtn2Click(object sender, EventArgs e)
         {
-            bool Exists = !listOfSales.Any(x => x.UserName.ToUpper() == outletCodeText.Text.ToUpper());
 
-            // Set the IsValid property based on the authentication result
-            args.IsValid = Exists;
-        }
+            bool Exists = listOfSales.Any(x => x.UserName.ToUpper() == outletCodeText.Text.ToUpper());
+            // Open the modal and hide elements based on the result
 
-
-       /* public ActionResult ValidateNumber(string number)
-        {
-            bool exists !listOfSales.Any(x => x.UserName.ToUpper() == outletCodeText.Text.ToUpper());
-
-            if (exists)
-            {
-                ViewBag.Message = "Error: The number already exists.";
-                ViewBag.IsError = true;
+            if(Exists){ //if bool returns true 
+                //message
+                Confirmation.Visible = true;
+                Exist.Visible = false;
+                //button
+                SaveBtn2.Visible = true;
+                btnClose.Visible = true;
+                okBtn.Visible = false;
             }
             else
             {
-                ViewBag.Message = "Are you sure?";
-                ViewBag.IsError = false;
+                //message
+                Exist.Visible = true;
+                //button
+                okBtn.Visible = true;
+                SaveBtn2.Visible = false;
+                btnClose.Visible = false;
             }
+            string script = "$('#confirmationmodal').modal('show');";
+            ClientScript.RegisterStartupScript(this.GetType(), "openModal", script, true);
+        }
 
-            return View(); 
-        }*/
     }
 }

@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="sales_representative.aspx.cs" Inherits="HuarITSolutions.SalesRepresentative" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 <webopt:bundlereference runat="server" path="~/Content/css" />
 <!DOCTYPE html>
 
@@ -52,7 +53,7 @@
                                     </asp:Label>
                                     <asp:RequiredFieldValidator ID="outletCodeTextValidator" runat="server" ControlToValidate="outletCodeText" ErrorMessage="Please Enter an Outlet Code." CssClass="outlet-validator-error" Display="Dynamic"></asp:RequiredFieldValidator>
 <%--                                   <asp:TextBox ID="outletCode1" Height="20px" Width="300px" ValidateRequestMode="Disabled" type="text" runat="server" ></asp:TextBox><br />--%>
-                                    <asp:CustomValidator ID="outletCodeTextexistValidator" runat="server" ErrorMessage="Outlet Code already exists" CssClass="outlet-validator-error" Display="Dynamic" ></asp:CustomValidator>
+                                   
                                     <label class="subheader" style=" margin-top: 15px;margin-right:68px;"><small>Device ID</small></label>
                                     <asp:TextBox ID="deviceID"  CssClass="textbox2" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><asp:Button ID="clearBtn" runat="server" Text="Clear" /><br />
                                     
@@ -159,7 +160,7 @@
                                         <div class="col-9" >
                                             <br />
                                             <asp:Button runat="server" Text="Save for Edit" ID="editBtn" OnClick="editBtnClick" CssClass="salesEdit" />
-                                            <asp:Button runat="server" Text="Save" ID="saveBtn" CssClass="salesSave" />
+                                            <asp:Button runat="server" Text="Save" ID="saveBtn" CssClass="salesSave" OnClick="saveBtn2Click" />
                                             <asp:Button runat="server" Text="New" ID="newBtn" OnClick="newBtnClick" CssClass="salesNew"/>
                                             <asp:Button runat="server" Text="Delete" ID="deleteBtn" OnClick="deleteBtnClick" CssClass="salesDelete" />
                                             <asp:Button runat="server" Text="Cancel" Height="30px" ID="cancelBtn" OnClick="cancelBtnClick" CausesValidation="False" CssClass="salesCancel" />
@@ -177,40 +178,19 @@
 
                       </div>
                       <div class="modal-body">
-                        Are you sure about your changes?
+                        <asp:Label ID="Confirmation" runat="server" Text="Are you sure about your changes?"></asp:Label>
+                        <asp:Label ID="Exist" runat="server" Text="Outlet Code already exists"></asp:Label>
                       </div>
                       <div class="modal-footer">
                         <asp:Button ID="btnClose" runat="server" Text="Close"  />
                         <asp:Button runat="server" Text="Save" ID="SaveBtn2" OnClick="saveBtnClick" />
+                        <asp:Button ID="okBtn" runat="server" Text="Ok"  />
                       </div>
                     </div>
                   </div>
                 </div>
-                    <%-- 
-                <div class="modal fade" id="confirmationmodal" tabindex="-1" role="dialog" aria-labelledby="confirmationmodalLabel" aria-hidden="true" style="margin-top:210px;">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="confirmationmodalLabel">/h5>
+                   
 
-                      </div>
-                      <div class="modal-body">
-                         @ViewBag.Message
-                      </div>
-                      <div class="modal-footer">
-                          @if (ViewBag.IsError)
-                                {
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">OK</button>
-                                }
-                                else
-                                {
-                                    <asp:Button ID="Button1" runat="server" Text="Cancel"  />
-                                    <asp:Button runat="server" Text="Save" ID="Button2" OnClick="saveBtnClick" />
-                                }
-                      </div>
-                    </div>
-                  </div>
-                </div>--%>
 </div>
     </form>
 </body>
@@ -267,12 +247,12 @@
     });
 
 
-    $("#<%= saveBtn.ClientID %>").click(function (e) {
-        $('#confirmationmodal').modal('show');
+    $("#<%= btnClose.ClientID %>").click(function (e) {
+        $('#confirmationmodal').modal('hide');
         e.preventDefault();
         return false;
     });
-    $("#<%= btnClose.ClientID %>").click(function (e) {
+    $("#<%= okBtn.ClientID %>").click(function (e) {
         $('#confirmationmodal').modal('hide');
         e.preventDefault();
         return false;
@@ -412,15 +392,7 @@
             }
         });
     });
-    $(document).ready(function () {
-        $('#<%= outletCodeText.ClientID %>').blur(function () {
-                if ($(this).val().length == 0) {
-                    $('#<%= outletCodeTextexistValidator.ClientID %>').show();
-        } else {
-                $('#<%= outletCodeTextexistValidator.ClientID %>').hide();
-            }
-        });
-        });
+
 
     $(document).ready(function () {
         $('#<%= fullName.ClientID %>').blur(function () {
