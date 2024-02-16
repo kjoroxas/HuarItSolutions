@@ -1,5 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="sales_representative.aspx.cs" Inherits="HuarITSolutions.SalesRepresentative" %>
-<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+﻿w#<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="sales_representative.aspx.cs" Inherits="HuarITSolutions.SalesRepresentative" %>
+
 
 <webopt:bundlereference runat="server" path="~/Content/css" />
 <!DOCTYPE html>
@@ -17,7 +17,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
                 <div>
                     <div class="card specificcard" >
                          <div class="card-body">
@@ -172,17 +172,25 @@
                                 </div>
                          </div>  
                    </div>
-                    <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1" runat="server" TargetControlID="saveBtn" PopupControlID="confirmationmodal" BackgroundCssClass="modalBackground">
-                    </ajaxToolkit:ModalPopupExtender>
-                    
-                    <asp:Panel ID="confirmationmodal" runat="server" style="display:none;">
-                        <h5>Saving Changes</h5>
-                        <asp:Label ID="Confirmation" runat="server" Text="Are you sure about your changes?"></asp:Label>
-                        <asp:Label ID="Exist" runat="server" Text="Outlet Code already exists"></asp:Label>
-                        <asp:Button ID="btnClose" runat="server" Text="Close"  />
-                        <asp:Button runat="server" Text="Save" ID="SaveBtn2" OnClick="saveBtnClick" />
-                        <asp:Button ID="okBtn" runat="server" Text="Ok"  />
-                    </asp:Panel>
+                     <div class="modal fade" id="confirmationmodal" tabindex="-1" role="dialog" aria-labelledby="confirmationmodalLabel" aria-hidden="true" style="margin-top:210px;">
+                       <div class="modal-dialog" role="document">
+                         <div class="modal-content">
+                           <div class="modal-header">
+                             <h5 class="modal-title" id="confirmationmodalLabel">Saving Changes</h5>
+
+                           </div>
+                           <div class="modal-body">
+                             <asp:Label ID="Confirmation" runat="server" Text="Are you sure about your changes?"></asp:Label>
+                             <asp:Label ID="Exist" runat="server" Text="Outlet Code already exists"></asp:Label>
+                           </div>
+                           <div class="modal-footer">
+                             <asp:Button ID="btnClose" runat="server" Text="Close"  />
+                             <asp:Button runat="server" Text="Save" ID="SaveBtn2" OnClick="saveBtnClick" />
+                             <asp:Button ID="okBtn" runat="server" Text="Ok"  />
+                           </div>
+                         </div>
+                       </div>
+                     </div>
 
 </div>
     </form>
@@ -191,7 +199,8 @@
 <asp:PlaceHolder runat="server">
     <%: Scripts.Render("~/Scripts/bootstrap.js") %>
     <%: Scripts.Render("~/Scripts/jquery-3.4.1.min.js") %>
-    <%: Scripts.Render("~/Scripts/bootstrap.bundle.js") %>    
+    <%: Scripts.Render("~/Scripts/bootstrap.bundle.js") %> 
+    <%: Scripts.Render("~/Scripts/sales.js") %> 
 
 </asp:PlaceHolder>
 <script>
@@ -239,7 +248,11 @@
         })
     });
 
-
+    $("#<%= saveBtn.ClientID %>").click(function (e) {
+        $('#confirmationmodal').modal('show');
+        e.preventDefault();
+        return false;
+    });
     $("#<%= btnClose.ClientID %>").click(function (e) {
         $('#confirmationmodal').modal('hide');
         e.preventDefault();
@@ -271,7 +284,7 @@
 
         var password = document.querySelector('input[type=password]');
         var confirmPassword = document.querySelector('#confirmPassword'); // assuming the id of confirm password field is 'confirmPassword'
-        var ignoreFields = ['#deviceID', '#location']; // replace with the IDs of the fields you want to ignore
+        var ignoreFields = ['deviceID', 'location']; 
 
         function checkFieldsForSave() {
             for (var i = 0; i < textboxes.length; i++) {

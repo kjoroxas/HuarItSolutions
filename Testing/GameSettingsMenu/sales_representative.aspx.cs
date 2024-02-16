@@ -219,7 +219,7 @@ namespace HuarITSolutions
             saveBtn.Visible = true;
             isActive.Enabled = true;
             outletCode.Enabled = true;
-            deviceID.Enabled = true;
+            deviceID.Enabled = false;
             fullName.Enabled = true;
             address.Enabled = true;
             areaCode.Enabled = true;
@@ -228,7 +228,7 @@ namespace HuarITSolutions
             groupAccount.Enabled = true;
             commissionType.Enabled = true;
             backPayType.Enabled = true;
-            location.Enabled = true;
+            location.Enabled = false;
             confirmPassword.Enabled = true;
 
 
@@ -592,13 +592,13 @@ namespace HuarITSolutions
             {
                 //message
                 Exist.Visible = true;
+                Confirmation.Visible = false;
                 //button
                 okBtn.Visible = true;
                 SaveBtn2.Visible = false;
                 btnClose.Visible = false;
             }
 
-            ModalPopupExtender1.Show();
         }
 
     }
