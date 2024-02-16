@@ -1,4 +1,4 @@
-﻿w#<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="sales_representative.aspx.cs" Inherits="HuarITSolutions.SalesRepresentative" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="sales_representative.aspx.cs" Inherits="HuarITSolutions.SalesRepresentative" %>
 
 
 <webopt:bundlereference runat="server" path="~/Content/css" />
@@ -200,7 +200,6 @@
     <%: Scripts.Render("~/Scripts/bootstrap.js") %>
     <%: Scripts.Render("~/Scripts/jquery-3.4.1.min.js") %>
     <%: Scripts.Render("~/Scripts/bootstrap.bundle.js") %> 
-    <%: Scripts.Render("~/Scripts/sales.js") %> 
 
 </asp:PlaceHolder>
 <script>
@@ -299,7 +298,7 @@
                 if (ignoreFields.includes(dropdowns[i].id)) {
                     continue;
                 }
-                if (dropdowns[i].value == '') {
+                if (dropdowns[i].value == '0') {
                     return false;
                 }
             }
