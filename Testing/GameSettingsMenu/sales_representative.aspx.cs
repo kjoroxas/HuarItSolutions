@@ -597,8 +597,8 @@ namespace HuarITSolutions
                 SaveBtn2.Visible = false;
                 btnClose.Visible = false;
             }
-            string script = "$('#confirmationmodal').modal('show');";
-            ClientScript.RegisterStartupScript(this.GetType(), "openModal", script, true);
+
+            ModalPopupExtender1.Show();
         }
 
     }

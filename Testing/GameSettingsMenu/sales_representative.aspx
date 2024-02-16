@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="sales_representative.aspx.cs" Inherits="HuarITSolutions.SalesRepresentative" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+
 <webopt:bundlereference runat="server" path="~/Content/css" />
 <!DOCTYPE html>
 
@@ -16,6 +17,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
                 <div>
                     <div class="card specificcard" >
                          <div class="card-body">
@@ -170,26 +172,17 @@
                                 </div>
                          </div>  
                    </div>
-                <div class="modal fade" id="confirmationmodal" tabindex="-1" role="dialog" aria-labelledby="confirmationmodalLabel" aria-hidden="true" style="margin-top:210px;">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="confirmationmodalLabel">Saving Changes</h5>
-
-                      </div>
-                      <div class="modal-body">
+                    <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1" runat="server" TargetControlID="saveBtn" PopupControlID="confirmationmodal" BackgroundCssClass="modalBackground">
+                    </ajaxToolkit:ModalPopupExtender>
+                    
+                    <asp:Panel ID="confirmationmodal" runat="server" style="display:none;">
+                        <h5>Saving Changes</h5>
                         <asp:Label ID="Confirmation" runat="server" Text="Are you sure about your changes?"></asp:Label>
                         <asp:Label ID="Exist" runat="server" Text="Outlet Code already exists"></asp:Label>
-                      </div>
-                      <div class="modal-footer">
                         <asp:Button ID="btnClose" runat="server" Text="Close"  />
                         <asp:Button runat="server" Text="Save" ID="SaveBtn2" OnClick="saveBtnClick" />
                         <asp:Button ID="okBtn" runat="server" Text="Ok"  />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                   
+                    </asp:Panel>
 
 </div>
     </form>
