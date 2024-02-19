@@ -280,7 +280,7 @@
 
         var password = document.querySelector('input[type=password]');
         var confirmPassword = document.querySelector('#confirmPassword'); // assuming the id of confirm password field is 'confirmPassword'
-        var ignoreFields = ['location']; 
+        var ignoreFields = ['deviceID','location']; 
         var setBtn = document.getElementById('setBtn');  // assuming the id of set button is 'setBtn'
         var isSetBtnClicked = false;
 
