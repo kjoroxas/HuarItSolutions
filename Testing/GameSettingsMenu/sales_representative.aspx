@@ -279,10 +279,11 @@
         var groupAccount = document.getElementById('<%= groupAccount.ClientID %>');
 
         var password = document.querySelector('input[type=password]');
-        var confirmPassword = document.querySelector('#confirmPassword'); // assuming the id of confirm password field is 'confirmPassword'
+        var confirmPassword = document.querySelector('#confirmPassword'); 
         var ignoreFields = ['deviceID','location']; 
-        var setBtn = document.getElementById('setBtn');  // assuming the id of set button is 'setBtn'
+        var setBtn = document.getElementById('setBtn'); 
         var isSetBtnClicked = false;
+        var isOutletCodeExisting = false;  
 
         function checkFieldsForSave() {
             for (var i = 0; i < textboxes.length; i++) {
@@ -301,7 +302,10 @@
                     return false;
                 }
             }
-
+            if (isOutletCodeExisting) {  // Check the AJAX result
+                return false;
+            }
+            return true;
             if (groupAccount.value.trim() == '' && !ignoreFields.includes(groupAccount.id)) {
                 return false;
             }
@@ -532,11 +536,13 @@
                     if (msg.d) { //true existing
                         $("#outletCodeExist").text("Outlet code exists.").css("background-color", "indianred").show();
                         $("#<%= saveBtn.ClientID %>").attr("disabled", "disabled"); // Disable the ASP.NET button
-                    document.documentElement.style.setProperty('--border-color', 'indianred');
+                        document.documentElement.style.setProperty('--border-color', 'indianred');
+                        isOutletCodeExisting = true;  
                 } else { //false not existing
                     $("#outletCodeExist").text("").hide();
-
-                }
+                        isOutletCodeExisting = false;  
+                    }
+                    enableDisableSaveBtn(); 
             },
             failure: function (xhr, err) {
                 alert("readyState: " + xhr.readyState + "\nstatus: " + xhr.status + "\nresponseText: " + xhr.responseText);
