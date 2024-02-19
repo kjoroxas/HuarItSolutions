@@ -509,6 +509,8 @@
         });
     });
     function preventPostback() {
+        var textBox = document.getElementById('<%= deviceID.ClientID %>');
+        textBox.value = '';
         event.preventDefault();
     }
     $("#outletCodeText").change(function () {
