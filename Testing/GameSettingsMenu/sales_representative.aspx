@@ -53,13 +53,13 @@
                                     <asp:Label ID="outletCodeLabel" Text="Outlet Code" AssociatedControlID="outletCodeText" EnableViewState="false" runat="server">
                                         <asp:TextBox ID="outletCodeText" CssClass="textbox3" runat="server" />
                                     </asp:Label>
-                                    <label id="outletCodeExist"></label>
+                                    <label id="outletCodeExist" class="outletlabel-validator-error"></label>
 
                                     <asp:RequiredFieldValidator ID="outletCodeTextValidator" runat="server" ControlToValidate="outletCodeText" ErrorMessage="Please Enter an Outlet Code." CssClass="outlet-validator-error" Display="Dynamic"></asp:RequiredFieldValidator>
 <%--                                   <asp:TextBox ID="outletCode1" Height="20px" Width="300px" ValidateRequestMode="Disabled" type="text" runat="server" ></asp:TextBox><br />--%>
                                    
-                                    <label class="subheader" style=" margin-top: 15px;margin-right:68px;"><small>Device ID</small></label>
-                                    <asp:TextBox ID="deviceID"  CssClass="textbox2" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><asp:Button ID="clearBtn" runat="server" Text="Clear" /><br />
+                                    <label class="subheader" style=" margin-top: 15px;margin-right:65px;"><small>Device ID</small></label>
+                                    <asp:TextBox ID="deviceID"  CssClass="textbox2" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><asp:Button ID="clearBtn" runat="server" Text="Clear" CausesValidation="False" OnClientClick="preventPostback();"/><br />
                                     
                                     <label class="subheader"  style=" margin-top: 10px;margin-right:70px; margin-bottom:10px;"><small>Fullname</small></label>
                                     <asp:TextBox ID="fullName" CssClass="textbox2"  ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox>
@@ -147,7 +147,7 @@
                                         Display="Dynamic">
                                     </asp:RequiredFieldValidator>
                                     <label class="subheader" style=" margin-top: 15px; margin-right:70px;"><small>Location</small></label>
-                                    <asp:TextBox ID="location" CssClass="textbox2" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><asp:Button ID="setBtn" runat="server" Text="Set" /><br />
+                                    <asp:TextBox ID="location" CssClass="textbox2" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><asp:Button ID="setBtn" runat="server" Text="Set" CausesValidation="False" OnClientClick="preventPostback();"/><br />
                                     
                                     <asp:CheckBox ID="isActive" CssClass="ActiveCheckbox" runat="server" /><label style="position: relative; top: -8px; right:4px;"><small>Active</small></label><br />
                                     <asp:CustomValidator ID="isActivevalidator" runat="server" 
@@ -164,7 +164,7 @@
                                         <div class="col-9" >
                                             <br />
                                             <asp:Button runat="server" Text="Save for Edit" ID="editBtn" OnClick="editBtnClick" CssClass="salesEdit" />
-                                            <asp:Button runat="server" Text="Save" ID="saveBtn" CssClass="salesSave" OnClick="saveBtn2Click" />
+                                            <asp:Button runat="server" Text="Save" ID="saveBtn" CssClass="salesSave"  />
                                             <asp:Button runat="server" Text="New" ID="newBtn" OnClick="newBtnClick" CssClass="salesNew"/>
                                             <asp:Button runat="server" Text="Delete" ID="deleteBtn" OnClick="deleteBtnClick" CssClass="salesDelete" />
                                             <asp:Button runat="server" Text="Cancel" Height="30px" ID="cancelBtn" OnClick="cancelBtnClick" CausesValidation="False" CssClass="salesCancel" />
@@ -281,6 +281,8 @@
         var password = document.querySelector('input[type=password]');
         var confirmPassword = document.querySelector('#confirmPassword'); // assuming the id of confirm password field is 'confirmPassword'
         var ignoreFields = ['deviceID', 'location']; 
+        var setBtn = document.getElementById('setBtn');  // assuming the id of set button is 'setBtn'
+        var isSetBtnClicked = false;
 
         function checkFieldsForSave() {
             for (var i = 0; i < textboxes.length; i++) {
@@ -308,7 +310,11 @@
             }
             return true;
         }
-
+        setBtn.onclick = function () {
+            isSetBtnClicked = true;
+            enableDisableSaveBtn();
+            preventPostback();  // call this function if it's still needed
+        };
         function checkFieldsForEdit() {
             for (var i = 0; i < textboxes.length; i++) {
                 if (ignoreFields.includes(textboxes[i].id)) {
@@ -336,13 +342,13 @@
         }
 
 
-    function enableDisableSaveBtn() {
-        if (checkFieldsForSave()) {
-            saveBtn.disabled = false;
-        } else {
-            saveBtn.disabled = true;
+        function enableDisableSaveBtn() {
+            if (checkFieldsForSave() && isSetBtnClicked) {
+                saveBtn.disabled = false;
+            } else {
+                saveBtn.disabled = true;
+            }
         }
-    }
 
     function enableDisableEditBtn() {
         if (checkFieldsForEdit()) {
@@ -483,6 +489,7 @@
 </script>
 
 <script type="text/javascript">
+    $("#outletCodeExist").hide();
     $("#setBtn").click(function () {
         $.ajax({
             type: "GET", //GET
@@ -501,32 +508,41 @@
             }
         });
     });
-
+    function preventPostback() {
+        event.preventDefault();
+    }
     $("#outletCodeText").change(function () {
-        $.ajax({
-            type: "POST", //GET
-            url: 'sales_representative.aspx/checkIfOutletCodeExists',
-            data: JSON.stringify({ outletCode: $("#outletCodeText").val()}),
-            contentType: "application/json; charset=utf-8",
-            dataType: "json",
-            processData: true,
-            success: function (msg) {
-                if (msg.d) { //true existing
-                    $("#outletCodeExist").val(msg.d);
-
+        var outletCode = $("#outletCodeText").val();
+        if (outletCode === '') {
+            $("#outletCodeExist").hide();
+        } else {
+            $.ajax({
+                type: "POST",
+                url: 'sales_representative.aspx/checkIfOutletCodeExists',
+                data: JSON.stringify({ outletCode: outletCode }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                processData: true,
+                success: function (msg) {
+                    if (msg.d) { //true existing
+                        $("#outletCodeExist").text("Outlet code exists.").css("background-color", "red").show();
+                        $("#<%= saveBtn.ClientID %>").attr("disabled", "disabled"); // Disable the ASP.NET button
+                    document.documentElement.style.setProperty('--border-color', 'red');
+                } else { //false not existing
+                    $("#outletCodeExist").text("Outlet code is available.").css("background-color", "green").show();
+                    document.documentElement.style.setProperty('--border-color', 'green');
                 }
-                else { //false not existing
-                    $("#outletCodeExist").val(msg.d);
-                } 
-
-
             },
             failure: function (xhr, err) {
-                alert(alert("readyState: " + xhr.readyState + "\nstatus: " + xhr.status + "\nresponseText: " + xhr.responseText));
+                alert("readyState: " + xhr.readyState + "\nstatus: " + xhr.status + "\nresponseText: " + xhr.responseText);
             },
             error: function (xhr, err) {
-                alert(alert("readyState: " + xhr.readyState + "\nstatus: " + xhr.status + "\nresponseText: " + xhr.responseText));
+                alert("readyState: " + xhr.readyState + "\nstatus: " + xhr.status + "\nresponseText: " + xhr.responseText);
             }
         });
-    });
+    }
+});
+
+
+
 </script>​

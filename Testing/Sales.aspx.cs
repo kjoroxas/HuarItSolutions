@@ -7,14 +7,14 @@ using System.Web.UI.WebControls;
 
 namespace HuarITSolutions
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class Sales : System.Web.UI.Page
     {
-        protected void Page_Load2(object sender, EventArgs e)
+        protected void Page_Load(object sender, EventArgs e)
         {
 
         }
 
-        protected void Button2_Click(object sender, EventArgs e)
+        protected void Close1_Click(object sender, EventArgs e)
         {
             Response.Redirect("Catalogue.aspx");
         }

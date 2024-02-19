@@ -540,6 +540,36 @@ passwordMatchvalidator{
         border-style: solid;
         border-color: transparent indianred transparent transparent; /* Change the color to match the background-color */
     }
+
+:root {
+    --border-color: indianred;
+}
+
+.outletlabel-validator-error {
+    display: block;
+    position: absolute;
+    background-color: indianred; /* Change the color to your preference */
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 10px;
+    z-index: 1;
+    margin-left: 350px;
+    margin-top: -40px;
+    font-size: 12px;
+}
+
+    .outletlabel-validator-error::after {
+        content: "";
+        position: absolute;
+        bottom: 120%;
+        left: 0%;
+        margin-left: -10px;
+        margin-bottom: -30px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent var(--border-color) transparent transparent;
+    }
 .device-validator-error {
     display: block;
     position: absolute;
