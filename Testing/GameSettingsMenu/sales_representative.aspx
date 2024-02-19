@@ -59,7 +59,7 @@
 <%--                                   <asp:TextBox ID="outletCode1" Height="20px" Width="300px" ValidateRequestMode="Disabled" type="text" runat="server" ></asp:TextBox><br />--%>
                                    
                                     <label class="subheader" style=" margin-top: 15px;margin-right:65px;"><small>Device ID</small></label>
-                                    <asp:TextBox ID="deviceID"  CssClass="textbox2" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><asp:Button ID="clearBtn" runat="server" Text="Clear" CausesValidation="False" OnClientClick="preventPostback();"/><br />
+                                    <asp:TextBox ID="deviceID"  CssClass="textbox2" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><asp:Button ID="clearBtn" runat="server" Text="Clear" CausesValidation="False" OnClientClick="preventPostback2();"/><br />
                                     
                                     <label class="subheader"  style=" margin-top: 10px;margin-right:70px; margin-bottom:10px;"><small>Fullname</small></label>
                                     <asp:TextBox ID="fullName" CssClass="textbox2"  ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox>
@@ -280,7 +280,7 @@
 
         var password = document.querySelector('input[type=password]');
         var confirmPassword = document.querySelector('#confirmPassword'); // assuming the id of confirm password field is 'confirmPassword'
-        var ignoreFields = ['deviceID', 'location']; 
+        var ignoreFields = ['location']; 
         var setBtn = document.getElementById('setBtn');  // assuming the id of set button is 'setBtn'
         var isSetBtnClicked = false;
 
@@ -509,10 +509,13 @@
         });
     });
     function preventPostback() {
-        var textBox = document.getElementById('<%= deviceID.ClientID %>');
-        textBox.value = '';
         event.preventDefault();
     }
+    function preventPostback2() {
+        var textBox = document.getElementById('<%= deviceID.ClientID %>');
+            textBox.value = '';
+            event.preventDefault();
+        }
     $("#outletCodeText").change(function () {
         var outletCode = $("#outletCodeText").val();
         if (outletCode === '') {
