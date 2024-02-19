@@ -183,12 +183,11 @@
                            </div>
                            <div class="modal-body">
                              <asp:Label ID="Confirmation" runat="server" Text="Are you sure about your changes?"></asp:Label>
-                             <asp:Label ID="Exist" runat="server" Text="Outlet Code already exists"></asp:Label>
+
                            </div>
                            <div class="modal-footer">
                              <asp:Button ID="btnClose" runat="server" Text="Close"  />
                              <asp:Button runat="server" Text="Save" ID="SaveBtn2" OnClick="saveBtnClick" />
-                             <asp:Button ID="okBtn" runat="server" Text="Ok"  />
                            </div>
                          </div>
                        </div>
@@ -259,11 +258,7 @@
         e.preventDefault();
         return false;
     });
-    $("#<%= okBtn.ClientID %>").click(function (e) {
-        $('#confirmationmodal').modal('hide');
-        e.preventDefault();
-        return false;
-    });
+
     $(document).ready(function () {
         $("#<%=areaCode.ClientID%>, #<%=commissionType.ClientID%>, #<%=backPayType.ClientID%>").change(function () {
             if ($(this).val() != 0) {
