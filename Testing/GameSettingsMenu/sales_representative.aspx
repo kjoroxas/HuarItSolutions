@@ -54,6 +54,7 @@
                                         <asp:TextBox ID="outletCodeText" CssClass="textbox3" runat="server" />
                                     </asp:Label>
                                     <label id="outletCodeExist"></label>
+
                                     <asp:RequiredFieldValidator ID="outletCodeTextValidator" runat="server" ControlToValidate="outletCodeText" ErrorMessage="Please Enter an Outlet Code." CssClass="outlet-validator-error" Display="Dynamic"></asp:RequiredFieldValidator>
 <%--                                   <asp:TextBox ID="outletCode1" Height="20px" Width="300px" ValidateRequestMode="Disabled" type="text" runat="server" ></asp:TextBox><br />--%>
                                    
@@ -508,16 +509,18 @@
 
     $("#outletCodeText").change(function () {
         $.ajax({
-            type: "GET", //GET
-            url: "sales_representative.aspx/checkIfOutletCodeExists?outletCode=" + $("#outletCodeText").val().toString(),
+            type: "POST", //GET
+            url: 'sales_representative.aspx/checkIfOutletCodeExists',
+            data: JSON.stringify({ outletCode: $("#outletCodeText").val()}),
             contentType: "application/json; charset=utf-8",
             dataType: "json",
+            processData: true,
             success: function (msg) {
-                if (msg.d) {
+                if (msg.d) { //true existing
                     $("#outletCodeExist").val(msg.d);
 
                 }
-                else {
+                else { //false not existing
                     $("#outletCodeExist").val(msg.d);
                 } 
 

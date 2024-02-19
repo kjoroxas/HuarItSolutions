@@ -673,12 +673,12 @@ namespace HuarITSolutions
         }
 
         [WebMethod]
-        [ScriptMethod(UseHttpGet = true)]
         public static bool checkIfOutletCodeExists(string outletCode)
         {
-            var isExist = listOfSales.Any(q => q.UserName.ToUpper() == outletCode.ToUpper());
-
-            return isExist;
+            if (listOfSales.Any(q => q.UserName.ToUpper() == outletCode.ToUpper()))
+                return true;
+            else
+                return false;
 
         }
     }
