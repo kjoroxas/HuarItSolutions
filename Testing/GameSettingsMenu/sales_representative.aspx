@@ -525,12 +525,12 @@
                 processData: true,
                 success: function (msg) {
                     if (msg.d) { //true existing
-                        $("#outletCodeExist").text("Outlet code exists.").css("background-color", "red").show();
+                        $("#outletCodeExist").text("Outlet code exists.").css("background-color", "indianred").show();
                         $("#<%= saveBtn.ClientID %>").attr("disabled", "disabled"); // Disable the ASP.NET button
-                    document.documentElement.style.setProperty('--border-color', 'red');
+                    document.documentElement.style.setProperty('--border-color', 'indianred');
                 } else { //false not existing
-                    $("#outletCodeExist").text("Outlet code is available.").css("background-color", "green").show();
-                    document.documentElement.style.setProperty('--border-color', 'green');
+                    $("#outletCodeExist").text("").hide();
+
                 }
             },
             failure: function (xhr, err) {
