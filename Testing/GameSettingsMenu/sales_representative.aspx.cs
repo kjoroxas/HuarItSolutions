@@ -1,10 +1,14 @@
 ﻿using HuarITSolutions.Class;
 using HuarITSolutions.Model;
+using Microsoft.Win32;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Device.Location;
 using System.Linq;
 using System.Web;
+using System.Web.Script.Services;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -15,11 +19,21 @@ namespace HuarITSolutions
     public partial class SalesRepresentative : Page
     {
         public static SQLFunctions sqlFunctions = new SQLFunctions();
-        List<SalesRepresentativeModel> listOfSales = new List<SalesRepresentativeModel>();
+        static List<SalesRepresentativeModel> listOfSales = new List<SalesRepresentativeModel>();
         protected string selectedOutletCode;
+        static GeoCoordinateWatcher Watcher = new GeoCoordinateWatcher();
+
 
         protected void Page_Init(object sender, EventArgs e)
         {
+            Watcher = new GeoCoordinateWatcher();
+
+            // Catch the StatusChanged event.
+            Watcher.StatusChanged += Watcher_StatusChanged;
+
+            // Start the watcher.
+            Watcher.Start();
+
             if (!Context.User.Identity.IsAuthenticated)
             {
                 Response.Redirect("~/Login.aspx");
@@ -58,8 +72,39 @@ namespace HuarITSolutions
                 // Add row
                 activeGame.Rows.Add(row);
             }
-        }
 
+            string ret = string.Empty;
+            RegistryKey regKey = null;
+
+            try
+            {
+
+                var regDefault = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion", false);
+                ret = regDefault.GetValue("ProductId").ToString();
+
+                RegistryKey localKey;
+                if (Environment.Is64BitOperatingSystem)
+                    localKey = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry64);
+                else
+                    localKey = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry32);
+                var RegKEY = localKey.OpenSubKey(@"SOFTWARE\Microsoft\SQMClient");
+                if (RegKEY != null)
+                {
+                    var deviceId = RegKEY.GetValue("MachineId").ToString().Trim();
+                    deviceID.Text = deviceId.Substring(1, deviceId.Length - 2);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                ret = string.Format("Your error message");
+            }
+            finally
+            {
+                if (regKey != null)
+                    regKey.Close();
+            }
+        }
         protected void outletCode_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -601,5 +646,40 @@ namespace HuarITSolutions
 
         }
 
+        private void Watcher_StatusChanged(object sender, GeoPositionStatusChangedEventArgs e)
+        {
+            if (e.Status == GeoPositionStatus.Ready)
+            {
+                // Display the latitude and longitude.
+                if (Watcher.Position.Location.IsUnknown)
+                {
+                    var ss = "Cannot find location data";
+                }
+                else
+                {
+                    GeoCoordinate location =
+                        Watcher.Position.Location;
+                }
+            }
+        }
+
+        [WebMethod]
+        [ScriptMethod(UseHttpGet = true)]
+        public static string getLocationCoordinates()
+        {
+            GeoCoordinate location = Watcher.Position.Location;
+            return location.Latitude.ToString() + "" + location.Longitude.ToString();
+
+        }
+
+        [WebMethod]
+        [ScriptMethod(UseHttpGet = true)]
+        public static bool checkIfOutletCodeExists(string outletCode)
+        {
+            var isExist = listOfSales.Any(q => q.UserName.ToUpper() == outletCode.ToUpper());
+
+            return isExist;
+
+        }
     }
 }

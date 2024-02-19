@@ -53,6 +53,7 @@
                                     <asp:Label ID="outletCodeLabel" Text="Outlet Code" AssociatedControlID="outletCodeText" EnableViewState="false" runat="server">
                                         <asp:TextBox ID="outletCodeText" CssClass="textbox3" runat="server" />
                                     </asp:Label>
+                                    <label id="outletCodeExist"></label>
                                     <asp:RequiredFieldValidator ID="outletCodeTextValidator" runat="server" ControlToValidate="outletCodeText" ErrorMessage="Please Enter an Outlet Code." CssClass="outlet-validator-error" Display="Dynamic"></asp:RequiredFieldValidator>
 <%--                                   <asp:TextBox ID="outletCode1" Height="20px" Width="300px" ValidateRequestMode="Disabled" type="text" runat="server" ></asp:TextBox><br />--%>
                                    
@@ -483,5 +484,51 @@
         });
     });
 
-
 </script>
+
+<script type="text/javascript">
+    $("#setBtn").click(function () {
+        $.ajax({
+            type: "GET", //GET
+            url: "sales_representative.aspx/getLocationCoordinates",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (msg) {
+                $("#location").val(msg.d);
+//                DrawTable(msg.d);
+            },
+            failure: function (xhr, err) {
+                alert(alert("readyState: " + xhr.readyState + "\nstatus: " + xhr.status + "\nresponseText: " + xhr.responseText));
+            },
+            error: function (xhr, err) {
+                alert(alert("readyState: " + xhr.readyState + "\nstatus: " + xhr.status + "\nresponseText: " + xhr.responseText));
+            }
+        });
+    });
+
+    $("#outletCodeText").change(function () {
+        $.ajax({
+            type: "GET", //GET
+            url: "sales_representative.aspx/checkIfOutletCodeExists?outletCode=" + $("#outletCodeText").val().toString(),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (msg) {
+                if (msg.d) {
+                    $("#outletCodeExist").val(msg.d);
+
+                }
+                else {
+                    $("#outletCodeExist").val(msg.d);
+                } 
+
+
+            },
+            failure: function (xhr, err) {
+                alert(alert("readyState: " + xhr.readyState + "\nstatus: " + xhr.status + "\nresponseText: " + xhr.responseText));
+            },
+            error: function (xhr, err) {
+                alert(alert("readyState: " + xhr.readyState + "\nstatus: " + xhr.status + "\nresponseText: " + xhr.responseText));
+            }
+        });
+    });
+</script>​
