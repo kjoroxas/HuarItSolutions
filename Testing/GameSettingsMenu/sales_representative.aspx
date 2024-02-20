@@ -64,6 +64,7 @@
                                     <label class="subheader"  style=" margin-top: 10px;margin-right:70px; margin-bottom:10px;"><small>Fullname</small></label>
                                     <asp:TextBox ID="fullName" CssClass="textbox2"  ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="fullNameValidator" runat="server" ControlToValidate="fullName" ErrorMessage="Please enter your full name." CssClass="name-validator-error" Display="Dynamic"></asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="fullNameValidator1" runat="server" ControlToValidate="fullName" ErrorMessage="Please enter your full name." CssClass="name2-validator-error" Display="Dynamic"></asp:RequiredFieldValidator>
                                     <label class="subheader" style=" margin-top: 5px; margin-right:77px;"><small>Address</small></label>
                                     <asp:TextBox ID="address" Height="50px" Width="300px" TextMode="MultiLine" Rows="3" CssClass="paragraph-style no-resize" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><br />
                                     <asp:RequiredFieldValidator ID="addressValidator" runat="server" ControlToValidate="address" ErrorMessage="Please enter address." CssClass="new-validator-error" Display="Dynamic"></asp:RequiredFieldValidator>
@@ -88,14 +89,16 @@
                                     <label class="subheader" style=" margin-top: 10px; margin-right:65px;"><small>Password</small></label>
                                     <div class="input-group" style="margin-left:137px; margin-top:-30px;">                                     
                                         <asp:TextBox ID="password" CssClass="textbox2" ValidateRequestMode="Disabled" type="password" runat="server"  ></asp:TextBox><br />
+                                        <asp:RequiredFieldValidator ID="passwordValidator" runat="server" ControlToValidate="password" ErrorMessage="Please enter password." CssClass="password-validator-error" Display="Dynamic"></asp:RequiredFieldValidator>
                                         <div class="input-group-append">
                                             <button id="show_password" class="btn btn-outline-secondary" style="height:30px;width:auto;display: flex; align-items: center;justify-content: center;" type="button"><i class="fa-solid fa-eye"></i></button>
                                         </div>
                                     </div>
-                                    <asp:RequiredFieldValidator ID="passwordValidator" runat="server" ControlToValidate="password" ErrorMessage="Please enter password." CssClass="new-validator-error" Display="Dynamic"></asp:RequiredFieldValidator>
+                                    
                                      <label class="subheader" style=" margin-top: 15px; margin-right:5px;"><small>Confirm Password</small></label>
                                     <div class="input-group" style="margin-left:137px; margin-top:-35px;">                                     
                                         <asp:TextBox ID="confirmPassword" CssClass="textbox2" ValidateRequestMode="Disabled" type="password" runat="server"  ></asp:TextBox><br />
+                                        <asp:RequiredFieldValidator ID="confirmPasswordValidator" runat="server" ControlToValidate="confirmPassword" ErrorMessage="Confirm your password." CssClass="cpassword-validator-error" Display="Dynamic"></asp:RequiredFieldValidator>
                                         <div class="input-group-append">
                                             <button id="show_password2" class="btn btn-outline-secondary" style="height:30px;width:auto;display: flex; align-items: center;justify-content: center; margin-right:10px;" type="button"><i class="fa-solid fa-eye"></i></button>
                                         </div>
@@ -109,7 +112,7 @@
                                         Display="Dynamic">
                                     </asp:CompareValidator>
                                     </div>
-                                     <asp:RequiredFieldValidator ID="confirmPasswordValidator" runat="server" ControlToValidate="confirmPassword" ErrorMessage="Confirm your password." CssClass="new-validator-error" Display="Dynamic"></asp:RequiredFieldValidator>
+                                     
                                     <label class="subheader" style=" margin-top: 15px; margin-right:24px;"><small>Group Account </small></label>
                                      <asp:TextBox ID="groupAccount" CssClass="textbox2" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox>    <br />
                                     <asp:RequiredFieldValidator ID="groupAccountValidator" runat="server" ControlToValidate="groupAccount" ErrorMessage="Group account is required." CssClass="new-validator-error" Display="Dynamic"></asp:RequiredFieldValidator>
@@ -272,17 +275,16 @@
 <script type="text/javascript">
     /*this disables save button if fields are not all filled */
     window.onload = function () {
-        var textboxes = document.querySelectorAll('input[type=text], input[type=password], input[type=email], #address, #mobileNumber');
+        var textboxes = document.querySelectorAll('input[type=text],input[type=password], input[type=email], #address, #mobileNumber');
         var dropdowns = document.getElementsByTagName('select');
         var saveBtn = document.getElementById('saveBtn');
         var editBtn = document.getElementById('editBtn');
         var groupAccount = document.getElementById('<%= groupAccount.ClientID %>');
 
-        var password = document.querySelector('input[type=password]');
-        var confirmPassword = document.querySelector('#confirmPassword'); 
+        var password = document.getElementById('<%= password.ClientID %>');;
+        var confirmPassword = document.getElementById('<%= confirmPassword.ClientID %>');
         var ignoreFields = ['deviceID','location']; 
-        var setBtn = document.getElementById('setBtn'); 
-        var isSetBtnClicked = false;
+
         var isOutletCodeExisting = false;  
 
         function checkFieldsForSave() {
@@ -305,20 +307,16 @@
             if (isOutletCodeExisting) {  // Check the AJAX result
                 return false;
             }
-            return true;
             if (groupAccount.value.trim() == '' && !ignoreFields.includes(groupAccount.id)) {
                 return false;
             }
             if (password.value !== confirmPassword.value) {
                 return false;
             }
+
             return true;
         }
-        setBtn.onclick = function () {
-            isSetBtnClicked = true;
-            enableDisableSaveBtn();
-            preventPostback();  // call this function if it's still needed
-        };
+
         function checkFieldsForEdit() {
             for (var i = 0; i < textboxes.length; i++) {
                 if (ignoreFields.includes(textboxes[i].id)) {
@@ -347,7 +345,7 @@
 
 
         function enableDisableSaveBtn() {
-            if (checkFieldsForSave() && isSetBtnClicked) {
+            if (checkFieldsForSave() ) {
                 saveBtn.disabled = false;
             } else {
                 saveBtn.disabled = true;

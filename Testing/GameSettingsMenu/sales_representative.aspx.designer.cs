@@ -123,6 +123,15 @@ namespace HuarITSolutions
         protected global::System.Web.UI.WebControls.RequiredFieldValidator fullNameValidator;
 
         /// <summary>
+        /// fullNameValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator fullNameValidator1;
+
+        /// <summary>
         /// address control.
         /// </summary>
         /// <remarks>
@@ -204,15 +213,6 @@ namespace HuarITSolutions
         protected global::System.Web.UI.WebControls.TextBox confirmPassword;
 
         /// <summary>
-        /// comparePasswords control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator comparePasswords;
-
-        /// <summary>
         /// confirmPasswordValidator control.
         /// </summary>
         /// <remarks>
@@ -220,6 +220,15 @@ namespace HuarITSolutions
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator confirmPasswordValidator;
+
+        /// <summary>
+        /// comparePasswords control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator comparePasswords;
 
         /// <summary>
         /// groupAccount control.

@@ -77,10 +77,18 @@ namespace HuarITSolutions
         }
         protected void outletCode_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            setDeviceId();
+            isActivevalidator.Visible = true;
+            backPayTypeValidator.Visible = true;
+            commissionTypeValidator.Visible = true;
+            areaCodeValidator.Visible = true;
+            fullNameValidator.Visible = false;
+            confirmPasswordValidator.Visible = true;
+            passwordValidator.Visible = true;
             mobileNumberValidator.Visible = true;
-
             addressValidator.Visible = true;
+            fullNameValidator1.Visible = true;
+            outletCodeTextValidator.Visible = true;
             groupAccountValidator.Visible = true;
             setBtn.Visible = true;
             clearBtn.Visible = true;
@@ -246,37 +254,7 @@ namespace HuarITSolutions
             location.Enabled = false;
             confirmPassword.Enabled = true;
 
-            string ret = string.Empty;
-            RegistryKey regKey = null;
-
-            try
-            {
-
-                var regDefault = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion", false);
-                ret = regDefault.GetValue("ProductId").ToString();
-
-                RegistryKey localKey;
-                if (Environment.Is64BitOperatingSystem)
-                    localKey = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry64);
-                else
-                    localKey = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry32);
-                var RegKEY = localKey.OpenSubKey(@"SOFTWARE\Microsoft\SQMClient");
-                if (RegKEY != null)
-                {
-                    var deviceId = RegKEY.GetValue("MachineId").ToString().Trim();
-                    deviceID.Text = deviceId.Substring(1, deviceId.Length - 2);
-                }
-
-            }
-            catch (Exception ex)
-            {
-                ret = string.Format("Your error message");
-            }
-            finally
-            {
-                if (regKey != null)
-                    regKey.Close();
-            }
+            setDeviceId();
         }
         protected void saveBtnClick(object sender, EventArgs e)
         {
@@ -560,7 +538,7 @@ namespace HuarITSolutions
         }
         private void defaultStateBtn()
         {
-
+            fullNameValidator1.Visible = false;
 
             isActivevalidator.Visible = false;
             backPayTypeValidator.Visible = false;
@@ -617,9 +595,43 @@ namespace HuarITSolutions
             //outletCodeTextBox.Text = "";
         }
 
+        protected void setDeviceId()
+        {
+            string ret = string.Empty;
+            RegistryKey regKey = null;
+
+            try
+            {
+
+                var regDefault = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion", false);
+                ret = regDefault.GetValue("ProductId").ToString();
+
+                RegistryKey localKey;
+                if (Environment.Is64BitOperatingSystem)
+                    localKey = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry64);
+                else
+                    localKey = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry32);
+                var RegKEY = localKey.OpenSubKey(@"SOFTWARE\Microsoft\SQMClient");
+                if (RegKEY != null)
+                {
+                    var deviceId = RegKEY.GetValue("MachineId").ToString().Trim();
+                    deviceID.Text = deviceId.Substring(1, deviceId.Length - 2);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                ret = string.Format("Your error message");
+            }
+            finally
+            {
+                if (regKey != null)
+                    regKey.Close();
+            }
+        }
 
 
-        private void Watcher_StatusChanged(object sender, GeoPositionStatusChangedEventArgs e)
+    private void Watcher_StatusChanged(object sender, GeoPositionStatusChangedEventArgs e)
         {
             if (e.Status == GeoPositionStatus.Ready)
             {
@@ -655,4 +667,5 @@ namespace HuarITSolutions
 
         }
     }
+
 }

@@ -135,6 +135,9 @@
     <Content Include="Global.asax" />
     <Content Include="Logout.aspx" />
     <Content Include="Sales.aspx" />
+    <Content Include="SalesMenufiles\Bet Summary.aspx" />
+    <Content Include="SalesMenufiles\BetSummaryFIles\BetSummary1.aspx" />
+    <Content Include="SalesMenufiles\BetSummaryFIles\ThermalSales.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -226,6 +229,27 @@
     </Compile>
     <Compile Include="Sales.aspx.designer.cs">
       <DependentUpon>Sales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SalesMenufiles\Bet Summary.aspx.cs">
+      <DependentUpon>Bet Summary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SalesMenufiles\Bet Summary.aspx.designer.cs">
+      <DependentUpon>Bet Summary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SalesMenufiles\BetSummaryFIles\BetSummary1.aspx.cs">
+      <DependentUpon>BetSummary1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SalesMenufiles\BetSummaryFIles\BetSummary1.aspx.designer.cs">
+      <DependentUpon>BetSummary1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SalesMenufiles\BetSummaryFIles\ThermalSales.aspx.cs">
+      <DependentUpon>ThermalSales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SalesMenufiles\BetSummaryFIles\ThermalSales.aspx.designer.cs">
+      <DependentUpon>ThermalSales.aspx</DependentUpon>
     </Compile>
     <Compile Include="SQL Functions\SQLFunctions.cs" />
     <Compile Include="Model\ApprovedGamesModel.cs" />
