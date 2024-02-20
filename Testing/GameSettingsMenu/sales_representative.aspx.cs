@@ -79,7 +79,7 @@ namespace HuarITSolutions
         {
 
             mobileNumberValidator.Visible = true;
-
+            fullNameValidator2.Visible = true;
             addressValidator.Visible = true;
             groupAccountValidator.Visible = true;
             setBtn.Visible = true;
@@ -540,7 +540,7 @@ namespace HuarITSolutions
             backPayTypeValidator.Visible = false;
             commissionTypeValidator.Visible = false;
             areaCodeValidator.Visible = false;
-
+            fullNameValidator2.Visible = false;
             confirmPasswordValidator.Visible = false;
             passwordValidator.Visible = false;
             mobileNumberValidator.Visible = false;
