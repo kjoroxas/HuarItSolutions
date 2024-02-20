@@ -78,6 +78,18 @@ namespace HuarITSolutions
         protected void outletCode_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+
+            backPayTypeValidator.Visible = true;
+            commissionTypeValidator.Visible = true;
+            areaCodeValidator.Visible = true;
+
+            confirmPasswordValidator.Visible = true;
+            passwordValidator.Visible = true;
+
+            addressValidator.Visible = true;
+
+
+
             mobileNumberValidator.Visible = true;
             fullNameValidator2.Visible = true;
             addressValidator.Visible = true;
