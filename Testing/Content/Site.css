@@ -540,6 +540,31 @@ passwordMatchvalidator{
         border-style: solid;
         border-color: transparent indianred transparent transparent; /* Change the color to match the background-color */
     }
+.name2-validator-error {
+    display: block;
+    position: absolute;
+    background-color: indianred; /* Change the color to your preference */
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 10px;
+    z-index: 1;
+    top: 80px; /* adjust as needed */
+    left: 350px; /* adjust as needed */
+    font-size: 12px;
+}
+
+    .name2-validator-error::after {
+        content: "";
+        position: absolute;
+        bottom: 120%;
+        left: 0%;
+        margin-left: -10px;
+        margin-bottom: -30px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent indianred transparent transparent; /* Change the color to match the background-color */
+    }
 
 :root {
     --border-color: indianred;
@@ -645,7 +670,107 @@ passwordMatchvalidator{
         border-style: solid;
         border-color: transparent indianred transparent transparent; /* Change the color to match the background-color */
     }
+.password-validator-error {
+    display: block;
+    position: absolute;
+    background-color: indianred; /* Change the color to your preference */
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 10px;
+    z-index: 1;
+    top: -0px; /* adjust as needed */
+    left: 330px; /* adjust as needed */
+    font-size: 12px;
+}
 
+    .password-validator-error::after {
+        content: "";
+        position: absolute;
+        bottom: 120%;
+        left: 0%;
+        margin-left: -10px;
+        margin-bottom: -30px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent indianred transparent transparent; /* Change the color to match the background-color */
+    }
+.cpassword-validator-error {
+    display: block;
+    position: absolute;
+    background-color: indianred; /* Change the color to your preference */
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 10px;
+    z-index: 1;
+    top: 0px; /* adjust as needed */
+    left: 330px; /* adjust as needed */
+    font-size: 12px;
+}
+
+    .cpassword-validator-error::after {
+        content: "";
+        position: absolute;
+        bottom: 120%;
+        left: 0%;
+        margin-left: -10px;
+        margin-bottom: -30px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent indianred transparent transparent; /* Change the color to match the background-color */
+    }
+.password2-validator-error {
+    display: block;
+    position: absolute;
+    background-color: indianred; /* Change the color to your preference */
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 10px;
+    z-index: 1;
+    top: 80px; /* adjust as needed */
+    left: 350px; /* adjust as needed */
+    font-size: 12px;
+}
+
+    .password2-validator-error::after {
+        content: "";
+        position: absolute;
+        bottom: 120%;
+        left: 0%;
+        margin-left: -10px;
+        margin-bottom: -30px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent indianred transparent transparent; /* Change the color to match the background-color */
+    }
+
+.cpassword2-validator-error {
+    display: block;
+    position: absolute;
+    background-color: indianred; /* Change the color to your preference */
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 10px;
+    z-index: 1;
+    top: 80px; /* adjust as needed */
+    left: 350px; /* adjust as needed */
+    font-size: 12px;
+}
+
+    .cpassword2-validator-error::after {
+        content: "";
+        position: absolute;
+        bottom: 120%;
+        left: 0%;
+        margin-left: -10px;
+        margin-bottom: -30px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent indianred transparent transparent; /* Change the color to match the background-color */
+    }
 /* Mobile CSS*/
 @media screen and (min-width: 360px) and (max-width: 500px) {
     .body-content {
