@@ -44,9 +44,7 @@
 
         </div>
         <style>
-        footer {
-            padding-top:35px;
-        }
+
         body{
             overflow:hidden;
         }

@@ -45,9 +45,7 @@
         .body-content {
             padding-top:35px;
         }
-        footer{
-            margin-top:-30px;
-        }
+
         @media screen and (min-width: 375px) and (max-width: 500px) {
             html, body {
               height: 100%;

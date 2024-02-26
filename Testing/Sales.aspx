@@ -112,9 +112,7 @@
                 </div>
             </div>
 <style>
-        #UserControl{
-        margin-bottom:10px;
-    }
+
     footer {
         margin-top: 0px !important;
         font-size: 20px;

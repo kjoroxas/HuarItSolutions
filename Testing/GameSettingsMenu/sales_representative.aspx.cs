@@ -544,7 +544,7 @@ namespace HuarITSolutions
             backPayTypeValidator.Visible = false;
             commissionTypeValidator.Visible = false;
             areaCodeValidator.Visible = false;
-            fullNameValidator2.Visible = false;
+            fullNameValidator1.Visible = false;
             confirmPasswordValidator.Visible = false;
             passwordValidator.Visible = false;
             mobileNumberValidator.Visible = false;
@@ -595,40 +595,6 @@ namespace HuarITSolutions
             //outletCodeTextBox.Text = "";
         }
 
-        protected void setDeviceId()
-        {
-            string ret = string.Empty;
-            RegistryKey regKey = null;
-
-            try
-            {
-
-                var regDefault = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion", false);
-                ret = regDefault.GetValue("ProductId").ToString();
-
-                RegistryKey localKey;
-                if (Environment.Is64BitOperatingSystem)
-                    localKey = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry64);
-                else
-                    localKey = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry32);
-                var RegKEY = localKey.OpenSubKey(@"SOFTWARE\Microsoft\SQMClient");
-                if (RegKEY != null)
-                {
-                    var deviceId = RegKEY.GetValue("MachineId").ToString().Trim();
-                    deviceID.Text = deviceId.Substring(1, deviceId.Length - 2);
-                }
-
-            }
-            catch (Exception ex)
-            {
-                ret = string.Format("Your error message");
-            }
-            finally
-            {
-                if (regKey != null)
-                    regKey.Close();
-            }
-        }
 
 
     private void Watcher_StatusChanged(object sender, GeoPositionStatusChangedEventArgs e)
