@@ -47,7 +47,7 @@
                            </div>  
                        </div>
                       <div class="col-9">
-                          <iframe>
+
                        </div>
                    </div>
                </div>

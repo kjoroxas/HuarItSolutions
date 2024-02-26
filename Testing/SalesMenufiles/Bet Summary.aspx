@@ -30,6 +30,7 @@
                     <div class="tab-pane fade" id="nav-thermalSales" role="tabpanel" aria-labelledby="nav-thermalSale">
 
                     </div>
+                    <div class="tab-pane fade" id="nav-thermalSales" role="tabpanel" aria-labelledby="nav-thermalSale">...</div>
                 </div>
 
              </div>  
