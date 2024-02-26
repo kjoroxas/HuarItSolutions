@@ -64,7 +64,7 @@
                                     <label class="subheader"  style=" margin-top: 10px;margin-right:70px; margin-bottom:10px;"><small>Fullname</small></label>
                                     <asp:TextBox ID="fullName" CssClass="textbox2"  ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="fullNameValidator" runat="server" ControlToValidate="fullName" ErrorMessage="Please enter your full name." CssClass="name-validator-error" Display="Dynamic"></asp:RequiredFieldValidator>
-                                    <asp:RequiredFieldValidator ID="fullNameValidator2" runat="server" ControlToValidate="fullName" ErrorMessage="Please enter your full name." CssClass="name2-validator-error" Display="Dynamic"></asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="fullNameValidator1" runat="server" ControlToValidate="fullName" ErrorMessage="Please enter your full name." CssClass="name2-validator-error" Display="Dynamic"></asp:RequiredFieldValidator>
                                     <label class="subheader" style=" margin-top: 5px; margin-right:77px;"><small>Address</small></label>
                                     <asp:TextBox ID="address" Height="50px" Width="300px" TextMode="MultiLine" Rows="3" CssClass="paragraph-style no-resize" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><br />
                                     <asp:RequiredFieldValidator ID="addressValidator" runat="server" ControlToValidate="address" ErrorMessage="Please enter address." CssClass="new-validator-error" Display="Dynamic"></asp:RequiredFieldValidator>

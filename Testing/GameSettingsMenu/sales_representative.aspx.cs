@@ -77,22 +77,18 @@ namespace HuarITSolutions
         }
         protected void outletCode_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-
+            setDeviceId();
+            isActivevalidator.Visible = true;
             backPayTypeValidator.Visible = true;
             commissionTypeValidator.Visible = true;
             areaCodeValidator.Visible = true;
-
+            fullNameValidator.Visible = false;
             confirmPasswordValidator.Visible = true;
             passwordValidator.Visible = true;
-
-            addressValidator.Visible = true;
-
-
-
             mobileNumberValidator.Visible = true;
-            fullNameValidator2.Visible = true;
             addressValidator.Visible = true;
+            fullNameValidator1.Visible = true;
+            outletCodeTextValidator.Visible = true;
             groupAccountValidator.Visible = true;
             setBtn.Visible = true;
             clearBtn.Visible = true;
@@ -258,11 +254,7 @@ namespace HuarITSolutions
             location.Enabled = false;
             confirmPassword.Enabled = true;
 
-
-
             setDeviceId();
-
-            
         }
         protected void saveBtnClick(object sender, EventArgs e)
         {
@@ -546,13 +538,13 @@ namespace HuarITSolutions
         }
         private void defaultStateBtn()
         {
-
+            fullNameValidator1.Visible = false;
 
             isActivevalidator.Visible = false;
             backPayTypeValidator.Visible = false;
             commissionTypeValidator.Visible = false;
             areaCodeValidator.Visible = false;
-            fullNameValidator2.Visible = false;
+            fullNameValidator1.Visible = false;
             confirmPasswordValidator.Visible = false;
             passwordValidator.Visible = false;
             mobileNumberValidator.Visible = false;
@@ -605,7 +597,7 @@ namespace HuarITSolutions
 
 
 
-        private void Watcher_StatusChanged(object sender, GeoPositionStatusChangedEventArgs e)
+    private void Watcher_StatusChanged(object sender, GeoPositionStatusChangedEventArgs e)
         {
             if (e.Status == GeoPositionStatus.Ready)
             {
@@ -676,4 +668,5 @@ namespace HuarITSolutions
             }
         }
     }
+
 }

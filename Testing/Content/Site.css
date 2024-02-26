@@ -81,7 +81,7 @@ textarea {
 
     #loginsection {
         margin-top: 60px;
-        margin-bottom: 180px;
+        margin-bottom: 145px !important;
     }
     .loginbutton {
         background-color: #3498db;
@@ -120,7 +120,7 @@ dropdown-menu{
 #catalogbuttons {
     margin-left: 50px;
     margin-top: 100px;
-    margin-bottom: 270px;
+    margin-bottom: 288px;
 }
 .columnsizes{
     margin-left:25px;
@@ -485,10 +485,11 @@ passwordMatchvalidator{
     width: 107.99rem;
     height: 46rem;
 }
+
 .gamesettingsmobile{
     display:none;
 }
-/*Validators for sales*/
+/*Validators for sales representative*/
 
 .new-validator-error {
     display: block;
@@ -771,6 +772,39 @@ passwordMatchvalidator{
         border-style: solid;
         border-color: transparent indianred transparent transparent; /* Change the color to match the background-color */
     }
+    /*Sales*/
+#salesttons {
+    margin-left: -300px;
+    padding-bottom: 80px;
+    background-color: lightgray !important;
+}
+.specificsalescard {
+    width: 106rem;
+    height: 30rem;
+}
+.viewBtnclass{
+    margin-top:20px;
+}
+.ActiveDropDown {
+
+    width: 500px !important;
+    height: 40px;
+    font-size: 18px;
+}
+.listbox1{
+    margin-bottom:20px;
+    height:350px;
+    
+}
+.pcversion{
+    margin-left:60px;
+}
+.salesgameCodeDropDown {
+
+    width: 500px !important;
+    height: 40px;
+    font-size: 18px;
+}
 /* Mobile CSS*/
 @media screen and (min-width: 360px) and (max-width: 500px) {
     .body-content {

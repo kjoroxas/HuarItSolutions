@@ -109,11 +109,12 @@
                 </div>
             </div>
 <style>
+
     footer {
         margin-top: 0px !important;
         font-size: 20px;
-        height: 30px !important;
-        padding: 0px !important;
+        height: 50px !important;
+        padding-bottom: 10px !important;
     }
     body {
         overflow: hidden; 
