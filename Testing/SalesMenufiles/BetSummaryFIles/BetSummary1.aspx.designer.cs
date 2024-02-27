@@ -24,15 +24,6 @@ namespace HuarITSolutions.SalesMenufiles.BetSummaryFIles
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// ScriptManager1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
-
-        /// <summary>
         /// drawDate control.
         /// </summary>
         /// <remarks>
@@ -51,21 +42,30 @@ namespace HuarITSolutions.SalesMenufiles.BetSummaryFIles
         protected global::System.Web.UI.WebControls.DropDownList gameCode;
 
         /// <summary>
-        /// View control.
+        /// Button3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button View;
+        protected global::System.Web.UI.WebControls.Button Button3;
 
         /// <summary>
-        /// ReportViewer1 control.
+        /// Button5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Microsoft.Reporting.WebForms.ReportViewer ReportViewer1;
+        protected global::System.Web.UI.WebControls.Button Button5;
+
+        /// <summary>
+        /// Button6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button6;
     }
 }
