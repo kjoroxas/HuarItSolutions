@@ -805,6 +805,26 @@ passwordMatchvalidator{
     height: 40px;
     font-size: 18px;
 }
+
+.tablestyle1 {
+    margin-left: 50px;
+    width: 1500px;
+}
+.tablestyle2 {
+    margin-left: 50px;
+    width: 1000px;
+}
+.tablestyle3 {
+    margin-top: 10px;
+    margin-left: 50px;
+    width: 1500px;
+}
+.gameCodeDropDown3 {
+
+    width: 500px !important;
+    height: 40px;
+    font-size: 18px;
+}
 /* Mobile CSS*/
 @media screen and (min-width: 360px) and (max-width: 500px) {
     .body-content {

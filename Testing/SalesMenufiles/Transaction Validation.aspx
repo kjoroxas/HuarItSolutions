@@ -47,7 +47,7 @@
 
            <div class="row">
                 <div  style="height:450px;">
-                    <div class="row" style="margin-left:80px;margin-top:30px;  ">
+                    <div class="row" style="margin-left:50px;margin-top:30px;  ">
                         <div class="scrollable-table2">
                             <asp:Table ID="CombinationsTab" runat="server" Width="80%"  HorizontalAlign="Left" CssClass="table table-bordered" style="font-size:20px;" >
                                    <asp:TableHeaderRow CssClass="aspNetTable">
