@@ -1,0 +1,104 @@
+{
+  "data": [
+    {
+      "DRAW DATE": "2024-02-27",
+      "OUTLET CODE": "ABC123",
+      "GAME CODE": "Lotto",
+      "COMBINATION": "5-12-18-24-30",
+      "BET AMOUNT": 100,
+      "PRIZE": "5000 PHP",
+      "TRANSACTION ID": "TXN12345",
+      "TIME ENTRY": "14:30:00"
+    },
+    {
+      "DRAW DATE": "2024-02-27",
+      "OUTLET CODE": "XYZ789",
+      "GAME CODE": "Lotto",
+      "COMBINATION": "7-15-22-28-35",
+      "BET AMOUNT": 50,
+      "PRIZE": "2500 PHP",
+      "TRANSACTION ID": "TXN67890",
+      "TIME ENTRY": "15:45:00"
+    },
+    {
+      "DRAW DATE": "2024-02-27",
+      "OUTLET CODE": "DEF456",
+      "GAME CODE": "Lotto",
+      "COMBINATION": "2-10-17-23-29",
+      "BET AMOUNT": 75,
+      "PRIZE": "3750 PHP",
+      "TRANSACTION ID": "TXN24680",
+      "TIME ENTRY": "16:20:00"
+    },
+    {
+      "DRAW DATE": "2024-02-27",
+      "OUTLET CODE": "GHI789",
+      "GAME CODE": "Lotto",
+      "COMBINATION": "9-16-21-27-34",
+      "BET AMOUNT": 60,
+      "PRIZE": "3000 PHP",
+      "TRANSACTION ID": "TXN13579",
+      "TIME ENTRY": "17:10:00"
+    },
+    {
+      "DRAW DATE": "2024-02-27",
+      "OUTLET CODE": "JKL012",
+      "GAME CODE": "Lotto",
+      "COMBINATION": "3-11-19-25-31",
+      "BET AMOUNT": 90,
+      "PRIZE": "4500 PHP",
+      "TRANSACTION ID": "TXN35791",
+      "TIME ENTRY": "18:05:00"
+    },
+    {
+      "DRAW DATE": "2024-02-27",
+      "OUTLET CODE": "MNO345",
+      "GAME CODE": "Lotto",
+      "COMBINATION": "6-13-20-26-32",
+      "BET AMOUNT": 70,
+      "PRIZE": "3500 PHP",
+      "TRANSACTION ID": "TXN46802",
+      "TIME ENTRY": "19:15:00"
+    },
+    {
+      "DRAW DATE": "2024-02-27",
+      "OUTLET CODE": "PQR678",
+      "GAME CODE": "Lotto",
+      "COMBINATION": "8-14-21-28-36",
+      "BET AMOUNT": 55,
+      "PRIZE": "2750 PHP",
+      "TRANSACTION ID": "TXN57913",
+      "TIME ENTRY": "20:30:00"
+    },
+    {
+      "DRAW DATE": "2024-02-27",
+      "OUTLET CODE": "STU901",
+      "GAME CODE": "Lotto",
+      "COMBINATION": "4-12-19-27-33",
+      "BET AMOUNT": 80,
+      "PRIZE": "4000 PHP",
+      "TRANSACTION ID": "TXN68024",
+      "TIME ENTRY": "21:40:00"
+    },
+    {
+      "DRAW DATE": "2024-02-27",
+      "OUTLET CODE": "VWX234",
+      "GAME CODE": "Lotto",
+      "COMBINATION": "1-9-16-24-30",
+      "BET AMOUNT": 65,
+      "PRIZE": "3250 PHP",
+      "TRANSACTION ID": "TXN79135",
+      "TIME ENTRY": "22:55:00"
+    },
+    {
+      "DRAW DATE": "2024-02-27",
+      "OUTLET CODE": "YZA567",
+      "GAME CODE": "Lotto",
+      "COMBINATION": "10-18-25-33-39",
+      "BET AMOUNT": 85,
+      "PRIZE": "4250 PHP",
+      "TRANSACTION ID": "TXN80246",
+      "TIME ENTRY": "23:59:00"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "data": [
+    {
+      "Game Code": "ABC123",
+      "Gross pay": 1200.50,
+      "Hits": 8,
+      "Payout": 950.25,
+      "Back Pay": 50.00,
+      "Commission": 75.75,
+      "Net Amount": 1125.00
+    },
+    {
+      "Game Code": "XYZ456",
+      "Gross pay": 1450.75,
+      "Hits": 12,
+      "Payout": 1100.00,
+      "Back Pay": 75.50,
+      "Commission": 90.25,
+      "Net Amount": 1034.00
+    },
+    {
+      "Game Code": "LMN456",
+      "Gross pay": 1200,
+      "Hits": 6,
+      "Payout": 950,
+      "Back Pay": 60,
+      "Commission": 110,
+      "Net Amount": 780
+    },
+    {
+      "Game Code": "DEF789",
+      "Gross pay": 1800,
+      "Hits": 9,
+      "Payout": 1400,
+      "Back Pay": 90,
+      "Commission": 180,
+      "Net Amount": 1140
+    },
+    {
+      "Game Code": "JKL321",
+      "Gross pay": 800,
+      "Hits": 4,
+      "Payout": 640,
+      "Back Pay": 40,
+      "Commission": 80,
+      "Net Amount": 560
+    },
+    {
+      "Game Code": "LMN456",
+      "Gross pay": 1200,
+      "Hits": 6,
+      "Payout": 950,
+      "Back Pay": 60,
+      "Commission": 110,
+      "Net Amount": 780
+    },
+    {
+      "Game Code": "DEF789",
+      "Gross pay": 1800,
+      "Hits": 9,
+      "Payout": 1400,
+      "Back Pay": 90,
+      "Commission": 180,
+      "Net Amount": 1140
+    },
+    {
+      "Game Code": "JKL321",
+      "Gross pay": 800,
+      "Hits": 4,
+      "Payout": 640,
+      "Back Pay": 40,
+      "Commission": 80,
+      "Net Amount": 560
+    },
+    {
+      "Game Code": "JKL321",
+      "Gross pay": 800,
+      "Hits": 4,
+      "Payout": 640,
+      "Back Pay": 40,
+      "Commission": 80,
+      "Net Amount": 560
+    },
+    {
+      "Game Code": "JKL321",
+      "Gross pay": 800,
+      "Hits": 4,
+      "Payout": 640,
+      "Back Pay": 40,
+      "Commission": 80,
+      "Net Amount": 560
+    },
+    {
+      "Game Code": "JKL321",
+      "Gross pay": 800,
+      "Hits": 4,
+      "Payout": 640,
+      "Back Pay": 40,
+      "Commission": 80,
+      "Net Amount": 560
+    }
+  ]
+}
