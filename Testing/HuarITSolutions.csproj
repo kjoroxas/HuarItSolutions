@@ -265,7 +265,9 @@
     <Compile Include="Logout.aspx.designer.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Model\BetSummary.cs" />
     <Compile Include="Model\ControlledCombinationsModel.cs" />
+    <Compile Include="Model\GameCodeModel.cs" />
     <Compile Include="Model\LowWinningCombinationsModel.cs" />
     <Compile Include="Model\SalesRepresentativeModel.cs" />
     <Compile Include="Sales.aspx.cs">
