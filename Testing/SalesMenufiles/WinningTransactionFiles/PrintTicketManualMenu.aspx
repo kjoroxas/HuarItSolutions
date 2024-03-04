@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Print Ticket Manual.aspx.cs" Inherits="HuarITSolutions.SalesMenufiles.WinningTransactionFiles.Print_Ticket_Manual" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PrintTicketManualMenu.aspx.cs" Inherits="HuarITSolutions.SalesMenufiles.WinningTransactionFiles.Print_Ticket_Manual" %>
 
 <!DOCTYPE html>
 

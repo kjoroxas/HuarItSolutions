@@ -27,7 +27,7 @@
                   <div class="tab-content" id="nav-tabContent">
 
                      <div class="tab-pane fade show active" id="nav-salesPosting" role="tabpanel" aria-labelledby="nav-salesPosting">
-                         <iframe src="SalesPostingFiles\Sales Posting1.aspx" scrolling="no" class="specifc"></iframe>
+                         <iframe src="SalesPostingFiles\SalesPostingMenu.aspx" scrolling="no" class="specifc"></iframe>
                      </div>
                      <div class="tab-pane fade" id="nav-unclaimedWinning" role="tabpanel" aria-labelledby="nav-unclaimedWinning">
 

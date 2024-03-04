@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WinningTransaction1.aspx.cs" Inherits="HuarITSolutions.SalesMenufiles.WinningTransactionFiles.WinningTransaction1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WinningTransactionMenu.aspx.cs" Inherits="HuarITSolutions.SalesMenufiles.WinningTransactionFiles.WinningTransaction1" %>
 
 <%@ Register Assembly="Microsoft.ReportViewer.WebForms" Namespace="Microsoft.Reporting.WebForms" TagPrefix="rsweb" %>
 <webopt:bundlereference runat="server" path="~/Content/css" />
@@ -32,18 +32,18 @@
                    <div class="row">
                        <div class="col-3 pcversion">
 
-                          <div class="row" style="margin-top:40px; margin-bottom:20px;">
-                              <label class="subheader" style=" margin-top:3px;">Game Code</label><br />
+                          <div class="row" style=" margin-bottom:20px;">
+                                <label class="subheader" style=" margin-top:3px; margin-left:-10px;">Draw Date</label><br />
+                                 <asp:TextBox ID="drawDate" CssClass="textbox" runat="server" TextMode="Date"></asp:TextBox>
+                           </div>
+                            <div class="row " style="margin-top:30px; margin-bottom:20px;">
+                                                              <label class="subheader" style=" margin-top:3px; margin-left:-10px;">Game Code</label><br />
                                 <asp:DropDownList ID="gameCode" runat="server" AutoPostBack="true" CssClass="salesgameCodeDropDown" >
                                     <asp:ListItem Value="0">Select Game Code</asp:ListItem>
                                 </asp:DropDownList><br />
                            </div>
                             <div class="row " style="margin-top:30px; margin-bottom:20px;">
-                                <label class="subheader" style=" margin-top:3px;">Draw Date</label><br />
-                                 <asp:TextBox ID="drawDate" CssClass="textbox" runat="server" TextMode="Date"></asp:TextBox>
-                           </div>
-                            <div class="row " style="margin-top:30px; margin-bottom:20px;">
-                                <label class="subheader" style=" margin-top:3px;">Winning Combinations</label><br />
+                                <label class="subheader" style=" margin-top:3px; margin-left:-10px;">Winning Combinations</label><br />
                                  <asp:TextBox ID="TextBox1" CssClass="textbox" runat="server" TextMode="SingleLine"></asp:TextBox>
                            </div>
                          <div class="row">
@@ -54,8 +54,8 @@
                            </div>  
                        </div>
                       <div class="col-8">
-                                                       <div class="tablestyle2">
-                                <table id="example" class="table table-striped table-bordered" style="width:100%">
+                                                       <div class="tablestyle4">
+                                <table id="winningtransactiontable" class="table table-striped table-bordered" style="width:100%">
                                         <thead>
                                             <tr>
                                                 <th>DRAW DATE</th>
@@ -102,7 +102,7 @@
 <script>
     window.jsPDF = window.jspdf.jsPDF;
     $(document).ready(function () {
-        var table = $('#example').DataTable({  // Define 'table' here
+        var table = $('#winningtransactiontable').DataTable({  // Define 'table' here
             "pageLength": 6,
             "lengthChange": false,
             ajax: 'winningtransaction.json',

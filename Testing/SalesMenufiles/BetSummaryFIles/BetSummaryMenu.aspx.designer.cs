@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HuarITSolutions.SalesMenufiles.WinningTransactionFiles
+namespace HuarITSolutions.SalesMenufiles.BetSummaryFIles
 {
 
 
-    public partial class WinningTransaction1
+    public partial class BetSummary1
     {
 
         /// <summary>
@@ -24,13 +24,13 @@ namespace HuarITSolutions.SalesMenufiles.WinningTransactionFiles
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// ScriptManager1 control.
+        /// drawDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        protected global::System.Web.UI.WebControls.TextBox drawDate;
 
         /// <summary>
         /// gameCode control.
@@ -42,40 +42,13 @@ namespace HuarITSolutions.SalesMenufiles.WinningTransactionFiles
         protected global::System.Web.UI.WebControls.DropDownList gameCode;
 
         /// <summary>
-        /// drawDate control.
+        /// Button3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox drawDate;
-
-        /// <summary>
-        /// TextBox1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
-
-        /// <summary>
-        /// Button1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
-
-        /// <summary>
-        /// Button2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.Button Button3;
 
         /// <summary>
         /// pdfButton control.
