@@ -1,0 +1,76 @@
+{
+  "data": [
+    {
+      "COMBINATION": "12345",
+      "BET AMOUNT": "100",
+      "GAME CODE": "Game1"
+    },
+    {
+      "COMBINATION": "23456",
+      "BET AMOUNT": "200",
+      "GAME CODE": "Game1"
+    },
+    {
+      "COMBINATION": "34567",
+      "BET AMOUNT": "300",
+      "GAME CODE": "Game1"
+    },
+    {
+      "COMBINATION": "45678",
+      "BET AMOUNT": "400",
+      "GAME CODE": "Game1"
+    },
+    {
+      "COMBINATION": "56789",
+      "BET AMOUNT": "500",
+      "GAME CODE": "Game1"
+    },
+    {
+      "COMBINATION": "67890",
+      "BET AMOUNT": "600",
+      "GAME CODE": "Game2"
+    },
+    {
+      "COMBINATION": "78901",
+      "BET AMOUNT": "700",
+      "GAME CODE": "Game2"
+    },
+    {
+      "COMBINATION": "89012",
+      "BET AMOUNT": "800",
+      "GAME CODE": "Game2"
+    },
+    {
+      "COMBINATION": "90123",
+      "BET AMOUNT": "900",
+      "GAME CODE": "Game2"
+    },
+    {
+      "COMBINATION": "01234",
+      "BET AMOUNT": "1000",
+      "GAME CODE": "Game2"
+    },
+
+    {
+      "COMBINATION": "23456",
+      "BET AMOUNT": "1200",
+      "GAME CODE": "Game3"
+    },
+    {
+      "COMBINATION": "34567",
+      "BET AMOUNT": "1300",
+      "GAME CODE": "Game3"
+    },
+    {
+      "COMBINATION": "45678",
+      "BET AMOUNT": "1400",
+      "GAME CODE": "Game3"
+    },
+    {
+      "COMBINATION": "56789",
+      "BET AMOUNT": "1500",
+      "GAME CODE": "Game3"
+    }
+  ]
+
+}

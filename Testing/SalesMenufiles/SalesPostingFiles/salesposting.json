@@ -1,0 +1,173 @@
+{
+  "data": [
+    {
+      "GAME CODE": "Game1",
+      "GROSS SALES": "1000",
+      "HITS": "50",
+      "PAYOUT": "500",
+      "COMMISSION": "100",
+      "BACKPAY": "50",
+      "NET SALES": "350",
+      "OUTLET CODE": "Outlet1",
+      "GROUP ACCOUNT": "Group1",
+      "DRAW DATE": "2024-03-01"
+    },
+    {
+      "GAME CODE": "Game2",
+      "GROSS SALES": "2000",
+      "HITS": "100",
+      "PAYOUT": "1000",
+      "COMMISSION": "200",
+      "BACKPAY": "100",
+      "NET SALES": "700",
+      "OUTLET CODE": "Outlet2",
+      "GROUP ACCOUNT": "Group2",
+      "DRAW DATE": "2024-03-02"
+    },
+    {
+      "GAME CODE": "Game4",
+      "GROSS SALES": "3000",
+      "HITS": "150",
+      "PAYOUT": "1500",
+      "COMMISSION": "300",
+      "BACKPAY": "150",
+      "NET SALES": "1050",
+      "OUTLET CODE": "Outlet3",
+      "GROUP ACCOUNT": "Group3",
+      "DRAW DATE": "2024-03-03"
+    },
+    {
+      "GAME CODE": "Game5",
+      "GROSS SALES": "4000",
+      "HITS": "200",
+      "PAYOUT": "2000",
+      "COMMISSION": "400",
+      "BACKPAY": "200",
+      "NET SALES": "1400",
+      "OUTLET CODE": "Outlet4",
+      "GROUP ACCOUNT": "Group4",
+      "DRAW DATE": "2024-03-04"
+    },
+    {
+      "GAME CODE": "Game6",
+      "GROSS SALES": "5000",
+      "HITS": "250",
+      "PAYOUT": "2500",
+      "COMMISSION": "500",
+      "BACKPAY": "250",
+      "NET SALES": "1750",
+      "OUTLET CODE": "Outlet5",
+      "GROUP ACCOUNT": "Group5",
+      "DRAW DATE": "2024-03-05"
+    },
+    {
+      "GAME CODE": "Game7",
+      "GROSS SALES": "6000",
+      "HITS": "300",
+      "PAYOUT": "3000",
+      "COMMISSION": "600",
+      "BACKPAY": "300",
+      "NET SALES": "2100",
+      "OUTLET CODE": "Outlet6",
+      "GROUP ACCOUNT": "Group6",
+      "DRAW DATE": "2024-03-06"
+    },
+    {
+      "GAME CODE": "Game8",
+      "GROSS SALES": "7000",
+      "HITS": "350",
+      "PAYOUT": "3500",
+      "COMMISSION": "700",
+      "BACKPAY": "350",
+      "NET SALES": "2450",
+      "OUTLET CODE": "Outlet7",
+      "GROUP ACCOUNT": "Group7",
+      "DRAW DATE": "2024-03-07"
+    },
+    {
+      "GAME CODE": "Game9",
+      "GROSS SALES": "8000",
+      "HITS": "400",
+      "PAYOUT": "4000",
+      "COMMISSION": "800",
+      "BACKPAY": "400",
+      "NET SALES": "2800",
+      "OUTLET CODE": "Outlet8",
+      "GROUP ACCOUNT": "Group8",
+      "DRAW DATE": "2024-03-08"
+    },
+    {
+      "GAME CODE": "Game10",
+      "GROSS SALES": "9000",
+      "HITS": "450",
+      "PAYOUT": "4500",
+      "COMMISSION": "900",
+      "BACKPAY": "450",
+      "NET SALES": "3150",
+      "OUTLET CODE": "Outlet9",
+      "GROUP ACCOUNT": "Group9",
+      "DRAW DATE": "2024-03-09"
+    },
+    {
+      "GAME CODE": "Game11",
+      "GROSS SALES": "10000",
+      "HITS": "500",
+      "PAYOUT": "5000",
+      "COMMISSION": "1000",
+      "BACKPAY": "500",
+      "NET SALES": "3500",
+      "OUTLET CODE": "Outlet10",
+      "GROUP ACCOUNT": "Group10",
+      "DRAW DATE": "2024-03-10"
+    },
+    {
+      "GAME CODE": "Game12",
+      "GROSS SALES": "11000",
+      "HITS": "550",
+      "PAYOUT": "5500",
+      "COMMISSION": "1100",
+      "BACKPAY": "550",
+      "NET SALES": "3850",
+      "OUTLET CODE": "Outlet11",
+      "GROUP ACCOUNT": "Group11",
+      "DRAW DATE": "2024-03-11"
+    },
+    {
+      "GAME CODE": "Game12",
+      "GROSS SALES": "12000",
+      "HITS": "600",
+      "PAYOUT": "6000",
+      "COMMISSION": "1200",
+      "BACKPAY": "600",
+      "NET SALES": "4200",
+      "OUTLET CODE": "Outlet12",
+      "GROUP ACCOUNT": "Group12",
+      "DRAW DATE": "2024-03-12"
+    },
+    {
+      "GAME CODE": "Game12",
+      "GROSS SALES": "13000",
+      "HITS": "650",
+      "PAYOUT": "6500",
+      "COMMISSION": "1300",
+      "BACKPAY": "650",
+      "NET SALES": "4550",
+      "OUTLET CODE": "Outlet13",
+      "GROUP ACCOUNT": "Group13",
+      "DRAW DATE": "2024-03-13"
+    },
+    {
+      "GAME CODE": "Game12",
+      "GROSS SALES": "14000",
+      "HITS": "700",
+      "PAYOUT": "7000",
+      "COMMISSION": "1400",
+      "BACKPAY": "700",
+      "NET SALES": "4900",
+      "OUTLET CODE": "Outlet14",
+      "GROUP ACCOUNT": "Group14",
+      "DRAW DATE": "2024-03-14"
+    }
+
+  ]
+}

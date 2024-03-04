@@ -29,13 +29,13 @@
                  <div class="tab-content" id="nav-tabContent">
 
                     <div class="tab-pane fade show active" id="nav-winningTransactions" role="tabpanel" aria-labelledby="nav-winningTransactions">
-                        <iframe src="WinningTransactionFiles\WinningTransaction1.aspx" scrolling="no" class="specifc"></iframe>
+                        <iframe src="WinningTransactionFiles\WinningTransactionMenu.aspx" scrolling="no" class="specifc"></iframe>
                     </div>
                     <div class="tab-pane fade" id="nav-reprintTicket" role="tabpanel" aria-labelledby="nav-reprintTicket">
-                        <iframe src="WinningTransactionFiles\Reprint Ticket.aspx" scrolling="no" class="specifc"></iframe>
+                        <iframe src="WinningTransactionFiles\ReprintTicketMenu.aspx" scrolling="no" class="specifc"></iframe>
                     </div>
                      <div class="tab-pane fade" id="nav-printTicketManual" role="tabpanel" aria-labelledby="nav-printTicketManual">
-                        <iframe src="WinningTransactionFiles\Print Ticket Manual.aspx" scrolling="no" class="specifc"></iframe>
+                        <iframe src="WinningTransactionFiles\PrintTicketManualMenu.aspx" scrolling="no" class="specifc"></iframe>
                     </div>
                 </div>
 

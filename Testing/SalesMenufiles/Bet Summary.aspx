@@ -25,13 +25,12 @@
                  <div class="tab-content" id="nav-tabContent">
 
                     <div class="tab-pane fade show active" id="nav-betSummary" role="tabpanel" aria-labelledby="nav-betSummary">
-                        <iframe src="BetSummaryFIles\BetSummary1.aspx" scrolling="no" class="specifc"></iframe>
+                        <iframe src="BetSummaryFIles\BetSummaryMenu.aspx" scrolling="no" class="specifc"></iframe>
                     </div>
                     <div class="tab-pane fade" id="nav-thermalSales" role="tabpanel" aria-labelledby="nav-thermalSale">
-
+                        <iframe src="BetSummaryFIles\ThermalSalesMenu.aspx" scrolling="no" class="specifc"></iframe>
                     </div>
-                    <div class="tab-pane fade" id="nav-thermalSales" role="tabpanel" aria-labelledby="nav-thermalSale">...</div>
-                </div>
+
 
              </div>  
 

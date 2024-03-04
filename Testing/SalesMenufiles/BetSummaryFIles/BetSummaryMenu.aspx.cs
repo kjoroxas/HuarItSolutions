@@ -13,6 +13,12 @@ namespace HuarITSolutions.SalesMenufiles.BetSummaryFIles
         {
 
         }
-        
+
+        protected void gameCode_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }
