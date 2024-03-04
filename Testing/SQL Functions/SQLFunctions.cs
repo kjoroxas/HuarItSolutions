@@ -11,7 +11,6 @@ using Antlr.Runtime.Misc;
 using System.Xml.Linq;
 using HuarITSolutions.Model;
 using WebGrease.Css.Ast;
-using System.Web.Util;
 
 namespace HuarITSolutions.Class
 {
@@ -75,6 +74,7 @@ namespace HuarITSolutions.Class
             }
 
         }
+
         public void updateGameSettingsMenu(string gameCode, string printCode, string highBet, string lowBet, string lowBetLimit, string highBetLimit, string commAdmin, string commCoor, string adPay, string coorPay)
         {
             var storedProcName = "spUpdate_GameSettings";
@@ -199,6 +199,7 @@ namespace HuarITSolutions.Class
                 }
             }
         }
+
         public List<ControlledCombinationsModel> getControlledCombinations(string gameCode)
         {
             List<ControlledCombinationsModel> controlledCombi = new List<ControlledCombinationsModel>();
@@ -234,6 +235,7 @@ namespace HuarITSolutions.Class
             }
 
         }
+
         public List<LowWinningCombinationsModel> getLowWinningCombinations(string gameCode)
         {
             List<LowWinningCombinationsModel> controlledCombi = new List<LowWinningCombinationsModel>();
@@ -268,6 +270,7 @@ namespace HuarITSolutions.Class
             }
 
         }
+
         public List<SalesRepresentativeModel> getSalesRepresentatives()
         {
             List<SalesRepresentativeModel> salesRepresentative = new List<SalesRepresentativeModel>();
@@ -360,279 +363,6 @@ namespace HuarITSolutions.Class
                         command.CommandType = CommandType.StoredProcedure;
 
                         command.Parameters.Add("@OutletCode", SqlDbType.VarChar).Value = outletCode;
-                        conn.Open();
-                        command.ExecuteNonQuery();
-                    }
-                }
-                catch (Exception ex)
-                {
-                }
-            }
-        }
-        public List<GameCodeModel> getCurrentGameCode()
-        {
-            List<GameCodeModel> gameCode = new List<GameCodeModel>();
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                SqlCommand command = new SqlCommand("Select * From fnCurrentGameCode()", conn);
-
-                try
-                {
-                    conn.Open();
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            GameCodeModel gameC = new GameCodeModel();
-
-                            gameCode.Add(gameC);
-                        }
-                        return gameCode;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    return gameCode;
-                }
-            }
-        }
-        public List<BetSummary> getBetSummary(DateTime drawDate, string gameCode)
-        {
-            List<BetSummary> betSummary = new List<BetSummary>();
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                SqlCommand command = new SqlCommand("Select * From fnBetSummary(@DrawDate, @GameCode)", conn);
-                command.Parameters.AddWithValue("@DrawDate", drawDate);
-                command.Parameters.AddWithValue("@GameCode", gameCode);
-
-                try
-                {
-                    conn.Open();
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            BetSummary betS = new BetSummary();
-
-                            betSummary.Add(betS);
-                        }
-                        return betSummary;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    return betSummary;
-                }
-            }
-        }
-        public List<UsersModel> getUserActive(DateTime drawDate, string stat)
-        {
-            List<UsersModel> userLists = new List<UsersModel>();
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                SqlCommand command = new SqlCommand("Select * From fnUsers(@drawDate) Where ActiveToday=@stat Order by UserName", conn);
-                command.Parameters.AddWithValue("@drawDate", drawDate);
-                command.Parameters.AddWithValue("@stat", stat);
-
-                try
-                {
-                    conn.Open();
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            UsersModel user = new UsersModel();
-
-                            userLists.Add(user);
-                        }
-                        return userLists;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    return userLists;
-                }
-            }
-        }
-        public List<SalesSummaryModel> getSalesSummary(DateTime drawDate, string outletCode)
-        {
-            List<SalesSummaryModel> salesSum = new List<SalesSummaryModel>();
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                SqlCommand command = new SqlCommand("Select Code, Gross, Commission = Com, BetAmount, PayOut, BackPay, NetAmount, ReceiveBy = RecieveBy, DrawDate from SummaryPerAccount(@outletcode, @drawdate) Order by Code ASC", conn);
-                command.Parameters.AddWithValue("@outletcode", outletCode);
-                command.Parameters.AddWithValue("@drawdate", drawDate);
-
-                try
-                {
-                    conn.Open();
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            SalesSummaryModel sales = new SalesSummaryModel();
-
-                            salesSum.Add(sales);
-                        }
-                        return salesSum;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    return salesSum;
-                }
-            }
-        }
-        public List<SalesSummaryModel> getSalesSummaryOverAll(DateTime drawDate, string accountType)
-        {
-            List<SalesSummaryModel> salesSum = new List<SalesSummaryModel>();
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                SqlCommand command = new SqlCommand("Select Code, Gross, Commission = Com, BetAmount, PayOut, BackPay, NetAmount, ReceiveBy = RecieveBy, DrawDate from SummaryOverAll(@drawDate,@accountType) Order by Code ASC", conn);
-                command.Parameters.AddWithValue("@drawdate", drawDate);
-                command.Parameters.AddWithValue("@accountType", accountType);
-
-                try
-                {
-                    conn.Open();
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            SalesSummaryModel sales = new SalesSummaryModel();
-
-                            salesSum.Add(sales);
-                        }
-                        return salesSum;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    return salesSum;
-                }
-            }
-        }
-        public void saveWinningCombination(DateTime DrawDate, string DrawGameCode, string WinningCombination)
-        {
-            var storedProcName = "spSaveWinningCombination";
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                try
-                {
-                    using (SqlCommand command = new SqlCommand(storedProcName, conn))
-                    {
-                        command.CommandType = CommandType.StoredProcedure;
-
-                        command.Parameters.Add("@DrawDate", SqlDbType.VarChar).Value = DrawDate;
-                        command.Parameters.Add("@DrawGameCode", SqlDbType.VarChar).Value = DrawGameCode;
-                        command.Parameters.Add("@WinningCombination", SqlDbType.VarChar).Value = WinningCombination;
-                        conn.Open();
-                        command.ExecuteNonQuery();
-                    }
-                }
-                catch (Exception ex)
-                {
-                }
-            }
-        }
-        public List<SearchTransactionModel> getSearchTransaction(DateTime drawDate, int transactionID,string outletCode)
-        {
-            List<SearchTransactionModel> searchTransaction = new List<SearchTransactionModel>();
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                SqlCommand command = new SqlCommand("Select * From fnSearchTransaction(@DrawDate,@TransactionID,@OutletCode)", conn);
-                command.Parameters.AddWithValue("@DrawDate", drawDate);
-                command.Parameters.AddWithValue("@TransactionID", transactionID);
-                command.Parameters.AddWithValue("@OutletCode", outletCode);
-
-                try
-                {
-                    conn.Open();
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            SearchTransactionModel searchTran = new SearchTransactionModel();
-
-                            searchTransaction.Add(searchTran);
-                        }
-                        return searchTransaction;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    return searchTransaction;
-                }
-            }
-        }
-        public void deleteTransaction(string smsID, string OutletCode, string UserAcct)
-        {
-            var storedProcName = "spDeleteTransaction";
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                try
-                {
-                    using (SqlCommand command = new SqlCommand(storedProcName, conn))
-                    {
-                        command.CommandType = CommandType.StoredProcedure;
-
-                        command.Parameters.Add("@smsID", SqlDbType.VarChar).Value = smsID;
-                        command.Parameters.Add("@OutletCode", SqlDbType.VarChar).Value = OutletCode;
-                        command.Parameters.Add("@UserAcct", SqlDbType.VarChar).Value = UserAcct;
-                        conn.Open();
-                        command.ExecuteNonQuery();
-                    }
-                }
-                catch (Exception ex)
-                {
-                }
-            }
-        }
-        public void saveSalesReference(DateTime DrawDate, string GameCode)
-        {
-            var storedProcName = "spSave_SalesReference";
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                try
-                {
-                    using (SqlCommand command = new SqlCommand(storedProcName, conn))
-                    {
-                        command.CommandType = CommandType.StoredProcedure;
-
-                        command.Parameters.Add("@DrawDate", SqlDbType.VarChar).Value = DrawDate;
-                        command.Parameters.Add("@DrawGameCode", SqlDbType.VarChar).Value = GameCode;
-                        conn.Open();
-                        command.ExecuteNonQuery();
-                    }
-                }
-                catch (Exception ex)
-                {
-                }
-            }
-        }
-        public void insertSalesSummary(string Description, DateTime DrawDate)
-        {
-            var storedProcName = "spInsert_SalesSummary";
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                try
-                {
-                    using (SqlCommand command = new SqlCommand(storedProcName, conn))
-                    {
-                        command.CommandType = CommandType.StoredProcedure;
-
-                        command.Parameters.Add("@Description", SqlDbType.VarChar).Value = Description;
-                        command.Parameters.Add("@DrawDate", SqlDbType.VarChar).Value = DrawDate;
                         conn.Open();
                         command.ExecuteNonQuery();
                     }

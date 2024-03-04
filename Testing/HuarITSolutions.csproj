@@ -270,6 +270,9 @@
     <Compile Include="Model\GameCodeModel.cs" />
     <Compile Include="Model\LowWinningCombinationsModel.cs" />
     <Compile Include="Model\SalesRepresentativeModel.cs" />
+    <Compile Include="Model\SalesSummaryModel.cs" />
+    <Compile Include="Model\SearchTransactionModel.cs" />
+    <Compile Include="Model\UsersModel.cs" />
     <Compile Include="Sales.aspx.cs">
       <DependentUpon>Sales.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
