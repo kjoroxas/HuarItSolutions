@@ -69,12 +69,21 @@ namespace HuarITSolutions.SalesMenufiles
         protected global::System.Web.UI.WebControls.Button Button4;
 
         /// <summary>
-        /// CombinationsTab control.
+        /// pdfButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table CombinationsTab;
+        protected global::System.Web.UI.WebControls.Button pdfButton;
+
+        /// <summary>
+        /// csvButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button csvButton;
     }
 }

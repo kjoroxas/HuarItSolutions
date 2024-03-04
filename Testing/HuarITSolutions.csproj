@@ -157,16 +157,16 @@
     <Content Include="Logout.aspx" />
     <Content Include="Sales.aspx" />
     <Content Include="SalesMenufiles\Bet Summary.aspx" />
-    <Content Include="SalesMenufiles\BetSummaryFIles\BetSummary1.aspx" />
-    <Content Include="SalesMenufiles\BetSummaryFIles\ThermalSales.aspx" />
+    <Content Include="SalesMenufiles\BetSummaryFIles\BetSummaryMenu.aspx" />
+    <Content Include="SalesMenufiles\BetSummaryFIles\ThermalSalesMenu.aspx" />
     <Content Include="SalesMenufiles\Sales Posting.aspx" />
     <Content Include="SalesMenufiles\Sales Summary.aspx" />
-    <Content Include="SalesMenufiles\SalesPostingFiles\Sales Posting1.aspx" />
+    <Content Include="SalesMenufiles\SalesPostingFiles\SalesPostingMenu.aspx" />
     <Content Include="SalesMenufiles\Transaction Validation.aspx" />
     <Content Include="SalesMenufiles\Winning Transactions.aspx" />
-    <Content Include="SalesMenufiles\WinningTransactionFiles\Print Ticket Manual.aspx" />
-    <Content Include="SalesMenufiles\WinningTransactionFiles\Reprint Ticket.aspx" />
-    <Content Include="SalesMenufiles\WinningTransactionFiles\WinningTransaction1.aspx" />
+    <Content Include="SalesMenufiles\WinningTransactionFiles\PrintTicketManualMenu.aspx" />
+    <Content Include="SalesMenufiles\WinningTransactionFiles\ReprintTicketMenu.aspx" />
+    <Content Include="SalesMenufiles\WinningTransactionFiles\WinningTransactionMenu.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -199,6 +199,9 @@
     <Content Include="WebForm1.aspx" />
     <Content Include="SalesMenufiles\salessummary.json" />
     <Content Include="SalesMenufiles\WinningTransactionFiles\winningtransaction.json" />
+    <Content Include="SalesMenufiles\BetSummaryFIles\betsummary.json" />
+    <Content Include="SalesMenufiles\SalesPostingFiles\salesposting.json" />
+    <Content Include="SalesMenufiles\validation.json" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -270,6 +273,9 @@
     <Compile Include="Model\GameCodeModel.cs" />
     <Compile Include="Model\LowWinningCombinationsModel.cs" />
     <Compile Include="Model\SalesRepresentativeModel.cs" />
+    <Compile Include="Model\SalesSummaryModel.cs" />
+    <Compile Include="Model\SearchTransactionModel.cs" />
+    <Compile Include="Model\UsersModel.cs" />
     <Compile Include="Sales.aspx.cs">
       <DependentUpon>Sales.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -284,19 +290,19 @@
     <Compile Include="SalesMenufiles\Bet Summary.aspx.designer.cs">
       <DependentUpon>Bet Summary.aspx</DependentUpon>
     </Compile>
-    <Compile Include="SalesMenufiles\BetSummaryFIles\BetSummary1.aspx.cs">
-      <DependentUpon>BetSummary1.aspx</DependentUpon>
+    <Compile Include="SalesMenufiles\BetSummaryFIles\BetSummaryMenu.aspx.cs">
+      <DependentUpon>BetSummaryMenu.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="SalesMenufiles\BetSummaryFIles\BetSummary1.aspx.designer.cs">
-      <DependentUpon>BetSummary1.aspx</DependentUpon>
+    <Compile Include="SalesMenufiles\BetSummaryFIles\BetSummaryMenu.aspx.designer.cs">
+      <DependentUpon>BetSummaryMenu.aspx</DependentUpon>
     </Compile>
-    <Compile Include="SalesMenufiles\BetSummaryFIles\ThermalSales.aspx.cs">
-      <DependentUpon>ThermalSales.aspx</DependentUpon>
+    <Compile Include="SalesMenufiles\BetSummaryFIles\ThermalSalesMenu.aspx.cs">
+      <DependentUpon>ThermalSalesMenu.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="SalesMenufiles\BetSummaryFIles\ThermalSales.aspx.designer.cs">
-      <DependentUpon>ThermalSales.aspx</DependentUpon>
+    <Compile Include="SalesMenufiles\BetSummaryFIles\ThermalSalesMenu.aspx.designer.cs">
+      <DependentUpon>ThermalSalesMenu.aspx</DependentUpon>
     </Compile>
     <Compile Include="SalesMenufiles\Sales Posting.aspx.cs">
       <DependentUpon>Sales Posting.aspx</DependentUpon>
@@ -312,12 +318,12 @@
     <Compile Include="SalesMenufiles\Sales Summary.aspx.designer.cs">
       <DependentUpon>Sales Summary.aspx</DependentUpon>
     </Compile>
-    <Compile Include="SalesMenufiles\SalesPostingFiles\Sales Posting1.aspx.cs">
-      <DependentUpon>Sales Posting1.aspx</DependentUpon>
+    <Compile Include="SalesMenufiles\SalesPostingFiles\SalesPostingMenu.aspx.cs">
+      <DependentUpon>SalesPostingMenu.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="SalesMenufiles\SalesPostingFiles\Sales Posting1.aspx.designer.cs">
-      <DependentUpon>Sales Posting1.aspx</DependentUpon>
+    <Compile Include="SalesMenufiles\SalesPostingFiles\SalesPostingMenu.aspx.designer.cs">
+      <DependentUpon>SalesPostingMenu.aspx</DependentUpon>
     </Compile>
     <Compile Include="SalesMenufiles\Transaction Validation.aspx.cs">
       <DependentUpon>Transaction Validation.aspx</DependentUpon>
@@ -333,26 +339,26 @@
     <Compile Include="SalesMenufiles\Winning Transactions.aspx.designer.cs">
       <DependentUpon>Winning Transactions.aspx</DependentUpon>
     </Compile>
-    <Compile Include="SalesMenufiles\WinningTransactionFiles\Print Ticket Manual.aspx.cs">
-      <DependentUpon>Print Ticket Manual.aspx</DependentUpon>
+    <Compile Include="SalesMenufiles\WinningTransactionFiles\PrintTicketManualMenu.aspx.cs">
+      <DependentUpon>PrintTicketManualMenu.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="SalesMenufiles\WinningTransactionFiles\Print Ticket Manual.aspx.designer.cs">
-      <DependentUpon>Print Ticket Manual.aspx</DependentUpon>
+    <Compile Include="SalesMenufiles\WinningTransactionFiles\PrintTicketManualMenu.aspx.designer.cs">
+      <DependentUpon>PrintTicketManualMenu.aspx</DependentUpon>
     </Compile>
-    <Compile Include="SalesMenufiles\WinningTransactionFiles\Reprint Ticket.aspx.cs">
-      <DependentUpon>Reprint Ticket.aspx</DependentUpon>
+    <Compile Include="SalesMenufiles\WinningTransactionFiles\ReprintTicketMenu.aspx.cs">
+      <DependentUpon>ReprintTicketMenu.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="SalesMenufiles\WinningTransactionFiles\Reprint Ticket.aspx.designer.cs">
-      <DependentUpon>Reprint Ticket.aspx</DependentUpon>
+    <Compile Include="SalesMenufiles\WinningTransactionFiles\ReprintTicketMenu.aspx.designer.cs">
+      <DependentUpon>ReprintTicketMenu.aspx</DependentUpon>
     </Compile>
-    <Compile Include="SalesMenufiles\WinningTransactionFiles\WinningTransaction1.aspx.cs">
-      <DependentUpon>WinningTransaction1.aspx</DependentUpon>
+    <Compile Include="SalesMenufiles\WinningTransactionFiles\WinningTransactionMenu.aspx.cs">
+      <DependentUpon>WinningTransactionMenu.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="SalesMenufiles\WinningTransactionFiles\WinningTransaction1.aspx.designer.cs">
-      <DependentUpon>WinningTransaction1.aspx</DependentUpon>
+    <Compile Include="SalesMenufiles\WinningTransactionFiles\WinningTransactionMenu.aspx.designer.cs">
+      <DependentUpon>WinningTransactionMenu.aspx</DependentUpon>
     </Compile>
     <Compile Include="SQL Functions\SQLFunctions.cs" />
     <Compile Include="Model\ApprovedGamesModel.cs" />

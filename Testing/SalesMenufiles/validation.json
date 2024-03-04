@@ -1,0 +1,138 @@
+{
+  "data": [
+    {
+      "DRAW DATE": "2024-03-01",
+      "OUTLET CODE": "Outlet1",
+      "TRANSACTION ID": "123456",
+      "TIME ESTIMATED": "10:00 AM",
+      "DRAW CODE": "Draw1",
+      "COMBINATION": "12345",
+      "AMOUNT": "100",
+      "REMARKS/WIN VALUE": "Win",
+      "DELETED ON": "2024-03-02"
+    },
+    {
+      "DRAW DATE": "2024-03-02",
+      "OUTLET CODE": "Outlet2",
+      "TRANSACTION ID": "234567",
+      "TIME ESTIMATED": "11:00 AM",
+      "DRAW CODE": "Draw2",
+      "COMBINATION": "23456",
+      "AMOUNT": "200",
+      "REMARKS/WIN VALUE": "Loss",
+      "DELETED ON": "2024-03-03"
+    },
+    {
+      "DRAW DATE": "2024-03-03",
+      "OUTLET CODE": "Outlet3",
+      "TRANSACTION ID": "345678",
+      "TIME ESTIMATED": "12:00 PM",
+      "DRAW CODE": "Draw3",
+      "COMBINATION": "34567",
+      "AMOUNT": "300",
+      "REMARKS/WIN VALUE": "Loss",
+      "DELETED ON": "2024-03-04"
+    },
+    {
+      "DRAW DATE": "2024-03-04",
+      "OUTLET CODE": "Outlet4",
+      "TRANSACTION ID": "456789",
+      "TIME ESTIMATED": "1:00 PM",
+      "DRAW CODE": "Draw4",
+      "COMBINATION": "45678",
+      "AMOUNT": "400",
+      "REMARKS/WIN VALUE": "Win",
+      "DELETED ON": "2024-03-05"
+    },
+    {
+      "DRAW DATE": "2024-03-05",
+      "OUTLET CODE": "Outlet5",
+      "TRANSACTION ID": "567890",
+      "TIME ESTIMATED": "2:00 PM",
+      "DRAW CODE": "Draw5",
+      "COMBINATION": "56789",
+      "AMOUNT": "500",
+      "REMARKS/WIN VALUE": "Loss",
+      "DELETED ON": "2024-03-06"
+    },
+    {
+      "DRAW DATE": "2024-03-06",
+      "OUTLET CODE": "Outlet6",
+      "TRANSACTION ID": "678901",
+      "TIME ESTIMATED": "3:00 PM",
+      "DRAW CODE": "Draw6",
+      "COMBINATION": "67890",
+      "AMOUNT": "600",
+      "REMARKS/WIN VALUE": "Win",
+      "DELETED ON": "2024-03-07"
+    },
+    {
+      "DRAW DATE": "2024-03-07",
+      "OUTLET CODE": "Outlet7",
+      "TRANSACTION ID": "789012",
+      "TIME ESTIMATED": "4:00 PM",
+      "DRAW CODE": "Draw7",
+      "COMBINATION": "78901",
+      "AMOUNT": "700",
+      "REMARKS/WIN VALUE": "Loss",
+      "DELETED ON": "2024-03-08"
+    },
+    {
+      "DRAW DATE": "2024-03-08",
+      "OUTLET CODE": "Outlet8",
+      "TRANSACTION ID": "890123",
+      "TIME ESTIMATED": "5:00 PM",
+      "DRAW CODE": "Draw8",
+      "COMBINATION": "89012",
+      "AMOUNT": "800",
+      "REMARKS/WIN VALUE": "Win",
+      "DELETED ON": "2024-03-09"
+    },
+    {
+      "DRAW DATE": "2024-03-09",
+      "OUTLET CODE": "Outlet9",
+      "TRANSACTION ID": "901234",
+      "TIME ESTIMATED": "6:00 PM",
+      "DRAW CODE": "Draw9",
+      "COMBINATION": "90123",
+      "AMOUNT": "900",
+      "REMARKS/WIN VALUE": "Loss",
+      "DELETED ON": "2024-03-10"
+    },
+    {
+      "DRAW DATE": "2024-03-10",
+      "OUTLET CODE": "Outlet10",
+      "TRANSACTION ID": "012345",
+      "TIME ESTIMATED": "7:00 PM",
+      "DRAW CODE": "Draw10",
+      "COMBINATION": "01234",
+      "AMOUNT": "1000",
+      "REMARKS/WIN VALUE": "Win",
+      "DELETED ON": "2024-03-11"
+    },
+    {
+      "DRAW DATE": "2024-03-11",
+      "OUTLET CODE": "Outlet11",
+      "TRANSACTION ID": "123456",
+      "TIME ESTIMATED": "8:00 PM",
+      "DRAW CODE": "Draw11",
+      "COMBINATION": "12345",
+      "AMOUNT": "1100",
+      "REMARKS/WIN VALUE": "Loss",
+      "DELETED ON": "2024-03-12"
+    },
+    {
+      "DRAW DATE": "2024-03-12",
+      "OUTLET CODE": "Outlet12",
+      "TRANSACTION ID": "234567",
+      "TIME ESTIMATED": "9:00 PM",
+      "DRAW CODE": "Draw12",
+      "COMBINATION": "23456",
+      "AMOUNT": "1200",
+      "REMARKS/WIN VALUE": "Win",
+      "DELETED ON": "2024-03-13"
+    }
+
+
+  ]
+}
