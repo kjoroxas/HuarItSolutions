@@ -19,7 +19,7 @@
     <form id="form1" runat="server">
 
                 <div>
-                    <div class="card specificcard" >
+                    <div class="card specificcard specificcard3" >
                          <div class="card-body">
                          <h5 class="card-title"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path fill="currentColor" d="M18.72 14.76c.35-.85.54-1.76.54-2.76c0-.72-.11-1.41-.3-2.05c-.65.15-1.33.23-2.04.23A9.07 9.07 0 0 1 9.5 6.34a9.21 9.21 0 0 1-4.73 4.88c-.04.25-.04.52-.04.78A7.27 7.27 0 0 0 12 19.27c1.05 0 2.06-.23 2.97-.64c.57 1.09.83 1.63.81 1.63c-1.64.55-2.91.82-3.78.82c-2.42 0-4.73-.95-6.43-2.66a9.03 9.03 0 0 1-2.24-3.69H2v-4.55h1.09a9.09 9.09 0 0 1 15.33-4.6a8.991 8.991 0 0 1 2.47 4.6H22v4.55h-.06L18.38 18l-5.3-.6v-1.67h4.83zm-9.45-2.99c.3 0 .59.12.8.34a1.136 1.136 0 0 1 0 1.6c-.21.21-.5.33-.8.33c-.63 0-1.14-.5-1.14-1.13c0-.63.51-1.14 1.14-1.14m5.45 0c.63 0 1.13.51 1.13 1.14c0 .63-.5 1.13-1.13 1.13c-.63 0-1.14-.5-1.14-1.13a1.14 1.14 0 0 1 1.14-1.14"/></svg> Sales Representative</h5>
                              <div style="margin-left:40px;" class="row" id="firstrow">
@@ -45,11 +45,10 @@
 
                                    </div>
                                 <div  class="col-4 margin">
+                                    <asp:Label ID="outletCodeLabel1" Text="Outlet Code" AssociatedControlID="outletCodeTextBox" EnableViewState="false" runat="server" CssClass="single-line-label">
 
-                                    <asp:Label ID="outletCodeLabel1" Text="Outlet Code"  CssClassAssociatedControlID="outletCodeText" EnableViewState="false" runat="server">
-                                        <asp:TextBox ID="outletCodeTextBox" CssClass="textbox3"  ValidateRequestMode="Disabled" type="text" runat="server" />
-                                    </asp:Label><br />
-
+                                    </asp:Label>
+                                    <asp:TextBox ID="outletCodeTextBox" CssClass="textbox3" ValidateRequestMode="Disabled" type="text" runat="server" />
                                     <asp:Label ID="outletCodeLabel" Text="Outlet Code" AssociatedControlID="outletCodeText" EnableViewState="false" runat="server">
                                         <asp:TextBox ID="outletCodeText" CssClass="textbox3" runat="server" />
                                     </asp:Label>
@@ -58,7 +57,7 @@
                                     <asp:RequiredFieldValidator ID="outletCodeTextValidator" runat="server" ControlToValidate="outletCodeText" ErrorMessage="Please Enter an Outlet Code." CssClass="outlet-validator-error" Display="Dynamic"></asp:RequiredFieldValidator>
 <%--                                   <asp:TextBox ID="outletCode1" Height="20px" Width="300px" ValidateRequestMode="Disabled" type="text" runat="server" ></asp:TextBox><br />--%>
                                    
-                                    <label class="subheader" style=" margin-top: 15px;margin-right:65px;"><small>Device ID</small></label>
+                                    <label class="subheader deviceidlabelstyle" ><small>Device ID</small></label>
                                     <asp:TextBox ID="deviceID"  CssClass="textbox2" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><asp:Button ID="clearBtn" runat="server" Text="Clear" CausesValidation="False" OnClientClick="preventPostback2();"/><br />
                                     
                                     <label class="subheader"  style=" margin-top: 10px;margin-right:70px; margin-bottom:10px;"><small>Fullname</small></label>
@@ -83,11 +82,11 @@
                                         CssClass="new-validator-error"
                                         Display="Dynamic">
                                     </asp:RequiredFieldValidator>
-                                   <label class="subheader" style=" margin-top: 15px; margin-right:22px;"><small>Mobile Number</small></label>
+                                   <label class="subheader mobilenumberstyle" ><small>Mobile Number</small></label>
                                     <asp:TextBox ID="mobileNumber" CssClass="textbox2" ValidateRequestMode="Disabled" MaxLength="15" type="in" runat="server"  ></asp:TextBox><br />
                                     <asp:RequiredFieldValidator ID="mobileNumberValidator" runat="server" ControlToValidate="mobileNumber" ErrorMessage="Please enter mobile number." CssClass="new-validator-error" Display="Dynamic"></asp:RequiredFieldValidator>
-                                    <label class="subheader" style=" margin-top: 10px; margin-right:65px;"><small>Password</small></label>
-                                    <div class="input-group" style="margin-left:137px; margin-top:-30px;">                                     
+                                    <label class="subheader " style=" margin-top: 10px; margin-right:65px;"><small>Password</small></label>
+                                    <div class="input-group divpasswordtextbox" >                                     
                                         <asp:TextBox ID="password" CssClass="textbox2" ValidateRequestMode="Disabled" type="password" runat="server"  ></asp:TextBox><br />
                                         <asp:RequiredFieldValidator ID="passwordValidator" runat="server" ControlToValidate="password" ErrorMessage="Please enter password." CssClass="password-validator-error" Display="Dynamic"></asp:RequiredFieldValidator>
                                         <div class="input-group-append">
@@ -95,8 +94,8 @@
                                         </div>
                                     </div>
                                     
-                                     <label class="subheader" style=" margin-top: 15px; margin-right:5px;"><small>Confirm Password</small></label>
-                                    <div class="input-group" style="margin-left:137px; margin-top:-35px;">                                     
+                                     <label class="subheader confirmpasswordstyle" ><small>Confirm Password</small></label>
+                                    <div class="input-group divpasswordtextbox">                                     
                                         <asp:TextBox ID="confirmPassword" CssClass="textbox2" ValidateRequestMode="Disabled" type="password" runat="server"  ></asp:TextBox><br />
                                         <asp:RequiredFieldValidator ID="confirmPasswordValidator" runat="server" ControlToValidate="confirmPassword" ErrorMessage="Confirm your password." CssClass="cpassword-validator-error" Display="Dynamic"></asp:RequiredFieldValidator>
                                         <div class="input-group-append">
@@ -113,11 +112,11 @@
                                     </asp:CompareValidator>
                                     </div>
                                      
-                                    <label class="subheader" style=" margin-top: 15px; margin-right:24px;"><small>Group Account </small></label>
+                                    <label class="subheader groupaccountstyle" ><small>Group Account </small></label>
                                      <asp:TextBox ID="groupAccount" CssClass="textbox2" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox>    <br />
                                     <asp:RequiredFieldValidator ID="groupAccountValidator" runat="server" ControlToValidate="groupAccount" ErrorMessage="Group account is required." CssClass="new-validator-error" Display="Dynamic"></asp:RequiredFieldValidator>
 
-                                    <label class="subheader" style=" margin-top: 15px; margin-right:-15px;"><small>Commision Type</small></label>
+                                    <label class="subheader commissiontypestyle" ><small>Commision Type</small></label>
                                     <asp:DropDownList ID="commissionType"  Height="30px" CssClass="gameCodeDropDown" runat="server">
                                         <asp:ListItem Value=0>Select Commision Type</asp:ListItem>
                                         <asp:ListItem Value="admin">Admin</asp:ListItem>
@@ -152,12 +151,13 @@
                                     <label class="subheader" style=" margin-top: 15px; margin-right:70px;"><small>Location</small></label>
                                     <asp:TextBox ID="location" CssClass="textbox2" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><asp:Button ID="setBtn" runat="server" Text="Set" CausesValidation="False" OnClientClick="preventPostback();"/><br />
                                     
-                                    <asp:CheckBox ID="isActive" CssClass="ActiveCheckbox" runat="server" /><label style="position: relative; top: -8px; right:4px;"><small>Active</small></label><br />
+                                    <asp:CheckBox ID="isActive" CssClass="ActiveCheckbox" runat="server" /><label class="label-inline" style="position: relative; top: -8px; right:4px;"><small>Active</small></label><br />
                                     <asp:CustomValidator ID="isActivevalidator" runat="server" 
                                         ErrorMessage="Click the checkbox " 
                                         CssClass="new-validator-error"
                                         OnServerValidate="isActivevalidator_ServerValidate">
                                     </asp:CustomValidator>
+
                                     </div>
                                  <div  class="row pcsalesbuttons" >
                                         <div class="col-3 margin">
@@ -174,6 +174,7 @@
                                         </div>
 
                                     </div>
+
                                 </div>
                          </div>  
                    </div>
@@ -206,6 +207,7 @@
     <%: Scripts.Render("~/Scripts/bootstrap.bundle.js") %> 
 
 </asp:PlaceHolder>
+
 <script>
     $(document).ready(function () {
         $('#mobileNumber').keydown(function (e) {

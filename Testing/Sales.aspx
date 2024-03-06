@@ -1,7 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Sales.aspx.cs" Inherits="HuarITSolutions.Sales" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+    <webopt:bundlereference runat="server" path="~/Content/css" />
             <div class="row">
 
             <div id="salesttons" class="col-sm-auto  sticky-top custom-column-spacing ">

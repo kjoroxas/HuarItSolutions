@@ -46,7 +46,7 @@
 
 
                     <div id="content" class="col-lg-2"  >
-                                <div class="buttonContainer">
+                                <div class="buttonContainer" id="back">
                                     <asp:Button runat="server" CssClass="closebutton" OnClick="Button1_Click" ></asp:Button>
                                 </div>
                         <center>
@@ -101,7 +101,10 @@
                                              <iframe src="GameSettingsMenu/highcombi.aspx" style="width:1300px; height:550px; border:none; "></iframe>
                                         </div>--%>
                                         <div id="salesrep" class=" tab-pane fade" role="tabpanel" aria-labelledby="salesr">
-                                               <iframe src="GameSettingsMenu/sales_representative.aspx" scrolling="no" class="specifc"></iframe>
+                                               <iframe src="GameSettingsMenu/sales_representative.aspx" scrolling="no" class="specifc  specifc3"></iframe>
+                                        </div>
+                                        <div id="salesrepmobile" class=" tab-pane fade" role="tabpanel" aria-labelledby="salesr">
+                                               <iframe src="GameSettingsMenu/sales_representative.aspx" scrolling="no" class="specifc  specifc3"></iframe>
                                         </div>
                             </div>
                         </div>
@@ -120,21 +123,27 @@
         overflow: hidden; 
     }
     @media screen and (min-width: 360px) and (max-width: 500px) {
-            body{
-        overflow:auto;
-    }
+        body {
+            overflow: auto;
+        }
+
         footer {
             height: 60px !important;
-        margin-top: -200px !important;
-        font-size: 20px;
-
-        padding: 0px !important;
-    }
+            font-size: 20px;
+            font-size: 20px;
+            position: fixed;
+            left: 0;
+            top: 92%;
+            width: 100%;
+            padding: 0px !important;
+        }
         #UserControl{
-        z-index: 9999; /* adjust as needed */
+            z-index:9999;
+        }
+    }
+    /*Catalog Mobile*/
 
-    }
-    }
+
 </style>
 
 <asp:PlaceHolder runat="server">
