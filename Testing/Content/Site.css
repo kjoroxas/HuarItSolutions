@@ -277,9 +277,9 @@ dropdown-menu{
     margin-left:-300px;
     padding-bottom: 150px;
     background-color: lightgray !important;
-
+    
 }
-button
+
 #site-logo {
     border: none !important;
     margin-right:0 !important;
@@ -351,6 +351,10 @@ th, .aspNetTable th {
     top: 0; /* Adjust as needed */
     background-color: white; /* Or any color that matches your design */
     z-index: 1; /* To ensure the header stays on top */
+}
+.deviceidlabelstyle {
+    margin-top: 15px;
+    margin-right: 65px;
 }
 .validator-error {
     display: block;
@@ -772,6 +776,30 @@ passwordMatchvalidator{
         border-style: solid;
         border-color: transparent indianred transparent transparent; /* Change the color to match the background-color */
     }
+.mobilenumberstyle {
+    margin-top: 15px;
+    margin-right: 22px;
+    white-space: nowrap;
+}
+.confirmpasswordstyle {
+    margin-top: 15px;
+    margin-right: 5px;
+    white-space: nowrap;
+}
+.groupaccountstyle {
+    margin-top: 15px;
+    margin-right: 24px;
+    white-space: nowrap;
+}
+.commissiontypestyle {
+    margin-top: 15px;
+    margin-right: -15px;
+    white-space: nowrap;
+}
+.divpasswordtextbox {
+    margin-left: 137px;
+    margin-top: -30px;
+}
     /*Sales*/
 #salesttons {
     margin-left: -300px;
@@ -1065,6 +1093,12 @@ passwordMatchvalidator{
         margin-left: 30px;
     }
     /*Specificfiles*/
+    .textbox3 {
+        width: 500px; /* Adjust as needed */
+        height: 30px;
+        margin-left: 0; /* Remove the left margin */
+        display: inline-block; /* Ensures it stays on the same line */
+    }
     #activeGametext {
         margin-left: 10px;
     }
@@ -1075,31 +1109,37 @@ passwordMatchvalidator{
         margin-left:60px;
     }
     .filecard {
-        width: 28rem;
+        width: 25.75rem;
         height: 125rem;
         margin-top: 30px !important;
         border: none;
     }
     .specifc {
-        width: 28rem;
+        width: 25.75rem;
         height: 125rem;
         border: none;
-
     }
     .specifc2 {
-        width: 28rem;
+        width: 25.75rem;
         height: 65rem;
+        border: none;
+    }
+    .specifc3 {
+        width: 25.75rem;
+        height: 125rem;
         border: none;
     }
     .specificcard {
-        width: 28rem;
+        width: 25.75rem;
         height: 125rem;
-
-
     }
     .specificcard2 {
-        width: 28rem;
+        width: 25.75rem;
         height: 65rem;
+    }
+    .specificcard3 {
+        width: 25.75rem;
+        height: 125rem;
     }
     #sidettons {
 
@@ -1124,7 +1164,7 @@ passwordMatchvalidator{
     .buttonContainer {
         position: fixed;
         top: 10%;
-        right: 0;
+        right: 10%;
     }
 
     .closebutton {
@@ -1136,9 +1176,10 @@ passwordMatchvalidator{
         text-indent: -9999px;
         border-radius: 10px;
     }
+
     .gamesettingsmobile {
         display: block;
-        margin-top: 30px !important;
+        margin-top: 70px !important;
         width: 300px;
         display: flex;
         justify-content: center; /* align horizontal */
@@ -1198,8 +1239,375 @@ passwordMatchvalidator{
         width: 400px;
         margin-bottom:20px;
     }
-    .pcsalesbuttons {
-        margin-left: 40px;
-        margin-top: -20px;
+    .salesNew {
+        margin-left: 80px;
+        width: 110px;
+        height: 30px;
     }
-}
+
+    .salesEdit {
+        margin-left: 0px;
+        margin-right: 85px;
+        width: 110px;
+        height: 30px;
+    }
+
+    .salesDelete {
+        margin-bottom: 20px;
+        margin-top: 20px;
+        margin-right: 85px;
+        width: 80px;
+        height: 30px;
+    }
+    .salesSave {
+        margin-right: 20px;
+        margin-left: 0px;
+        width: 80px;
+        height: 30px;
+    }
+    .salesCancel {
+        width: 80px;
+        height: 30px;
+    }
+    .single-line-label {
+        white-space: nowrap;
+        margin-right:500px !important;
+    }
+    .deviceidlabelstyle {
+        margin-top: 15px;
+        margin-right: 0px;
+    }
+    .gameCodeDropDown {
+        margin-left: 0px;
+        width: 500px !important;
+        height: 40px;
+        font-size: 18px;
+    }
+    .divpasswordtextbox {
+        white-space: nowrap;
+        margin-left: 0px;
+        margin-top: 0px;
+    }
+    .textbox2 {
+        width: 600px;
+        height: 30px;
+    }
+    #show_password2{
+        display:none;
+    }
+    .ActiveCheckbox {
+
+        margin-left: -5px;
+    }
+    #isActive{
+        margin-top:30px;
+    }
+    .col-9{
+        width:400px;
+    }
+
+    /*Validators for sales representative*/
+
+    .new-validator-error {
+        display: block;
+        position: absolute;
+        background-color: indianred; /* Change the color to your preference */
+        color: white;
+        text-align: center;
+        border-radius: 6px;
+        padding: 10px;
+        z-index: 1;
+        margin-left: 160px;
+        margin-top: -40px;
+        font-size: 12px;
+        white-space: nowrap;
+    }
+
+        .new-validator-error::after {
+            content: "";
+            position: absolute;
+            bottom: 120%;
+            left: 0%;
+            margin-left: -10px;
+            margin-bottom: -30px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent indianred transparent transparent; /* Change the color to match the background-color */
+        }
+
+    .outlet-validator-error {
+        display: block;
+        position: absolute;
+        background-color: indianred; /* Change the color to your preference */
+        color: white;
+        text-align: center;
+        border-radius: 6px;
+        padding: 10px;
+        z-index: 1;
+        top: 20px; /* adjust as needed */
+        left: 200px; /* adjust as needed */
+        font-size: 10px;
+        white-space: nowrap;
+    }
+
+        .outlet-validator-error::after {
+            content: "";
+            position: absolute;
+            bottom: 120%;
+            left: 0%;
+            margin-left: -10px;
+            margin-bottom: -30px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent indianred transparent transparent; /* Change the color to match the background-color */
+        }
+
+    .name2-validator-error {
+        display: block;
+        position: absolute;
+        background-color: indianred; /* Change the color to your preference */
+        color: white;
+        text-align: center;
+        border-radius: 6px;
+        padding: 10px;
+        z-index: 1;
+        top: 210px; /* adjust as needed */
+        left: 170px; /* adjust as needed */
+        font-size: 12px;
+        white-space: nowrap;
+    }
+
+        .name2-validator-error::after {
+            content: "";
+            position: absolute;
+            bottom: 120%;
+            left: 0%;
+            margin-left: -10px;
+            margin-bottom: -30px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent indianred transparent transparent; /* Change the color to match the background-color */
+        }
+
+    :root {
+        --border-color: indianred;
+    }
+
+    .outletlabel-validator-error {
+        display: block;
+        position: absolute;
+        background-color: indianred; /* Change the color to your preference */
+        color: white;
+        text-align: center;
+        border-radius: 6px;
+        padding: 10px;
+        z-index: 1;
+        margin-left: 250px;
+        margin-top: -40px;
+        font-size: 12px;
+    }
+
+        .outletlabel-validator-error::after {
+            content: "";
+            position: absolute;
+            bottom: 120%;
+            left: 0%;
+            margin-left: -10px;
+            margin-bottom: -30px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent var(--border-color) transparent transparent;
+        }
+
+    .device-validator-error {
+        display: block;
+        position: absolute;
+        background-color: indianred; /* Change the color to your preference */
+        color: white;
+        text-align: center;
+        border-radius: 6px;
+        padding: 10px;
+        z-index: 1;
+        top: 70px; /* adjust as needed */
+        left: 400px; /* adjust as needed */
+        font-size: 12px;
+    }
+
+        .device-validator-error::after {
+            content: "";
+            position: absolute;
+            bottom: 120%;
+            left: 0%;
+            margin-left: -10px;
+            margin-bottom: -30px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent indianred transparent transparent; /* Change the color to match the background-color */
+        }
+
+    .device2-validator-error {
+        display: block;
+        position: absolute;
+        background-color: indianred; /* Change the color to your preference */
+        color: white;
+        text-align: center;
+        border-radius: 6px;
+        padding: 10px;
+        z-index: 1;
+        top: 40px; /* adjust as needed */
+        left: 400px; /* adjust as needed */
+        font-size: 12px;
+    }
+
+        .device2-validator-error::after {
+            content: "";
+            position: absolute;
+            bottom: 120%;
+            left: 0%;
+            margin-left: -10px;
+            margin-bottom: -30px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent indianred transparent transparent; /* Change the color to match the background-color */
+        }
+
+    .name-validator-error {
+        display: block;
+        position: absolute;
+        background-color: indianred; /* Change the color to your preference */
+        color: white;
+        text-align: center;
+        border-radius: 6px;
+        padding: 10px;
+        z-index: 1;
+        top: 210px; /* adjust as needed */
+        left: 210px; /* adjust as needed */
+        font-size: 10px;
+        white-space: nowrap;
+    }
+
+        .name-validator-error::after {
+            content: "";
+            position: absolute;
+            bottom: 120%;
+            left: 0%;
+            margin-left: -10px;
+            margin-bottom: -30px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent indianred transparent transparent; /* Change the color to match the background-color */
+        }
+
+    .password-validator-error {
+        display: block;
+        position: absolute;
+        background-color: indianred; /* Change the color to your preference */
+        color: white;
+        text-align: center;
+        border-radius: 6px;
+        padding: 10px;
+        z-index: 1;
+        top: -0px; /* adjust as needed */
+        left: 100px; /* adjust as needed */
+        font-size: 12px;
+    }
+
+        .password-validator-error::after {
+            content: "";
+            position: absolute;
+            bottom: 120%;
+            left: 0%;
+            margin-left: -10px;
+            margin-bottom: -30px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent indianred transparent transparent; /* Change the color to match the background-color */
+        }
+
+    .cpassword-validator-error {
+        display: block;
+        position: absolute;
+        background-color: indianred; /* Change the color to your preference */
+        color: white;
+        text-align: center;
+        border-radius: 6px;
+        padding: 10px;
+        z-index: 1;
+        top: 0px; /* adjust as needed */
+        left: 100px; /* adjust as needed */
+        font-size: 12px;
+    }
+
+        .cpassword-validator-error::after {
+            content: "";
+            position: absolute;
+            bottom: 120%;
+            left: 0%;
+            margin-left: -10px;
+            margin-bottom: -30px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent indianred transparent transparent; /* Change the color to match the background-color */
+        }
+
+    .password2-validator-error {
+        display: block;
+        position: absolute;
+        background-color: indianred; /* Change the color to your preference */
+        color: white;
+        text-align: center;
+        border-radius: 6px;
+        padding: 10px;
+        z-index: 1;
+        top: 80px; /* adjust as needed */
+        left: 350px; /* adjust as needed */
+        font-size: 12px;
+    }
+
+        .password2-validator-error::after {
+            content: "";
+            position: absolute;
+            bottom: 120%;
+            left: 0%;
+            margin-left: -10px;
+            margin-bottom: -30px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent indianred transparent transparent; /* Change the color to match the background-color */
+        }
+
+    .cpassword2-validator-error {
+        display: block;
+        position: absolute;
+        background-color: indianred; /* Change the color to your preference */
+        color: white;
+        text-align: center;
+        border-radius: 6px;
+        padding: 10px;
+        z-index: 1;
+        top: 80px; /* adjust as needed */
+        left: 350px; /* adjust as needed */
+        font-size: 12px;
+    }
+
+        .cpassword2-validator-error::after {
+            content: "";
+            position: absolute;
+            bottom: 120%;
+            left: 0%;
+            margin-left: -10px;
+            margin-bottom: -30px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent indianred transparent transparent; /* Change the color to match the background-color */
+        }
+        /*Sales Mobile*/
+    #salesttons{
+        display:none;
+    }
+    .tablestyle2 {
+        margin-left: 50px;
+        width:250px;
+    }
+    }
+    
