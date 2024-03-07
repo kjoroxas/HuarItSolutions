@@ -18,7 +18,7 @@
                 <div style="margin-left:1px;" class="row">
                     <div class="col-3 margin">
                         <label class="subheader" style="margin-left:30px; margin-top:3px;"><small>Game Code</small></label><br />
-                        <asp:DropDownList ID="gameCode" runat="server" AutoPostBack="true" CssClass="gameCodeDropDown" OnSelectedIndexChanged="gameCode_SelectedIndexChanged">
+                        <asp:DropDownList ID="gameCode" runat="server" AutoPostBack="true" CssClass="gameCodeDropDown3" OnSelectedIndexChanged="gameCode_SelectedIndexChanged">
                             <asp:ListItem Value="0">Select Game Code</asp:ListItem>
                         </asp:DropDownList><br />
                     </div>
