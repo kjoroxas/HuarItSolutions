@@ -322,7 +322,12 @@ dropdown-menu{
     height: 40px;
     font-size: 18px;
 }
-
+.gameCodeDropDown3 {
+    margin-left: 30px !important;
+    width: 500px !important;
+    height: 40px;
+    font-size: 18px;
+}
 .gameCodeDropDown2 {
     margin-bottom:30px;
     width: 500px !important;
@@ -337,6 +342,9 @@ dropdown-menu{
     overflow-y: auto;
 
     height: 500px; /* Adjust as needed */
+
+}
+#show_password2{
 
 }
 .text{
@@ -1247,15 +1255,17 @@ passwordMatchvalidator{
 
     .salesEdit {
         margin-left: 0px;
-        margin-right: 85px;
+        margin-right: 10px;
+        margin-left: -10px;
         width: 110px;
         height: 30px;
     }
 
     .salesDelete {
-        margin-bottom: 20px;
+
         margin-top: 20px;
-        margin-right: 85px;
+
+        margin-right: 10px;
         width: 80px;
         height: 30px;
     }
@@ -1293,7 +1303,7 @@ passwordMatchvalidator{
         height: 30px;
     }
     #show_password2{
-        display:none;
+height:30px;width:auto;display: flex; align-items: center;justify-content: center; margin-right:10px;
     }
     .ActiveCheckbox {
 
@@ -1305,7 +1315,7 @@ passwordMatchvalidator{
     .col-9{
         width:400px;
     }
-
+    columnpc
     /*Validators for sales representative*/
 
     .new-validator-error {
@@ -1609,5 +1619,36 @@ passwordMatchvalidator{
         margin-left: 50px;
         width:250px;
     }
+    .tablestyle1 {
+        margin-left: 50px;
+        width: 1500px;
+    }
+
+
+    .tablestyle4 {
+        margin-left:-10px;
+        width: 550px;
+    }
+    #show_password {
+        height: 30px;
+        width: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 10px;
+        margin-top: -54px;
+        margin-left: 190px;
+    }
+    #show_password2 {
+        height: 30px;
+        width: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 10px;
+        margin-top: -54px;
+        margin-left: 190px;
+    }
+
     }
     

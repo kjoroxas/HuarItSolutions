@@ -96,10 +96,10 @@
                                         </div>
 
                                         <div id="combi" class=" tab-pane fade" role="tabpanel" aria-labelledby="combine">
-                                             <iframe src="SalesMenufiles\Sales Summary.aspx" scrolling="no" class="specifc specifc2"></iframe>
+                                             <iframe src="SalesMenufiles\Sales Summary.aspx" scrolling="no" class="specifc "></iframe>
                                         </div>
                                         <div id="lowcombi" class=" tab-pane fade" role="tabpanel" aria-labelledby="lowb">
-                                             <iframe src="SalesMenufiles\Winning Transactions.aspx" scrolling="no" class="specifc specifc2"></iframe>
+                                             <iframe src="SalesMenufiles\Winning Transactions.aspx" scrolling="no" class="specifc "></iframe>
                                         </div>
                                         <div id="highcombi" class=" tab-pane fade" role="tabpanel" aria-labelledby="highb">
                                              <iframe src="SalesMenufiles\Transaction Validation.aspx" scrolling="no" class="specifc"></iframe>

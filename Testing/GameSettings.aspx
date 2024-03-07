@@ -83,7 +83,7 @@
                             </div>
                         </div>
                             </center>
-                        <div  class="card filecard" >
+                        <div  class="card  filecard" >
                         <div class="row-lg-12"  >
                             <div class="tab-content" >
                                         <div id="active" class="tab-pane fade show active" role="tabpanel" aria-labelledby="agame">

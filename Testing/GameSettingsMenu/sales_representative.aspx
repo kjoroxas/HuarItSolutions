@@ -99,7 +99,7 @@
                                         <asp:TextBox ID="confirmPassword" CssClass="textbox2" ValidateRequestMode="Disabled" type="password" runat="server"  ></asp:TextBox><br />
                                         <asp:RequiredFieldValidator ID="confirmPasswordValidator" runat="server" ControlToValidate="confirmPassword" ErrorMessage="Confirm your password." CssClass="cpassword-validator-error" Display="Dynamic"></asp:RequiredFieldValidator>
                                         <div class="input-group-append">
-                                            <button id="show_password2" class="btn btn-outline-secondary" style="height:30px;width:auto;display: flex; align-items: center;justify-content: center; margin-right:10px;" type="button"><i class="fa-solid fa-eye"></i></button>
+                                            <button id="show_password2" class="btn btn-outline-secondary"  type="button"><i class="fa-solid fa-eye"></i></button>
                                         </div>
                                    
                                     <asp:CompareValidator ID="comparePasswords" runat="server" ForeColor="Red"
@@ -160,11 +160,11 @@
 
                                     </div>
                                  <div  class="row pcsalesbuttons" >
-                                        <div class="col-3 margin">
+                                        <div class="col-xxl-3 margin">
                                             <br />
 
                                         </div>
-                                        <div class="col-9" >
+                                        <div class="col-xxl-9 " >
                                             <br />
                                             <asp:Button runat="server" Text="Save for Edit" ID="editBtn" OnClick="editBtnClick" CssClass="salesEdit" />
                                             <asp:Button runat="server" Text="Save" ID="saveBtn" CssClass="salesSave"  />
