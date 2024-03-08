@@ -24,16 +24,18 @@
 
 </head>
 <body>
-    <form id="form1" runat="server">
+
+    <form id="betsummarymenuform" runat="server">
+         
             <div class="row">
-        <div class="col-3 pcversion">
+        <div class="col-sm-3 pcversion">
             <div class="row " style="margin-bottom:20px; margin-top:50px; ">
               <label class="subheader" style="margin-left:-10px;margin-top:3px;">Draw Date</label><br />
               <asp:TextBox ID="drawDate" CssClass="textbox" runat="server" TextMode="Date"></asp:TextBox>
             </div>
            <div class="row">
                     <label class="subheader" style=" margin-top:20px; margin-left:-10px;">Game Code</label><br />
-                    <asp:DropDownList ID="gameCode" runat="server" AutoPostBack="true" CssClass="gameCodeDropDown3" OnSelectedIndexChanged="gameCode_SelectedIndexChanged" >
+                    <asp:DropDownList ID="gameCode" runat="server" AutoPostBack="true" CssClass="gameCodeDropDown4" OnSelectedIndexChanged="gameCode_SelectedIndexChanged" >
                         <asp:ListItem Value="0">Select Game Code</asp:ListItem>
                     </asp:DropDownList><br />
             </div>
@@ -41,7 +43,7 @@
                <asp:Button ID="Button3" CSSClass="viewBtnclass" runat="server" Text="View" Width="500px" Height="40px"  />
             </div>
         </div>
-       <div class="col-8">
+       <div class="col-sm-8">
 
            <div class="tablestyle2">
               <table id="betsummaryMenu" class="table table-striped table-bordered" style="width:100%">

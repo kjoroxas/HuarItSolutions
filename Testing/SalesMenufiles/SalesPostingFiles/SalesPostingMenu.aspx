@@ -27,7 +27,7 @@
              <div class="card-body">
   
     <div class="row">
-        <div class="col-3 col-sm-12 pcversion">
+        <div class="col-sm-3  pcversion">
 
            <div class="row" style=" margin-bottom:20px;">
                  <label class="subheader" style=" margin-top:3px; margin-left:-10px;">Draw Date</label><br />
@@ -50,7 +50,7 @@
                 <asp:Button ID="Button2" CSSClass="viewBtnclass" runat="server" Text="View List" Width="500px" Height="40px" />
             </div>  
         </div>
-       <div class="col-8">
+       <div class="col-sm-8">
                                         <div class="tablestyle4">
                  <table id="salespostingTable" class="table table-striped table-bordered table-responsive" style="width:100%">
                          <thead>
