@@ -47,7 +47,7 @@
             </div>
 
 
-                    <div id="content" class="col-lg-2"  >
+                    <div id="content" class="col-sm-2"  >
                                 <div class="buttonContainer">
                                     <asp:Button runat="server" CssClass="closebutton" OnClick="Close1_Click" ></asp:Button>
                                 </div>
@@ -87,25 +87,40 @@
                             </div>
                         </div>
                             </center>
-                        <div  class="card filecard" >
-                        <div class="row-lg-12"  >
+                        <div   class="card filecard" >
+                        <div class="row-sm-12"  >
                             <div class="tab-content" >
                                         <div id="betsummarytab" class="tab-pane fade show active" role="tabpanel" aria-labelledby="betsummary">
-                                             <iframe src="SalesMenufiles\Bet Summary.aspx" scrolling="no" class="specifc"></iframe>
+                                              <div class="divclassbutton">
+                                                <iframe src="SalesMenufiles\Bet Summary.aspx" scrolling="no" class="specifc specific4 "></iframe>
+                                              </div>
+                                             
 
                                         </div>
 
                                         <div id="combi" class=" tab-pane fade" role="tabpanel" aria-labelledby="combine">
-                                             <iframe src="SalesMenufiles\Sales Summary.aspx" scrolling="no" class="specifc "></iframe>
+                                                <div class="divclassbutton">
+                                                <iframe src="SalesMenufiles\Sales Summary.aspx" scrolling="no" class="specifc specific4 "></iframe>
+                                              </div>
+                                             
                                         </div>
                                         <div id="lowcombi" class=" tab-pane fade" role="tabpanel" aria-labelledby="lowb">
-                                             <iframe src="SalesMenufiles\Winning Transactions.aspx" scrolling="no" class="specifc "></iframe>
+                                                <div class="divclassbutton">
+                                                 <iframe src="SalesMenufiles\Winning Transactions.aspx" scrolling="no" class="specifc specific4 "></iframe>
+                                              </div>
+                                            
                                         </div>
                                         <div id="highcombi" class=" tab-pane fade" role="tabpanel" aria-labelledby="highb">
-                                             <iframe src="SalesMenufiles\Transaction Validation.aspx" scrolling="no" class="specifc"></iframe>
+                                                <div class="divclassbutton">
+                                                 <iframe src="SalesMenufiles\Transaction Validation.aspx" scrolling="no" class="specifc specific4"></iframe>
+                                              </div>
+                                             
                                         </div>
                                         <div id="salesrep" class=" tab-pane fade" role="tabpanel" aria-labelledby="salesr">
-                                               <iframe src="SalesMenufiles\Sales Posting.aspx" scrolling="no" class="specifc"></iframe>
+                                                <div class="divclassbutton">
+                                                 <iframe src="SalesMenufiles\Sales Posting.aspx" scrolling="no" class="specifc specific4"></iframe>
+                                              </div>
+                                               
                                         </div>
                             </div>
                         </div>
@@ -129,13 +144,17 @@
     }
         footer {
             height: 60px !important;
-        margin-top: -200px !important;
-        font-size: 20px;
-
-        padding: 0px !important;
-    }
+            font-size: 20px;
+            font-size: 20px;
+            position: fixed;
+            left: 0;
+            top: 92%;
+            width: 100%;
+            padding: 0px !important;
+        }
         #UserControl{
         z-index: 9999; /* adjust as needed */
+
 
     }
     }
