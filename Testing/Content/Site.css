@@ -1795,6 +1795,19 @@ passwordMatchvalidator{
 }
 /* Mobile CSS*/
 @media screen and (min-width: 360px) and (max-width: 420px) {
+    .pdfButton {
+        margin-top: 20px;
+        width: 150px;
+        height: 40px;
+        margin-left: -30px;
+    }
+
+    .csvButton {
+        margin-left: 50px;
+        margin-top: 20px;
+        width: 150px;
+        height: 40px;
+    }
     .body-content {
         padding: 0;
     }
@@ -2641,6 +2654,19 @@ height:30px;width:auto;display: flex; align-items: center;justify-content: cente
 
     }
 @media screen and (min-width: 421px) and (max-width: 539px) {
+    .pdfButton {
+        margin-top: 20px;
+        width: 150px;
+        height: 40px;
+        margin-left: -30px;
+    }
+
+    .csvButton {
+        margin-left: 50px;
+        margin-top: 20px;
+        width: 150px;
+        height: 40px;
+    }
     .body-content {
         padding: 0;
     }
@@ -3509,6 +3535,19 @@ height:30px;width:auto;display: flex; align-items: center;justify-content: cente
 }
 
 @media screen and (min-width: 540px) and (max-width: 600px) {
+    .pdfButton {
+        margin-top: 20px;
+        width: 150px;
+        height: 40px;
+        margin-left: -30px;
+    }
+
+    .csvButton {
+        margin-left: 50px;
+        margin-top: 20px;
+        width: 150px;
+        height: 40px;
+    }
     .body-content {
         padding: 0;
     }
@@ -4379,6 +4418,19 @@ height:30px;width:auto;display: flex; align-items: center;justify-content: cente
     }
 }
 @media screen and (min-width: 600px) and (max-width: 1000px) {
+    .pdfButton {
+        margin-top: 20px;
+        width: 150px;
+        height: 40px;
+        margin-left: -30px;
+    }
+
+    .csvButton {
+        margin-left: 50px;
+        margin-top: 20px;
+        width: 150px;
+        height: 40px;
+    }
     .body-content {
         padding: 0;
     }
@@ -5252,6 +5304,19 @@ height:30px;width:auto;display: flex; align-items: center;justify-content: cente
     }
 }
 @media screen and (min-width: 1024px) and (max-width: 1200px) {
+    .pdfButton {
+        margin-top: 20px;
+        width: 150px;
+        height: 40px;
+        margin-left: -30px;
+    }
+
+    .csvButton {
+        margin-left: 50px;
+        margin-top: 20px;
+        width: 150px;
+        height: 40px;
+    }
     .body-content {
         padding: 0;
     }
@@ -6123,6 +6188,19 @@ height:30px;width:auto;display: flex; align-items: center;justify-content: cente
     }
 }
 @media screen and (min-width: 1024px) and (max-width: 1250px) {
+    .pdfButton {
+        margin-top: 20px;
+        width: 150px;
+        height: 40px;
+        margin-left: -30px;
+    }
+
+    .csvButton {
+        margin-left: 50px;
+        margin-top: 20px;
+        width: 150px;
+        height: 40px;
+    }
     .body-content {
         padding: 0;
     }
@@ -7000,6 +7078,19 @@ height:30px;width:auto;display: flex; align-items: center;justify-content: cente
     }
 }
 @media screen and (min-width: 1260px) and (max-width: 1366px) {
+    .pdfButton {
+        margin-top: 20px;
+        width: 150px;
+        height: 40px;
+        margin-left: -30px;
+    }
+
+    .csvButton {
+        margin-left: 50px;
+        margin-top: 20px;
+        width: 150px;
+        height: 40px;
+    }
     .body-content {
         padding: 0;
     }
