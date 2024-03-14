@@ -44,7 +44,7 @@
                                      </div>
 
                                    </div>
-                                <div  class="col-4 margin">
+                                <div  class="col-4 test margin4">
                                     <asp:Label ID="outletCodeLabel1" Text="Outlet Code" AssociatedControlID="outletCodeTextBox" EnableViewState="false" runat="server" CssClass="single-line-label">
 
                                     </asp:Label>
@@ -164,7 +164,7 @@
                                             <br />
 
                                         </div>
-                                        <div class="col-xxl-9 " >
+                                        <div class="col-xxl-9 mx-md-auto mx-lg-0" >
                                             <br />
                                             <asp:Button runat="server" Text="Save for Edit" ID="editBtn" OnClick="editBtnClick" CssClass="salesEdit" />
                                             <asp:Button runat="server" Text="Save" ID="saveBtn" CssClass="salesSave"  />

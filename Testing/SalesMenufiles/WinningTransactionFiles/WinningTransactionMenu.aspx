@@ -30,32 +30,32 @@
                <div class="card-body">
                  
                    <div class="row">
-                       <div class="col-3 pcversion">
+                       <div class="col-sm-3 pcversion">
 
                           <div class="row" style=" margin-bottom:20px;">
                                 <label class="subheader" style=" margin-top:3px; margin-left:-10px;">Draw Date</label><br />
-                                 <asp:TextBox ID="drawDate" CssClass="textbox" runat="server" TextMode="Date"></asp:TextBox>
+                                 <asp:TextBox ID="drawDate" CssClass="textbox6" runat="server" TextMode="Date"></asp:TextBox>
                            </div>
                             <div class="row " style="margin-top:30px; margin-bottom:20px;">
                                                               <label class="subheader" style=" margin-top:3px; margin-left:-10px;">Game Code</label><br />
-                                <asp:DropDownList ID="gameCode" runat="server" AutoPostBack="true" CssClass="salesgameCodeDropDown" >
+                                <asp:DropDownList ID="gameCode" runat="server" AutoPostBack="true" CssClass="gamecodeDropDown4" >
                                     <asp:ListItem Value="0">Select Game Code</asp:ListItem>
                                 </asp:DropDownList><br />
                            </div>
                             <div class="row " style="margin-top:30px; margin-bottom:20px;">
                                 <label class="subheader" style=" margin-top:3px; margin-left:-10px;">Winning Combinations</label><br />
-                                 <asp:TextBox ID="TextBox1" CssClass="textbox" runat="server" TextMode="SingleLine"></asp:TextBox>
+                                 <asp:TextBox ID="TextBox1" CssClass="textbox6" runat="server" TextMode="SingleLine"></asp:TextBox>
                            </div>
                          <div class="row">
-                              <asp:Button ID="Button1" CSSClass="viewBtnclass" runat="server" Text="Save" Width="500px" Height="40px" />
+                              <asp:Button ID="Button1" CSSClass="pdfButton" runat="server" Text="Save"  />
                            </div>
                           <div class="row">
-                               <asp:Button ID="Button2" CSSClass="viewBtnclass" runat="server" Text="View List" Width="500px" Height="40px" />
+                               <asp:Button ID="Button2" CSSClass="csvButton" runat="server" Text="View List" />
                            </div>  
                        </div>
                       <div class="col-8">
                                                        <div class="tablestyle4">
-                                <table id="winningtransactiontable" class="table table-striped table-bordered" style="width:100%">
+                                <table id="winningtransactiontable" class="table table-striped table-bordered table-responsive" style="width:100%">
                                         <thead>
                                             <tr>
                                                 <th>DRAW DATE</th>
@@ -79,10 +79,10 @@
                                     </div>
                                 <div class="row" style=" margin-left: 30px !important; ">
                               <div class="col-3  " style=" margin-right:30px;">
-                                  <asp:Button ID="pdfButton" CSSClass="viewBtnclass" runat="server" Text="Download as PDF" Width="300px" Height="40px" />
+                                  <asp:Button ID="pdfButton" CSSClass="pdfButton" runat="server" Text="Download as PDF"/>
                                   </div>
                               <div class="col-3 ">
-                                  <asp:Button ID="csvButton" CSSClass="viewBtnclass" runat="server" Text="Download as CSV" Width="300px" Height="40px" />
+                                  <asp:Button ID="csvButton" CSSClass="csvButton" runat="server" Text="Download as CSV"  />
                                   </div>
                 
                             </div>

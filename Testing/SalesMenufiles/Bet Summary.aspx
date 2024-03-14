@@ -13,7 +13,7 @@
     <form id="form1" runat="server">
 
             <div class="card specificcard" >
-             <div class="card-body">
+             <div id="test" class="card-body">
                  
                     <nav>
                       <div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -25,10 +25,10 @@
                  <div class="tab-content" id="nav-tabContent">
 
                     <div class="tab-pane fade show active" id="nav-betSummary" role="tabpanel" aria-labelledby="nav-betSummary">
-                        <iframe src="BetSummaryFIles\BetSummaryMenu.aspx" scrolling="no" class="specifc"></iframe>
+                        <iframe src="BetSummaryFIles\BetSummaryMenu.aspx" scrolling="no" class="specifc5  "></iframe>
                     </div>
                     <div class="tab-pane fade" id="nav-thermalSales" role="tabpanel" aria-labelledby="nav-thermalSale">
-                        <iframe src="BetSummaryFIles\ThermalSalesMenu.aspx" scrolling="no" class="specifc"></iframe>
+                        <iframe src="BetSummaryFIles\ThermalSalesMenu.aspx" scrolling="no" class="specifc5"></iframe>
                     </div>
 
 

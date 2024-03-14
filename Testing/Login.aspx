@@ -55,6 +55,15 @@
 
             }
         }
+        @media screen and (min-width: 768px) and (max-width: 1024px) {
+            html, body {
+              height: 100%;
+              margin: 0;
+              padding: 0;
+              overflow: hidden; /* This will disable scrolling */
+
+            }
+        }
     </style>
 
 </asp:Content>

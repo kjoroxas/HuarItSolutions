@@ -36,7 +36,7 @@
 
                                                
                        </div>
-                    <div class="col-4 margin left">
+                    <div class="col-4 margin3  left">
                        <label class="subheader pcgamecode mobilegamecode" ><small>Game Code</small></label>
                         <asp:TextBox ID="gameCode" CssClass="textbox" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><br />
 
@@ -60,7 +60,7 @@
 
                        
                     </div>
-                    <div class="col-4 left">
+                    <div class="col-4 left secondcolumn">
                          
                        <label class="subheader"><small>Admin Commission</small></label>
                         <asp:TextBox ID="AdminCommission" CssClass="textbox" ValidateRequestMode="Disabled" type="text" runat="server"  ></asp:TextBox><br />
@@ -81,7 +81,7 @@
 
                             
                         </div>
-                        <div class="col" style="margin-top:50px;">
+                        <div class="col buttoncolumn" style="margin-top:50px;">
                             <br />
                             <!-- Button trigger modal -->
                             <asp:Button ID="saveModal" runat="server" Text="Save" Width="300px" Height="40px" />

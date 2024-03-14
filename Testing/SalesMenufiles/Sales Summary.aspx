@@ -27,10 +27,10 @@
                   <div class="card-body">
                     <h5 class="subtitle"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path fill="currentColor" d="m12 1.148l6.16 9.602H5.84zm0 3.704L9.5 8.75h5zM2 13h9v9H2zm2 2v5h5v-5zm13.5 0a2.5 2.5 0 1 0 0 5a2.5 2.5 0 0 0 0-5M13 17.5a4.5 4.5 0 1 1 9 0a4.5 4.5 0 0 1-9 0"/></svg> Sales Summary</h5>
                       <div class="row">
-                          <div class="col-3 pcversion">
+                          <div class="col-sm-3 pcversion">
                               <div class="row " style="margin-bottom:20px;">
 
-                                    <asp:TextBox ID="drawDate" CssClass="textbox" runat="server" TextMode="Date"></asp:TextBox>
+                                    <asp:TextBox ID="drawDate" CssClass="textbox6" runat="server" TextMode="Date"></asp:TextBox>
                               </div>
                              <div class="row">
                                  <asp:ListBox ID="ListBox1" runat="server" CssClass="listbox1" ></asp:ListBox>
@@ -40,16 +40,16 @@
                                     </asp:DropDownList><br />
                               </div>
                             <div class="row">
-                                 <asp:Button ID="Button1" CSSClass="viewBtnclass" runat="server" Text="View Outlets" Width="500px" Height="40px" />
+                                 <asp:Button ID="Button1" CSSClass="viewBtnclass" runat="server" Text="View Outlets"  />
                               </div>
                              <div class="row">
-                                  <asp:Button ID="Button2" CSSClass="viewBtnclass" runat="server" Text="Overall Summary" Width="500px" Height="40px" />
+                                  <asp:Button ID="Button2" CSSClass="viewBtnclass" runat="server" Text="Overall Summary"  />
                               </div>  
                           </div>
                          <div class="col-8">
 
                              <div class="tablestyle2">
-                                <table id="salesSummaryTable" class="table table-striped table-bordered" style="width:100%">
+                                <table id="salesSummaryTable" class="table table-striped table-bordered table-responsive" style="width:100%">
                                         <thead>
                                             <tr>
                                                 <th>GAME CODE</th>
@@ -71,10 +71,10 @@
                                     </div>
                                 <div class="row" style=" margin-left: 30px !important; ">
                                   <div class="col-3  " style=" margin-right:30px;">
-                                      <asp:Button ID="pdfButton" CSSClass="viewBtnclass" runat="server" Text="Download as PDF" Width="300px" Height="40px" />
+                                      <asp:Button ID="pdfButton" CSSClass="pdfButton" runat="server" Text="Download as PDF"  />
                                       </div>
                                   <div class="col-3 ">
-                                      <asp:Button ID="Button6" CSSClass="viewBtnclass" runat="server" Text="Download as CSV" Width="300px" Height="40px" />
+                                      <asp:Button ID="csvButton" CSSClass="csvButton" runat="server" Text="Download as CSV" />
                                       </div>
                 
                                 </div>
