@@ -31,7 +31,7 @@
         <div class="col-sm-3 pcversion">
             <div class="row " style="margin-bottom:20px; margin-top:50px; ">
               <label class="subheader" style="margin-left:-10px;margin-top:3px;">Draw Date</label><br />
-              <asp:TextBox ID="drawDate" CssClass="textbox" runat="server" TextMode="Date"></asp:TextBox>
+              <asp:TextBox ID="drawDate" CssClass="textbox6" runat="server" TextMode="Date"></asp:TextBox>
             </div>
            <div class="row">
                     <label class="subheader" style=" margin-top:20px; margin-left:-10px;">Game Code</label><br />
@@ -40,7 +40,7 @@
                     </asp:DropDownList><br />
             </div>
           <div class="row" style="margin-bottom:20px; margin-top:50px; ">
-               <asp:Button ID="Button3" CSSClass="viewBtnclass" runat="server" Text="View" Width="500px" Height="40px"  />
+               <asp:Button ID="Button3" CSSClass="viewBtnclass" runat="server" Text="View" />
             </div>
         </div>
        <div class="col-sm-8">
@@ -65,10 +65,10 @@
                   </div>
                                <div class="row" style=" margin-left: 30px !important; ">
                         <div class="col-3 " style=" margin-right:30px!important;">
-                            <asp:Button ID="pdfButton" CSSClass="viewBtnclass" runat="server" Text="Download as PDF" Width="300px" Height="40px" />
+                            <asp:Button ID="pdfButton" CSSClass="pdfButton" runat="server" Text="Download as PDF" />
                             </div>
                         <div class="col-3 ">
-                            <asp:Button ID="csvButton" CSSClass="viewBtnclass" runat="server" Text="Download as CSV" Width="300px" Height="40px" />
+                            <asp:Button ID="csvButton" CSSClass="csvButton" runat="server" Text="Download as CSV" />
                             </div>
                 
                     </div>

@@ -53,5 +53,10 @@
                     overflow:auto;
                 }
             }
+                    @media screen and (min-width: 200px) and (max-width: 360px) {
+                        body{
+                    overflow:auto;
+                }
+            }
     </style>
 </asp:Content>

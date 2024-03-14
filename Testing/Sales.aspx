@@ -47,7 +47,7 @@
             </div>
 
 
-                    <div id="content" class="col-sm-2"  >
+                    <div id="salescontent" class="col-sm-2"  >
                                 <div class="buttonContainer">
                                     <asp:Button runat="server" CssClass="closebutton" OnClick="Close1_Click" ></asp:Button>
                                 </div>
@@ -58,7 +58,7 @@
                                     <ul class="nav" >
                                     <li class="nav-item ">
                                         <button type="button" id="betsummary" class="btn btn-light btn-circle btn-custom active  " data-toggle="tab" data-target="#betsummarytab" role="tab" aria-controls="betsummarytab" aria-selected="true"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><g fill="none"><path d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="M12 3a1 1 0 0 1 .993.883L13 4v1h1.5a7.5 7.5 0 0 1 .243 14.996L14.5 20h-5a7.5 7.5 0 0 1-.243-14.996L9.5 5H11V4a1 1 0 0 1 1-1m3.5 7a1 1 0 0 0-1 1v.5H14a1 1 0 1 0 0 2h.5v.5a1 1 0 1 0 2 0v-.5h.5a1 1 0 1 0 0-2h-.5V11a1 1 0 0 0-1-1m-7 0a2.5 2.5 0 1 0 0 5a2.5 2.5 0 0 0 0-5m0 2a.5.5 0 1 1 0 1a.5.5 0 0 1 0-1"/></g></svg></button>
-                                            
+                                        <br />
                                     </li>
                                         <h6 id="activeGametext"><center>Bet <br />Summary</center></h6>
 
@@ -88,7 +88,7 @@
                         </div>
                             </center>
                         <div   class="card filecard" >
-                        <div class="row-sm-12"  >
+                        <div class="row-lg-12"  >
                             <div class="tab-content" >
                                         <div id="betsummarytab" class="tab-pane fade show active" role="tabpanel" aria-labelledby="betsummary">
                                               <div class="divclassbutton">
@@ -138,9 +138,11 @@
     body {
         overflow: hidden; 
     }
-    @media screen and (min-width: 360px) and (max-width: 500px) {
+    @media screen and (min-width: 360px) and (max-width: 420px) {
             body{
-        overflow:auto;
+        overflow-y:auto;
+        overflow-x: hidden;
+        position: relative;
     }
         footer {
             height: 60px !important;
@@ -154,6 +156,38 @@
         }
         #UserControl{
         z-index: 9999; /* adjust as needed */
+
+
+        position: fixed;
+        top: 0;
+        right: 20px;
+
+
+    }
+    }
+        @media screen and (min-width: 430px) and (max-width: 599px) {
+            body{
+        overflow-y:auto;
+        overflow-x: hidden;
+        position: relative;
+    }
+        footer {
+            height: 60px !important;
+            font-size: 20px;
+            font-size: 20px;
+            position: fixed;
+            left: 0;
+            top: 92%;
+            width: 100%;
+            padding: 0px !important;
+        }
+        #UserControl{
+        z-index: 9999; /* adjust as needed */
+
+
+        position: fixed;
+        top: 0;
+        right: 20px;
 
 
     }

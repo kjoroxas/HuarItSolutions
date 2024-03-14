@@ -50,7 +50,7 @@
                                     <asp:Button runat="server" CssClass="closebutton" OnClick="Button1_Click" ></asp:Button>
                                 </div>
                         <center>
-                        <div class="row gamesettingsmobile">
+                        <div id="filemobilemenu" class="row gamesettingsmobile">
                                  <div class="gamesettingsmobile">
                     
                                     <ul class="nav" >
@@ -83,6 +83,7 @@
                             </div>
                         </div>
                             </center>
+
                         <div  class="card  filecard" >
                         <div class="row-lg-12"  >
                             <div class="tab-content" >
@@ -122,7 +123,7 @@
     body {
         overflow: hidden; 
     }
-    @media screen and (min-width: 360px) and (max-width: 500px) {
+    @media screen and (min-width: 360px) and (max-width: 420px) {
         body {
             overflow: auto;
         }
@@ -134,6 +135,63 @@
             position: fixed;
             left: 0;
             top: 92%;
+            width: 100%;
+            padding: 0px !important;
+        }
+        #UserControl{
+            z-index:9999;
+        }
+    }
+        @media screen and (min-width: 430px) and (max-width: 599px) {
+        body {
+            overflow: auto;
+        }
+
+        footer {
+            height: 60px !important;
+            font-size: 20px;
+            font-size: 20px;
+            position: fixed;
+            left: 0;
+            top: 92%;
+            width: 100%;
+            padding: 0px !important;
+        }
+        #UserControl{
+            z-index:9999;
+        }
+    }
+                @media screen and (min-width: 600px) and (max-width: 1000px) {
+        body {
+            overflow: auto;
+        }
+
+        footer {
+            height: 60px !important;
+            font-size: 20px;
+
+            position: fixed;
+            left: 0;
+            top: 95%;
+            width: 100%;
+            padding: 0px !important;
+        }
+        #UserControl{
+            z-index:9999;
+        }
+    }
+                                @media screen and (min-width: 1001px) and (max-width: 1366px) {
+        body {
+            overflow: auto;
+        }
+
+        footer {
+            height: 60px !important;
+            font-size: 20px;
+
+            position: fixed;
+            left: 0;
+            top: 95%;
             width: 100%;
             padding: 0px !important;
         }
